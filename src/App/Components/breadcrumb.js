@@ -3,7 +3,7 @@ import React from 'react';
 export default ({ data }) => {
 	console.log('cscscsc', data);
 	return (
-		<nav aria-label='breadcrumb flex-row p-0 '>
+		<nav aria-label='breadcrumb flex-row p-0 text-sm-left font-weight-light '>
 			<ol className='breadcrumb p-0 mt-3 bg-transparent'>
 				<li className='breadcrumb-item'>
 					<a href='/'>Home</a>

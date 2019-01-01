@@ -44,3 +44,16 @@ export const categories = (state = initialState, action) => {
 			return state;
 	}
 };
+
+export const singleItem = (state = initialState, action) => {
+	switch (action.type) {
+		case constant.SINGLE_PENDING:
+			return { ...state, pending: true };
+		case constant.SINGLE_SUCCESS:
+			return { ...state, payload: action.payload, pending: false };
+		case constant.SINGLE_ERROR:
+			return { ...state, error: action.error, pending: false };
+		default:
+			return state;
+	}
+};

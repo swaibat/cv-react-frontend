@@ -14,6 +14,9 @@ const apis = {
 	getCategories() {
 		return axios.get(`${BASE_URL}/category`);
 	},
+	singleItem(name) {
+		return axios.get(`${BASE_URL}/products/${name}`);
+	},
 };
 
 export default apis;

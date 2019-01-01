@@ -7,6 +7,7 @@ import Category from './categories.nav';
 
 class Header extends Component {
 	render() {
+		console.log(this);
 		return (
 			<>
 				<nav className='navbar navbar-expand-lg navbar-sm-dark  navbar-dark bg-primary shadow-lr-sm'>

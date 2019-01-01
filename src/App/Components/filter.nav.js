@@ -8,8 +8,8 @@ class Filter extends Component {
 		const { data } = this.props;
 		return (
 			<ul className='navbar-nav mr-auto sidenav pl-0' id='navAccordion'>
-				{data && data.match(data) && <Vehicle />}
-				<Others />
+				{data && data.match('vehicle') && <Vehicle />}
+				{data && data.match(/hone/g) && <Others />}
 			</ul>
 		);
 	}

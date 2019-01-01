@@ -10,6 +10,15 @@ export const items = async () => {
 	}
 };
 
+export const singleItems = async name => {
+	try {
+		const result = await Api.singleItem(name);
+		return { type: constant.SINGLE_SUCCESS, payload: result.data };
+	} catch (error) {
+		return { type: constant.SINGLE_ERROR, error: error.response.data };
+	}
+};
+
 export const itemsByCategory = async name => {
 	try {
 		const result = await Api.getItemsByCategory(name);

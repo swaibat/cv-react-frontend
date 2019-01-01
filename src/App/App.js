@@ -6,6 +6,7 @@ import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Items from './Pages/items.page';
 import CategoryItems from './Pages/category.item';
+import singleItem from './Pages/single.item';
 
 export class App extends React.Component {
 	render() {
@@ -26,6 +27,9 @@ export class App extends React.Component {
 				</Switch>
 				<Switch>
 					<Route exact path='/category/:name/:sub' component={CategoryItems} />
+				</Switch>
+				<Switch>
+					<Route exact path='/products/:name' component={singleItem} />
 				</Switch>
 				<Footer />
 			</Router>
