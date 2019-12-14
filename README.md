@@ -1,1 +1,1 @@
-# vendly-react
+# cv-react-frontend
