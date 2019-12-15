@@ -3,11 +3,18 @@ html {
 	min-height: 100%;
 }
 
+a {
+	text-decoration: none;
+}
+
 body {
-	padding-top: 3.5rem;
-	margin-bottom: 3.5rem;
-    height: 100%;
-    background: #F9F9F9;
+	height: 100vh;
+	background: #F9F9F9;
+	font-weight: 100;
+}
+
+body {
+	font-weight: 100;
 }
 
 .footer {
@@ -27,7 +34,7 @@ body {
 	padding-left: 0;
 }
 
-.nav-item ul.nav-second-level > .nav-item {
+.nav-item ul.nav-second-level>.nav-item {
 	padding-left: 20px;
 }
 
@@ -51,8 +58,8 @@ body {
 }
 
 .card-product {
-    width: 25vw;
-    max-width: 255px;
+	width: 25vw;
+	max-width: 255px;
 	min-width: 200px;
 	max-height: 255px;
 }
@@ -69,12 +76,21 @@ body {
 	border-radius: 100%;
 	line-height: 1.4;
 }
+
 .card-footer {
 	padding: 0.25rem 1.25rem;
 	background-color: white;
 	border-top: none;
 }
 
-.img-holder{
+.custom-input {
+	border-radius: 0px;
+	border: none;
+	background: transparent;
+	border-bottom: solid 1px #ced4da;
+}
 
+.facebook {
+	background: $facebook;
+	color: white;
 }

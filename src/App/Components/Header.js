@@ -9,7 +9,15 @@ class Header extends Component {
 				<a className='navbar-brand' href='/'>
 					Biz.ug
 				</a>
-				<button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarCollapse' aria-controls='navbarCollapse' aria-expanded='false' aria-label='Toggle navigation'>
+				<button
+					className='navbar-toggler rounded-sm'
+					type='button'
+					data-toggle='collapse'
+					data-target='#navbarCollapse'
+					aria-controls='navbarCollapse'
+					aria-expanded='false'
+					aria-label='Toggle navigation'
+				>
 					<span className='navbar-toggler-icon'></span>
 				</button>
 
@@ -21,13 +29,13 @@ class Header extends Component {
 							</span>
 							Advert
 						</button>
-						<div class='btn-group' role='group' aria-label='Basic example'>
-							<button type='button' class='btn btn-sm btn-outline-primary'>
+						<div className='btn-group' role='group' aria-label='Basic example'>
+							<a href='/register' type='button' className='btn btn-sm btn-outline-primary'>
 								signup
-							</button>
-							<button type='button' class='btn btn-sm btn-primary'>
-								signin
-							</button>
+							</a>
+							<a href='/login' type='button' className='btn btn-sm btn-secondary'>
+								Login
+							</a>
 						</div>
 					</div>
 				</div>
