@@ -3,11 +3,29 @@ html {
 	min-height: 100%;
 }
 
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+
+body * {
+	font-weight: 100 !important;
+}
+
 body {
-	padding-top: 3.5rem;
-	margin-bottom: 3.5rem;
-    height: 100%;
-    background: #F9F9F9;
+	height: 100vh;
+	background: #F9F9F9;
+	font-weight: 100;
+}
+
+body {
+	font-weight: 100;
+}
+
+main {
+	background: #ececec !important;
 }
 
 .footer {
@@ -27,7 +45,7 @@ body {
 	padding-left: 0;
 }
 
-.nav-item ul.nav-second-level > .nav-item {
+.nav-item ul.nav-second-level>.nav-item {
 	padding-left: 20px;
 }
 
@@ -50,11 +68,13 @@ body {
 	border: 3px solid #ffff;
 }
 
-.card-product {
-    width: 25vw;
-    max-width: 255px;
+.card-item{
 	min-width: 200px;
 	max-height: 255px;
+	padding: 0;
+	img{
+		border-radius:20px;
+	}
 }
 
 .heart {
@@ -69,12 +89,65 @@ body {
 	border-radius: 100%;
 	line-height: 1.4;
 }
+
 .card-footer {
 	padding: 0.25rem 1.25rem;
 	background-color: white;
 	border-top: none;
 }
 
-.img-holder{
 
+.custom-input {
+	border-radius: 0px;
+	border: none;
+	background: transparent;
+	border-bottom: solid 1px #ced4da;
+	margin-left: -1rem;
+	margin-right: -1rem;
+	padding: 0 1.5rem;
+}
+
+.facebook {
+	background: $facebook;
+	color: white;
+}
+
+.twitter {
+	background: $twitter;
+	color: white;
+}
+
+@media(max-width:767px) {
+	.card-item{
+		width: 100%;
+		min-height: 118px;
+		max-height: 155px;
+		img{
+			width: 45%;
+		}
+		.heart {
+			width: 35px;
+			height: 35px;
+			font-size: 20px;
+			bottom: 1rem;
+			left: 30vw;
+			border-radius: 100%;
+			line-height: 1.6;
+		}
+	}
+	.card-item{
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		min-width: 0;
+		word-wrap: break-word;
+		background-color: #fff;
+		background-clip: border-box;
+		border: 1px solid rgba(0, 0, 0, 0.125);
+		margin: 0 0 0 0;
+		border-radius: .3rem;
+		.card-footer:last-child {
+			border-radius: $border-radius;
+		}
+	}
 }

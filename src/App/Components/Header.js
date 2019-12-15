@@ -5,11 +5,19 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 class Header extends Component {
 	render() {
 		return (
-			<nav className='navbar navbar-expand-lg navbar-light fixed-top bg-white shadow'>
+			<nav className='navbar navbar-expand-lg navbar-sm-dark  navbar-dark  fixed-top bg-transparent shadow-lr-sm'>
 				<a className='navbar-brand' href='/'>
 					Biz.ug
 				</a>
-				<button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarCollapse' aria-controls='navbarCollapse' aria-expanded='false' aria-label='Toggle navigation'>
+				<button
+					className='navbar-toggler rounded-sm'
+					type='button'
+					data-toggle='collapse'
+					data-target='#navbarCollapse'
+					aria-controls='navbarCollapse'
+					aria-expanded='false'
+					aria-label='Toggle navigation'
+				>
 					<span className='navbar-toggler-icon'></span>
 				</button>
 
@@ -21,13 +29,13 @@ class Header extends Component {
 							</span>
 							Advert
 						</button>
-						<div class='btn-group' role='group' aria-label='Basic example'>
-							<button type='button' class='btn btn-sm btn-outline-primary'>
+						<div className='btn-group' role='group' aria-label='Basic example'>
+							<a href='/register' type='button' className='btn btn-sm btn-outline-primary'>
 								signup
-							</button>
-							<button type='button' class='btn btn-sm btn-primary'>
-								signin
-							</button>
+							</a>
+							<a href='/login' type='button' className='btn btn-sm btn-primary'>
+								Login
+							</a>
 						</div>
 					</div>
 				</div>
