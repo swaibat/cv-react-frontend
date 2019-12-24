@@ -8,6 +8,9 @@ const apis = {
 	getItems() {
 		return axios.get(`${BASE_URL}/products`);
 	},
+	getItemsByCategory(name) {
+		return axios.get(`${BASE_URL}/category/${name}`);
+	},
 };
 
 export default apis;

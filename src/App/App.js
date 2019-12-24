@@ -5,6 +5,7 @@ import Login from './Pages/login';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Items from './Pages/items.page';
+import CategoryItems from './Pages/category.item';
 
 export class App extends React.Component {
 	render() {
@@ -18,7 +19,10 @@ export class App extends React.Component {
 					<Route exact path='/login' component={Login} />
 				</Switch>
 				<Switch>
-					<Route exact path='/products' component={Items} />
+					<Route exact path='/products' component={Items} />{' '}
+				</Switch>
+				<Switch>
+					<Route exact path='/category/:name' component={CategoryItems} />
 				</Switch>
 				<Footer />
 			</Router>

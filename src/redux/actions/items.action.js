@@ -9,3 +9,12 @@ export const items = async () => {
 		return { type: constant.ITEMS_ERROR, error: error.response.data };
 	}
 };
+
+export const itemsByCategory = async name => {
+	try {
+		const result = await Api.getItemsByCategory(name);
+		return { type: constant.ITEMS_SUCCESS, payload: result.data };
+	} catch (error) {
+		return { type: constant.ITEMS_ERROR, error: error.response.data };
+	}
+};

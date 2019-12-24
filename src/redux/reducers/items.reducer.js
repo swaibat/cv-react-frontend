@@ -6,7 +6,20 @@ const initialState = {
 	error: null,
 };
 
-export default (state = initialState, action) => {
+export const Items = (state = initialState, action) => {
+	switch (action.type) {
+		case constant.ITEMS_PENDING:
+			return { ...state, pending: true };
+		case constant.ITEMS_SUCCESS:
+			return { ...state, payload: action.payload, pending: false };
+		case constant.ITEMS_ERROR:
+			return { ...state, error: action.error, pending: false };
+		default:
+			return state;
+	}
+};
+
+export const CatItems = (state = initialState, action) => {
 	switch (action.type) {
 		case constant.ITEMS_PENDING:
 			return { ...state, pending: true };

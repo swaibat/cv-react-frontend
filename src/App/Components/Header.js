@@ -1,23 +1,16 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import Logo from '../../assets/images/logo.svg';
 
 class Header extends Component {
 	render() {
 		return (
-			<nav className='navbar navbar-expand-lg navbar-sm-dark  navbar-dark  fixed-top bg-transparent shadow-lr-sm'>
-				<a className='navbar-brand' href='/'>
-					Biz.ug
+			<nav className='navbar navbar-expand-lg navbar-sm-dark  navbar-light bg-white  fixed-top shadow-lr-sm'>
+				<a className='navbar-brand p-0' href='/'>
+					<img src={Logo} alt='logo' />
 				</a>
-				<button
-					className='navbar-toggler rounded-sm'
-					type='button'
-					data-toggle='collapse'
-					data-target='#navbarCollapse'
-					aria-controls='navbarCollapse'
-					aria-expanded='false'
-					aria-label='Toggle navigation'
-				>
+				<button className='navbar-toggler rounded-sm' type='button' data-toggle='collapse' data-target='#navbarCollapse' aria-controls='navbarCollapse' aria-expanded='false' aria-label='Toggle navigation'>
 					<span className='navbar-toggler-icon'></span>
 				</button>
 

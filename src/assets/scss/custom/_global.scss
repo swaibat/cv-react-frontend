@@ -24,10 +24,6 @@ body {
 	font-weight: 100;
 }
 
-main {
-	background: #ececec !important;
-}
-
 .footer {
 	position: absolute;
 	bottom: 0;
@@ -65,24 +61,15 @@ main {
 }
 
 .img-thumbnail {
-	border: 3px solid #ffff;
-}
-
-.card-item{
-	min-width: 200px;
-	max-height: 255px;
-	padding: 0;
-	img{
-		border-radius:20px;
-	}
+	border: none !important;
 }
 
 .heart {
-	width: 45px;
-	height: 45px;
+	width: 2.5rem;
+	height: 2.5rem;
 	position: absolute;
 	right: 1.5rem;
-	font-size: 30px;
+	font-size: 1.7rem;
 	bottom: 3rem;
 	background: #ffffff;
 	text-align: center;
@@ -94,6 +81,10 @@ main {
 	padding: 0.25rem 1.25rem;
 	background-color: white;
 	border-top: none;
+	white-space: nowrap;
+	text-transform: uppercase;
+  	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 
@@ -150,4 +141,10 @@ main {
 			border-radius: $border-radius;
 		}
 	}
+}
+.car-logo{
+	height: 25px;
+}
+.brand-title{
+	font-size: 13px;
 }

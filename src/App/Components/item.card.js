@@ -6,9 +6,9 @@ import heart from '@iconify/icons-mdi-light/heart';
 function Card({ data }) {
 	return data.map((e, i) => {
 		return (
-			<a href={`/products/${e.id}`} class='p-0 flex-fill card text-secondary' key={i}>
-				<img src={AdImg} className='img-thumbnail' alt='...' />
-				<div className='card-footer'>
+			<a key={i} href={`/products/${e.id}`} className='border-0 card text-secondary col-6 col-md-3 col-sm-4  p-0 bg-transparent'>
+				<img src={AdImg} className='img-thumbnail bg-transparent' alt='...' />
+				<div className='card-footer bg-transparent'>
 					<span className='heart text-primary shadow-sm'>
 						<Icon icon={heart} />
 					</span>

@@ -17,7 +17,7 @@ class Landing extends Component {
 					<h4>Featured</h4>
 				</div>
 				<div className='sponsor-container d-flex w-100 row justify-content-center align-items-center'>
-					<div class='p-0 flex-fill card'>
+					<div className='p-0 flex-fill card'>
 						<img src={AdImg} className='img-thumbnail' alt='...' />
 						<div className='card-footer'>
 							<span className='heart text-primary shadow-sm'>
@@ -27,7 +27,7 @@ class Landing extends Component {
 							<h5 className='card-text'>$650000</h5>
 						</div>
 					</div>
-					<div class='p-0 flex-fill card'>
+					<div className='p-0 flex-fill card'>
 						<img src={AdImg} className='img-thumbnail' alt='...' />
 						<div className='card-footer'>
 							<span className='heart text-primary shadow-sm'>
@@ -37,7 +37,7 @@ class Landing extends Component {
 							<h5 className='card-text'>$650000</h5>
 						</div>
 					</div>
-					<div class='p-0 flex-fill card'>
+					<div className='p-0 flex-fill card'>
 						<img src={AdImg} className='img-thumbnail' alt='...' />
 						<div className='card-footer'>
 							<span className='heart text-primary shadow-sm'>
@@ -47,7 +47,7 @@ class Landing extends Component {
 							<h5 className='card-text'>$650000</h5>
 						</div>
 					</div>
-					<div class='p-0 flex-fill card'>
+					<div className='p-0 flex-fill card'>
 						<img src={AdImg} className='img-thumbnail' alt='...' />
 						<div className='card-footer'>
 							<span className='heart text-primary shadow-sm'>
@@ -57,7 +57,7 @@ class Landing extends Component {
 							<h5 className='card-text'>$650000</h5>
 						</div>
 					</div>
-					<div class='p-0 flex-fill card'>
+					<div className='p-0 flex-fill card'>
 						<img src={AdImg} className='img-thumbnail' alt='...' />
 						<div className='card-footer'>
 							<span className='heart text-primary shadow-sm'>
@@ -67,7 +67,7 @@ class Landing extends Component {
 							<h5 className='card-text'>$650000</h5>
 						</div>
 					</div>
-					<div class='p-0 flex-fill card'>
+					<div className='p-0 flex-fill card'>
 						<img src={AdImg} className='img-thumbnail' alt='...' />
 						<div className='card-footer'>
 							<span className='heart text-primary shadow-sm'>
@@ -77,7 +77,7 @@ class Landing extends Component {
 							<h5 className='card-text'>$650000</h5>
 						</div>
 					</div>
-					<div class='p-0 flex-fill card'>
+					<div className='p-0 flex-fill card'>
 						<img src={AdImg} className='img-thumbnail' alt='...' />
 						<div className='card-footer'>
 							<span className='heart text-primary shadow-sm'>
@@ -87,7 +87,7 @@ class Landing extends Component {
 							<h5 className='card-text'>$650000</h5>
 						</div>
 					</div>
-					<div class='p-0 flex-fill card'>
+					<div className='p-0 flex-fill card'>
 						<img src={AdImg} className='img-thumbnail' alt='...' />
 						<div className='card-footer'>
 							<span className='heart text-primary shadow-sm'>
@@ -97,7 +97,7 @@ class Landing extends Component {
 							<h5 className='card-text'>$650000</h5>
 						</div>
 					</div>
-					<div class='p-0 flex-fill card'>
+					<div className='p-0 flex-fill card'>
 						<img src={AdImg} className='img-thumbnail' alt='...' />
 						<div className='card-footer'>
 							<span className='heart text-primary shadow-sm'>
@@ -107,7 +107,7 @@ class Landing extends Component {
 							<h5 className='card-text'>$650000</h5>
 						</div>
 					</div>
-					<div class='p-0 flex-fill card'>
+					<div className='p-0 flex-fill card'>
 						<img src={AdImg} className='img-thumbnail' alt='...' />
 						<div className='card-footer'>
 							<span className='heart text-primary shadow-sm'>
