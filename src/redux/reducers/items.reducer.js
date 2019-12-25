@@ -31,3 +31,16 @@ export const CatItems = (state = initialState, action) => {
 			return state;
 	}
 };
+
+export const categories = (state = initialState, action) => {
+	switch (action.type) {
+		case constant.CATEGORY_PENDING:
+			return { ...state, pending: true };
+		case constant.CATEGORY_SUCCESS:
+			return { ...state, payload: action.payload, pending: false };
+		case constant.CATEGORY_ERROR:
+			return { ...state, error: action.error, pending: false };
+		default:
+			return state;
+	}
+};

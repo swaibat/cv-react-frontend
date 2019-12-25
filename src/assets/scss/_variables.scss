@@ -4,7 +4,10 @@ $facebook:#3b5998;
 $twitter: #00acee;
 $secondary:grey;
 $input-border-focus: red;
-
-$ytd-rich-grid-items-per-row: 4;
-$ytd-rich-grid-posts-per-row: 3;
-$ytd-rich-grid-movies-per-row: 6;
+$bg-light:#f8f9fa;
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1340px
+) !default;

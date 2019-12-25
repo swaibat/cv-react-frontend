@@ -9,9 +9,9 @@ import Bread from '../Components/breadcrumb';
 
 class CategoryItem extends Component {
 	componentDidMount() {
-		const { name } = this.props.match.params;
+		const { name, sub } = this.props.match.params;
 		this.props.init();
-		this.props.items(name);
+		this.props.items(sub || name);
 	}
 
 	toggleMenu() {
@@ -21,13 +21,15 @@ class CategoryItem extends Component {
 	render() {
 		const { payload } = this.props;
 		return (
-			<div className='cv-container'>
-				<Bread />
-				<Filter />
-				<main class='content-wrapper mt-2 row'>
-					<div className='container-fluid row m-auto'>{payload && <Card data={payload.data} />}</div>
-				</main>
-			</div>
+			<>
+				<div className='container'>
+					<Bread data={payload && this.props.match.params} />
+					<Filter data={payload && this.props.match.params.name} />
+					<main className='content-wrapper row'>
+						<div className='container-fluid row m-auto'>{payload && <Card data={payload.data} />}</div>
+					</main>
+				</div>
+			</>
 		);
 	}
 }

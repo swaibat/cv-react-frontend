@@ -12,7 +12,7 @@ function Card({ data }) {
 					<span className='heart text-primary shadow-sm'>
 						<Icon icon={heart} />
 					</span>
-					<p className='card-text mb-1'>{e.name}</p>
+					<p className='card-text mb-1 text-truncate'>{e.name}</p>
 					<h5 className='card-text'>{e.price}</h5>
 				</div>
 			</a>

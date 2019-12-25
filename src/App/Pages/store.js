@@ -3,27 +3,27 @@
 {
 	/* <div className=' d-flex align-items-center'>
 					<form className='w-100 hero-form mt-5 container'>
-						<div class='form-row w-100'>
-							<div class='form-group mb-2 col-md-3'>
-								<select id='inputState' class='form-control form-control-sm'>
+						<div className='form-row w-100'>
+							<div className='form-group mb-2 col-md-3'>
+								<select id='inputState' className='form-control form-control-sm'>
 									<option selected>Choose...</option>
 									<option>...</option>
 								</select>
 							</div>
-							<div class='form-group mb-2 col-md-3'>
-								<select id='inputState' class='form-control form-control-sm'>
+							<div className='form-group mb-2 col-md-3'>
+								<select id='inputState' className='form-control form-control-sm'>
 									<option selected>Body Type</option>
 									<option>...</option>
 								</select>
 							</div>
-							<div class='form-group mb-2 col-md-3'>
-								<select id='inputState' class='form-control form-control-sm'>
+							<div className='form-group mb-2 col-md-3'>
+								<select id='inputState' className='form-control form-control-sm'>
 									<option selected>Body Type</option>
 									<option>...</option>
 								</select>
 							</div>
-							<div class='form-group mb-2 col-md-3'>
-								<select id='inputState' class='form-control form-control-sm'>
+							<div className='form-group mb-2 col-md-3'>
+								<select id='inputState' className='form-control form-control-sm'>
 									<option value=''>Body type (all)</option>
 									<option value='4'>Sedan</option>
 									<option value='3'>Hatchback</option>
@@ -47,9 +47,9 @@
 									<option value='31'>Others</option>
 								</select>
 							</div>
-							<div class='d-flex mb-2 col-md-3 d-flex justify-content-between'>
-								<div class='form-group mb-2 flex-fill'>
-									<select id='inputState' class='form-control form-control-sm'>
+							<div className='d-flex mb-2 col-md-3 d-flex justify-content-between'>
+								<div className='form-group mb-2 flex-fill'>
+									<select id='inputState' className='form-control form-control-sm'>
 										<option value=''>Min Eng.cc</option>
 										<option value='700'>700cc</option>
 										<option value='1000'>1000cc</option>
@@ -62,8 +62,8 @@
 									</select>
 								</div>
 								<span className='text-dark p-1'>~</span>
-								<div class='form-group mb-2 flex-fill'>
-									<select id='inputState' class='form-control form-control-sm'>
+								<div className='form-group mb-2 flex-fill'>
+									<select id='inputState' className='form-control form-control-sm'>
 										<option value=''>Min Eng.cc</option>
 										<option value='700'>700cc</option>
 										<option value='1000'>1000cc</option>
@@ -76,9 +76,9 @@
 									</select>
 								</div>
 							</div>
-							<div class='d-flex mb-2 col-md-3 d-flex justify-content-between'>
-								<div class='form-group mb-2 flex-fill'>
-									<select id='inputState' class='form-control form-control-sm'>
+							<div className='d-flex mb-2 col-md-3 d-flex justify-content-between'>
+								<div className='form-group mb-2 flex-fill'>
+									<select id='inputState' className='form-control form-control-sm'>
 										<option value=''>Min Eng.cc</option>
 										<option value='700'>700cc</option>
 										<option value='1000'>1000cc</option>
@@ -91,8 +91,8 @@
 									</select>
 								</div>
 								<span className='text-dark p-1'>~</span>
-								<div class='form-group mb-2 flex-fill'>
-									<select id='inputState' class='form-control form-control-sm'>
+								<div className='form-group mb-2 flex-fill'>
+									<select id='inputState' className='form-control form-control-sm'>
 										<option value=''>Min Eng.cc</option>
 										<option value='700'>700cc</option>
 										<option value='1000'>1000cc</option>
@@ -105,9 +105,9 @@
 									</select>
 								</div>
 							</div>
-							<div class='d-flex mb-2 col-md-3 d-flex justify-content-between'>
-								<div class='form-group mb-2 flex-fill'>
-									<select id='inputState' class='form-control form-control-sm'>
+							<div className='d-flex mb-2 col-md-3 d-flex justify-content-between'>
+								<div className='form-group mb-2 flex-fill'>
+									<select id='inputState' className='form-control form-control-sm'>
 										<option value=''>Min Eng.cc</option>
 										<option value='700'>700cc</option>
 										<option value='1000'>1000cc</option>
@@ -120,8 +120,8 @@
 									</select>
 								</div>
 								<span className='text-dark p-1'>~</span>
-								<div class='form-group mb-2 flex-fill'>
-									<select id='inputState' class='form-control form-control-sm'>
+								<div className='form-group mb-2 flex-fill'>
+									<select id='inputState' className='form-control form-control-sm'>
 										<option value=''>Min Eng.cc</option>
 										<option value='700'>700cc</option>
 										<option value='1000'>1000cc</option>
@@ -134,9 +134,9 @@
 									</select>
 								</div>
 							</div>
-							<div class='d-flex mb-2 col-md-3 d-flex justify-content-between'>
-								<div class='form-group mb-2 flex-fill'>
-									<select id='inputState' class='form-control mb-1 form-control-sm'>
+							<div className='d-flex mb-2 col-md-3 d-flex justify-content-between'>
+								<div className='form-group mb-2 flex-fill'>
+									<select id='inputState' className='form-control mb-1 form-control-sm'>
 										<option value=''>Min Price</option>
 										<option value='500'>$500</option>
 										<option value='750'>$750</option>
@@ -159,8 +159,8 @@
 									</select>
 								</div>
 								<span className='text-dak p-1'>~</span>
-								<div class='form-group mb-2 flex-fill'>
-									<select id='inputState' class='form-control form-control-sm'>
+								<div className='form-group mb-2 flex-fill'>
+									<select id='inputState' className='form-control form-control-sm'>
 										<option value=''>Max Price</option>
 										<option value='500'>$500</option>
 										<option value='750'>$750</option>
@@ -193,63 +193,63 @@
 {
 	/* <div className='container-fluid'>
 					<div className='row'>
-						<ul class='navbar-nav mr-auto sidenav' id='navAccordion'>
-							<li class='nav-item active'>
-								<a class='nav-link' href='#'>
-									Home <span class='sr-only'>(current)</span>
+						<ul className='navbar-nav mr-auto sidenav' id='navAccordion'>
+							<li className='nav-item active'>
+								<a className='nav-link' href='#'>
+									Home <span className='sr-only'>(current)</span>
 								</a>
 							</li>
-							<li class='nav-item'>
-								<a class='nav-link' href='#'>
+							<li className='nav-item'>
+								<a className='nav-link' href='#'>
 									Item 1
 								</a>
 							</li>
-							<li class='nav-item'>
-								<a class='nav-link nav-link-collapse' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItems2' aria-controls='collapseSubItems2' aria-expanded='false'>
+							<li className='nav-item'>
+								<a className='nav-link nav-link-collapse' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItems2' aria-controls='collapseSubItems2' aria-expanded='false'>
 									Item 2
 								</a>
-								<ul class='nav-second-level collapse' id='collapseSubItems2' data-parent='#navAccordion'>
-									<li class='nav-item'>
-										<a class='nav-link' href='#'>
-											<span class='nav-link-text'>Item 2.1</span>
+								<ul className='nav-second-level collapse' id='collapseSubItems2' data-parent='#navAccordion'>
+									<li className='nav-item'>
+										<a className='nav-link' href='#'>
+											<span className='nav-link-text'>Item 2.1</span>
 										</a>
 									</li>
-									<li class='nav-item'>
-										<a class='nav-link' href='#'>
-											<span class='nav-link-text'>Item 2.2</span>
+									<li className='nav-item'>
+										<a className='nav-link' href='#'>
+											<span className='nav-link-text'>Item 2.2</span>
 										</a>
 									</li>
 								</ul>
 							</li>
-							<li class='nav-item'>
-								<a class='nav-link' href='#'>
+							<li className='nav-item'>
+								<a className='nav-link' href='#'>
 									Item 3
 								</a>
 							</li>
-							<li class='nav-item'>
-								<a class='nav-link nav-link-collapse' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItems4' aria-controls='collapseSubItems4' aria-expanded='false'>
+							<li className='nav-item'>
+								<a className='nav-link nav-link-collapse' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItems4' aria-controls='collapseSubItems4' aria-expanded='false'>
 									Item 4
 								</a>
-								<ul class='nav-second-level collapse' id='collapseSubItems4' data-parent='#navAccordion'>
-									<li class='nav-item'>
-										<a class='nav-link' href='#'>
-											<span class='nav-link-text'>Item 4.1</span>
+								<ul className='nav-second-level collapse' id='collapseSubItems4' data-parent='#navAccordion'>
+									<li className='nav-item'>
+										<a className='nav-link' href='#'>
+											<span className='nav-link-text'>Item 4.1</span>
 										</a>
 									</li>
-									<li class='nav-item'>
-										<a class='nav-link' href='#'>
-											<span class='nav-link-text'>Item 4.2</span>
+									<li className='nav-item'>
+										<a className='nav-link' href='#'>
+											<span className='nav-link-text'>Item 4.2</span>
 										</a>
 									</li>
-									<li class='nav-item'>
-										<a class='nav-link' href='#'>
-											<span class='nav-link-text'>Item 4.2</span>
+									<li className='nav-item'>
+										<a className='nav-link' href='#'>
+											<span className='nav-link-text'>Item 4.2</span>
 										</a>
 									</li>
 								</ul>
 							</li>
-							<li class='nav-item'>
-								<a class='nav-link' href='#'>
+							<li className='nav-item'>
+								<a className='nav-link' href='#'>
 									Item 5
 								</a>
 							</li>

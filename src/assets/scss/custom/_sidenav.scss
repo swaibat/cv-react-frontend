@@ -13,11 +13,8 @@ li {
 @media (min-width: 992px) {
     .sidenav {
         position: absolute;
-        top: 4rem;
         width: 225px;
-        padding: 10px;
         height: calc(100% - 3.5rem);
-        margin-top: 3.5rem;
         box-sizing: border-box;
     }
 
@@ -54,13 +51,6 @@ li {
     background: lighten($primary, 20)
 }
 
-.cv-container {
-    width: 100%;
-    padding: 4.5rem;
-    margin-right: auto;
-    margin-left: auto;
-}
-
 @media (max-width: 992px) {
     .cv-container {
         width: 100%;
@@ -70,11 +60,8 @@ li {
     .sidenav {
         display: none;
         position: absolute;
-        top: 5rem;
         width: 225px;
-        padding: 10px;
         height: calc(100% - 3.5rem);
-        margin-top: 3.5rem;
         box-sizing: border-box;
     }
     .cv-container {

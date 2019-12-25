@@ -19,10 +19,13 @@ export class App extends React.Component {
 					<Route exact path='/login' component={Login} />
 				</Switch>
 				<Switch>
-					<Route exact path='/products' component={Items} />{' '}
+					<Route exact path='/products' component={Items} />
 				</Switch>
 				<Switch>
 					<Route exact path='/category/:name' component={CategoryItems} />
+				</Switch>
+				<Switch>
+					<Route exact path='/category/:name/:sub' component={CategoryItems} />
 				</Switch>
 				<Footer />
 			</Router>

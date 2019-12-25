@@ -148,3 +148,14 @@ body {
 .brand-title{
 	font-size: 13px;
 }
+.btn-fav{
+	border-radius: 100%;
+	font-size: 2rem;
+	padding: 0;
+	width: auto;
+	height: auto;
+	position: absolute;
+	span{
+		text-align: center;
+	}
+}
