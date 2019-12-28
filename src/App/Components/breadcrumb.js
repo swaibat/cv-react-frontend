@@ -1,17 +1,25 @@
 import React from 'react';
 
 export default ({ data }) => {
-	console.log('cscscsc', data);
 	return (
-		<nav aria-label='breadcrumb flex-row p-0 text-sm-left font-weight-light '>
-			<ol className='breadcrumb p-0 mt-3 bg-transparent'>
-				<li className='breadcrumb-item'>
+		<nav aria-label='breadcrumb cv-breadcrumb flex-row p-0 text-sm-left font-weight-light text-sm'>
+			<ol className='breadcrumb p-0 mt-3 bg-transparent align-items-center'>
+				<li className='breadcrumb-item cv-breadcrumb-item'>
 					<a href='/'>Home</a>
 				</li>
-				<li className='breadcrumb-item'>{data && <a href={`/category/${data.name}`}>{data.name}</a>}</li>
-				<li className='breadcrumb-item active' aria-current='page'>
-					{data && data.sub}
-				</li>
+				{data && data.sub ? (
+					<li className='breadcrumb-item cv-breadcrumb-item'>{data && <a href={`/category/${data.name.replace(/-/g, ' ')}`}>{data.name.replace(/-/g, ' ')}</a>}</li>
+				) : (
+					<li className='breadcrumb-item active cv-breadcrumb-item' aria-current='page'>
+						{data && data.name}
+					</li>
+				)}
+				{data && data.sub && (
+					<li className='breadcrumb-item cv-breadcrumb-item active' aria-current='page'>
+						{data && data.sub}
+					</li>
+				)}
+
 				<select id='inputState' className='filter-nav form-control form-control-sm ml-auto'>
 					<option value=''>Filter by</option>
 					<option value='700'>700cc</option>

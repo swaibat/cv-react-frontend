@@ -44,19 +44,15 @@ class Login extends Component {
 		return (
 			<main className='d-flex flex-column align-items-center vh-100'>
 				<div className='sm-bg '>
-					<h5 className='text-center mb-4 font-weight-light mt-5 text-white'>Login</h5>
+					<h5 className='text-center mb-4 font-weight-light mt-2 text-white'>Login</h5>
 				</div>
 				<form className='form-signin font-weight-light rounded-sm m-lg-auto' onSubmit={this.handleSubmit}>
 					<div className='login-avatar border shadow-sm'>
 						<Icon icon={user} />
 					</div>
-					{error ? (
+					{error && (
 						<div className='alert alert-danger rounded-sm text-center scale-in-ver-center' role='alert'>
 							{error.message}
-						</div>
-					) : (
-						<div className='alert alert-success rounded-sm text-center scale-in-ver-center' role='alert'>
-							{'error.message'}
 						</div>
 					)}
 

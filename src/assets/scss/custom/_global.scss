@@ -6,6 +6,7 @@ html {
 a {
 	text-decoration: none;
 }
+
 a:hover {
 	text-decoration: none;
 }
@@ -16,7 +17,7 @@ body * {
 
 body {
 	height: 100vh;
-	background: #F9F9F9;
+	background: rgb(238, 242, 244);
 	font-weight: 100;
 }
 
@@ -25,12 +26,19 @@ body {
 }
 
 .footer {
-	position: absolute;
 	bottom: 0;
 	width: 100%;
-	height: 3.5rem;
-	line-height: 3.5rem;
-	background-color: #ccc;
+	font-size: .8rem;
+
+	a {
+		color: #fff;
+	}
+
+	.cv-title {
+		color: #fff;
+		font-size: 1rem;
+		font-weight: 500 !important;
+	}
 }
 
 .nav-link:hover {
@@ -83,7 +91,7 @@ body {
 	border-top: none;
 	white-space: nowrap;
 	text-transform: uppercase;
-  	overflow: hidden;
+	overflow: hidden;
 	text-overflow: ellipsis;
 }
 
@@ -109,13 +117,15 @@ body {
 }
 
 @media(max-width:767px) {
-	.card-item{
+	.card-item {
 		width: 100%;
 		min-height: 118px;
 		max-height: 155px;
-		img{
+
+		img {
 			width: 45%;
 		}
+
 		.heart {
 			width: 35px;
 			height: 35px;
@@ -126,7 +136,8 @@ body {
 			line-height: 1.6;
 		}
 	}
-	.card-item{
+
+	.card-item {
 		position: relative;
 		display: flex;
 		flex-direction: row;
@@ -137,25 +148,115 @@ body {
 		border: 1px solid rgba(0, 0, 0, 0.125);
 		margin: 0 0 0 0;
 		border-radius: .3rem;
+
 		.card-footer:last-child {
 			border-radius: $border-radius;
 		}
 	}
 }
-.car-logo{
+
+.car-logo {
 	height: 25px;
 }
-.brand-title{
+
+.brand-title {
 	font-size: 13px;
 }
-.btn-fav{
+
+.btn-fav {
 	border-radius: 100%;
 	font-size: 2rem;
 	padding: 0;
 	width: auto;
 	height: auto;
 	position: absolute;
-	span{
+
+	span {
 		text-align: center;
 	}
+}
+
+.item-holder {
+	width: 100vmin;
+	height: 62vmin;
+}
+
+.image-gallery-left-nav .image-gallery-svg,
+.image-gallery-right-nav .image-gallery-svg {
+	height: 50px !important;
+	width: 30px !important;
+}
+
+#map {
+	width: 100%;
+	height: 150px;
+	background-color: grey;
+}
+
+.cv-nav {
+	border-left: solid .5px gainsboro;
+	padding: 0 2rem;
+}
+
+
+.nav-icon {
+	width: 3rem;
+	height: 3rem;
+	padding: 0 .5rem;
+}
+
+.nav-second-level-cv {
+	max-height: 12rem;
+	overflow: scroll;
+}
+
+.cv-breadcrumb-item {
+	font-size: .8rem;
+}
+
+.cv-vendor-banner {
+	height: 7rem;
+}
+
+.company-logo {
+	font-size: 3rem;
+	margin-top: -3.3rem;
+	line-height: 2.5;
+
+	span {
+		height: 5rem;
+		width: 5rem;
+		border: solid 1px $primary;
+		border-radius: 100%;
+		background: white;
+
+	}
+}
+
+.cv-title {
+	&:before {
+		content: "";
+		border: solid 1.5px $primary;
+		position: absolute;
+		width: 4rem;
+		margin-top: 1.7rem;
+	}
+}
+
+.image-gallery-content .image-gallery-slide .image-gallery-image {
+	height: 60vh;
+}
+
+.cv-copyright {
+	background: rgb(24, 24, 24);
+	width: 100%;
+	color: #fff;
+
+	a {
+		color: $primary;
+	}
+}
+
+.min-vh-80 {
+	min-height: 80vh;
 }

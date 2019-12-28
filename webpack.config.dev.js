@@ -28,7 +28,7 @@ module.exports = {
 			'Access-Control-Allow-Origin': '*',
 		},
 		https: false,
-		port: 8000,
+		port: 8080,
 		historyApiFallback: {
 			disableDotRule: true,
 		},

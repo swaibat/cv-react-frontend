@@ -7,7 +7,7 @@ class Filter extends Component {
 	render() {
 		const { data } = this.props;
 		return (
-			<ul className='navbar-nav mr-auto sidenav pl-0' id='navAccordion'>
+			<ul className='navbar-nav mr-auto sidenav pl-0 sidenav-filter' id='navAccordion'>
 				{data && data.match('vehicle') && <Vehicle />}
 				{data && data.match(/hone/g) && <Others />}
 			</ul>

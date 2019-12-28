@@ -20,6 +20,9 @@ module.exports = {
 		filename: 'bundle.js',
 		publicPath: '/',
 	},
+	devServer: {
+		disableHostCheck: true,
+	},
 	plugins: [
 		new Dotenv({
 			path: path.resolve(__dirname, './.env'),

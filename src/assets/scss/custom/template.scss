@@ -26,7 +26,14 @@
 .nav-scroller {
     position: relative;
     z-index: 2;
-    height: 2.75rem;
+    border-top: solid 1px gainsboro;
+
+    li {
+        &:last-child {
+            border-right: solid 1px gainsboro;
+        }
+    }
+
 }
 
 .nav-scroller .nav {

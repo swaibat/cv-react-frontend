@@ -43,7 +43,7 @@ input:-webkit-autofill:active {
 }
 
 @media(min-width:768px) {
-  .shadow-lr-sm{
+  .shadow-lr-sm {
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
   }
 }
@@ -53,9 +53,10 @@ input:-webkit-autofill:active {
     position: relative;
     width: 100%;
     background: $primary;
-    height: 160px;
+    height: 130px;
     background: $primary;
   }
+
   .form-signin {
     width: 95%;
     max-width: 420px;
@@ -76,7 +77,6 @@ input:-webkit-autofill:active {
       color: #fff;
     }
   }
-
 }
 
 .login-avatar {
