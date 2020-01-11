@@ -8,6 +8,7 @@ import Items from './Pages/items.page';
 import CategoryItems from './Pages/category.item';
 import singleItem from './Pages/single.item';
 import NotFound from './Pages/404.page';
+import Faq from './Pages/faq.page';
 
 export class App extends React.Component {
 	render() {
@@ -21,6 +22,7 @@ export class App extends React.Component {
 					<Route exact path='/category/:name' component={CategoryItems} />
 					<Route exact path='/category/:name/:sub' component={CategoryItems} />
 					<Route exact path='/products/:name' component={singleItem} />
+					<Route exact path='/faq' component={Faq} />
 					<Route path='*' component={NotFound} />
 				</Switch>
 				<Footer />

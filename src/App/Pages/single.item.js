@@ -31,7 +31,7 @@ class Item extends Component {
 				});
 			});
 		}
-		console.log(this.props);
+		document.title = this.props.match.params.name;
 		return (
 			<>
 				<div className='container min-vh-80'>

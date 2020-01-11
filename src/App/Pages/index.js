@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Landing extends Component {
 	render() {
-		document.title = 'hello';
+		document.title = 'Home';
 		return (
 			<main className='d-flex flex-column align-items-center'>
 				<div className='container-fluid bg-secondary slider'>

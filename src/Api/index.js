@@ -17,6 +17,9 @@ const apis = {
 	singleItem(name) {
 		return axios.get(`${BASE_URL}/products/${name}`);
 	},
+	getFaq() {
+		return axios.get(`${BASE_URL}/faq`);
+	},
 };
 
 export default apis;
