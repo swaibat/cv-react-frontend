@@ -8,7 +8,7 @@ class Vehicle extends Component {
 	render() {
 		return (
 			<ul className='navbar-nav mr-auto sidenav pl-0' id='navAccordion'>
-				<li className='nav-item rounded'>
+				<li className='nav-item'>
 					<a className='nav-link nav-link-collapse bg-primary text-white d-flex justify-content-between px-2' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItems1' aria-controls='collapseSubItems1' aria-expanded='false'>
 						Car Make
 						<span>

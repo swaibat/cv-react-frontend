@@ -7,6 +7,8 @@ import Footer from './Components/Footer';
 import Items from './Pages/items.page';
 import CategoryItems from './Pages/category.item';
 import singleItem from './Pages/single.item';
+import NotFound from './Pages/404.page';
+import Faq from './Pages/faq.page';
 
 export class App extends React.Component {
 	render() {
@@ -15,21 +17,13 @@ export class App extends React.Component {
 				<Header />
 				<Switch>
 					<Route exact path='/' component={Landing} />
-				</Switch>
-				<Switch>
 					<Route exact path='/login' component={Login} />
-				</Switch>
-				<Switch>
 					<Route exact path='/products' component={Items} />
-				</Switch>
-				<Switch>
 					<Route exact path='/category/:name' component={CategoryItems} />
-				</Switch>
-				<Switch>
 					<Route exact path='/category/:name/:sub' component={CategoryItems} />
-				</Switch>
-				<Switch>
 					<Route exact path='/products/:name' component={singleItem} />
+					<Route exact path='/faq' component={Faq} />
+					<Route path='*' component={NotFound} />
 				</Switch>
 				<Footer />
 			</Router>

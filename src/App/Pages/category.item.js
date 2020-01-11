@@ -22,7 +22,7 @@ class CategoryItem extends Component {
 		const { payload } = this.props;
 		return (
 			<>
-				<div className='container'>
+				<div className='container min-vh-80'>
 					<Bread data={payload && this.props.match.params} />
 					<Filter data={payload && this.props.match.params.name} />
 					<main className='content-wrapper row'>

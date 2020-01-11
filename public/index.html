@@ -4,10 +4,49 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>cv</title>
+    <style>
+        [aria-expanded="true"].active {
+            color: #495057;
+            background-color: #eef2f4;
+        }
+
+        [aria-expanded="true"] {
+            color: #495057;
+            background-color: #eef2f4;
+        }
+    </style>
 </head>
 
 <body>
     <div id="root"></div>
 </body>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcAP0GrIyhCe_kJfKY1Cb4OYOeP5vmhsQ&callback=initMap">
+</script>
+<script>
+    $(document).ready(function () {
+        $('.nav-link-collapse').on('click', function () {
+            $('.nav-link-collapse').not(this).removeClass('nav-link-show');
+            $(this).toggleClass('nav-link-show');
+        });
+    });
+    var latLang = new google.maps.LatLng(51.4957751, 6.532127700000046);
+
+    function initMap() {
+        var mapProp = {
+            center: latLang,
+            zoom: 13,
+        };
+
+        var map = new google.maps.Map(document.getElementById('map'), mapProp);
+
+        var marker = new google.maps.Marker({
+            position: latLang,
+            map: map,
+            title: ''
+        });
+    }
+
+    initMap();
+</script>
 
 </html>

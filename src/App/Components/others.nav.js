@@ -7,50 +7,82 @@ class Others extends Component {
 	render() {
 		return (
 			<>
-				<li class='nav-item'>
-					<a class='nav-link nav-link-collapse bg-primary text-white d-flex justify-content-between px-2' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItems2' aria-controls='collapseSubItems2' aria-expanded='true'>
-						Item 2
+				<li className='nav-item'>
+					<a className='nav-link nav-link-collapse bg-primary text-white d-flex justify-content-between px-2 rounded-top' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItems2' aria-controls='collapseSubItems2' aria-expanded='true'>
+						Shop By Brand
 					</a>
-					<ul class='nav-second-level collapse text-secondary show' id='collapseSubItems2' data-parent='#navAccordion'>
-						<li class='nav-item'>
-							<a class='nav-link' href='#'>
-								<span class='nav-link-text'>Apple</span>
-							</a>
+					<ul className='nav-second-level nav-second-level-cv collapse text-secondary show' id='collapseSubItems2'>
+						<li className='form-check nav-item py-1 ml-2'>
+							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
+							<label className='form-check-label' htmlFor='defaultCheck1'>
+								Apple
+							</label>
 						</li>
-						<li class='nav-item'>
-							<a class='nav-link' href='#'>
-								<span class='nav-link-text'>Samsung</span>
-							</a>
+						<li className='form-check nav-item py-1 ml-2'>
+							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
+							<label className='form-check-label' htmlFor='defaultCheck1'>
+								Samsung
+							</label>
 						</li>
-						<li class='nav-item'>
-							<a class='nav-link' href='#'>
-								<span class='nav-link-text'>Huawei</span>
-							</a>
+						<li className='form-check nav-item py-1 ml-2'>
+							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
+							<label className='form-check-label' htmlFor='defaultCheck1'>
+								Huawei
+							</label>
 						</li>
-						<li class='nav-item'>
-							<a class='nav-link' href='#'>
-								<span class='nav-link-text'>Techno</span>
-							</a>
+						<li className='form-check nav-item py-1 ml-2'>
+							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
+							<label className='form-check-label' htmlFor='defaultCheck1'>
+								Techno
+							</label>
 						</li>
-						<li class='nav-item'>
-							<a class='nav-link' href='#'>
-								<span class='nav-link-text'>infinix</span>
-							</a>
+						<li className='form-check nav-item py-1 ml-2'>
+							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
+							<label className='form-check-label' htmlFor='defaultCheck1'>
+								infinix
+							</label>
 						</li>
-						<li class='nav-item'>
-							<a class='nav-link' href='#'>
-								<span class='nav-link-text'>LG</span>
-							</a>
+						<li className='form-check nav-item py-1 ml-2'>
+							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
+							<label className='form-check-label' htmlFor='defaultCheck1'>
+								LG
+							</label>
 						</li>
-						<li class='nav-item'>
-							<a class='nav-link' href='#'>
-								<span class='nav-link-text'>Nokia</span>
-							</a>
+						<li className='form-check nav-item py-1 ml-2'>
+							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
+							<label className='form-check-label' htmlFor='defaultCheck1'>
+								Nokia
+							</label>
 						</li>
-						<li class='nav-item'>
-							<a class='nav-link' href='#'>
-								<span class='nav-link-text'>Itel</span>
-							</a>
+						<li className='form-check nav-item py-1 ml-2'>
+							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
+							<label className='form-check-label' htmlFor='defaultCheck1'>
+								One plus
+							</label>
+						</li>
+						<li className='form-check nav-item py-1 ml-2'>
+							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
+							<label className='form-check-label' htmlFor='defaultCheck1'>
+								Itel
+							</label>
+						</li>
+						<li className='form-check nav-item py-1 ml-2'>
+							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
+							<label className='form-check-label' htmlFor='defaultCheck1'>
+								Black berry
+							</label>
+						</li>
+						<li className='form-check nav-item py-1 ml-2'>
+							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
+							<label className='form-check-label' htmlFor='defaultCheck1'>
+								Motorolla
+							</label>
+						</li>
+						<li className='form-check nav-item py-1 ml-2'>
+							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
+							<label className='form-check-label' htmlFor='defaultCheck1'>
+								others
+							</label>
 						</li>
 					</ul>
 				</li>
@@ -61,7 +93,49 @@ class Others extends Component {
 							<Icon icon={Arrow} />
 						</span>
 					</a>
-					<ul className='nav-second-level collapse' id='collapseSubItems3' data-parent='#navAccordion'>
+					<ul className='nav-second-level collapse' id='collapseSubItems3'>
+						<li className='my-3'>
+							<div className='form-group mb-2 flex-fill'>
+								<input type='number' className='form-control form-control-sm' placeholder='Enter min price' />
+							</div>
+						</li>
+						<li className='my-3'>
+							<div className='form-group mb-2 flex-fill'>
+								<input type='number' className='form-control form-control-sm' placeholder='Enter max price' />
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li className='nav-item'>
+					<a className='nav-link nav-link-collapse border-bottom text-secondary text-white d-flex justify-content-between px-2' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItems33' aria-controls='collapseSubItems33' aria-expanded='false'>
+						Shop By Condition
+						<span>
+							<Icon icon={Arrow} />
+						</span>
+					</a>
+					<ul className='nav-second-level collapse' id='collapseSubItems33'>
+						<li className='form-check nav-item py-1 ml-2'>
+							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
+							<label className='form-check-label' htmlFor='defaultCheck1'>
+								New
+							</label>
+						</li>
+						<li className='form-check nav-item py-1 ml-2'>
+							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
+							<label className='form-check-label' htmlFor='defaultCheck1'>
+								Used
+							</label>
+						</li>
+					</ul>
+				</li>
+				<li className='nav-item'>
+					<a className='nav-link nav-link-collapse border-bottom text-secondary text-white d-flex justify-content-between px-2' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItems34' aria-controls='collapseSubItems34' aria-expanded='false'>
+						Shop By location
+						<span>
+							<Icon icon={Arrow} />
+						</span>
+					</a>
+					<ul className='nav-second-level collapse' id='collapseSubItems34'>
 						<li className='my-3'>
 							<div className='form-group mb-2 flex-fill'>
 								<select id='inputState' className='form-control form-control-sm'>
