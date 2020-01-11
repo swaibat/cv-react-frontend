@@ -38,9 +38,9 @@ class Item extends Component {
 					<Bread data={payload && this.props.match.params} />
 					<main className='row m-0'>
 						<div className='row w-100 m-0 bg-white rounded'>
-							<div className='col-md-7 px-2 m-0'>
-								<div className='rounded p-2'>
-									<ImageGallery items={images} />
+							<div className='col-md-7 px-2 m-0 pt-2'>
+								<div className='rounded border'>
+									<ImageGallery className='rounded border mt-n1' items={images} />
 								</div>
 								<nav className='w-100 mt-3'>
 									<div className='nav nav-tabs' id='nav-tab' role='tablist'>

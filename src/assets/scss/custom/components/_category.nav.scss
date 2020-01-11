@@ -1,0 +1,49 @@
+.nav-scroller nav {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.cv-category-nav {
+    .active {
+        border-color: #dee2e6 #dee2e6 #fff;
+    }
+}
+
+.cv-category-nav {
+    border-top: 1px solid #dee2e6;
+
+    .nav-link {
+        border: 1px solid transparent;
+    }
+
+    .nav-item {
+        margin-bottom: -1px;
+    }
+
+    .nav-item ul.p-nav {
+        padding-left: 0;
+        background: white;
+        width: 100vw;
+        margin: auto;
+        left: 0;
+        min-height: 10rem;
+        background-color: #eef2f4;
+    }
+    .nav-item ul.p-nav *{
+        background-color: #eef2f4;
+    }
+}
+
+.nav-cats {
+    .car-col {
+        border-right: 1px solid #dee2e6 !important;
+    }
+
+    .nav-item {
+        &:first-child {
+            a {
+                color: #495057;
+                font-weight: bold !important;
+            }
+        }
+    }
+}

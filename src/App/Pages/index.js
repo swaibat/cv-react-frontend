@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 
 class Landing extends Component {
 	render() {
+		document.title = 'hello';
 		return (
 			<main className='d-flex flex-column align-items-center'>
 				<div className='container-fluid bg-secondary slider'>
 					<h1>Main Content</h1>
 				</div>
-				<div className='container min-vh-80 d-flex w-100 row justify-content-center align-items-center'>
+				<div className='container p-1 p-md-2 min-vh-80 d-flex w-100 row justify-content-center align-items-center'>
 					<div className='h-50 w-100 py-3'>
 						<h5 className='cv-title ml-2'>Similar adverts</h5>
 						<div className='m-0 mt-3 row'>
-							<div className='col-6 col-md-3 col-sm-4 p-2'>
+							<div className='col-6 col-md-3 col-sm-4 p-1 p-md-2'>
 								<a href='/products/techno spark 4' className='card text-secondary w-100 bg-white border-0 shadow-xs'>
 									<div className='banner_holder rounded'>
 										<div className='banner_holderImage img-thumbnail'></div>
@@ -27,7 +28,7 @@ class Landing extends Component {
 									</div>
 								</a>
 							</div>
-							<div className='col-6 col-md-3 col-sm-4 p-2'>
+							<div className='col-6 col-md-3 col-sm-4 p-1 p-md-2'>
 								<a href='/products/techno spark 4' className='card text-secondary w-100 bg-white border-0 shadow-xs'>
 									<div className='banner_holder rounded'>
 										<div className='banner_holderImage img-thumbnail'></div>
@@ -43,7 +44,7 @@ class Landing extends Component {
 									</div>
 								</a>
 							</div>
-							<div className='col-6 col-md-3 col-sm-4 p-2'>
+							<div className='col-6 col-md-3 col-sm-4 p-1 p-md-2'>
 								<a href='/products/techno spark 4' className='card text-secondary w-100 bg-white border-0 shadow-xs'>
 									<div className='banner_holder rounded'>
 										<div className='banner_holderImage img-thumbnail'></div>
@@ -59,7 +60,7 @@ class Landing extends Component {
 									</div>
 								</a>
 							</div>
-							<div className='col-6 col-md-3 col-sm-4 p-2'>
+							<div className='col-6 col-md-3 col-sm-4 p-1 p-md-2'>
 								<a href='/products/techno spark 4' className='card text-secondary w-100 bg-white border-0 shadow-xs'>
 									<div className='banner_holder rounded'>
 										<div className='banner_holderImage img-thumbnail'></div>
@@ -80,7 +81,7 @@ class Landing extends Component {
 					<div className='h-50 w-100 py-3'>
 						<h5 className='cv-title ml-2'>Similar adverts</h5>
 						<div className='m-0 mt-3 row'>
-							<div className='col-6 col-md-3 col-sm-4 p-2'>
+							<div className='col-6 col-md-3 col-sm-4 p-1 p-md-2'>
 								<a href='/products/techno spark 4' className='card text-secondary w-100 bg-white border-0 shadow-xs'>
 									<div className='banner_holder rounded'>
 										<div className='banner_holderImage img-thumbnail'></div>
@@ -96,7 +97,7 @@ class Landing extends Component {
 									</div>
 								</a>
 							</div>
-							<div className='col-6 col-md-3 col-sm-4 p-2'>
+							<div className='col-6 col-md-3 col-sm-4 p-1 p-md-2'>
 								<a href='/products/techno spark 4' className='card text-secondary w-100 bg-white border-0 shadow-xs'>
 									<div className='banner_holder rounded'>
 										<div className='banner_holderImage img-thumbnail'></div>
@@ -112,7 +113,7 @@ class Landing extends Component {
 									</div>
 								</a>
 							</div>
-							<div className='col-6 col-md-3 col-sm-4 p-2'>
+							<div className='col-6 col-md-3 col-sm-4 p-1 p-md-2'>
 								<a href='/products/techno spark 4' className='card text-secondary w-100 bg-white border-0 shadow-xs'>
 									<div className='banner_holder rounded'>
 										<div className='banner_holderImage img-thumbnail'></div>
@@ -128,7 +129,7 @@ class Landing extends Component {
 									</div>
 								</a>
 							</div>
-							<div className='col-6 col-md-3 col-sm-4 p-2'>
+							<div className='col-6 col-md-3 col-sm-4 p-1 p-md-2'>
 								<a href='/products/techno spark 4' className='card text-secondary w-100 bg-white border-0 shadow-xs'>
 									<div className='banner_holder rounded'>
 										<div className='banner_holderImage img-thumbnail'></div>
@@ -144,7 +145,7 @@ class Landing extends Component {
 									</div>
 								</a>
 							</div>
-							<div className='col-6 col-md-3 col-sm-4 p-2'>
+							<div className='col-6 col-md-3 col-sm-4 p-1 p-md-2'>
 								<a href='/products/techno spark 4' className='card text-secondary w-100 bg-white border-0 shadow-xs'>
 									<div className='banner_holder rounded'>
 										<div className='banner_holderImage img-thumbnail'></div>
@@ -160,7 +161,7 @@ class Landing extends Component {
 									</div>
 								</a>
 							</div>
-							<div className='col-6 col-md-3 col-sm-4 p-2'>
+							<div className='col-6 col-md-3 col-sm-4 p-1 p-md-2'>
 								<a href='/products/techno spark 4' className='card text-secondary w-100 bg-white border-0 shadow-xs'>
 									<div className='banner_holder rounded'>
 										<div className='banner_holderImage img-thumbnail'></div>
@@ -176,7 +177,7 @@ class Landing extends Component {
 									</div>
 								</a>
 							</div>
-							<div className='col-6 col-md-3 col-sm-4 p-2'>
+							<div className='col-6 col-md-3 col-sm-4 p-1 p-md-2'>
 								<a href='/products/techno spark 4' className='card text-secondary w-100 bg-white border-0 shadow-xs'>
 									<div className='banner_holder rounded'>
 										<div className='banner_holderImage img-thumbnail'></div>
@@ -192,7 +193,7 @@ class Landing extends Component {
 									</div>
 								</a>
 							</div>
-							<div className='col-6 col-md-3 col-sm-4 p-2'>
+							<div className='col-6 col-md-3 col-sm-4 p-1 p-md-2'>
 								<a href='/products/techno spark 4' className='card text-secondary w-100 bg-white border-0 shadow-xs'>
 									<div className='banner_holder rounded'>
 										<div className='banner_holderImage img-thumbnail'></div>

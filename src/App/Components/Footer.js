@@ -8,7 +8,7 @@ class Footer extends Component {
 			<footer className='footer bg-dark pt-3'>
 				<div className='container'>
 					<div className='row d-flex justify-content-between py-2'>
-						<div className='col-md-3'>
+						<div className='col-md-3 col-6'>
 							<p className='cv-title'>Contact</p>
 							<ul className='nav flex-column'>
 								<li className='nav-item'>
@@ -28,7 +28,7 @@ class Footer extends Component {
 								</li>
 							</ul>
 						</div>
-						<div className='col-md-3'>
+						<div className='col-md-3 col-6'>
 							<p className='cv-title'>policies & info</p>
 							<ul className='nav flex-column'>
 								<li className='nav-item'>
@@ -36,7 +36,7 @@ class Footer extends Component {
 										Terms Conditions
 									</a>
 								</li>
-								<li className='nav-item'>
+								<li className='nav-item '>
 									<a className='nav-link p-1' href='/'>
 										Policy for Sellers
 									</a>
@@ -53,7 +53,7 @@ class Footer extends Component {
 								</li>
 							</ul>
 						</div>
-						<div className='col-md-3'>
+						<div className='col-md-3  col-6'>
 							<p className='cv-title'>policies & info</p>
 							<ul className='nav flex-column'>
 								<li className='nav-item'>
@@ -78,7 +78,7 @@ class Footer extends Component {
 								</li>
 							</ul>
 						</div>
-						<div className='col-md-3'>
+						<div className='col-md-3  col-6'>
 							<p className='cv-title'>subscribe</p>
 							<ul className='nav flex-column'>
 								<li className='nav-item'>
@@ -93,14 +93,11 @@ class Footer extends Component {
 						</div>
 					</div>
 				</div>
-				<div className='cv-copyright p-2 px-3 d-flex justify-content-between'>
+				<div className='cv-copyright p-2 px-3 d-flex justify-content-between align-items-center'>
 					<span>
 						Copyright © 2020 <a href='/'>biz.ug</a>
 					</span>
 					<span>
-						<button className='btn btn-secondary mx-2'>
-							<FontAwesomeIcon icon={faPlus} />
-						</button>
 						<button className='btn btn-secondary mx-2'>
 							<FontAwesomeIcon icon={faPlus} />
 						</button>

@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTh, faList } from '@fortawesome/free-solid-svg-icons';
 
 export default ({ data }) => {
 	return (
@@ -19,18 +21,16 @@ export default ({ data }) => {
 						{data && data.sub}
 					</li>
 				)}
-
-				<select id='inputState' className='filter-nav form-control form-control-sm ml-auto'>
-					<option value=''>Filter by</option>
-					<option value='700'>700cc</option>
-					<option value='1000'>1000cc</option>
-					<option value='1500'>1500cc</option>
-					<option value='1800'>1800cc</option>
-					<option value='2000'>2000cc</option>
-					<option value='2500'>2500cc</option>
-					<option value='3000'>3000cc</option>
-					<option value='4000'>4000cc</option>
-				</select>
+				<div class='btn-group ml-auto'>
+					<a href='/' id='list' class='btn btn-outline-primary  btn-sm'>
+						<FontAwesomeIcon className='mr-1' icon={faTh} />
+						Grid
+					</a>{' '}
+					<a href='/' id='grid' class='btn btn-outline-secondary  btn-sm'>
+						<FontAwesomeIcon className='mr-1' icon={faList} />
+						List
+					</a>
+				</div>
 			</ol>
 		</nav>
 	);

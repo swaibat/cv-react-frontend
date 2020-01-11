@@ -9,7 +9,7 @@ class Header extends Component {
 	render() {
 		return (
 			<>
-				<nav className='navbar navbar-expand-lg navbar-sm-dark  navbar-light bg-white shadow-lr-sm'>
+				<nav className='navbar navbar-expand-lg navbar-sm-dark  navbar-light bg-white'>
 					<a className='navbar-brand p-0' href='/'>
 						<svg xmlns='http://www.w3.org/2000/svg' width='148' height='43' viewBox='0 0 148 43'>
 							<defs>
