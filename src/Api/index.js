@@ -5,6 +5,12 @@ const apis = {
 	loginUser(data) {
 		return axios.post(`${BASE_URL}/users/login`, data);
 	},
+	register(data, token) {
+		return axios.post(`${BASE_URL}/users/register/${token}`, data);
+	},
+	verifyUser(email) {
+		return axios.post(`${BASE_URL}/users/verify`, email);
+	},
 	getItems() {
 		return axios.get(`${BASE_URL}/products`);
 	},
@@ -19,6 +25,9 @@ const apis = {
 	},
 	getFaq() {
 		return axios.get(`${BASE_URL}/faqs`);
+	},
+	logout(token) {
+		return axios.get(`${BASE_URL}/users/logout/${token}`);
 	},
 };
 

@@ -8,7 +8,7 @@ class Others extends Component {
 		return (
 			<>
 				<li className='nav-item'>
-					<a className='nav-link nav-link-collapse bg-primary text-white d-flex justify-content-between px-2 rounded-top' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItems2' aria-controls='collapseSubItems2' aria-expanded='true'>
+					<a className='nav-link nav-link-collapse bg-white text-bold d-flex justify-content-between px-2 rounded-top' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItems2' aria-controls='collapseSubItems2' aria-expanded='true'>
 						Shop By Brand
 					</a>
 					<ul className='nav-second-level nav-second-level-cv collapse text-secondary show' id='collapseSubItems2'>

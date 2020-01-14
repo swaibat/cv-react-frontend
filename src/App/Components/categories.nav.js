@@ -17,7 +17,7 @@ class Category extends Component {
 	render() {
 		const { payload } = this.props;
 		const { href, pathname } = window.location;
-		const page = window.location.href.match(/(login|register)/);
+		const page = window.location.href.match(/(login|register|verify)/);
 		return (
 			<div className={page ? 'd-none' : 'nav-scroller bg-white'}>
 				<nav className='nav nav-underline text-capitalize justify-content-center cv-category-nav' id='navAccordion'>
@@ -26,28 +26,28 @@ class Category extends Component {
 							Home
 						</a>
 					</li>
-					<ul class='nav-second-level z-index-1050  p-nav collapse position-absolute show' id='Home' data-parent='#navAccordion'></ul>
-					<li class='nav-item'>
-						<a class={`nav-link nav-link-collapse cv-nav${href.match(/category/) ? ' active' : ''}`} href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItemsCategories' aria-controls='collapseSubItemsCategories' aria-expanded='false'>
+					<ul className='nav-second-level z-index-1050  p-nav collapse position-absolute show' id='Home' data-parent='#navAccordion'></ul>
+					<li className='nav-item'>
+						<a className={`nav-link nav-link-collapse cv-nav${href.match(/category/) ? ' active' : ''}`} href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItemsCategories' aria-controls='collapseSubItemsCategories' aria-expanded='false'>
 							categories
 						</a>
-						<ul class='nav-second-level z-index-1050  p-nav collapse position-absolute shadow-sm' id='collapseSubItemsCategories' data-parent='#navAccordion'>
-							<div className='w-75 bg-white h-auto m-auto nav-cats'>
+						<ul className='nav-second-level z-index-1050 bg-light p-nav collapse position-absolute shadow-sm' id='collapseSubItemsCategories' data-parent='#navAccordion'>
+							<div className='w-75 bg-light h-auto m-auto nav-cats'>
 								<div className='row py-3' id='categoriesAccordion'>
 									{payload &&
 										payload.data.map((e, index) => {
 											return (
 												<div className='col-md-3 cat-col border-left'>
 													<li className='nav-item text-secondary'>
-														<a class='nav-link nav-link-collapse text-secondary py-1' href='#' id='hasSubItems' data-toggle='collapse' data-target={`#Cat${index}`} aria-controls={`Cat${index}`} aria-expanded='false'>
+														<a className='nav-link nav-link-collapse text-secondary py-1' href='#' id='hasSubItems' data-toggle='collapse' data-target={`#Cat${index}`} aria-controls={`Cat${index}`} aria-expanded='false'>
 															{e.name}
 														</a>
 														<ul className='nav-second-level z-index-1050 collapse position-absolute' id={`Cat${index}`} data-parent='#categoriesAccordion'>
 															{e.sub.map((sub, i) => {
 																return (
-																	<li class='nav-item'>
-																		<a class='nav-link py-1' href='#'>
-																			<span class='nav-link-text'>{sub.name}</span>
+																	<li className='nav-item'>
+																		<a className='nav-link py-1' href='#'>
+																			<span className='nav-link-text'>{sub.name}</span>
 																		</a>
 																	</li>
 																);
@@ -67,25 +67,25 @@ class Category extends Component {
 						</a>
 						<ul className='nav-second-level z-index-1050  p-nav collapse bg-white position-absolute text-left' id='category7' data-parent='#categoryNav'></ul>
 					</li>
-					<li class='nav-item'>
-						<a class='nav-link nav-link-collapse cv-nav' href='#' id='hasSubItems' data-toggle='collapse' data-target='#services' aria-controls='services' aria-expanded='false'>
+					<li className='nav-item'>
+						<a className='nav-link nav-link-collapse cv-nav' href='#' id='hasSubItems' data-toggle='collapse' data-target='#services' aria-controls='services' aria-expanded='false'>
 							Services
 						</a>
-						<ul class='nav-second-level z-index-1050 z-index-md p-nav collapse position-absolute' id='services' data-parent='#navAccordion'>
-							<li class='nav-item'>
-								<a class='nav-link' href='#'>
-									<span class='nav-link-text'>Item 2.1</span>
+						<ul className='nav-second-level z-index-1050 z-index-md p-nav collapse position-absolute' id='services' data-parent='#navAccordion'>
+							<li className='nav-item'>
+								<a className='nav-link' href='#'>
+									<span className='nav-link-text'>Item 2.1</span>
 								</a>
 							</li>
-							<li class='nav-item'>
-								<a class='nav-link' href='#'>
-									<span class='nav-link-text'>Item 2.2</span>
+							<li className='nav-item'>
+								<a className='nav-link' href='#'>
+									<span className='nav-link-text'>Item 2.2</span>
 								</a>
 							</li>
 						</ul>
 					</li>
 					<li className='nav-item'>
-						<Link to='/contact' class={`nav-link nav-link-collapse cv-nav${href.match(/ontact/) ? 'link-active' : ''}`}>
+						<Link to='/contact' className={`nav-link nav-link-collapse cv-nav${href.match(/ontact/) ? 'link-active' : ''}`}>
 							contact
 						</Link>
 					</li>
@@ -94,78 +94,78 @@ class Category extends Component {
 							faq
 						</Link>
 					</li>
-					<li class='nav-item'>
-						<a class='nav-link nav-link-collapse cv-nav' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItemsSearch' aria-controls='collapseSubItemsSearch' aria-expanded='false'>
+					<li className='nav-item'>
+						<a className='nav-link nav-link-collapse cv-nav' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItemsSearch' aria-controls='collapseSubItemsSearch' aria-expanded='false'>
 							<FontAwesomeIcon className='mr-1' icon={faSearch} />
 						</a>
-						<ul class='nav-second-level z-index-1050 p-nav collapse position-absolute shadow-sm' id='collapseSubItemsSearch' data-parent='#navAccordion'>
-							<div className='w-75 bg-primary h-auto m-auto nav-cats'>
-								<div className='row pt-3' id='navAccordion1'>
+						<ul className='nav-second-level z-index-1050 p-nav bg-light collapse position-absolute shadow' id='collapseSubItemsSearch' data-parent='#navAccordion'>
+							<div className='w-75 h-auto m-auto nav-cats'>
+								<div className='row pt-3 mb-3' id='navAccordion1'>
 									<div className='col-md-4 cat-col'>
-										<div class='input-group mb-3'>
-											<div class='input-group-prepend'>
-												<span class='input-group-text'>Search</span>
+										<div className='input-group shadow-xs'>
+											<div className='input-group-prepend'>
+												<span className='input-group-text bg-white'>Search</span>
 											</div>
-											<input type='text' class='form-control' aria-label='Amount (to the nearest dollar)' />
-											<div class='input-group-append'>
-												<span class='input-group-text'>.00</span>
+											<input type='text' className='form-control ' aria-label='Amount (to the nearest dollar)' />
+											<div className='input-group-append'>
+												<span className='input-group-text bg-white'>.00</span>
 											</div>
 										</div>
 									</div>
 									<div className='col-md-4 cat-col'>
-										<div class='input-group mb-3'>
-											<div class='input-group-prepend'>
-												<span class='input-group-text'>$</span>
+										<div className='input-group shadow-xs'>
+											<div className='input-group-prepend'>
+												<span className='input-group-text bg-white'>$</span>
 											</div>
-											<input type='text' class='form-control' aria-label='Amount (to the nearest dollar)' />
-											<div class='input-group-append'>
-												<span class='input-group-text'>.00</span>
+											<input type='text' className='form-control' aria-label='Amount (to the nearest dollar)' />
+											<div className='input-group-append'>
+												<span className='input-group-text bg-white'>.00</span>
 											</div>
 										</div>
 									</div>
 									<div className='col-md-4 cat-col'>
-										<div class='input-group mb-3 bg-dark'>
-											<div class='input-group-prepend'>
-												<span class='input-group-text'>$</span>
+										<div className='input-group shadow-xs'>
+											<div className='input-group-prepend'>
+												<span className='input-group-text bg-white'>$</span>
 											</div>
-											<input type='text' class='form-control' aria-label='Amount (to the nearest dollar)' />
-											<div class='input-group-append'>
-												<span class='input-group-text'>.00</span>
+											<input type='text' className='form-control' aria-label='Amount (to the nearest dollar)' />
+											<div className='input-group-append'>
+												<span className='input-group-text bg-white'>.00</span>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div className='row pb-3' id='navAccordion1'>
 									<div className='col-md-4 cat-col'>
-										<div class='input-group mb-3'>
-											<div class='input-group-prepend'>
-												<span class='input-group-text'>Search</span>
+										<div className='input-group shadow-xs'>
+											<div className='input-group-prepend'>
+												<span className='input-group-text bg-white'>$</span>
 											</div>
-											<input type='text' class='form-control' aria-label='Amount (to the nearest dollar)' />
-											<div class='input-group-append'>
-												<span class='input-group-text'>.00</span>
-											</div>
-										</div>
-									</div>
-									<div className='col-md-4 cat-col'>
-										<div class='input-group mb-3'>
-											<div class='input-group-prepend'>
-												<span class='input-group-text'>$</span>
-											</div>
-											<input type='text' class='form-control' aria-label='Amount (to the nearest dollar)' />
-											<div class='input-group-append'>
-												<span class='input-group-text'>.00</span>
+											<input type='text' className='form-control' aria-label='Amount (to the nearest dollar)' />
+											<div className='input-group-append'>
+												<span className='input-group-text bg-white'>.00</span>
 											</div>
 										</div>
 									</div>
 									<div className='col-md-4 cat-col'>
-										<div class='input-group mb-3'>
-											<div class='input-group-prepend'>
-												<span class='input-group-text'>$</span>
+										<div className='input-group shadow-xs'>
+											<div className='input-group-prepend'>
+												<span className='input-group-text bg-white bg-white'>$</span>
 											</div>
-											<input type='text' class='form-control' aria-label='Amount (to the nearest dollar)' />
-											<div class='input-group-append'>
-												<span class='input-group-text'>.00</span>
+											<input type='text' className='form-control' aria-label='Amount (to the nearest dollar)' />
+											<div className='input-group-append'>
+												<span className='input-group-text bg-white'>.00</span>
+											</div>
+										</div>
+									</div>
+									<div className='col-md-4 cat-col'>
+										<div className='input-group shadow-xs'>
+											<div className='input-group-prepend'>
+												<span className='input-group-text bg-white'>$</span>
+											</div>
+											<input type='text' className='form-control' aria-label='Amount (to the nearest dollar)' />
+											<div className='input-group-append'>
+												<span className='input-group-text bg-white'>.00</span>
 											</div>
 										</div>
 									</div>
