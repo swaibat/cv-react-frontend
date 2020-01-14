@@ -16,16 +16,16 @@ class Faq extends Component {
 		const { payload } = this.props;
 		console.log(payload);
 		return (
-			<div className='container min-vh-80'>
+			<div className='container min-vh-85'>
 				<Bread data={payload && this.props.match.params} />
 				<main className=''>
-					<div class='accordion' id='accordionExample'>
+					<div className='accordion' id='accordionExample'>
 						{payload &&
 							payload.data.map((faq, index) => {
 								return (
-									<div class='card mb-3 overflow-hidden rounded border shadow-xs bg-white'>
-										<div class='card-header border-bottom bg-white' id='headingOne'>
-											<button class='btn btn-link w-100 text-left d-flex' type='button' data-toggle='collapse' data-target={`#faq${index}`} aria-expanded='true' aria-controls={`faq${index}`}>
+									<div className='card mb-3 overflow-hidden rounded border shadow-xs bg-white'>
+										<div className='card-header border-bottom bg-white' id='headingOne'>
+											<button className='btn btn-link w-100 text-left d-flex' type='button' data-toggle='collapse' data-target={`#faq${index}`} aria-expanded='true' aria-controls={`faq${index}`}>
 												{faq.question}
 												<span className='ml-auto'>
 													<FontAwesomeIcon className='mr-1' icon={faChevronDown} />
@@ -33,8 +33,8 @@ class Faq extends Component {
 											</button>
 										</div>
 
-										<div id={`faq${index}`} class='collapse' aria-labelledby='headingOne' data-parent='#accordionExample'>
-											<div class='card-body'>{faq.answer}</div>
+										<div id={`faq${index}`} className='collapse' aria-labelledby='headingOne' data-parent='#accordionExample'>
+											<div className='card-body'>{faq.answer}</div>
 										</div>
 									</div>
 								);

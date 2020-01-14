@@ -22,13 +22,15 @@ class CategoryItem extends Component {
 		const { payload } = this.props;
 		return (
 			<>
-				<div className='container min-vh-80'>
-					<Bread data={payload && this.props.match.params} />
-					<Filter data={payload && this.props.match.params.name} />
-					<main className='content-wrapper row'>
-						<div className='container-fluid row m-auto'>{payload && <Card data={payload.data} />}</div>
-					</main>
-				</div>
+				<main className='row'>
+					<div className='container min-vh-85'>
+						<Bread data={payload && this.props.match.params} />
+						<div className='row'>
+							<Filter data={payload && this.props.match.params.name} />
+							<div className='row col-10 pr-0 pl-3'>{payload && <Card data={payload.data} />}</div>
+						</div>
+					</div>
+				</main>
 			</>
 		);
 	}

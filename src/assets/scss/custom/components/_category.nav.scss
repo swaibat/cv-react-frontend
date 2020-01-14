@@ -3,7 +3,7 @@
 }
 
 .cv-category-nav {
-    .link-active{
+    .link-active {
         background-color: #eef2f4;
     }
 }
@@ -27,10 +27,6 @@
         left: 0;
         background-color: #eef2f4;
     }
-
-    .nav-item ul.p-nav * {
-        background-color: #eef2f4;
-    }
 }
 
 .nav-cats {
@@ -41,4 +37,8 @@
 
 .z-index-1050 {
     z-index: 1050;
+}
+
+.min-vh-85 {
+    min-height: 85vh;
 }

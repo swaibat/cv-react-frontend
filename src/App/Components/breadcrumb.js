@@ -21,12 +21,12 @@ export default ({ data }) => {
 						{data && data.sub}
 					</li>
 				)}
-				<div class='btn-group ml-auto'>
-					<a href='/' id='list' class='btn btn-outline-primary  btn-sm'>
+				<div className='btn-group ml-auto'>
+					<a href='/' id='list' className='btn btn-outline-primary  btn-sm'>
 						<FontAwesomeIcon className='mr-1' icon={faTh} />
 						Grid
 					</a>{' '}
-					<a href='/' id='grid' class='btn btn-outline-secondary  btn-sm'>
+					<a href='/' id='grid' className='btn btn-outline-secondary  btn-sm'>
 						<FontAwesomeIcon className='mr-1' icon={faList} />
 						List
 					</a>

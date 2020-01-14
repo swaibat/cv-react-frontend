@@ -92,3 +92,33 @@ input:-webkit-autofill:active {
   color: white;
   background: $secondary;
 }
+
+.social-btns {
+  display: inline-block;
+  background-color: #fff;
+  width: 60px;
+  height: 60px;
+  margin: 0 10px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 28%;
+  box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
+  opacity: 0.99;
+
+
+}
+
+.facebook {
+  color: #3B5998;
+}
+.twitter{
+  color: #33CCFF;
+}
+
+.social-btns .btn,
+.social-btns .btn:before,
+.social-btns .btn .fa {
+  transition: all 0.35s;
+  transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}

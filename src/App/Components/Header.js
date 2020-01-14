@@ -1,9 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faBell, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faBell, faHeart, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import Category from './categories.nav';
 import { Link } from 'react-router-dom';
+import token from '../../helper';
+import Logout from './logout.component';
 
 class Header extends Component {
 	render() {
@@ -71,14 +73,18 @@ class Header extends Component {
 								</span>
 								Advert
 							</button>
-							<div className='btn-group' role='group' aria-label='Basic example'>
-								<a href='/register' type='button' className='btn btn-sm btn-primary btn-outline-light'>
-									signup
-								</a>
-								<Link type='button' className='btn btn-sm btn-outline-primary' to='/login'>
-									Login
-								</Link>
-							</div>
+							{token ? (
+								<Logout />
+							) : (
+								<div className='btn-group' role='group' aria-label='Basic example'>
+									<a href='/verify' type='button' className='btn btn-sm btn-primary btn-outline-light'>
+										signup
+									</a>
+									<Link type='button' className='btn btn-sm btn-outline-primary' to='/login'>
+										Login
+									</Link>
+								</div>
+							)}
 						</div>
 					</div>
 				</nav>

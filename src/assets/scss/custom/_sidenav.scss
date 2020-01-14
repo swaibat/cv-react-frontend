@@ -12,7 +12,6 @@ li {
 
 @media (min-width: 992px) {
     .sidenav {
-        position: absolute;
         width: 225px;
         height: calc(100% - 3.5rem);
         box-sizing: border-box;
@@ -61,7 +60,6 @@ li {
         display: none;
         position: absolute;
         width: 225px;
-        height: calc(100% - 3.5rem);
         box-sizing: border-box;
     }
     .cv-container {
