@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faBell, faHeart, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faBell, faHeart } from '@fortawesome/free-solid-svg-icons';
 import Category from './categories.nav';
 import { Link } from 'react-router-dom';
 import token from '../../helper';
@@ -73,7 +73,7 @@ class Header extends Component {
 								</span>
 								Advert
 							</button>
-							{token ? (
+							{token() ? (
 								<Logout />
 							) : (
 								<div className='btn-group' role='group' aria-label='Basic example'>
@@ -88,7 +88,7 @@ class Header extends Component {
 						</div>
 					</div>
 				</nav>
-				<Category />
+				{/* <Category /> */}
 			</>
 		);
 	}

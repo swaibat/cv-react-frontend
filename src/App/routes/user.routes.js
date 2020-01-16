@@ -11,12 +11,12 @@ import singleItem from './Pages/single.item';
 import NotFound from './Pages/404.page';
 import Faq from './Pages/faq.page';
 import VerifyUser from './Pages/verify.user.page';
-import Dashboard from './Pages/admin/dashboard.page';
 
 export class App extends React.Component {
 	render() {
 		return (
 			<Router>
+				<Header />
 				<Switch>
 					<Route exact path='/' component={Landing} />
 					<Route exact path='/login' component={Login} />
@@ -27,12 +27,6 @@ export class App extends React.Component {
 					<Route exact path='/category/:name/:sub' component={CategoryItems} />
 					<Route exact path='/products/:name' component={singleItem} />
 					<Route exact path='/faq' component={Faq} />
-					{/* 
-
-					admin routes
-
-					*/}
-					<Route exact path='/admin/dashboard' component={Dashboard} />
 					<Route path='*' component={NotFound} />
 				</Switch>
 				<Footer />

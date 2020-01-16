@@ -1,0 +1,67 @@
+.h-7 {
+    height: $spacer *8;
+}
+
+.h-3 {
+    height: $spacer *3.5;
+}
+
+.w-95{
+    width: 95% !important;
+}
+.h-15{
+    height: $spacer * 16;
+}
+
+.dash-card{
+    height: calc(100vh - 28rem);
+}
+
+.admin-nav-icons {
+    font-size: 1.5rem;
+}
+
+.shadow-sm-top {
+    box-shadow: 0 -0.125rem 0.3rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.text-secondary-light {
+    color: lighten($secondary, 30);
+}
+
+.rotate-20 {
+    transform: rotate(30deg);
+}
+
+.rotate-90 {
+    transform: rotate(90deg);
+}
+
+.h-90 {
+    height: 90%;
+}
+
+.rounded-sm-right {
+    border-top-right-radius: $border-radius-sm !important;
+    border-bottom-right-radius: $border-radius-sm !important;
+}
+
+.min-h-display {
+    min-height: calc(100vh - 4.4rem);
+}
+
+.nav-avatar {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 100%;
+}
+
+.header-bg {
+    background: $primary !important;
+    height: 11rem;
+    padding: 1rem;
+    width: 100%;
+    position: absolute;
+    z-index: -10;
+
+}
