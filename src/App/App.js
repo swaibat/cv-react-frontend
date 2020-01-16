@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Landing from './Pages';
 import Login from './Pages/login';
 import Register from './Pages/register.page';
-import Header from './Components/Header';
+// import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Items from './Pages/items.page';
 import CategoryItems from './Pages/category.item';

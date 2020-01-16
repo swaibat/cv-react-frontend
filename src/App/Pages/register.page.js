@@ -171,15 +171,15 @@ class Register extends Component {
 																	</div>
 																	<div className='input-group form-group mb-3'>
 																		<label className='mr-4 p-0 m-0'>user type:</label>
-																		<div class='form-check form-check-inline'>
-																			<input class='form-check-input' type='radio' name='RoleId' id='exampleRadios1' value='1' checked />
-																			<label class='form-check-label' for='exampleRadios1'>
+																		<div className='form-check form-check-inline'>
+																			<input className='form-check-input' type='radio' name='RoleId' id='exampleRadios1' value='1' checked />
+																			<label className='form-check-label' for='exampleRadios1'>
 																				Buyer
 																			</label>
 																		</div>
-																		<div class='form-check'>
-																			<input class='form-check-input' type='radio' name='RoleId' id='exampleRadios2' value='2' />
-																			<label class='form-check-label' for='exampleRadios2'>
+																		<div className='form-check'>
+																			<input className='form-check-input' type='radio' name='RoleId' id='exampleRadios2' value='2' />
+																			<label className='form-check-label' for='exampleRadios2'>
 																				Seller
 																			</label>
 																		</div>
