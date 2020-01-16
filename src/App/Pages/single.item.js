@@ -1,3 +1,5 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import constants from '../../redux/constants/index';
@@ -85,6 +87,7 @@ class Item extends Component {
 									</div>
 								</div>
 							</div>
+
 							<div className='col-md-5 p-0 m-0 pr-2 text-secondary'>
 								<div className='w-100 border p-2 my-2 rounded'>
 									<div className='d-flex'>
@@ -107,6 +110,19 @@ class Item extends Component {
 									</div>
 								</div>
 								<div className='card h-auto w-100'>
+									<ul className='list-group list-group-flush'>
+										<li className='list-group-item'>Vestibulum at eros</li>
+										<li className='list-group-item'>
+											<div id='map'></div>
+										</li>
+									</ul>
+									<div className='card-body'>
+										<a href='#' className='btn btn-block btn-primary'>
+											visit company website
+										</a>
+									</div>
+								</div>
+								<div className='card h-auto w-100 mt-2'>
 									<ul className='list-group list-group-flush'>
 										<li className='list-group-item'>Vestibulum at eros</li>
 										<li className='list-group-item'>

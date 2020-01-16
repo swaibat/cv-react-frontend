@@ -23,10 +23,11 @@ class Verify extends Component {
 	};
 	render() {
 		const { payload, error, pending, match } = this.props;
+		console.log(this.props);
 		payload && payload.status === 200 && localStorage.setItem('cv-token', match.params.token);
 		return (
 			<main className='d-flex flex-column align-items-center min-vh-85'>
-				{Token ? <Redirect to='/' /> : ''}
+				{Token() ? <Redirect to='/' /> : ''}
 				<div className='container m-auto'>
 					<div className='row justify-content-sm-center align-items-center'>
 						<div className='col-sm-7 col-md-7'>
@@ -68,7 +69,7 @@ class Verify extends Component {
 																<FontAwesomeIcon icon={faTwitter} />
 															</button>
 														</div>
-														<form className='font-weight-light rounded-sm' onSubmit={this.handleVerifySubmit}>
+														<form className='font-weight-light rounded-sm' onSubmit={this.handleSubmit}>
 															{error && (
 																<div className='alert alert-danger rounded-sm text-center scale-in-ver-center' role='alert'>
 																	{error.message}
@@ -82,7 +83,7 @@ class Verify extends Component {
 																		<FontAwesomeIcon icon={faLock} />
 																	</span>
 																</div>
-																<input name='email' type='email' className='form-control custom-input' placeholder='Enter your email' onChange={this.handleVerifyInput} required />
+																<input name='email' type='email' className='form-control custom-input' placeholder='Enter your email' onChange={this.handleInput} required />
 																<div className='input-group-append'>
 																	<span className='btn p-0 border-0 my-auto invisible'>
 																		<FontAwesomeIcon icon={faEye} />
@@ -137,7 +138,7 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = state => {
 	return {
 		payload: state.verifyUser.payload,
-		pending: state.verifyUser.payload,
+		pending: state.verifyUser.pending,
 		error: state.verifyUser.error,
 	};
 };
