@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import LoginReducer from './login.reducer';
 import RegisterReducer, { verifyUser } from './register.reducer';
-import { Items, CatItems, categories, singleItem } from './items.reducer';
+import { Items, CatItems, categories, singleItem, createItem } from './items.reducer';
 import { GetFaq } from './faq.reducer';
 import Logout from './logout.reducer';
 
@@ -15,6 +15,7 @@ const allReducers = combineReducers({
 	RegisterReducer,
 	verifyUser,
 	Logout,
+	createItem,
 });
 
 export default allReducers;

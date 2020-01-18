@@ -14,6 +14,11 @@ const apis = {
 	getItems() {
 		return axios.get(`${BASE_URL}/products`);
 	},
+	createItem(data, token) {
+		return axios.post(`${BASE_URL}/products`, data, {
+			headers: { Authorization: token },
+		});
+	},
 	getItemsByCategory(name) {
 		return axios.get(`${BASE_URL}/category/${name}`);
 	},

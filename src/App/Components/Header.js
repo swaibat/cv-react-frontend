@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faBell, faHeart } from '@fortawesome/free-solid-svg-icons';
-import Category from './categories.nav';
+// import Category from './categories.nav';
 import { Link } from 'react-router-dom';
 import token from '../../helper';
 import Logout from './logout.component';

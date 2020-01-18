@@ -49,24 +49,24 @@ class registerSuccess extends Component {
 											</button>
 										</div>
 										<h5 className='cv-title ml-2'>Youtube tutorials</h5>
-										<div class='media tut-media shadow-x rounded p-2 border mt-3'>
+										<div className='media tut-media shadow-x rounded p-2 border mt-3'>
 											<iframe width='100' height='70' className='rounded align-self-center mr-3' src='https://www.youtube.com/embed/XysRGYNtpgI' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
-											<div class='media-body ml-2 text-truncate'>
-												<h5 class='mt-0 font-weight-bold'>Media heading</h5>
+											<div className='media-body ml-2 text-truncate'>
+												<h5 className='mt-0 font-weight-bold'>Media heading</h5>
 												Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
 											</div>
 										</div>
-										<div class='media tut-media shadow-x rounded p-2 border mt-3'>
+										<div className='media tut-media shadow-x rounded p-2 border mt-3'>
 											<iframe width='100' height='70' className='rounded align-self-center mr-3' src='https://www.youtube.com/embed/XysRGYNtpgI' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
-											<div class='media-body ml-2 text-truncate'>
-												<h5 class='mt-0 font-weight-bold'>Media heading</h5>
+											<div className='media-body ml-2 text-truncate'>
+												<h5 className='mt-0 font-weight-bold'>Media heading</h5>
 												Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
 											</div>
 										</div>
-										<div class='media tut-media shadow-x rounded p-2 border mt-3'>
+										<div className='media tut-media shadow-x rounded p-2 border mt-3'>
 											<iframe width='100' height='70' className='rounded align-self-center mr-3' src='https://www.youtube.com/embed/XysRGYNtpgI' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
-											<div class='media-body ml-2 text-truncate'>
-												<h5 class='mt-0 font-weight-bold'>Media heading</h5>
+											<div className='media-body ml-2 text-truncate'>
+												<h5 className='mt-0 font-weight-bold'>Media heading</h5>
 												Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
 											</div>
 										</div>

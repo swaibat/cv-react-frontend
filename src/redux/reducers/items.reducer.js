@@ -57,3 +57,16 @@ export const singleItem = (state = initialState, action) => {
 			return state;
 	}
 };
+
+export const createItem = (state = initialState, action) => {
+	switch (action.type) {
+		case constant.CREATE_ITEM_PENDING:
+			return { ...state, pending: true };
+		case constant.CREATE_ITEM_SUCCESS:
+			return { ...state, payload: action.payload, pending: false };
+		case constant.CREATE_ITEM_ERROR:
+			return { ...state, error: action.error, pending: false };
+		default:
+			return state;
+	}
+};

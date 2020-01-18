@@ -10,6 +10,15 @@ export const items = async () => {
 	}
 };
 
+export const createItem = async (data, token) => {
+	try {
+		const result = await Api.createItem(data, token);
+		return { type: constant.CREATE_ITEMS_SUCCESS, payload: result.data };
+	} catch (error) {
+		return { type: constant.CREATE_ITEMS_ERROR, error: error.response.data };
+	}
+};
+
 export const singleItems = async name => {
 	try {
 		const result = await Api.singleItem(name);

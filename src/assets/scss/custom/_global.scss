@@ -243,6 +243,18 @@ body {
 	}
 }
 
+.cv-title.title-light {
+	color: white;
+
+	&:before {
+		content: "";
+		border: solid 1.5px $light;
+		position: absolute;
+		width: 4rem;
+		margin-top: 1.7rem;
+	}
+}
+
 .image-gallery-content .image-gallery-slide .image-gallery-image {
 	height: 60vh;
 }

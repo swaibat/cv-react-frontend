@@ -9,8 +9,8 @@ class Sidenav extends Component {
 	render() {
 		return (
 			<>
-				<ul class='navbar-nav mr-auto sidenav position-absolute bg-white text-secondary-light vh-100' id='navAccordion'>
-					<li class='nav-item shadow-sm p-2 m-0 h-3 d-flex justify-content-center'>
+				<ul className='navbar-nav mr-auto sidenav position-absolute bg-white text-secondary-light vh-100' id='navAccordion'>
+					<li className='nav-item shadow-sm p-2 m-0 h-3 d-flex justify-content-center'>
 						<svg xmlns='http://www.w3.org/2000/svg' width='148' height='43' viewBox='0 0 148 43'>
 							<defs>
 								<clipPath id='a'>
@@ -48,8 +48,8 @@ class Sidenav extends Component {
 							</g>
 						</svg>
 					</li>
-					<li class='nav-item h-7 d-flex justify-content-between'>
-						<div class='nav-link m-auto d-flex flex-column text-center' href='#'>
+					<li className='nav-item h-7 d-flex justify-content-between'>
+						<div className='nav-link m-auto d-flex flex-column text-center' href='#'>
 							<img className='nav-avatar img-thumbnail' src={avatar} alt='user' />
 							<sapn>Admin</sapn>
 						</div>
@@ -59,95 +59,95 @@ class Sidenav extends Component {
 							<FontAwesomeIcon className='rotate-90' icon={faMinusCircle} />
 							<FontAwesomeIcon className='rotate-20' icon={faMinusCircle} />
 						</div>
-						<li class='nav-item pt-2'>
-							<div class='input-group mt-2 mb-3'>
-								<input type='text' class='form-control form-control-sm' placeholder='' aria-label="Recipient's username" aria-describedby='basic-addon2' />
-								<div class='input-group-append'>
-									<span class='input-group-text bg-white rounded-sm-right text-secondary-light' id='basic-addon2'>
+						<li className='nav-item pt-2'>
+							<div className='input-group mt-2 mb-3'>
+								<input type='text' className='form-control form-control-sm' placeholder='' aria-label="Recipient's username" aria-describedby='basic-addon2' />
+								<div className='input-group-append'>
+									<span className='input-group-text bg-white rounded-sm-right text-secondary-light' id='basic-addon2'>
 										<FontAwesomeIcon icon={faSearch} />
 									</span>
 								</div>
 							</div>
 						</li>
-						<li class='nav-item border-top'>
-							<a class='nav-link text-secondary pl-3' href='#'>
+						<li className='nav-item border-top'>
+							<a className='nav-link text-secondary pl-3' href='#'>
 								<FontAwesomeIcon className='mr-2' icon={faThLarge} /> Dashboard
 							</a>
 						</li>
-						<li class='nav-item'>
-							<a class='nav-link text-secondary nav-link text-secondary-collapse pl-3' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItems2' aria-controls='collapseSubItems2' aria-expanded='false'>
+						<li className='nav-item'>
+							<a className='nav-link text-secondary nav-link text-secondary-collapse pl-3' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItems2' aria-controls='collapseSubItems2' aria-expanded='false'>
 								<FontAwesomeIcon className='mr-2' icon={faLayerGroup} />
 								Categories
 							</a>
-							<ul class='nav-second-level collapse' id='collapseSubItems2' data-parent='#navAccordion'>
-								<li class='nav-item'>
-									<a class='nav-link text-secondary' href='#'>
-										<span class='nav-link text-secondary-text'>Item 2.1</span>
+							<ul className='nav-second-level collapse' id='collapseSubItems2' data-parent='#navAccordion'>
+								<li className='nav-item'>
+									<a className='nav-link text-secondary' href='#'>
+										<span className='nav-link text-secondary-text'>Item 2.1</span>
 									</a>
 								</li>
-								<li class='nav-item'>
-									<a class='nav-link text-secondary' href='#'>
-										<span class='nav-link text-secondary-text'>Item 2.2</span>
+								<li className='nav-item'>
+									<a className='nav-link text-secondary' href='#'>
+										<span className='nav-link text-secondary-text'>Item 2.2</span>
 									</a>
 								</li>
 							</ul>
 						</li>
-						<li class='nav-item'>
-							<Link class='nav-link text-secondary pl-3' to='/admin/products'>
+						<li className='nav-item'>
+							<Link className='nav-link text-secondary pl-3' to='/admin/products'>
 								<FontAwesomeIcon className='mr-2' icon={faBell} />
 								products
 							</Link>
 						</li>
-						<li class='nav-item'>
-							<a class='nav-link text-secondary pl-3' href='#'>
+						<li className='nav-item'>
+							<a className='nav-link text-secondary pl-3' href='#'>
 								<FontAwesomeIcon className='mr-2' icon={faFilePowerpoint} />
 								Pages
 							</a>
 						</li>
-						<li class='nav-item'>
-							<a class='nav-link text-secondary pl-3' href='#'>
+						<li className='nav-item'>
+							<a className='nav-link text-secondary pl-3' href='#'>
 								<FontAwesomeIcon className='mr-2' icon={faUsers} />
 								Users
 							</a>
 						</li>
-						<li class='nav-item'>
-							<a class='nav-link text-secondary pl-3' href='#'>
+						<li className='nav-item'>
+							<a className='nav-link text-secondary pl-3' href='#'>
 								<FontAwesomeIcon className='mr-2' icon={faCommentAlt} />
 								messages
 							</a>
 						</li>
-						<li class='nav-item'>
-							<a class='nav-link text-secondary pl-3' href='#'>
+						<li className='nav-item'>
+							<a className='nav-link text-secondary pl-3' href='#'>
 								<FontAwesomeIcon className='mr-2' icon={faHistory} />
 								History
 							</a>
 						</li>
-						<li class='nav-item'>
-							<a class='nav-link text-secondary nav-link text-secondary-collapse pl-3' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItems4' aria-controls='collapseSubItems4' aria-expanded='false'>
+						<li className='nav-item'>
+							<a className='nav-link text-secondary nav-link text-secondary-collapse pl-3' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItems4' aria-controls='collapseSubItems4' aria-expanded='false'>
 								<FontAwesomeIcon className='mr-2' icon={faCog} />
 								settings
 							</a>
-							<ul class='nav-second-level collapse' id='collapseSubItems4' data-parent='#navAccordion'>
-								<li class='nav-item'>
-									<a class='nav-link text-secondary' href='#'>
-										<span class='nav-link text-secondary-text'>Item 4.1</span>
+							<ul className='nav-second-level collapse' id='collapseSubItems4' data-parent='#navAccordion'>
+								<li className='nav-item'>
+									<a className='nav-link text-secondary' href='#'>
+										<span className='nav-link text-secondary-text'>Item 4.1</span>
 									</a>
 								</li>
-								<li class='nav-item'>
-									<a class='nav-link text-secondary' href='#'>
-										<span class='nav-link text-secondary-text'>Item 4.2</span>
+								<li className='nav-item'>
+									<a className='nav-link text-secondary' href='#'>
+										<span className='nav-link text-secondary-text'>Item 4.2</span>
 									</a>
 								</li>
-								<li class='nav-item'>
-									<a class='nav-link text-secondary' href='#'>
-										<span class='nav-link text-secondary-text'>Item 4.2</span>
+								<li className='nav-item'>
+									<a className='nav-link text-secondary' href='#'>
+										<span className='nav-link text-secondary-text'>Item 4.2</span>
 									</a>
 								</li>
 							</ul>
 						</li>
 					</li>
 					<li className='nav-item h-3.5'>
-						<div class='d-flex flex-row-reverse'>
+						<div className='d-flex flex-row-reverse'>
 							<div className='bg-primary d-flex flex-column p-1'>
 								<FontAwesomeIcon className='rotate-90 mb-3' icon={faMinusCircle} />
 								<FontAwesomeIcon className='rotate-20' icon={faMinusCircle} />
@@ -156,46 +156,46 @@ class Sidenav extends Component {
 					</li>
 				</ul>
 				<div className='header-bg' />
-				<main class='content-wrapper d-flex flex-column align-items-center min-h-display'>
-					<nav class='navbar navbar-dark bg-transparent w-100'>
-						<ul class='navbar-nav mr-auto'>
-							<li class='nav-item active'>
-								<a class='nav-link text-white' href='#'>
-									<span class='navbar-toggler-icon text-white'></span>
+				<main className='content-wrapper d-flex flex-column align-items-center min-h-display'>
+					<nav className='navbar navbar-dark bg-transparent w-100'>
+						<ul className='navbar-nav mr-auto'>
+							<li className='nav-item active'>
+								<a className='nav-link text-white' href='#'>
+									<span className='navbar-toggler-icon text-white'></span>
 								</a>
 							</li>
 						</ul>
-						<ul class='d-flex'>
-							<li class='nav-item mx-3'>
-								<a class='nav-link text-white' href='#' data-toggle='tooltip' data-placement='bottom' title='visit website'>
+						<ul className='d-flex'>
+							<li className='nav-item mx-3'>
+								<a className='nav-link text-white' href='#' data-toggle='tooltip' data-placement='bottom' title='visit website'>
 									<FontAwesomeIcon className='admin-nav-icons' icon={faGlobeAfrica} />
 								</a>
 							</li>
-							<li class='nav-item mx-3'>
-								<a class='nav-link text-white' href='#' data-toggle='tooltip' data-placement='bottom' title='Notifications'>
+							<li className='nav-item mx-3'>
+								<a className='nav-link text-white' href='#' data-toggle='tooltip' data-placement='bottom' title='Notifications'>
 									<FontAwesomeIcon className='admin-nav-icons' icon={faBell} />
 									<span className='badge badge-light mt-n2 ml-n1 position-absolute'>5</span>
 								</a>
 							</li>
-							<li class='dropdown ml-3' data-toggle='tooltip' data-placement='bottom' title='Notifications'>
-								<button class='btn bg-transparent text-white dropdown-toggle' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+							<li className='dropdown ml-3' data-toggle='tooltip' data-placement='bottom' title='Notifications'>
+								<button className='btn bg-transparent text-white dropdown-toggle' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
 									admin
 								</button>
-								<div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
-									<a class='dropdown-item' href='#'>
+								<div className='dropdown-menu' aria-labelledby='dropdownMenuButton'>
+									<a className='dropdown-item' href='#'>
 										Action
 									</a>
-									<a class='dropdown-item' href='#'>
+									<a className='dropdown-item' href='#'>
 										Another action
 									</a>
-									<a class='dropdown-item' href='#'>
+									<a className='dropdown-item' href='#'>
 										Something else here
 									</a>
 								</div>
 							</li>
 						</ul>
 					</nav>
-					<div class='container-fluid mt-4'>
+					<div className='container-fluid mt-4'>
 						<div className='row'>
 							<div className='col-md-6 h-15'>
 								<div className='bg-white p-5 d-flex  h-100 rounded shadow-xs mb-3'>hello</div>
