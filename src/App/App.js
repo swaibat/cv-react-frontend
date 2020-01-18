@@ -12,11 +12,13 @@ import NotFound from './Pages/404.page';
 import Faq from './Pages/faq.page';
 import VerifyUser from './Pages/verify.user.page';
 import Dashboard from './Pages/admin/dashboard.page';
+import CreateProduct from './Pages/admin/create.product.page';
 
 export class App extends React.Component {
 	render() {
 		return (
 			<Router>
+				{/* <Header /> */}
 				<Switch>
 					<Route exact path='/' component={Landing} />
 					<Route exact path='/login' component={Login} />
@@ -33,6 +35,7 @@ export class App extends React.Component {
 
 					*/}
 					<Route exact path='/admin/dashboard' component={Dashboard} />
+					<Route exact path='/admin/products/create' component={CreateProduct} />
 					<Route path='*' component={NotFound} />
 				</Switch>
 				<Footer />
