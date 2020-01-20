@@ -9,7 +9,8 @@ import { faLock, faUser, faCheck, faMapMarkedAlt, faPhone, faGlobe, faUserAlt } 
 import RegisterSuccess from '../Pages/register.success.page';
 import Token from '../../helper';
 import { Redirect } from 'react-router';
-import Google from '../Components/google';
+import Header from './../Components/Header';
+import Footer from './../Components/Footer';
 
 class Register extends Component {
 	constructor(props) {
@@ -42,7 +43,7 @@ class Register extends Component {
 		const { payload, error, pending } = this.props;
 		return (
 			<>
-				<Google />
+				<Header />
 				{Token() ? <Redirect to='/' /> : ''}
 				<main className='d-flex flex-column align-items-center min-vh-85'>
 					<div className='container m-auto'>
@@ -64,7 +65,15 @@ class Register extends Component {
 																<FontAwesomeIcon className='m-auto' icon={faLock} />
 																Verify
 															</span>
-															<a className='nav-link d-flex flex-column mt-3 active' id='v-pills-profile-tab' data-toggle='pill' href='#v-pills-profile' role='tab' aria-controls='v-pills-profile' aria-selected='true'>
+															<a
+																className='nav-link d-flex flex-column mt-3 active'
+																id='v-pills-profile-tab'
+																data-toggle='pill'
+																href='#v-pills-profile'
+																role='tab'
+																aria-controls='v-pills-profile'
+																aria-selected='true'
+															>
 																<FontAwesomeIcon className='m-auto' icon={faUser} />
 																Profile
 															</a>
@@ -220,6 +229,7 @@ class Register extends Component {
 						</div>
 					</div>
 				</main>
+				<Footer />
 			</>
 		);
 	}

@@ -8,7 +8,15 @@ class Others extends Component {
 		return (
 			<>
 				<li className='nav-item'>
-					<a className='nav-link nav-link-collapse bg-white text-bold d-flex justify-content-between px-2 rounded-top' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItems2' aria-controls='collapseSubItems2' aria-expanded='true'>
+					<a
+						className='nav-link nav-link-collapse bg-white text-bold d-flex justify-content-between px-2 rounded-top'
+						href='#'
+						id='hasSubItems'
+						data-toggle='collapse'
+						data-target='#collapseSubItems2'
+						aria-controls='collapseSubItems2'
+						aria-expanded='true'
+					>
 						Shop By Brand
 					</a>
 					<ul className='nav-second-level nav-second-level-cv collapse text-secondary show' id='collapseSubItems2'>
@@ -87,7 +95,15 @@ class Others extends Component {
 					</ul>
 				</li>
 				<li className='nav-item'>
-					<a className='nav-link nav-link-collapse border-bottom text-secondary text-white d-flex justify-content-between px-2' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItems3' aria-controls='collapseSubItems3' aria-expanded='false'>
+					<a
+						className='nav-link nav-link-collapse border-bottom text-secondary text-white d-flex justify-content-between px-2'
+						href='#'
+						id='hasSubItems'
+						data-toggle='collapse'
+						data-target='#collapseSubItems3'
+						aria-controls='collapseSubItems3'
+						aria-expanded='false'
+					>
 						Shop By Price
 						<span>
 							<Icon icon={Arrow} />
@@ -107,7 +123,15 @@ class Others extends Component {
 					</ul>
 				</li>
 				<li className='nav-item'>
-					<a className='nav-link nav-link-collapse border-bottom text-secondary text-white d-flex justify-content-between px-2' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItems33' aria-controls='collapseSubItems33' aria-expanded='false'>
+					<a
+						className='nav-link nav-link-collapse border-bottom text-secondary text-white d-flex justify-content-between px-2'
+						href='#'
+						id='hasSubItems'
+						data-toggle='collapse'
+						data-target='#collapseSubItems33'
+						aria-controls='collapseSubItems33'
+						aria-expanded='false'
+					>
 						Shop By Condition
 						<span>
 							<Icon icon={Arrow} />
@@ -129,7 +153,15 @@ class Others extends Component {
 					</ul>
 				</li>
 				<li className='nav-item'>
-					<a className='nav-link nav-link-collapse border-bottom text-secondary text-white d-flex justify-content-between px-2' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItems34' aria-controls='collapseSubItems34' aria-expanded='false'>
+					<a
+						className='nav-link nav-link-collapse border-bottom text-secondary text-white d-flex justify-content-between px-2'
+						href='#'
+						id='hasSubItems'
+						data-toggle='collapse'
+						data-target='#collapseSubItems34'
+						aria-controls='collapseSubItems34'
+						aria-expanded='false'
+					>
 						Shop By location
 						<span>
 							<Icon icon={Arrow} />

@@ -8,6 +8,9 @@ import Bread from '../Components/breadcrumb';
 import ImageGallery from 'react-image-gallery';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShareSquare, faHeart } from '@fortawesome/free-solid-svg-icons';
+import Header from './../Components/Header';
+import Footer from './../Components/Footer';
+
 const images = [];
 class Item extends Component {
 	componentDidMount() {
@@ -33,6 +36,7 @@ class Item extends Component {
 		document.title = this.props.match.params.name;
 		return (
 			<>
+				<Header />
 				<div className='container min-vh-80'>
 					<Bread data={payload && this.props.match.params} />
 					<main className='row m-0'>
@@ -80,10 +84,21 @@ class Item extends Component {
 										</div>
 									</div>
 									<div className='tab-pane fade active show' id='nav-profile' role='tabpanel' aria-labelledby='nav-profile-tab'>
-										<p>Nulla est ullamco ut irure incididunt nulla Lorem Lorem minim irure officia enim reprehenderit. Magna duis labore cillum sint adipisicing exercitation ipsum. Nostrud ut anim non exercitation velit laboris fugiat cupidatat. Commodo esse dolore fugiat sint velit ullamco magna consequat voluptate minim amet aliquip ipsum aute laboris nisi. Labore labore veniam irure irure ipsum pariatur mollit magna in cupidatat dolore magna irure esse tempor ad mollit. Dolore commodo nulla minim amet ipsum officia consectetur amet ullamco voluptate nisi commodo ea sit eu.</p>
+										<p>
+											Nulla est ullamco ut irure incididunt nulla Lorem Lorem minim irure officia enim reprehenderit. Magna duis labore cillum sint adipisicing exercitation ipsum. Nostrud ut anim non
+											exercitation velit laboris fugiat cupidatat. Commodo esse dolore fugiat sint velit ullamco magna consequat voluptate minim amet aliquip ipsum aute laboris nisi. Labore labore
+											veniam irure irure ipsum pariatur mollit magna in cupidatat dolore magna irure esse tempor ad mollit. Dolore commodo nulla minim amet ipsum officia consectetur amet ullamco
+											voluptate nisi commodo ea sit eu.
+										</p>
 									</div>
 									<div className='tab-pane fade' id='nav-contact' role='tabpanel' aria-labelledby='nav-contact-tab'>
-										<p>Sint sit mollit irure quis est nostrud cillum consequat Lorem esse do quis dolor esse fugiat sunt do. Eu ex commodo veniam Lorem aliquip laborum occaecat qui Lorem esse mollit dolore anim cupidatat. Deserunt officia id Lorem nostrud aute id commodo elit eiusmod enim irure amet eiusmod qui reprehenderit nostrud tempor. Fugiat ipsum excepteur in aliqua non et quis aliquip ad irure in labore cillum elit enim. Consequat aliquip incididunt ipsum et minim laborum laborum laborum et cillum labore. Deserunt adipisicing cillum id nulla minim nostrud labore eiusmod et amet. Laboris consequat consequat commodo non ut non aliquip reprehenderit nulla anim occaecat. Sunt sit ullamco reprehenderit irure ea ullamco Lorem aute nostrud magna.</p>
+										<p>
+											Sint sit mollit irure quis est nostrud cillum consequat Lorem esse do quis dolor esse fugiat sunt do. Eu ex commodo veniam Lorem aliquip laborum occaecat qui Lorem esse mollit
+											dolore anim cupidatat. Deserunt officia id Lorem nostrud aute id commodo elit eiusmod enim irure amet eiusmod qui reprehenderit nostrud tempor. Fugiat ipsum excepteur in aliqua
+											non et quis aliquip ad irure in labore cillum elit enim. Consequat aliquip incididunt ipsum et minim laborum laborum laborum et cillum labore. Deserunt adipisicing cillum id
+											nulla minim nostrud labore eiusmod et amet. Laboris consequat consequat commodo non ut non aliquip reprehenderit nulla anim occaecat. Sunt sit ullamco reprehenderit irure ea
+											ullamco Lorem aute nostrud magna.
+										</p>
 									</div>
 								</div>
 							</div>
@@ -148,7 +163,10 @@ class Item extends Component {
 										<div className='card-footer bg-transparent'>
 											<span className='heart text-primary shadow-sm'>
 												<svg xmlns='http://www.w3.org/2000/svg' focusable='false' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'>
-													<path d='M4.244 12.252a4.25 4.25 0 1 1 6.697-5.111h1.118a4.25 4.25 0 1 1 6.697 5.111L11.5 19.51l-7.256-7.257zm15.218.71A5.25 5.25 0 1 0 11.5 6.167a5.25 5.25 0 1 0-7.962 6.795l7.962 7.961l7.962-7.96z' fill='currentColor'></path>
+													<path
+														d='M4.244 12.252a4.25 4.25 0 1 1 6.697-5.111h1.118a4.25 4.25 0 1 1 6.697 5.111L11.5 19.51l-7.256-7.257zm15.218.71A5.25 5.25 0 1 0 11.5 6.167a5.25 5.25 0 1 0-7.962 6.795l7.962 7.961l7.962-7.96z'
+														fill='currentColor'
+													></path>
 												</svg>
 											</span>
 											<p className='card-text mb-1 text-truncate'>techno spark 4</p>
@@ -164,7 +182,10 @@ class Item extends Component {
 										<div className='card-footer bg-transparent'>
 											<span className='heart text-primary shadow-sm'>
 												<svg xmlns='http://www.w3.org/2000/svg' focusable='false' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'>
-													<path d='M4.244 12.252a4.25 4.25 0 1 1 6.697-5.111h1.118a4.25 4.25 0 1 1 6.697 5.111L11.5 19.51l-7.256-7.257zm15.218.71A5.25 5.25 0 1 0 11.5 6.167a5.25 5.25 0 1 0-7.962 6.795l7.962 7.961l7.962-7.96z' fill='currentColor'></path>
+													<path
+														d='M4.244 12.252a4.25 4.25 0 1 1 6.697-5.111h1.118a4.25 4.25 0 1 1 6.697 5.111L11.5 19.51l-7.256-7.257zm15.218.71A5.25 5.25 0 1 0 11.5 6.167a5.25 5.25 0 1 0-7.962 6.795l7.962 7.961l7.962-7.96z'
+														fill='currentColor'
+													></path>
 												</svg>
 											</span>
 											<p className='card-text mb-1 text-truncate'>techno spark 4</p>
@@ -180,7 +201,10 @@ class Item extends Component {
 										<div className='card-footer bg-transparent'>
 											<span className='heart text-primary shadow-sm'>
 												<svg xmlns='http://www.w3.org/2000/svg' focusable='false' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'>
-													<path d='M4.244 12.252a4.25 4.25 0 1 1 6.697-5.111h1.118a4.25 4.25 0 1 1 6.697 5.111L11.5 19.51l-7.256-7.257zm15.218.71A5.25 5.25 0 1 0 11.5 6.167a5.25 5.25 0 1 0-7.962 6.795l7.962 7.961l7.962-7.96z' fill='currentColor'></path>
+													<path
+														d='M4.244 12.252a4.25 4.25 0 1 1 6.697-5.111h1.118a4.25 4.25 0 1 1 6.697 5.111L11.5 19.51l-7.256-7.257zm15.218.71A5.25 5.25 0 1 0 11.5 6.167a5.25 5.25 0 1 0-7.962 6.795l7.962 7.961l7.962-7.96z'
+														fill='currentColor'
+													></path>
 												</svg>
 											</span>
 											<p className='card-text mb-1 text-truncate'>techno spark 4</p>
@@ -196,7 +220,10 @@ class Item extends Component {
 										<div className='card-footer bg-transparent'>
 											<span className='heart text-primary shadow-sm'>
 												<svg xmlns='http://www.w3.org/2000/svg' focusable='false' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'>
-													<path d='M4.244 12.252a4.25 4.25 0 1 1 6.697-5.111h1.118a4.25 4.25 0 1 1 6.697 5.111L11.5 19.51l-7.256-7.257zm15.218.71A5.25 5.25 0 1 0 11.5 6.167a5.25 5.25 0 1 0-7.962 6.795l7.962 7.961l7.962-7.96z' fill='currentColor'></path>
+													<path
+														d='M4.244 12.252a4.25 4.25 0 1 1 6.697-5.111h1.118a4.25 4.25 0 1 1 6.697 5.111L11.5 19.51l-7.256-7.257zm15.218.71A5.25 5.25 0 1 0 11.5 6.167a5.25 5.25 0 1 0-7.962 6.795l7.962 7.961l7.962-7.96z'
+														fill='currentColor'
+													></path>
 												</svg>
 											</span>
 											<p className='card-text mb-1 text-truncate'>techno spark 4</p>
@@ -212,7 +239,10 @@ class Item extends Component {
 										<div className='card-footer bg-transparent'>
 											<span className='heart text-primary shadow-sm'>
 												<svg xmlns='http://www.w3.org/2000/svg' focusable='false' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'>
-													<path d='M4.244 12.252a4.25 4.25 0 1 1 6.697-5.111h1.118a4.25 4.25 0 1 1 6.697 5.111L11.5 19.51l-7.256-7.257zm15.218.71A5.25 5.25 0 1 0 11.5 6.167a5.25 5.25 0 1 0-7.962 6.795l7.962 7.961l7.962-7.96z' fill='currentColor'></path>
+													<path
+														d='M4.244 12.252a4.25 4.25 0 1 1 6.697-5.111h1.118a4.25 4.25 0 1 1 6.697 5.111L11.5 19.51l-7.256-7.257zm15.218.71A5.25 5.25 0 1 0 11.5 6.167a5.25 5.25 0 1 0-7.962 6.795l7.962 7.961l7.962-7.96z'
+														fill='currentColor'
+													></path>
 												</svg>
 											</span>
 											<p className='card-text mb-1 text-truncate'>techno spark 4</p>
@@ -228,7 +258,10 @@ class Item extends Component {
 										<div className='card-footer bg-transparent'>
 											<span className='heart text-primary shadow-sm'>
 												<svg xmlns='http://www.w3.org/2000/svg' focusable='false' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'>
-													<path d='M4.244 12.252a4.25 4.25 0 1 1 6.697-5.111h1.118a4.25 4.25 0 1 1 6.697 5.111L11.5 19.51l-7.256-7.257zm15.218.71A5.25 5.25 0 1 0 11.5 6.167a5.25 5.25 0 1 0-7.962 6.795l7.962 7.961l7.962-7.96z' fill='currentColor'></path>
+													<path
+														d='M4.244 12.252a4.25 4.25 0 1 1 6.697-5.111h1.118a4.25 4.25 0 1 1 6.697 5.111L11.5 19.51l-7.256-7.257zm15.218.71A5.25 5.25 0 1 0 11.5 6.167a5.25 5.25 0 1 0-7.962 6.795l7.962 7.961l7.962-7.96z'
+														fill='currentColor'
+													></path>
 												</svg>
 											</span>
 											<p className='card-text mb-1 text-truncate'>techno spark 4</p>
@@ -244,7 +277,10 @@ class Item extends Component {
 										<div className='card-footer bg-transparent'>
 											<span className='heart text-primary shadow-sm'>
 												<svg xmlns='http://www.w3.org/2000/svg' focusable='false' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'>
-													<path d='M4.244 12.252a4.25 4.25 0 1 1 6.697-5.111h1.118a4.25 4.25 0 1 1 6.697 5.111L11.5 19.51l-7.256-7.257zm15.218.71A5.25 5.25 0 1 0 11.5 6.167a5.25 5.25 0 1 0-7.962 6.795l7.962 7.961l7.962-7.96z' fill='currentColor'></path>
+													<path
+														d='M4.244 12.252a4.25 4.25 0 1 1 6.697-5.111h1.118a4.25 4.25 0 1 1 6.697 5.111L11.5 19.51l-7.256-7.257zm15.218.71A5.25 5.25 0 1 0 11.5 6.167a5.25 5.25 0 1 0-7.962 6.795l7.962 7.961l7.962-7.96z'
+														fill='currentColor'
+													></path>
 												</svg>
 											</span>
 											<p className='card-text mb-1 text-truncate'>techno spark 4</p>
@@ -260,7 +296,10 @@ class Item extends Component {
 										<div className='card-footer bg-transparent'>
 											<span className='heart text-primary shadow-sm'>
 												<svg xmlns='http://www.w3.org/2000/svg' focusable='false' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'>
-													<path d='M4.244 12.252a4.25 4.25 0 1 1 6.697-5.111h1.118a4.25 4.25 0 1 1 6.697 5.111L11.5 19.51l-7.256-7.257zm15.218.71A5.25 5.25 0 1 0 11.5 6.167a5.25 5.25 0 1 0-7.962 6.795l7.962 7.961l7.962-7.96z' fill='currentColor'></path>
+													<path
+														d='M4.244 12.252a4.25 4.25 0 1 1 6.697-5.111h1.118a4.25 4.25 0 1 1 6.697 5.111L11.5 19.51l-7.256-7.257zm15.218.71A5.25 5.25 0 1 0 11.5 6.167a5.25 5.25 0 1 0-7.962 6.795l7.962 7.961l7.962-7.96z'
+														fill='currentColor'
+													></path>
 												</svg>
 											</span>
 											<p className='card-text mb-1 text-truncate'>techno spark 4</p>
@@ -273,6 +312,7 @@ class Item extends Component {
 						</div>
 					</main>
 				</div>
+				<Footer />
 			</>
 		);
 	}
