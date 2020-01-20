@@ -13,6 +13,7 @@ import Faq from './Pages/faq.page';
 import VerifyUser from './Pages/verify.user.page';
 import Dashboard from './Pages/admin/dashboard.page';
 import CreateProduct from './Pages/admin/create.product.page';
+import Category from './Pages/admin/categories.page';
 
 export class App extends React.Component {
 	render() {
@@ -36,6 +37,7 @@ export class App extends React.Component {
 					*/}
 					<Route exact path='/admin/dashboard' component={Dashboard} />
 					<Route exact path='/admin/products/create' component={CreateProduct} />
+					<Route exact path='/admin/category' component={Category} />
 					<Route path='*' component={NotFound} />
 				</Switch>
 				<Footer />

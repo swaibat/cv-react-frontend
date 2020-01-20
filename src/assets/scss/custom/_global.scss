@@ -11,17 +11,9 @@ a:hover {
 	text-decoration: none;
 }
 
-body * {
-	font-weight: 100 !important;
-}
-
 body {
 	height: 100vh;
 	background: rgb(238, 242, 244);
-	font-weight: 100;
-}
-
-body {
 	font-weight: 100;
 }
 
@@ -84,17 +76,6 @@ body {
 	border-radius: 100%;
 	line-height: 1.4;
 }
-
-.card-footer {
-	padding: 0.25rem 1.25rem;
-	background-color: white;
-	border-top: none;
-	white-space: nowrap;
-	text-transform: uppercase;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
 
 .custom-input {
 	border-radius: 0px;

@@ -70,3 +70,41 @@ export const createItem = (state = initialState, action) => {
 			return state;
 	}
 };
+export const createCategory = (state = initialState, action) => {
+	switch (action.type) {
+		case constant.UPDATE_CATEGORY_PENDING:
+			return { ...state, pending: true };
+		case constant.UPDATE_CATEGORY_SUCCESS:
+			return { ...state, payload: action.payload, pending: false };
+		case constant.UPDATE_CATEGORY_ERROR:
+			return { ...state, error: action.error, pending: false };
+		default:
+			return state;
+	}
+};
+
+export const updateCategory = (state = initialState, action) => {
+	switch (action.type) {
+		case constant.UPDATE_CATEGORY_PENDING:
+			return { ...state, pending: true };
+		case constant.UPDATE_CATEGORY_SUCCESS:
+			return { ...state, payload: action.payload, pending: false };
+		case constant.UPDATE_CATEGORY_ERROR:
+			return { ...state, error: action.error, pending: false };
+		default:
+			return state;
+	}
+};
+
+export const deleteCategory = (state = initialState, action) => {
+	switch (action.type) {
+		case constant.DELETE_CATEGORY_PENDING:
+			return { ...state, pending: true };
+		case constant.DELETE_CATEGORY_SUCCESS:
+			return { ...state, payload: action.payload, pending: false };
+		case constant.DELETE_CATEGORY_ERROR:
+			return { ...state, error: action.error, pending: false };
+		default:
+			return state;
+	}
+};

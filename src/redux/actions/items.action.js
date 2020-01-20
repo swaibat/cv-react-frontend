@@ -45,3 +45,30 @@ export const category = async () => {
 		return { type: constant.CATEGORY_ERROR, error: error.response.data };
 	}
 };
+
+export const createCategory = async (data, token) => {
+	try {
+		const result = await Api.createCategory(data, token);
+		return { type: constant.CREATE_CATEGORY_SUCCESS, payload: result.data };
+	} catch (error) {
+		return { type: constant.CREATE_CATEGORY_ERROR, error: error.response.data };
+	}
+};
+
+export const updateCategory = async (data, token, id) => {
+	try {
+		const result = await Api.updateCategory(data, token, id);
+		return { type: constant.UPDATE_CATEGORY_SUCCESS, payload: result.data };
+	} catch (error) {
+		return { type: constant.UPDATE_CATEGORY_ERROR, error: error.response.data };
+	}
+};
+
+export const deleteCategory = async (token, id) => {
+	try {
+		const result = await Api.deleteCategory(token, id);
+		return { type: constant.DELETE_CATEGORY_SUCCESS, payload: result.data };
+	} catch (error) {
+		return { type: constant.DELETE_CATEGORY_ERROR, error: error.response.data };
+	}
+};
