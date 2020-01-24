@@ -10,33 +10,38 @@ import { brands, models } from '../../../helper/cars.helper';
 import { getc, years } from '../../../helper/category.helper';
 import Sidenav from './components/sidenav';
 import { token } from '../../../helper';
-import Upload from './components/upload';
+import Dropzone from 'react-dropzone-uploader';
 
 class CreateItem extends Component {
 	componentDidMount() {
 		this.props.init();
 		this.props.getCat();
 	}
+	handleChangeStatus = (d, v, allFiles) => {
+		this.setState({ images: allFiles });
+	};
 	handleInput = e => {
 		const target = e.target;
-		const value = target.name === 'images' ? e.target.files : target.value;
+		const value = target.type === 'checkbox' ? target.checked : target.value;
+		console.log(value);
 		const name = target.name;
 		this.setState({ [name]: value });
 	};
 	handleSubmit = e => {
-		e.preventDefault();
 		const formData = new FormData();
+		e.preventDefault();
 		this.props.init();
 		const { images } = this.state;
-		for (let i = 0; i < images.length; i++) {
-			formData.append('images', images[i]);
+		for (const key in this.state) {
+			if (this.state.hasOwnProperty(key) && key !== 'images') {
+				formData.append(key, this.state[key]);
+			}
 		}
-		Object.assign(this.state, { images: formData });
-		this.props.createItem(this.state, token);
+		images.map(e => formData.append('images', e.file));
+		this.props.createItem(formData, token);
 	};
 	render() {
-		const { payload, categories } = this.props;
-
+		const { categories } = this.props;
 		return (
 			<>
 				<Sidenav />
@@ -140,7 +145,7 @@ class CreateItem extends Component {
 								<div className='form-group'>
 									<label for='inputZip'>upload images</label>
 									<div className='input-group'>
-										<Upload />
+										<Dropzone onChangeStatus={this.handleChangeStatus} accept='image/*' />
 									</div>
 								</div>
 								<div className='form-row'>

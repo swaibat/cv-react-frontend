@@ -3,6 +3,8 @@ import Card from '../Components/item.card';
 import { items } from '../../redux/actions/items.action';
 import constants from '../../redux/constants/index';
 import { connect } from 'react-redux';
+import Header from './../Components/Header';
+import Footer from './../Components/Footer';
 
 class Items extends Component {
 	componentDidMount() {
@@ -13,16 +15,20 @@ class Items extends Component {
 	render() {
 		const { payload } = this.props;
 		return (
-			<main className='d-flex flex-column align-items-center'>
-				<div className='container-fluid bg-secondary slider'>
-					<h1>Main Content</h1>
-				</div>
-				{/* two */}
-				<div className='product-title w-100'>
-					<h4>Featured</h4>
-				</div>
-				<div className='sponsor-container d-flex w-100 row justify-content-center align-items-center'>{payload && <Card data={payload.data} />}</div>
-			</main>
+			<>
+				<Header />
+				<main className='d-flex flex-column align-items-center'>
+					<div className='container-fluid bg-secondary slider'>
+						<h1>Main Content</h1>
+					</div>
+					{/* two */}
+					<div className='product-title w-100'>
+						<h4>Featured</h4>
+					</div>
+					<div className='sponsor-container d-flex w-100 row justify-content-center align-items-center'>{payload && <Card data={payload.data} />}</div>
+				</main>
+				<Footer />
+			</>
 		);
 	}
 }

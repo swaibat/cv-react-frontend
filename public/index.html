@@ -3,6 +3,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" id='favicon' href="favicon.svg">
     <title>cv</title>
     <style>
         [aria-expanded="true"].active {
@@ -23,19 +24,6 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcAP0GrIyhCe_kJfKY1Cb4OYOeP5vmhsQ&callback=initMap">
 </script>
 <script>
-    $(document).ready(function () {
-        $(window).resize(function () {
-            if ($(window).width() >= 980) {
-                $(".navbar .dropdown-toggle").hover(function () {
-                    $(this).parent().toggleClass("show");
-                    $(this).parent().find(".dropdown-menu").toggleClass("show");
-                });
-                $(".navbar .dropdown-menu").mouseleave(function () {
-                    $(this).removeClass("show");
-                });
-            }
-        });
-    });
     var latLang = new google.maps.LatLng(51.4957751, 6.532127700000046);
 
     function initMap() {

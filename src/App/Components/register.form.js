@@ -21,7 +21,15 @@ class Registerform extends Component {
 										<FontAwesomeIcon className='m-auto' icon={faLock} />
 										Verify
 									</span>
-									<a className='nav-link d-flex flex-column mt-3 active' id='v-pills-profile-tab' data-toggle='pill' href='#v-pills-profile' role='tab' aria-controls='v-pills-profile' aria-selected='true'>
+									<a
+										className='nav-link d-flex flex-column mt-3 active'
+										id='v-pills-profile-tab'
+										data-toggle='pill'
+										href='#v-pills-profile'
+										role='tab'
+										aria-controls='v-pills-profile'
+										aria-selected='true'
+									>
 										<FontAwesomeIcon className='m-auto' icon={faUser} />
 										Profile
 									</a>

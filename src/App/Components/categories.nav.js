@@ -22,13 +22,29 @@ class Category extends Component {
 			<div className={page ? 'd-none' : 'nav-scroller bg-white'}>
 				<nav className='nav nav-underline text-capitalize justify-content-center cv-category-nav' id='navAccordion'>
 					<li className='nav-item'>
-						<a href='/' className={`nav-link nav-link-collapse cv-nav${pathname === '/' ? ' active' : ''}`} id='hasSubItems' data-toggle='collapse' data-target='#Home' aria-controls='Home' aria-expanded='true'>
+						<a
+							href='/'
+							className={`nav-link nav-link-collapse cv-nav${pathname === '/' ? ' active' : ''}`}
+							id='hasSubItems'
+							data-toggle='collapse'
+							data-target='#Home'
+							aria-controls='Home'
+							aria-expanded='true'
+						>
 							Home
 						</a>
 					</li>
 					<ul className='nav-second-level z-index-1050  p-nav collapse position-absolute show' id='Home' data-parent='#navAccordion'></ul>
 					<li className='nav-item'>
-						<a className={`nav-link nav-link-collapse cv-nav${href.match(/category/) ? ' active' : ''}`} href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItemsCategories' aria-controls='collapseSubItemsCategories' aria-expanded='false'>
+						<a
+							className={`nav-link nav-link-collapse cv-nav${href.match(/category/) ? ' active' : ''}`}
+							href='#'
+							id='hasSubItems'
+							data-toggle='collapse'
+							data-target='#collapseSubItemsCategories'
+							aria-controls='collapseSubItemsCategories'
+							aria-expanded='false'
+						>
 							categories
 						</a>
 						<ul className='nav-second-level z-index-1050 bg-light p-nav collapse position-absolute shadow-sm' id='collapseSubItemsCategories' data-parent='#navAccordion'>
@@ -39,7 +55,15 @@ class Category extends Component {
 											return (
 												<div className='col-md-3 cat-col border-left'>
 													<li className='nav-item text-secondary'>
-														<a className='nav-link nav-link-collapse text-secondary py-1' href='#' id='hasSubItems' data-toggle='collapse' data-target={`#Cat${index}`} aria-controls={`Cat${index}`} aria-expanded='false'>
+														<a
+															className='nav-link nav-link-collapse text-secondary py-1'
+															href='#'
+															id='hasSubItems'
+															data-toggle='collapse'
+															data-target={`#Cat${index}`}
+															aria-controls={`Cat${index}`}
+															aria-expanded='false'
+														>
 															{e.name}
 														</a>
 														<ul className='nav-second-level z-index-1050 collapse position-absolute' id={`Cat${index}`} data-parent='#categoriesAccordion'>
@@ -62,7 +86,16 @@ class Category extends Component {
 						</ul>
 					</li>
 					<li className='nav-item'>
-						<a className='nav-link nav-link-collapse nav-link-show cv-nav' onClick={e => e.target.classList.toggle('active')} href='/category/Agriculture &amp; Foods' id='hasSubItems' data-toggle='collapse' data-target='#category7' aria-controls='category7' aria-expanded='false'>
+						<a
+							className='nav-link nav-link-collapse nav-link-show cv-nav'
+							onClick={e => e.target.classList.toggle('active')}
+							href='/category/Agriculture &amp; Foods'
+							id='hasSubItems'
+							data-toggle='collapse'
+							data-target='#category7'
+							aria-controls='category7'
+							aria-expanded='false'
+						>
 							Shops
 						</a>
 						<ul className='nav-second-level z-index-1050  p-nav collapse bg-white position-absolute text-left' id='category7' data-parent='#categoryNav'></ul>
@@ -95,7 +128,15 @@ class Category extends Component {
 						</Link>
 					</li>
 					<li className='nav-item'>
-						<a className='nav-link nav-link-collapse cv-nav' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItemsSearch' aria-controls='collapseSubItemsSearch' aria-expanded='false'>
+						<a
+							className='nav-link nav-link-collapse cv-nav'
+							href='#'
+							id='hasSubItems'
+							data-toggle='collapse'
+							data-target='#collapseSubItemsSearch'
+							aria-controls='collapseSubItemsSearch'
+							aria-expanded='false'
+						>
 							<FontAwesomeIcon className='mr-1' icon={faSearch} />
 						</a>
 						<ul className='nav-second-level z-index-1050 p-nav bg-light collapse position-absolute shadow' id='collapseSubItemsSearch' data-parent='#navAccordion'>
