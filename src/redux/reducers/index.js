@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
 import LoginReducer from './login.reducer';
 import RegisterReducer, { verifyUser } from './register.reducer';
-import { Items, CatItems, categories, singleItem, createItem } from './items.reducer';
-import { GetFaq } from './faq.reducer';
+import { Items, getProducts, CatItems, categories, singleItem, createItem, createCategory, updateCategory, deleteCategory } from './items.reducer';
+import Settings from './settings.reducer';
+import { GetFaq, createFaq, deleteFaq, updateFaq } from './faq.reducer';
 import Logout from './logout.reducer';
+import products from './pagination.reducer';
 
 const allReducers = combineReducers({
 	LoginReducer,
@@ -16,6 +18,15 @@ const allReducers = combineReducers({
 	verifyUser,
 	Logout,
 	createItem,
+	createCategory,
+	updateCategory,
+	deleteCategory,
+	getProducts,
+	products,
+	Settings,
+	createFaq,
+	deleteFaq,
+	updateFaq,
 });
 
 export default allReducers;

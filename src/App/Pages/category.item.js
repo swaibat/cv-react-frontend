@@ -6,6 +6,8 @@ import Filter from '../Components/filter.nav';
 import constants from '../../redux/constants/index';
 import { itemsByCategory } from '../../redux/actions/items.action';
 import Bread from '../Components/breadcrumb';
+import Header from './../Components/Header';
+import Footer from './../Components/Footer';
 
 class CategoryItem extends Component {
 	componentDidMount() {
@@ -22,6 +24,7 @@ class CategoryItem extends Component {
 		const { payload } = this.props;
 		return (
 			<>
+				<Header />
 				<main className='row'>
 					<div className='container min-vh-85'>
 						<Bread data={payload && this.props.match.params} />
@@ -31,6 +34,7 @@ class CategoryItem extends Component {
 						</div>
 					</div>
 				</main>
+				<Footer />
 			</>
 		);
 	}

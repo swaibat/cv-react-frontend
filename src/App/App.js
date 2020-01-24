@@ -3,22 +3,24 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Landing from './Pages';
 import Login from './Pages/login';
 import Register from './Pages/register.page';
-// import Header from './Components/Header';
-import Footer from './Components/Footer';
 import Items from './Pages/items.page';
 import CategoryItems from './Pages/category.item';
 import singleItem from './Pages/single.item';
 import NotFound from './Pages/404.page';
 import Faq from './Pages/faq.page';
+import FaqList from './Pages/admin/faqs.list.page';
 import VerifyUser from './Pages/verify.user.page';
 import Dashboard from './Pages/admin/dashboard.page';
 import CreateProduct from './Pages/admin/create.product.page';
+import Category from './Pages/admin/categories.page';
+import AdminProducts from './Pages/admin/products.list.page';
+import countries from './Pages/admin/main';
+import settings from './Pages/admin/Settings.page';
 
 export class App extends React.Component {
 	render() {
 		return (
 			<Router>
-				{/* <Header /> */}
 				<Switch>
 					<Route exact path='/' component={Landing} />
 					<Route exact path='/login' component={Login} />
@@ -34,11 +36,15 @@ export class App extends React.Component {
 					admin routes
 
 					*/}
-					<Route exact path='/admin/dashboard' component={Dashboard} />
-					<Route exact path='/admin/products/create' component={CreateProduct} />
+					<Route exact path='/user/dashboard' component={Dashboard} />
+					<Route exact path='/user/products/create' component={CreateProduct} />
+					<Route exact path='/user/category' component={Category} />
+					<Route exact path='/user/products' component={AdminProducts} />
+					<Route exact path='/user/countries' component={countries} />
+					<Route exact path='/user/settings' component={settings} />
+					<Route exact path='/user/faq' component={FaqList} />
 					<Route path='*' component={NotFound} />
 				</Switch>
-				<Footer />
 			</Router>
 		);
 	}

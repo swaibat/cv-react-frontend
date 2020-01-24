@@ -9,7 +9,15 @@ class Vehicle extends Component {
 		return (
 			<ul className='navbar-nav mr-auto sidenav pl-0' id='navAccordion'>
 				<li className='nav-item'>
-					<a className='nav-link nav-link-collapse bg-primary text-white d-flex justify-content-between px-2' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItems1' aria-controls='collapseSubItems1' aria-expanded='false'>
+					<a
+						className='nav-link nav-link-collapse bg-primary text-white d-flex justify-content-between px-2'
+						href='#'
+						id='hasSubItems'
+						data-toggle='collapse'
+						data-target='#collapseSubItems1'
+						aria-controls='collapseSubItems1'
+						aria-expanded='false'
+					>
 						Car Make
 						<span>
 							<Icon icon={Arrow} />
@@ -20,7 +28,15 @@ class Vehicle extends Component {
 					</ul>
 				</li>
 				<li className='nav-item'>
-					<a className='nav-link nav-link-collapse border-bottom text-secondary text-white d-flex justify-content-between px-2' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItems2' aria-controls='collapseSubItems2' aria-expanded='false'>
+					<a
+						className='nav-link nav-link-collapse border-bottom text-secondary text-white d-flex justify-content-between px-2'
+						href='#'
+						id='hasSubItems'
+						data-toggle='collapse'
+						data-target='#collapseSubItems2'
+						aria-controls='collapseSubItems2'
+						aria-expanded='false'
+					>
 						Body type
 						<span>
 							<Icon icon={Arrow} />
@@ -55,7 +71,15 @@ class Vehicle extends Component {
 					</ul>
 				</li>
 				<li className='nav-item'>
-					<a className='nav-link nav-link-collapse border-bottom text-secondary text-white d-flex justify-content-between px-2' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItems3' aria-controls='collapseSubItems3' aria-expanded='false'>
+					<a
+						className='nav-link nav-link-collapse border-bottom text-secondary text-white d-flex justify-content-between px-2'
+						href='#'
+						id='hasSubItems'
+						data-toggle='collapse'
+						data-target='#collapseSubItems3'
+						aria-controls='collapseSubItems3'
+						aria-expanded='false'
+					>
 						Shop By Price
 						<span>
 							<Icon icon={Arrow} />
@@ -95,7 +119,15 @@ class Vehicle extends Component {
 					</ul>
 				</li>
 				<li className='nav-item'>
-					<a className='nav-link nav-link-collapse border-bottom text-secondary text-white d-flex justify-content-between px-2' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItems4' aria-controls='collapseSubItems4' aria-expanded='false'>
+					<a
+						className='nav-link nav-link-collapse border-bottom text-secondary text-white d-flex justify-content-between px-2'
+						href='#'
+						id='hasSubItems'
+						data-toggle='collapse'
+						data-target='#collapseSubItems4'
+						aria-controls='collapseSubItems4'
+						aria-expanded='false'
+					>
 						Engine Size
 						<span>
 							<Icon icon={Arrow} />
@@ -135,7 +167,15 @@ class Vehicle extends Component {
 					</ul>
 				</li>
 				<li className='nav-item'>
-					<a className='nav-link nav-link-collapse border-bottom text-secondary text-white d-flex justify-content-between px-2' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItems5' aria-controls='collapseSubItems5' aria-expanded='false'>
+					<a
+						className='nav-link nav-link-collapse border-bottom text-secondary text-white d-flex justify-content-between px-2'
+						href='#'
+						id='hasSubItems'
+						data-toggle='collapse'
+						data-target='#collapseSubItems5'
+						aria-controls='collapseSubItems5'
+						aria-expanded='false'
+					>
 						Milage
 						<span>
 							<Icon icon={Arrow} />
@@ -175,7 +215,15 @@ class Vehicle extends Component {
 					</ul>
 				</li>
 				<li className='nav-item'>
-					<a className='nav-link nav-link-collapse border-bottom text-secondary text-white d-flex justify-content-between px-2' href='#' id='hasSubItems' data-toggle='collapse' data-target='#collapseSubItems6' aria-controls='collapseSubItems6' aria-expanded='false'>
+					<a
+						className='nav-link nav-link-collapse border-bottom text-secondary text-white d-flex justify-content-between px-2'
+						href='#'
+						id='hasSubItems'
+						data-toggle='collapse'
+						data-target='#collapseSubItems6'
+						aria-controls='collapseSubItems6'
+						aria-expanded='false'
+					>
 						Year of Manfacture
 						<span>
 							<Icon icon={Arrow} />
