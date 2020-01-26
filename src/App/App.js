@@ -16,6 +16,7 @@ import Category from './Pages/admin/categories.page';
 import AdminProducts from './Pages/admin/products.list.page';
 import countries from './Pages/admin/main';
 import settings from './Pages/admin/Settings.page';
+import Pages from './Pages/admin/pages.page';
 
 export class App extends React.Component {
 	render() {
@@ -43,6 +44,7 @@ export class App extends React.Component {
 					<Route exact path='/user/countries' component={countries} />
 					<Route exact path='/user/settings' component={settings} />
 					<Route exact path='/user/faq' component={FaqList} />
+					<Route exact path='/user/pages' component={Pages} />
 					<Route path='*' component={NotFound} />
 				</Switch>
 			</Router>

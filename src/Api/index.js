@@ -69,6 +69,48 @@ const apis = {
 			headers: { Authorization: token },
 		});
 	},
+	/**
+	 *
+	 * @param {*} token
+	 */
+	getPages(token) {
+		return axios.get(`${BASE_URL}/pages`, {
+			headers: { Authorization: token },
+		});
+	},
+	/**
+	 *
+	 * @param {*} data
+	 * @param {*} token
+	 */
+	createPage(data, token) {
+		return axios.post(`${BASE_URL}/pages`, data, {
+			headers: { Authorization: token },
+		});
+	},
+	/**
+	 *
+	 * @param {*} id
+	 * @param {*} token
+	 */
+
+	deletePage(id, token) {
+		return axios.delete(`${BASE_URL}/pages/${id}`, {
+			headers: { Authorization: token },
+		});
+	},
+	/**
+	 *
+	 * @param {*} id
+	 * @param {*} data
+	 * @param {*} token
+	 */
+
+	updatePage(id, data, token) {
+		return axios.patch(`${BASE_URL}/pages/${id}`, data, {
+			headers: { Authorization: token },
+		});
+	},
 };
 
 export default apis;
