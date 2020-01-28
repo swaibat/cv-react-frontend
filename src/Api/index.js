@@ -111,6 +111,51 @@ const apis = {
 			headers: { Authorization: token },
 		});
 	},
+
+	/**
+	 * should get user profile details with [user-ratings,user-products]
+	 * @param {*} token 
+	 * @param {*} id 
+	 */
+
+	getUser(token) {
+		return axios.get(`${BASE_URL}/users/profile`, {
+			headers: { Authorization: token },
+		});
+	},
+	/**
+	 *
+	 * @param {*} data
+	 * @param {*} token
+	 */
+	createAbout(data, token) {
+		return axios.post(`${BASE_URL}/about`, data, {
+			headers: { Authorization: token },
+		});
+	},
+	/**
+	 *
+	 * @param {*} id
+	 * @param {*} token
+	 */
+
+	deleteAbout(id, token) {
+		return axios.delete(`${BASE_URL}/about/${id}`, {
+			headers: { Authorization: token },
+		});
+	},
+	/**
+	 *
+	 * @param {*} id
+	 * @param {*} data
+	 * @param {*} token
+	 */
+
+	updateAbout(id, data, token) {
+		return axios.patch(`${BASE_URL}/about/${id}`, data, {
+			headers: { Authorization: token },
+		});
+	},
 };
 
 export default apis;

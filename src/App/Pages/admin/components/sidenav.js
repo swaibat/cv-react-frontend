@@ -80,7 +80,7 @@ function Nav() {
 					</Link>
 					<ul className='nav-second-level collapse' id='apps' data-parent='#navAccordion'>
 						<li className='nav-item'>
-							<Link className='nav-link text-secondary' to='/user/settings'>
+							<Link className='nav-link text-secondary' to='/user/chat'>
 								<span className='nav-link text-secondary-text'>chat</span>
 							</Link>
 						</li>

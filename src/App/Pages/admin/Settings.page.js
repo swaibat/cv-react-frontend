@@ -8,6 +8,7 @@ import Dropzone from 'react-dropzone-uploader';
 
 class Dashboard extends Component {
 	render() {
+		console.log('this.props', this.state);
 		return (
 			<>
 				<Sidenav />
@@ -138,7 +139,7 @@ class Dashboard extends Component {
 													<input type='text' class='form-control' id='inputZip' />
 												</div>
 											</div>
-											<button type='submit' class='btn btn-primary'>
+											<button type='submit' class='btn btn-primary btn-sm'>
 												Sign in
 											</button>
 										</form>
@@ -153,8 +154,8 @@ class Dashboard extends Component {
 													<div className='card-footer'>
 														<p>Default theme</p>
 														<div className='d-flex'>
-															<button className='btn btn-secondary'>preview</button>
-															<button className='btn btn-success ml-auto'>Activated</button>
+															<button className='btn btn-secondary btn-sm'>preview</button>
+															<button className='btn btn-success btn-sm ml-auto'>Activated</button>
 														</div>
 													</div>
 												</div>
@@ -167,8 +168,8 @@ class Dashboard extends Component {
 													<div className='card-footer'>
 														<p>Default theme</p>
 														<div className='d-flex'>
-															<button className='btn btn-secondary'>preview</button>
-															<button className='btn btn-primary ml-auto'>Activated</button>
+															<button className='btn btn-secondary btn-sm'>preview</button>
+															<button className='btn btn-primary btn-sm ml-auto'>Activated</button>
 														</div>
 													</div>
 												</div>
@@ -181,8 +182,8 @@ class Dashboard extends Component {
 													<div className='card-footer'>
 														<p>Default theme</p>
 														<div className='d-flex'>
-															<button className='btn btn-secondary'>preview</button>
-															<button className='btn btn-primary ml-auto'>Activated</button>
+															<button className='btn btn-secondary btn-sm'>preview</button>
+															<button className='btn btn-primary btn-sm ml-auto'>Activated</button>
 														</div>
 													</div>
 												</div>
@@ -195,8 +196,8 @@ class Dashboard extends Component {
 													<div className='card-footer'>
 														<p>Default theme</p>
 														<div className='d-flex'>
-															<button className='btn btn-secondary'>preview</button>
-															<button className='btn btn-primary ml-auto'>Activated</button>
+															<button className='btn btn-secondary btn-sm'>preview</button>
+															<button className='btn btn-primary btn-sm ml-auto'>Activated</button>
 														</div>
 													</div>
 												</div>
@@ -243,10 +244,10 @@ class Dashboard extends Component {
 												</div>
 											</div>
 											<div class='form-row'>
-												<button type='submit' class='btn btn-primary'>
+												<button type='submit' class='btn btn-primary btn-sm'>
 													send test Email
 												</button>
-												<button type='submit' class='btn btn-primary ml-auto'>
+												<button type='submit' class='btn btn-primary btn-sm ml-auto'>
 													Save
 												</button>
 											</div>
@@ -311,7 +312,7 @@ class Dashboard extends Component {
 												<button type='submit' class='btn btn-success'>
 													send test Email
 												</button>
-												<button type='submit' class='btn btn-primary ml-auto'>
+												<button type='submit' class='btn btn-primary btn-sm ml-auto'>
 													Save
 												</button>
 											</div>
