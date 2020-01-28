@@ -54,6 +54,108 @@ const apis = {
 			headers: { Authorization: token },
 		});
 	},
+	createFaq(data, token) {
+		return axios.post(`${BASE_URL}/faqs`, data, {
+			headers: { Authorization: token },
+		});
+	},
+	deleteFaq(id, token) {
+		return axios.delete(`${BASE_URL}/faqs/${id}`, {
+			headers: { Authorization: token },
+		});
+	},
+	updateFaq(id, data, token) {
+		return axios.patch(`${BASE_URL}/faqs/${id}`, data, {
+			headers: { Authorization: token },
+		});
+	},
+	/**
+	 *
+	 * @param {*} token
+	 */
+	getPages(token) {
+		return axios.get(`${BASE_URL}/pages`, {
+			headers: { Authorization: token },
+		});
+	},
+	/**
+	 *
+	 * @param {*} data
+	 * @param {*} token
+	 */
+	createPage(data, token) {
+		return axios.post(`${BASE_URL}/pages`, data, {
+			headers: { Authorization: token },
+		});
+	},
+	/**
+	 *
+	 * @param {*} id
+	 * @param {*} token
+	 */
+
+	deletePage(id, token) {
+		return axios.delete(`${BASE_URL}/pages/${id}`, {
+			headers: { Authorization: token },
+		});
+	},
+	/**
+	 *
+	 * @param {*} id
+	 * @param {*} data
+	 * @param {*} token
+	 */
+
+	updatePage(id, data, token) {
+		return axios.patch(`${BASE_URL}/pages/${id}`, data, {
+			headers: { Authorization: token },
+		});
+	},
+
+	/**
+	 * should get user profile details with [user-ratings,user-products]
+	 * @param {*} token 
+	 * @param {*} id 
+	 */
+
+	getUser(token) {
+		return axios.get(`${BASE_URL}/users/profile`, {
+			headers: { Authorization: token },
+		});
+	},
+	/**
+	 *
+	 * @param {*} data
+	 * @param {*} token
+	 */
+	createAbout(data, token) {
+		return axios.post(`${BASE_URL}/about`, data, {
+			headers: { Authorization: token },
+		});
+	},
+	/**
+	 *
+	 * @param {*} id
+	 * @param {*} token
+	 */
+
+	deleteAbout(id, token) {
+		return axios.delete(`${BASE_URL}/about/${id}`, {
+			headers: { Authorization: token },
+		});
+	},
+	/**
+	 *
+	 * @param {*} id
+	 * @param {*} data
+	 * @param {*} token
+	 */
+
+	updateAbout(id, data, token) {
+		return axios.patch(`${BASE_URL}/about/${id}`, data, {
+			headers: { Authorization: token },
+		});
+	},
 };
 
 export default apis;

@@ -1,60 +1,9 @@
-.scroll-table {
-    width: 100%;
-    height: auto;
-    font-size: 14px;
-    border: .5px solid #dee2e6;
-    margin-bottom: 1rem;
-}
-  
-  .table {
-    width: 100%;
-    height: 100%;
-    display: block;
-    table-layout: fixed;
-    border-collapse: collapse;
-    position: relative;
-    margin-bottom: 2rem;
+.card-specs {
+  font-size: .6rem;
 
-    
-    th {
-      background: #fff;
-    }
-    
-    tfoot td {
-      border-top: 1px solid black;
-    }
-    
-    th,
-    td {
-      text-align: left;
-      padding: 6px 10px;
-    }
-    
-    thead,
-    tfoot,
-    tbody > tr {
-      display: table;
-      width: 100%;
-      table-layout: fixed;
-    }
-    
-    thead {
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-    
-    tbody {
-      display: block;
-      transform: translate(0, 34px);
-      height: 100%;
-      overflow-y: auto;
-    }
-    
-    tfoot {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      transform: translate(0, 34px);
-    }
+  td,
+  th {
+    padding: .5rem;
+    vertical-align: center;
   }
+}

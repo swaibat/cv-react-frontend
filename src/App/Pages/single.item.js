@@ -41,72 +41,15 @@ class Item extends Component {
 					<Bread data={payload && this.props.match.params} />
 					<main className='row m-0'>
 						<div className='row w-100 m-0 bg-white rounded'>
-							<div className='col-md-7 px-2 m-0 pt-2'>
+							<div className='col-md-5 px-2 m-0 pt-2'>
 								<div className='rounded border'>
 									<ImageGallery className='rounded border mt-n1' items={images} />
 								</div>
-								<nav className='w-100 mt-3'>
-									<div className='nav nav-tabs' id='nav-tab' role='tablist'>
-										<a className='nav-item nav-link active' id='nav-home-tab' data-toggle='tab' href='#nav-home' role='tab' aria-controls='nav-home' aria-selected='true'>
-											Details
-										</a>
-										<a className='nav-item nav-link' id='nav-profile-tab' data-toggle='tab' href='#nav-profile' role='tab' aria-controls='nav-profile' aria-selected='false'>
-											Comapany Profile
-										</a>
-										<a className='nav-item nav-link' id='nav-contact-tab' data-toggle='tab' href='#nav-contact' role='tab' aria-controls='nav-contact' aria-selected='false'>
-											Contact
-										</a>
-									</div>
-								</nav>
-								<div className='tab-content' id='nav-tabContent'>
-									<div className='tab-pane fade' id='nav-home' role='tabpanel' aria-labelledby='nav-home-tab'>
-										<p className='pt-3'>{payload && payload.data.description}</p>
-										<div className='scroll-table rounded overflow-hidden text-sm'>
-											<table className='table table-alt'>
-												<thead>
-													<tr>
-														<th className='text-left text-bold'>Specifications</th>
-													</tr>
-												</thead>
-
-												<tbody>
-													{payload &&
-														Object.entries(payload.data.adons).map((e, i) => {
-															return (
-																<tr>
-																	<td className='text-left'>{e[0]}</td>
-																	<td className='text-left'>{e[1]}</td>
-																</tr>
-															);
-														})}
-												</tbody>
-											</table>
-										</div>
-									</div>
-									<div className='tab-pane fade active show' id='nav-profile' role='tabpanel' aria-labelledby='nav-profile-tab'>
-										<p>
-											Nulla est ullamco ut irure incididunt nulla Lorem Lorem minim irure officia enim reprehenderit. Magna duis labore cillum sint adipisicing exercitation ipsum. Nostrud ut anim non
-											exercitation velit laboris fugiat cupidatat. Commodo esse dolore fugiat sint velit ullamco magna consequat voluptate minim amet aliquip ipsum aute laboris nisi. Labore labore
-											veniam irure irure ipsum pariatur mollit magna in cupidatat dolore magna irure esse tempor ad mollit. Dolore commodo nulla minim amet ipsum officia consectetur amet ullamco
-											voluptate nisi commodo ea sit eu.
-										</p>
-									</div>
-									<div className='tab-pane fade' id='nav-contact' role='tabpanel' aria-labelledby='nav-contact-tab'>
-										<p>
-											Sint sit mollit irure quis est nostrud cillum consequat Lorem esse do quis dolor esse fugiat sunt do. Eu ex commodo veniam Lorem aliquip laborum occaecat qui Lorem esse mollit
-											dolore anim cupidatat. Deserunt officia id Lorem nostrud aute id commodo elit eiusmod enim irure amet eiusmod qui reprehenderit nostrud tempor. Fugiat ipsum excepteur in aliqua
-											non et quis aliquip ad irure in labore cillum elit enim. Consequat aliquip incididunt ipsum et minim laborum laborum laborum et cillum labore. Deserunt adipisicing cillum id
-											nulla minim nostrud labore eiusmod et amet. Laboris consequat consequat commodo non ut non aliquip reprehenderit nulla anim occaecat. Sunt sit ullamco reprehenderit irure ea
-											ullamco Lorem aute nostrud magna.
-										</p>
-									</div>
-								</div>
 							</div>
-
-							<div className='col-md-5 p-0 m-0 pr-2 text-secondary'>
-								<div className='w-100 border p-2 my-2 rounded'>
+							<div className='col-md-7 p-0 m-0 pr-2 text-secondary'>
+								<div className='w-100 border p-2 my-2 mb-3 rounded'>
 									<div className='d-flex'>
-										<h3 className='font-weight-bold'>$ 200000</h3>
+										<h3 className='font-weight-bold text-primary'>{payload && payload.data.name}</h3>
 										<div className='ml-auto'>
 											<button className='btn text-secondary'>
 												<FontAwesomeIcon icon={faShareSquare} />
@@ -116,7 +59,7 @@ class Item extends Component {
 											</button>
 										</div>
 									</div>
-									<p className=''>{payload && payload.data.name}</p>
+									<h5 className=''>{payload && payload.data.price}</h5>
 									<div className='d-flex justify-content-between'>
 										<p>kampala,Ug</p>
 										<small>
@@ -124,30 +67,34 @@ class Item extends Component {
 										</small>
 									</div>
 								</div>
-								<div className='card h-auto w-100'>
-									<ul className='list-group list-group-flush'>
-										<li className='list-group-item'>Vestibulum at eros</li>
-										<li className='list-group-item'>
-											<div id='map'></div>
-										</li>
-									</ul>
-									<div className='card-body'>
-										<a href='#' className='btn btn-block btn-primary'>
-											visit company website
-										</a>
+								<div className='row'>
+									<div className='col-7'>
+										<div className='card h-auto w-100 mb-3 overflow-hidden'>
+											<table class='table card-specs'>
+												<thead className='border-0 thead-light'>
+													<tr>
+														<th scope='col'>Name</th>
+														<th scope='col'>First</th>
+													</tr>
+												</thead>
+												<tbody>
+													{payload &&
+														Object.entries(payload.data.adons).map((e, i) => {
+															return (
+																<tr>
+																	<td className='text-left font-weight-bold text-capitalize'>{e[0]}</td>
+																	<td className='text-left'>{e[1]}</td>
+																</tr>
+															);
+														})}
+												</tbody>
+											</table>
+										</div>
 									</div>
-								</div>
-								<div className='card h-auto w-100 mt-2'>
-									<ul className='list-group list-group-flush'>
-										<li className='list-group-item'>Vestibulum at eros</li>
-										<li className='list-group-item'>
+									<div className='col-7'>
+										<div className='card h-auto w-100 overflow-hidden mb-3'>
 											<div id='map'></div>
-										</li>
-									</ul>
-									<div className='card-body'>
-										<a href='#' className='btn btn-block btn-primary'>
-											visit company website
-										</a>
+										</div>
 									</div>
 								</div>
 							</div>

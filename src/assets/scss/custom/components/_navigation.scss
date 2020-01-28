@@ -103,3 +103,17 @@
 button>* {
     pointer-events: none;
 }
+
+.nav-second-level{  
+    a:before {
+        content: "\26AC";
+        position: absolute;
+        left: 10px;
+        font-size: 1.6rem;
+        color: #889099;
+        margin-top: 5px;
+    }
+    .nav-link {
+        padding: 0.25rem;
+    }
+}

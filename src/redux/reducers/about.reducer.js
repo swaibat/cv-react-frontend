@@ -6,52 +6,52 @@ const initialState = {
 	error: null,
 };
 
-export const GetFaq = (state = initialState, action) => {
+export const GetAbout = (state = initialState, action) => {
 	switch (action.type) {
-		case constant.FAQ_PENDING:
+		case constant.ABOUT_PENDING:
 			return { ...state, pending: true };
-		case constant.FAQ_SUCCESS:
+		case constant.ABOUT_SUCCESS:
 			return { ...state, payload: action.payload, pending: false };
-		case constant.FAQ_ERROR:
+		case constant.ABOUT_ERROR:
 			return { ...state, error: action.error, pending: false };
 		default:
 			return state;
 	}
 };
 
-export const createFaq = (state = initialState, action) => {
+export const createAbout = (state = initialState, action) => {
 	switch (action.type) {
-		case constant.CREATE_FAQ_PENDING:
+		case constant.CREATE_ABOUT_PENDING:
 			return { ...state, pending: true };
-		case constant.CREATE_FAQ_SUCCESS:
+		case constant.CREATE_ABOUT_SUCCESS:
 			return { ...state, payload: action.payload, pending: false };
-		case constant.CREATE_FAQ_ERROR:
+		case constant.CREATE_ABOUT_ERROR:
 			return { ...state, error: action.error, pending: false };
 		default:
 			return state;
 	}
 };
 
-export const deleteFaq = (state = initialState, action) => {
+export const deleteAbout = (state = initialState, action) => {
 	switch (action.type) {
-		case constant.DELETE_FAQ_PENDING:
+		case constant.DELETE_ABOUT_PENDING:
 			return { ...state, pending: true };
-		case constant.DELETE_FAQ_SUCCESS:
+		case constant.DELETE_ABOUT_SUCCESS:
 			return { ...state, payload: action.payload, pending: false };
-		case constant.DELETE_FAQ_ERROR:
+		case constant.DELETE_ABOUT_ERROR:
 			return { ...state, error: action.error, pending: false };
 		default:
 			return state;
 	}
 };
 
-export const updateFaq = (state = initialState, action) => {
+export const updateAbout = (state = initialState, action) => {
 	switch (action.type) {
-		case constant.UPDATE_FAQ_PENDING:
+		case constant.UPDATE_ABOUT_PENDING:
 			return { ...state, pending: true };
-		case constant.UPDATE_FAQ_SUCCESS:
+		case constant.UPDATE_ABOUT_SUCCESS:
 			return { ...state, payload: action.payload, pending: false };
-		case constant.UPDATE_FAQ_ERROR:
+		case constant.UPDATE_ABOUT_ERROR:
 			return { ...state, error: action.error, pending: false };
 		default:
 			return state;

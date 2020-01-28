@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, { Component } from 'react';
 import Sidenav from './components/sidenav';
 import AdminNav from './components/admin.nav.component';
@@ -7,6 +8,7 @@ import Dropzone from 'react-dropzone-uploader';
 
 class Dashboard extends Component {
 	render() {
+		console.log('this.props', this.state);
 		return (
 			<>
 				<Sidenav />
@@ -137,79 +139,72 @@ class Dashboard extends Component {
 													<input type='text' class='form-control' id='inputZip' />
 												</div>
 											</div>
-											<button type='submit' class='btn btn-primary'>
+											<button type='submit' class='btn btn-primary btn-sm'>
 												Sign in
 											</button>
 										</form>
 									</div>
-									<div class='tab-pane bg-white rounded p-3 fade shadow-xs' id='v-pills-profile' role='tabpanel' aria-labelledby='v-pills-profile-tab'>
-										<form>
-											<div class='form-row'>
-												<div class='form-group col-md-12'>
-													<label for='inputEmail4'>Site Name</label>
-													<input type='email' class='form-control' id='inputEmail4' />
-												</div>
-												<div class='form-group col-md-12'>
-													<label for='inputPassword4'>Site Description</label>
-													<textarea class='form-control' placeholder='enter description'></textarea>
-												</div>
-											</div>
-											<div class='form-row'>
-												<div className='form-group col-md-4'>
-													<label for='inputZip'>Upload Favicon</label>
-													<div className='input-group'>
-														<Dropzone onChangeStatus={this.handleChangeStatus} accept='image/*' />
+									<div class='themes tab-pane bg-white rounded p-3 fade shadow-xs' id='v-pills-profile' role='tabpanel' aria-labelledby='v-pills-profile-tab'>
+										<div className='row'>
+											<div className='col-md-4 theme'>
+												<div class='card mb-3'>
+													<div class='theme dark shadow-sm'>
+														<img className='img-fluid img-thumbnail' src='http://drive.google.com/uc?export=view&id=1tos9QY2WerLKVqpqslIXyE4lf7PSRko1' />
 													</div>
-												</div>
-												<div className='form-group col-md-4'>
-													<label for='inputZip'>Upload Light Logo</label>
-													<div className='input-group'>
-														<Dropzone onChangeStatus={this.handleChangeStatus} accept='image/*' />
-													</div>
-												</div>
-												<div className='form-group col-md-4'>
-													<label for='inputZip'>Upload Dark Logo</label>
-													<div className='input-group'>
-														<Dropzone onChangeStatus={this.handleChangeStatus} accept='image/*' />
+													<div className='card-footer'>
+														<p>Default theme</p>
+														<div className='d-flex'>
+															<button className='btn btn-secondary btn-sm'>preview</button>
+															<button className='btn btn-success btn-sm ml-auto'>Activated</button>
+														</div>
 													</div>
 												</div>
 											</div>
-											<div class='form-row'>
-												<div class='form-group col-md-4'>
-													<label for='inputAddress2'>Company Address</label>
-													<input type='text' class='form-control' id='inputAddress2' placeholder='Apartment, studio, or floor' />
-												</div>
-												<div class='form-group col-md-4'>
-													<label for='inputAddress'>Contact Email</label>
-													<input type='text' class='form-control' id='inputAddress' placeholder='1234 Main St' />
-												</div>
-												<div class='form-group col-md-4'>
-													<label for='inputAddress'>Contact Phone</label>
-													<input type='text' class='form-control' id='inputAddress' placeholder='1234 Main St' />
-												</div>
-											</div>
-											<div class='form-row'>
-												<div class='form-group col-md-4'>
-													<label for='inputCity'>Facebook Page</label>
-													<input type='text' class='form-control' id='inputCity' />
-												</div>
-												<div class='form-group col-md-4'>
-													<label for='inputState'>Twitter Page</label>
-													<select id='inputState' class='form-control'>
-														<option selected>Choose...</option>
-														<option>...</option>
-													</select>
-												</div>
-												<div class='form-group col-md-4'>
-													<label for='inputZip'>Youtube Channel</label>
-													<input type='text' class='form-control' id='inputZip' />
+											<div className='col-md-4 theme'>
+												<div class='card mb-3'>
+													<div class='theme dark shadow-sm'>
+														<img className='img-fluid img-thumbnail' src='http://drive.google.com/uc?export=view&id=1tos9QY2WerLKVqpqslIXyE4lf7PSRko1' />
+													</div>
+													<div className='card-footer'>
+														<p>Default theme</p>
+														<div className='d-flex'>
+															<button className='btn btn-secondary btn-sm'>preview</button>
+															<button className='btn btn-primary btn-sm ml-auto'>Activated</button>
+														</div>
+													</div>
 												</div>
 											</div>
-											<button type='submit' class='btn btn-primary'>
-												Sign in
-											</button>
-										</form>
+											<div className='col-md-4 theme'>
+												<div class='card mb-3'>
+													<div class='theme dark shadow-sm'>
+														<img className='img-fluid img-thumbnail' src='http://drive.google.com/uc?export=view&id=1tos9QY2WerLKVqpqslIXyE4lf7PSRko1' />
+													</div>
+													<div className='card-footer'>
+														<p>Default theme</p>
+														<div className='d-flex'>
+															<button className='btn btn-secondary btn-sm'>preview</button>
+															<button className='btn btn-primary btn-sm ml-auto'>Activated</button>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div className='col-md-4 theme'>
+												<div class='card mb-3'>
+													<div class='theme dark shadow-sm'>
+														<img className='img-fluid img-thumbnail' src='http://drive.google.com/uc?export=view&id=1tos9QY2WerLKVqpqslIXyE4lf7PSRko1' />
+													</div>
+													<div className='card-footer'>
+														<p>Default theme</p>
+														<div className='d-flex'>
+															<button className='btn btn-secondary btn-sm'>preview</button>
+															<button className='btn btn-primary btn-sm ml-auto'>Activated</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
 									</div>
+
 									<div class='tab-pane bg-white rounded p-3 fade shadow-xs' id='v-pills-messages' role='tabpanel' aria-labelledby='v-pills-messages-tab'>
 										<form>
 											<div class='form-row'>
@@ -249,10 +244,10 @@ class Dashboard extends Component {
 												</div>
 											</div>
 											<div class='form-row'>
-												<button type='submit' class='btn btn-success'>
+												<button type='submit' class='btn btn-primary btn-sm'>
 													send test Email
 												</button>
-												<button type='submit' class='btn btn-primary ml-auto'>
+												<button type='submit' class='btn btn-primary btn-sm ml-auto'>
 													Save
 												</button>
 											</div>
@@ -317,7 +312,7 @@ class Dashboard extends Component {
 												<button type='submit' class='btn btn-success'>
 													send test Email
 												</button>
-												<button type='submit' class='btn btn-primary ml-auto'>
+												<button type='submit' class='btn btn-primary btn-sm ml-auto'>
 													Save
 												</button>
 											</div>
