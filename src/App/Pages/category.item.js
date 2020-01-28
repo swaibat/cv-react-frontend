@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Card from '../Components/item.card';
-import Filter from '../Components/filter.nav';
 import constants from '../../redux/constants/index';
 import { itemsByCategory } from '../../redux/actions/items.action';
 import Bread from '../Components/breadcrumb';
@@ -10,14 +9,25 @@ import Header from './../Components/Header';
 import Footer from './../Components/Footer';
 
 class CategoryItem extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			visible: 12,
+		};
+
+		this.loadMore = this.loadMore.bind(this);
+	}
+
+	loadMore() {
+		this.setState(prev => {
+			return { visible: prev.visible + 8 };
+		});
+	}
 	componentDidMount() {
 		const { name, sub } = this.props.match.params;
 		this.props.init();
 		this.props.items(sub || name);
-	}
-
-	toggleMenu() {
-		this.setState({ visible: !this.state.visible });
 	}
 
 	render() {
@@ -25,12 +35,14 @@ class CategoryItem extends Component {
 		return (
 			<>
 				<Header />
-				<main className='row'>
-					<div className='container min-vh-85'>
+				<main className='d-flex flex-column align-items-center'>
+					<div className='container p-1 p-md-2 min-vh-80 d-flex w-100 row justify-content-center align-items-center'>
 						<Bread data={payload && this.props.match.params} />
 						<div className='row'>
-							<Filter data={payload && this.props.match.params.name} />
-							<div className='row col-10 pr-0 pl-3'>{payload && <Card data={payload.data} />}</div>
+							<div className='row'>{payload && <Card data={payload.data} visible={this.state.visible} />}</div>
+							<button onClick={this.loadMore} className='btn bg-white text-primary btn-block text-center py-3 mt-3 mb-4'>
+								load more
+							</button>
 						</div>
 					</div>
 				</main>

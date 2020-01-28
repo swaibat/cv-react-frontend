@@ -90,22 +90,22 @@ class Categories extends Component {
 													</div>
 													<div className='card-body p-1'>
 														<span className='cv-title text-secondary'>sub categories</span>
-														<ul class='list-group list-group-flush mt-2 hr-9 overflow-y-scroll text-secondary'>
+														<ul className='list-group list-group-flush mt-2 hr-9 overflow-y-scroll text-secondary'>
 															{category.sub.map((sub, key) => {
 																return (
-																	<li key={key} class='list-group-item list-group-item-sm border-0 d-flex align-items-center category-list text-capitalize'>
-																		<span class='custom-control custom-checkbox '>
-																			<input type='checkbox' class='custom-control-input' id={sub.id} onClick={this.handleClick} />
-																			<label class='custom-control-label' for={sub.id}>
+																	<li key={key} className='list-group-item list-group-item-sm border-0 d-flex align-items-center category-list text-capitalize'>
+																		<span className='custom-control custom-checkbox '>
+																			<input type='checkbox' className='custom-control-input' id={sub.id} onClick={this.handleClick} />
+																			<label className='custom-control-label' for={sub.id}>
 																				{this.state && sub.id === parseInt(this.state.ParentId) ? this.state.name : sub.name}
 																			</label>
 																		</span>
-																		<div class='btn-group btn-group-sm ml-auto mr-1' role='group' aria-label='Basic example' onClick={this.handleClick}>
+																		<div className='btn-group btn-group-sm ml-auto mr-1' role='group' aria-label='Basic example' onClick={this.handleClick}>
 																			<button
 																				name={`${category.name}>${sub.name}`}
 																				id={sub.id}
 																				type='button'
-																				class='btn text-primary'
+																				className='btn text-primary'
 																				data-toggle='modal'
 																				data-target='#updateModel'
 																				onClick={this.handleClick}
@@ -116,7 +116,7 @@ class Categories extends Component {
 																				name={`${category.name}>${sub.name}`}
 																				id={sub.id}
 																				type='button'
-																				class='btn text-danger'
+																				className='btn text-danger'
 																				data-toggle='modal'
 																				data-target='.bd-example-modal-sm'
 																				onClick={this.handleClick}
@@ -128,10 +128,10 @@ class Categories extends Component {
 																);
 															})}
 															{this.state.name && category.id === parseInt(this.state.ParentId) ? (
-																<li class='list-group-item list-group-item-sm border-0'>
-																	<span class='custom-control custom-checkbox '>
-																		<input type='checkbox' class='custom-control-input' id={this.state.name} />
-																		<label class='custom-control-label' for={this.state.name}>
+																<li className='list-group-item list-group-item-sm border-0'>
+																	<span className='custom-control custom-checkbox '>
+																		<input type='checkbox' className='custom-control-input' id={this.state.name} />
+																		<label className='custom-control-label' for={this.state.name}>
 																			{this.state.name}
 																		</label>
 																	</span>
@@ -166,13 +166,13 @@ class Categories extends Component {
 													</div>
 													<div className='card-footer d-flex p-2 align-items-center shadow-sm-top bg-white text-secondary'>
 														<span className='card-text text-truncate'>{this.state && category.id === parseInt(this.state.ParentId) ? this.state.parentname : category.name}</span>
-														<div class='btn-group btn-group-sm ml-auto' role='group' aria-label='Basic example'>
-															<div class='btn-group btn-group-sm ml-auto mr-1' role='group' aria-label='Basic example' onClick={this.handleClick}>
+														<div className='btn-group btn-group-sm ml-auto' role='group' aria-label='Basic example'>
+															<div className='btn-group btn-group-sm ml-auto mr-1' role='group' aria-label='Basic example' onClick={this.handleClick}>
 																<button
 																	name={`${category.name}>${''}`}
 																	id={category.id}
 																	type='button'
-																	class='btn text-primary'
+																	className='btn text-primary'
 																	data-toggle='modal'
 																	data-target='#updateModel'
 																	onClick={this.handleClick}
@@ -183,7 +183,7 @@ class Categories extends Component {
 																	name={`${category.name}>${''}`}
 																	id={category.id}
 																	type='button'
-																	class='btn text-danger'
+																	className='btn text-danger'
 																	data-toggle='modal'
 																	data-target='.bd-example-modal-sm'
 																	onClick={this.handleClick}
@@ -201,19 +201,19 @@ class Categories extends Component {
 							{/* <Pagination /> */}
 						</div>
 					</div>
-					<div class='modal fade' id='exampleModalCenter' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>
-						<div class='modal-dialog modal-dialog-centered' role='document'>
-							<div class='modal-content'>
-								<div class='modal-header border-0'>
-									<h5 class='modal-title cv-title' id='exampleModalLongTitle'>
+					<div className='modal fade' id='exampleModalCenter' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>
+						<div className='modal-dialog modal-dialog-centered' role='document'>
+							<div className='modal-content'>
+								<div className='modal-header border-0'>
+									<h5 className='modal-title cv-title' id='exampleModalLongTitle'>
 										{this.state.parentname ? 'Add Sub category' : 'Add Category'}
 									</h5>
-									<button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+									<button type='button' className='close' data-dismiss='modal' aria-label='Close'>
 										<span aria-hidden='true'>&times;</span>
 									</button>
 								</div>
 								<form onSubmit={this.handleSubmit}>
-									<div class='modal-body'>
+									<div className='modal-body'>
 										<div className={this.state.parentname ? 'form-group' : 'd-none'}>
 											<input id={this.state.ParentId} type='text' value={this.state.parentname} className='form-control rounded-sm' onChange={this.handleInput} disabled />
 										</div>
@@ -221,11 +221,11 @@ class Categories extends Component {
 											<input type='text' name='name' placeholder='enter sub category' value={this.state.name} className='form-control rounded-sm' onChange={this.handleInput} />
 										</div>
 									</div>
-									<div class='modal-footer'>
-										<button type='button' class='btn btn-sm btn-secondary mr-auto' data-dismiss='modal'>
+									<div className='modal-footer'>
+										<button type='button' className='btn btn-sm btn-secondary mr-auto' data-dismiss='modal'>
 											Close
 										</button>
-										<button type='submit' class='btn btn-sm btn-primary'>
+										<button type='submit' className='btn btn-sm btn-primary'>
 											Save
 										</button>
 									</div>
@@ -233,53 +233,53 @@ class Categories extends Component {
 							</div>
 						</div>
 					</div>
-					<div class='modal fade bd-example-modal-sm' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'>
-						<div class='modal-dialog modal-dialog-centered'>
-							<div class='modal-content'>
-								<div class='modal-header border-0'>
-									<h5 class='modal-title cv-title' id='exampleModalLongTitle'>
+					<div className='modal fade bd-example-modal-sm' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'>
+						<div className='modal-dialog modal-dialog-centered'>
+							<div className='modal-content'>
+								<div className='modal-header border-0'>
+									<h5 className='modal-title cv-title' id='exampleModalLongTitle'>
 										{!this.state.name ? 'Delete category' : 'Delete sub category'}
 									</h5>
-									<button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+									<button type='button' className='close' data-dismiss='modal' aria-label='Close'>
 										<span aria-hidden='true'>&times;</span>
 									</button>
 								</div>
-								<div class='modal-body'>
+								<div className='modal-body'>
 									<p>
 										Are you sure you wan to delete <emp className='text-primary text-capitalize'>{this.state.name || this.state.parentname}</emp>
 									</p>
 								</div>
-								<div class='modal-footer'>
-									<button type='button' class='btn btn-sm btn-secondary mr-auto' data-dismiss='modal'>
+								<div className='modal-footer'>
+									<button type='button' className='btn btn-sm btn-secondary mr-auto' data-dismiss='modal'>
 										Cancel
 									</button>
-									<button type='button' onClick={this.handleDelete} class='btn btn-sm btn-danger'>
+									<button type='button' onClick={this.handleDelete} className='btn btn-sm btn-danger'>
 										Delete
 									</button>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class='modal fade' id='updateModel' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>
-						<div class='modal-dialog modal-dialog-centered' role='document'>
-							<div class='modal-content'>
-								<div class='modal-header border-0'>
-									<h5 class='modal-title cv-title text-capitalize' id='exampleModalLongTitle'>
+					<div className='modal fade' id='updateModel' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>
+						<div className='modal-dialog modal-dialog-centered' role='document'>
+							<div className='modal-content'>
+								<div className='modal-header border-0'>
+									<h5 className='modal-title cv-title text-capitalize' id='exampleModalLongTitle'>
 										{!this.state.name ? 'Update category' : 'Update sub category'}
 									</h5>
-									<button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+									<button type='button' className='close' data-dismiss='modal' aria-label='Close'>
 										<span aria-hidden='true'>&times;</span>
 									</button>
 								</div>
 								<form onSubmit={this.handleUpdate}>
 									{!this.state.name ? (
-										<div class='modal-body'>
+										<div className='modal-body'>
 											<div className='form-group'>
 												<input id={this.state.ParentId} name='parentname' type='text' value={this.state.parentname} className='form-control rounded-sm' onChange={this.handleInput} />
 											</div>
 										</div>
 									) : (
-										<div class='modal-body'>
+										<div className='modal-body'>
 											<div className='form-group'>
 												<input id={this.state.ParentId} type='text' value={this.state.parentname} className='form-control rounded-sm' onChange={this.handleInput} disabled />
 											</div>
@@ -288,11 +288,11 @@ class Categories extends Component {
 											</div>
 										</div>
 									)}
-									<div class='modal-footer'>
-										<button type='button' class='btn btn-sm btn-secondary mr-auto' data-dismiss='modal'>
+									<div className='modal-footer'>
+										<button type='button' className='btn btn-sm btn-secondary mr-auto' data-dismiss='modal'>
 											Close
 										</button>
-										<button type='submit' class='btn btn-sm btn-primary'>
+										<button type='submit' className='btn btn-sm btn-primary'>
 											Save
 										</button>
 									</div>

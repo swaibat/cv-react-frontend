@@ -53,7 +53,7 @@ class Category extends Component {
 									{payload &&
 										payload.data.map((e, index) => {
 											return (
-												<div className='col-md-3 cat-col border-left'>
+												<div className='col-md-3 cat-col '>
 													<li className='nav-item text-secondary'>
 														<a
 															className='nav-link nav-link-collapse text-secondary py-1'
@@ -66,13 +66,13 @@ class Category extends Component {
 														>
 															{e.name}
 														</a>
-														<ul className='nav-second-level z-index-1050 collapse position-absolute' id={`Cat${index}`} data-parent='#categoriesAccordion'>
+														<ul className='nav-second-level z-index-1050 collapse' id={`Cat${index}`} data-parent='#categoriesAccordion'>
 															{e.sub.map((sub, i) => {
 																return (
-																	<li className='nav-item'>
-																		<a className='nav-link py-1' href='#'>
+																	<li key={i} className='nav-item'>
+																		<Link className='nav-link py-1' to={`/category/${e.name}/${sub.name}`}>
 																			<span className='nav-link-text'>{sub.name}</span>
-																		</a>
+																		</Link>
 																	</li>
 																);
 															})}
