@@ -114,8 +114,8 @@ const apis = {
 
 	/**
 	 * should get user profile details with [user-ratings,user-products]
-	 * @param {*} token 
-	 * @param {*} id 
+	 * @param {*} token
+	 * @param {*} id
 	 */
 
 	getUser(token) {

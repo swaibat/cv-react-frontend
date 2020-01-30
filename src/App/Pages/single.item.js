@@ -45,6 +45,13 @@ class Item extends Component {
 								<div className='rounded border'>
 									<ImageGallery className='rounded border mt-n1' items={images} />
 								</div>
+								<div className='p-3'>
+									<span className='cv-title'>Description</span>
+									<p className='pt-2'>
+										Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard
+										McClintock, a Latin professor at Hampden-Sydney College in Virginia
+									</p>
+								</div>
 							</div>
 							<div className='col-md-7 p-0 m-0 pr-2 text-secondary'>
 								<div className='w-100 border p-2 my-2 mb-3 rounded'>
@@ -70,7 +77,7 @@ class Item extends Component {
 								<div className='row'>
 									<div className='col-7'>
 										<div className='card h-auto w-100 mb-3 overflow-hidden'>
-											<table class='table card-specs'>
+											<table className='table card-specs'>
 												<thead className='border-0 thead-light'>
 													<tr>
 														<th scope='col'>Name</th>
@@ -91,7 +98,7 @@ class Item extends Component {
 											</table>
 										</div>
 									</div>
-									<div className='col-7'>
+									<div className='col-5 pl-0'>
 										<div className='card h-auto w-100 overflow-hidden mb-3'>
 											<div id='map'></div>
 										</div>

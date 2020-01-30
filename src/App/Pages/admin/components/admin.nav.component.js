@@ -16,11 +16,11 @@ class Nav extends Component {
 		const { payload } = this.props;
 		return (
 			<nav className='navbar navbar-dark bg-transparent align-items-center w-100 h-3 mb-3'>
-				<li class='nav-item js-hamburger mt-n3'>
-					<button class='hamburger-toggle'>
-						<span class='bar-top'></span>
-						<span class='bar-mid'></span>
-						<span class='bar-bot'></span>
+				<li className='nav-item js-hamburger mt-n3'>
+					<button className='hamburger-toggle'>
+						<span className='bar-top'></span>
+						<span className='bar-mid'></span>
+						<span className='bar-bot'></span>
 					</button>
 				</li>
 				<ul className='d-flex'>

@@ -50,17 +50,15 @@ class Login extends Component {
 			<>
 				<Header />
 				<main className='d-flex flex-column align-items-center min-vh-85'>
-					{Token ? <Redirect to='/' /> : ''}
+					{Token() ? <Redirect to='/' /> : ''}
 					<div className='container m-auto'>
 						<div className='row justify-content-sm-center'>
 							<div className='col-sm-6 col-md-5'>
-								<div className='card text-center'>
-									<div className='card-header bg-white'>
-										<span className='card-title'>Login</span>
+								<div className='card border-0 shadow-xs'>
+									<div className='card-header bg-white border-0'>
+										<span className='card-text cv-title'>User Login</span>
 									</div>
 									<div className='card-body'>
-										<img src='https://placehold.it/75x75' alt='logo' className='mb-3 rounded' />
-
 										<form className='form-signin font-weight-light rounded-sm m-lg-auto' onSubmit={this.handleSubmit}>
 											{error && (
 												<div className='alert alert-danger rounded-sm text-center scale-in-ver-center' role='alert'>
@@ -122,7 +120,7 @@ class Login extends Component {
 												</button>
 											)}
 											<div className='w-100 text-center mt-3'>
-												<a href='/password'>Forgot password</a>
+												<a href='/reset-password'>Forgot password</a>
 											</div>
 										</form>
 									</div>

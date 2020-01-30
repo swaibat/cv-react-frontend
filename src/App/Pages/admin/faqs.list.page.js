@@ -8,7 +8,6 @@ import AdminNav from './components/admin.nav.component';
 import { faPlus, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { token } from './../../../helper';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
-import * as timeago from 'timeago.js';
 
 class Faq extends Component {
 	constructor(props) {
@@ -120,19 +119,19 @@ class Faq extends Component {
 					</div>
 				</main>
 				{/* create model */}
-				<div class='modal fade' id='exampleModalCenter' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenter' aria-hidden='true'>
-					<div class='modal-dialog modal-dialog-centered' role='document'>
-						<div class='modal-content'>
-							<div class='modal-header border-0'>
-								<h5 class='modal-title cv-title' id='exampleModalCenter'>
+				<div className='modal fade' id='exampleModalCenter' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenter' aria-hidden='true'>
+					<div className='modal-dialog modal-dialog-centered' role='document'>
+						<div className='modal-content'>
+							<div className='modal-header border-0'>
+								<h5 className='modal-title cv-title' id='exampleModalCenter'>
 									Add Faq
 								</h5>
-								<button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+								<button type='button' className='close' data-dismiss='modal' aria-label='Close'>
 									<span aria-hidden='true'>&times;</span>
 								</button>
 							</div>
 							<form onSubmit={this.handleSubmit}>
-								<div class='modal-body'>
+								<div className='modal-body'>
 									<div className='form-group'>
 										<input name='question' placeholder='enter question' type='text' className='form-control rounded-sm' onChange={this.handleInput} />
 									</div>
@@ -140,11 +139,11 @@ class Faq extends Component {
 										<textarea name='answer' rows='4' className='form-control' placeholder='enter the answer' onChange={this.handleInput} />
 									</div>
 								</div>
-								<div class='modal-footer'>
-									<button type='button' class='btn btn-sm btn-secondary mr-auto' data-dismiss='modal'>
+								<div className='modal-footer'>
+									<button type='button' className='btn btn-sm btn-secondary mr-auto' data-dismiss='modal'>
 										Close
 									</button>
-									<button type='submit' class='btn btn-sm btn-primary'>
+									<button type='submit' className='btn btn-sm btn-primary'>
 										Save
 									</button>
 								</div>
@@ -153,27 +152,27 @@ class Faq extends Component {
 					</div>
 				</div>
 				{/* delete model */}
-				<div class='modal fade bd-example-modal-sm' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'>
-					<div class='modal-dialog modal-dialog-centered'>
-						<div class='modal-content'>
-							<div class='modal-header border-0'>
-								<h5 class='modal-title cv-title' id='exampleModalLongTitle'>
+				<div className='modal fade bd-example-modal-sm' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'>
+					<div className='modal-dialog modal-dialog-centered'>
+						<div className='modal-content'>
+							<div className='modal-header border-0'>
+								<h5 className='modal-title cv-title' id='exampleModalLongTitle'>
 									Delete Faq
 								</h5>
-								<button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+								<button type='button' className='close' data-dismiss='modal' aria-label='Close'>
 									<span aria-hidden='true'>&times;</span>
 								</button>
 							</div>
-							<div class='modal-body'>
+							<div className='modal-body'>
 								<p>
 									Are you sure you wan to delete <emp className='text-primary text-capitalize'>{this.state.name}</emp>
 								</p>
 							</div>
-							<div class='modal-footer'>
-								<button type='button' class='btn btn-sm btn-secondary mr-auto' data-dismiss='modal'>
+							<div className='modal-footer'>
+								<button type='button' className='btn btn-sm btn-secondary mr-auto' data-dismiss='modal'>
 									Cancel
 								</button>
-								<button type='button' onClick={this.handleDelete} class='btn btn-sm btn-danger'>
+								<button type='button' onClick={this.handleDelete} className='btn btn-sm btn-danger'>
 									Delete
 								</button>
 							</div>
@@ -181,19 +180,19 @@ class Faq extends Component {
 					</div>
 				</div>
 				{/* update model */}
-				<div class='modal fade' id='updateModal' tabindex='-1' role='dialog' aria-labelledby='updateModal' aria-hidden='true'>
-					<div class='modal-dialog modal-dialog-centered' role='document'>
-						<div class='modal-content'>
-							<div class='modal-header border-0'>
-								<h5 class='modal-title cv-title' id='updateModal'>
+				<div className='modal fade' id='updateModal' tabindex='-1' role='dialog' aria-labelledby='updateModal' aria-hidden='true'>
+					<div className='modal-dialog modal-dialog-centered' role='document'>
+						<div className='modal-content'>
+							<div className='modal-header border-0'>
+								<h5 className='modal-title cv-title' id='updateModal'>
 									Edit Faq
 								</h5>
-								<button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+								<button type='button' className='close' data-dismiss='modal' aria-label='Close'>
 									<span aria-hidden='true'>&times;</span>
 								</button>
 							</div>
 							<form onSubmit={this.handleUpdate}>
-								<div class='modal-body'>
+								<div className='modal-body'>
 									<div className='form-group'>
 										<input name='question' value={this.state.question} placeholder='enter question' type='text' className='form-control rounded-sm' onChange={this.handleInput} />
 									</div>
@@ -201,11 +200,11 @@ class Faq extends Component {
 										<textarea name='answer' value={this.state.answer} rows='4' className='form-control' placeholder='enter the answer' onChange={this.handleInput} />
 									</div>
 								</div>
-								<div class='modal-footer'>
-									<button type='button' class='btn btn-sm btn-secondary mr-auto' data-dismiss='modal'>
+								<div className='modal-footer'>
+									<button type='button' className='btn btn-sm btn-secondary mr-auto' data-dismiss='modal'>
 										Close
 									</button>
-									<button type='submit' class='btn btn-sm btn-primary'>
+									<button type='submit' className='btn btn-sm btn-primary'>
 										Save
 									</button>
 								</div>
