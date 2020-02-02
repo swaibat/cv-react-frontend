@@ -71,7 +71,7 @@ function EmailSettings() {
 					<p className='font-weight-light'>Turn the type fo notifications you want to see on your dashboard incase of any operation</p>
 				</div>
 			</div>
-			<li class='border-bottom pt-3'>
+			<li className='border-bottom pt-3'>
 				<h6>General</h6>
 				<div className='d-flex justify-content-between'>
 					<p className='font-weight-light'>User signs up as a member</p>
@@ -95,7 +95,7 @@ function EmailSettings() {
 					</div>
 				</div>
 			</li>
-			<li class='pt-3'>
+			<li className='pt-3'>
 				<h6>Price and Quotes</h6>
 				<div className='d-flex justify-content-between'>
 					<p className='font-weight-light'>scheduled social post is hared</p>

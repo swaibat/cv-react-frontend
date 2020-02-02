@@ -176,6 +176,21 @@ const apis = {
 	getIp() {
 		return axios.get(`https://www.cloudflare.com/cdn-cgi/trace`);
 	},
+	getCurrency() {
+		return axios.get(`http://data.fixer.io/api/latest?access_key=e6f9f02beabdf4284826593a32ae2ca5`);
+	},
+	updateCurrency(data) {
+		return axios.patch(`${BASE_URL}/currency`, data);
+	},
+	getCurrencies() {
+		return axios.get(`${BASE_URL}/currency`);
+	},
+	getSettings() {
+		return axios.get(`${BASE_URL}/settings`);
+	},
+	updateSettings(data) {
+		return axios.patch(`${BASE_URL}/settings`, data);
+	},
 };
 
 export default apis;

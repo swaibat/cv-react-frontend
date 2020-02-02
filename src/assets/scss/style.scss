@@ -1,6 +1,7 @@
 // import scss bootstrap module
 @import './variables';
 @import './node_modules/bootstrap/scss/bootstrap.scss';
+@import './node_modules/react-toastify/scss/main.scss';
 
 
 @import './custom/sidenav';
@@ -23,7 +24,10 @@
 @import './custom/components/chat';
 @import './custom/components/input';
 @import './custom/components/pre-loader';
+@import './custom/components/toast';
 
+// mixins
+@import './custom/mixins/transition';
 // pages
 @import './custom/pages/contact.page';
 

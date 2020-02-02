@@ -10,6 +10,7 @@ import { token } from '../../../helper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobeAfrica, faTrash, faPlus, faEdit, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import Pagination from '../../Components/pagination';
+import { DeleteModal, CreateModal, UpdateModal, BulkDel } from './modals';
 
 class Categories extends Component {
 	constructor(props) {
@@ -23,6 +24,7 @@ class Categories extends Component {
 			currentCategories: [],
 			currentPage: null,
 			totalPages: null,
+			bulk: [],
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleInput = this.handleInput.bind(this);
@@ -50,7 +52,7 @@ class Categories extends Component {
 	handleDelete = e => {
 		e.preventDefault();
 		const { ParentId } = this.state;
-		this.props.delete(token, ParentId);
+		ParentId ? this.props.delete(token, ParentId) : this.state.bulk.map(sub => this.props.delete(token, sub.split('>')[1]));
 	};
 	handleUpdate = e => {
 		e.preventDefault();
@@ -60,11 +62,12 @@ class Categories extends Component {
 	};
 	handleInput = e => {
 		const target = e.target;
-		const value = target.name === 'images' ? e.target.files : target.value;
+		const value = target.type === 'checkbox' ? target.checked : target.value;
 		const name = target.name;
+		name === 'CategoryId' && value === true ? this.state.bulk.push(e.target.id) : '';
 		this.setState({ [name]: value });
 	};
-	handleSubmit = e => {
+	handleSubmit = async e => {
 		e.preventDefault();
 		this.props.init();
 		const { name, ParentId } = this.state;
@@ -72,15 +75,17 @@ class Categories extends Component {
 		this.props.createCat({ name, ParentId: id }, token);
 	};
 	render() {
+		console.log(this.state);
 		const { categories, currentCategories } = this.state;
 		const total = categories.length;
 		if (total === 0) return null;
-		const { payload } = this.props;
+		const { pending, createPayload, deletePayload, updatePayload, deleteError, createError, updateError } = this.props;
+		(deletePayload || createPayload || updatePayload || deleteError || createError || updateError) && setTimeout(() => window.location.reload(), 2000);
 		return (
 			<>
 				<Sidenav />
 				<div className='header-bg' />
-				<main className='content-wrapper d-flex flex-column align-items-center min-h-display'>
+				<main className={`content-wrapper d-flex flex-column align-items-center min-h-display ${pending ? 'loader' : ''}`}>
 					<AdminNav />
 					<div className='container-fluid mt-n2'>
 						<h5 className='cv-title title-light'>Categories</h5>
@@ -106,14 +111,22 @@ class Categories extends Component {
 														</button>
 													</div>
 													<div className='card-body p-1'>
-														<span className='cv-title text-secondary'>sub categories</span>
+														<div className='d-flex w-100'>
+															<span className='cv-title text-secondary'>sub categories</span>
+															{this.state.bulk.length !== 0 && this.state.bulk.find(e => e.split('>')[2] === category.name) && (
+																<button className='btn btn-sm ml-auto btn-outline-secondary' data-toggle='modal' data-target='#bulkDelete'>
+																	<FontAwesomeIcon icon={faTrash} />
+																	<spam className='badge badge-danger'>{this.state.bulk.filter(e => e.split('>')[2] === category.name).length}</spam>
+																</button>
+															)}
+														</div>
 														<ul className='list-group list-group-flush mt-2 hr-9 overflow-y-scroll text-secondary'>
 															{category.sub.map((sub, key) => {
 																return (
 																	<li key={key} className='list-group-item list-group-item-sm border-0 d-flex align-items-center category-list text-capitalize'>
-																		<span className='custom-control custom-checkbox '>
-																			<input type='checkbox' className='custom-control-input' id={sub.id} onClick={this.handleClick} />
-																			<label className='custom-control-label' for={sub.id}>
+																		<span className='custom-control custom-checkbox'>
+																			<input name='CategoryId' type='checkbox' className='custom-control-input' id={`${sub.name}>${sub.id}>${category.name}`} onChange={this.handleInput} />
+																			<label className='custom-control-label' for={`${sub.name}>${sub.id}>${category.name}`}>
 																				{this.state && sub.id === parseInt(this.state.ParentId) ? this.state.name : sub.name}
 																			</label>
 																		</span>
@@ -155,15 +168,8 @@ class Categories extends Component {
 																</li>
 															) : category.sub.length === 0 ? (
 																<li class={`list-group-item list-group-item-sm border-0 text-center m-auto`}>
-																	<p>Oops No sub Categories</p>
-																	<button
-																		name={category.name}
-																		id={category.id}
-																		className='btn btn-sm btn-outline-primary'
-																		data-toggle='modal'
-																		data-target='#exampleModalCenter'
-																		onClick={this.handleClick}
-																	>
+																	<p className='mb-1 mt-n3'>Oops No sub Categories</p>
+																	<button name={category.name} id={category.id} className='btn btn-secondary btn-sm' data-toggle='modal' data-target='#exampleModalCenter' onClick={this.handleClick}>
 																		<FontAwesomeIcon className='mr-2' icon={faPlus} />
 																		add one
 																	</button>
@@ -220,105 +226,10 @@ class Categories extends Component {
 							</div>
 						</div>
 					</div>
-					<div className='modal fade' id='exampleModalCenter' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>
-						<div className='modal-dialog modal-dialog-centered' role='document'>
-							<div className='modal-content'>
-								<div className='modal-header border-0'>
-									<h5 className='modal-title cv-title' id='exampleModalLongTitle'>
-										{this.state.parentname ? 'Add Sub category' : 'Add Category'}
-									</h5>
-									<button type='button' className='close' data-dismiss='modal' aria-label='Close'>
-										<span aria-hidden='true'>&times;</span>
-									</button>
-								</div>
-								<form onSubmit={this.handleSubmit}>
-									<div className='modal-body'>
-										<div className={this.state.parentname ? 'form-group' : 'd-none'}>
-											<input id={this.state.ParentId} type='text' value={this.state.parentname} className='form-control rounded-sm' onChange={this.handleInput} disabled />
-										</div>
-										<div className='form-group'>
-											<input type='text' name='name' placeholder='enter sub category' value={this.state.name} className='form-control rounded-sm' onChange={this.handleInput} />
-										</div>
-									</div>
-									<div className='modal-footer'>
-										<button type='button' className='btn btn-sm btn-secondary mr-auto' data-dismiss='modal'>
-											Close
-										</button>
-										<button type='submit' className='btn btn-sm btn-primary'>
-											Save
-										</button>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-					<div className='modal fade bd-example-modal-sm' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'>
-						<div className='modal-dialog modal-dialog-centered'>
-							<div className='modal-content'>
-								<div className='modal-header border-0'>
-									<h5 className='modal-title cv-title' id='exampleModalLongTitle'>
-										{!this.state.name ? 'Delete category' : 'Delete sub category'}
-									</h5>
-									<button type='button' className='close' data-dismiss='modal' aria-label='Close'>
-										<span aria-hidden='true'>&times;</span>
-									</button>
-								</div>
-								<div className='modal-body'>
-									<p>
-										Are you sure you wan to delete <emp className='text-primary text-capitalize'>{this.state.name || this.state.parentname}</emp>
-									</p>
-								</div>
-								<div className='modal-footer'>
-									<button type='button' className='btn btn-sm btn-secondary mr-auto' data-dismiss='modal'>
-										Cancel
-									</button>
-									<button type='button' onClick={this.handleDelete} className='btn btn-sm btn-danger'>
-										Delete
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div className='modal fade' id='updateModel' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>
-						<div className='modal-dialog modal-dialog-centered' role='document'>
-							<div className='modal-content'>
-								<div className='modal-header border-0'>
-									<h5 className='modal-title cv-title text-capitalize' id='exampleModalLongTitle'>
-										{!this.state.name ? 'Update category' : 'Update sub category'}
-									</h5>
-									<button type='button' className='close' data-dismiss='modal' aria-label='Close'>
-										<span aria-hidden='true'>&times;</span>
-									</button>
-								</div>
-								<form onSubmit={this.handleUpdate}>
-									{!this.state.name ? (
-										<div className='modal-body'>
-											<div className='form-group'>
-												<input id={this.state.ParentId} name='parentname' type='text' value={this.state.parentname} className='form-control rounded-sm' onChange={this.handleInput} />
-											</div>
-										</div>
-									) : (
-										<div className='modal-body'>
-											<div className='form-group'>
-												<input id={this.state.ParentId} type='text' value={this.state.parentname} className='form-control rounded-sm' onChange={this.handleInput} disabled />
-											</div>
-											<div className='form-group'>
-												<input type='text' name='name' placeholder='enter sub category' value={this.state.name} className='form-control rounded-sm' onChange={this.handleInput} />
-											</div>
-										</div>
-									)}
-									<div className='modal-footer'>
-										<button type='button' className='btn btn-sm btn-secondary mr-auto' data-dismiss='modal'>
-											Close
-										</button>
-										<button type='submit' className='btn btn-sm btn-primary'>
-											Save
-										</button>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
+					<CreateModal data={this} />
+					<DeleteModal data={this} />
+					<UpdateModal data={this} />
+					<BulkDel data={this} />
 				</main>
 			</>
 		);

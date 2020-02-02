@@ -3,7 +3,7 @@ import constants from '../../redux/constants/index';
 import { verifyUser } from '../../redux/actions/register.action';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLock, faUser, faCheck, faEye } from '@fortawesome/free-solid-svg-icons';
+import { faLock, faUser, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faGoogle, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import Token from '../../helper';
 import { Redirect } from 'react-router';
@@ -86,20 +86,15 @@ class Verify extends Component {
 																		{error.message}
 																	</div>
 																)}
-																<hr className='my-4' />
-																<p>OR</p>
-																<div className='input-group form-group mb-3'>
+																<hr className='m-0 mt-4 mb-n3' />
+																<span className='mt-n4 p-3 bg-white'>Or verify manually</span>
+																<div className='input-group form-group mb-3 mt-4'>
 																	<div className='input-group-prepend rounded-0'>
-																		<span className='input-group-text rounded-0 bg-transparent p-0 border-0 text-secondary'>
+																		<span className='input-group-text cv-input-group-text rounded-0 bg-transparent p-0  text-secondary'>
 																			<FontAwesomeIcon icon={faLock} />
 																		</span>
 																	</div>
 																	<input name='email' type='email' className='form-control custom-input' placeholder='Enter your email' onChange={this.handleInput} required />
-																	<div className='input-group-append'>
-																		<span className='btn p-0 border-0 my-auto invisible'>
-																			<FontAwesomeIcon icon={faEye} />
-																		</span>
-																	</div>
 																</div>
 																<div className='checkbox mb-3 font-weight-light'>
 																	<label>

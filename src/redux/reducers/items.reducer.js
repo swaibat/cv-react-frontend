@@ -85,11 +85,11 @@ export const createItem = (state = initialState, action) => {
 };
 export const createCategory = (state = initialState, action) => {
 	switch (action.type) {
-		case constant.UPDATE_CATEGORY_PENDING:
+		case constant.CREATE_CATEGORY_PENDING:
 			return { ...state, pending: true };
-		case constant.UPDATE_CATEGORY_SUCCESS:
+		case constant.CREATE_CATEGORY_SUCCESS:
 			return { ...state, payload: action.payload, pending: false };
-		case constant.UPDATE_CATEGORY_ERROR:
+		case constant.CREATE_CATEGORY_ERROR:
 			return { ...state, error: action.error, pending: false };
 		default:
 			return state;

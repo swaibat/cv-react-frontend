@@ -6,8 +6,10 @@ import store from './redux/store';
 import './assets/scss/style.scss';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import 'react-image-gallery/styles/scss/image-gallery.scss';
-import 'react-flags-select/scss/react-flags-select.scss';
-
+import { toast } from 'react-toastify';
+import cron from './helper/cron.job.helper';
+cron.start();
+toast.configure({ position: 'bottom-right' });
 ReactDOM.render(
 	<Provider store={store}>
 		<App />
