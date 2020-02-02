@@ -12,7 +12,7 @@ class Header extends Component {
 	render() {
 		return (
 			<>
-				<nav className='navbar navbar-expand-lg navbar-sm-dark  navbar-light bg-white'>
+				<nav className='navbar navbar-expand-lg navbar-sm-dark  navbar-light bg-white text-secondary'>
 					<a className='navbar-brand p-0' href='/'>
 						<img src={Logo} alt='logo' />
 					</a>
@@ -30,7 +30,7 @@ class Header extends Component {
 					<ul className='nav ml-auto'>
 						<li className='nav-item dropdown mx-2'>
 							<a className='nav-link' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'>
-								<FontAwesomeIcon icon={faCommentAlt} />
+								<FontAwesomeIcon className='cv-nav-icons' icon={faCommentAlt} />
 							</a>
 							<div className='dropdown-menu shadow notification-pane'>
 								<div className='dropdown-item card border-0 p-0' href='#'>
@@ -94,7 +94,7 @@ class Header extends Component {
 						</li>
 						<li className='nav-item dropdown mx-2'>
 							<a className='nav-link' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'>
-								<FontAwesomeIcon icon={faBell} />
+								<FontAwesomeIcon className='cv-nav-icons' icon={faBell} />
 							</a>
 							<div className='dropdown-menu shadow notification-pane'>
 								<div className='dropdown-item card border-0 p-0' href='#'>
@@ -108,10 +108,8 @@ class Header extends Component {
 										<ul className='list-group'>
 											<li className='dropdown-item d-flex flex-column'>
 												<div className='d-flex w-100 justify-content-between'>
-													<p className='mb-1'>List group item heading</p>
-													<small className='ml-2'>3 days</small>
+													<p className='mb-1'>account settings</p>
 												</div>
-												<p className='mb-1 text-truncate font-weight-light'>Dapibus ac facilisis in</p>
 											</li>
 											<div className='dropdown-divider' />
 											<li className='dropdown-item d-flex flex-column'>

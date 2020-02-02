@@ -156,6 +156,26 @@ const apis = {
 			headers: { Authorization: token },
 		});
 	},
+
+	/**
+	 *
+	 * @param {*} id
+	 * @param {*} data
+	 * @param {*} token
+	 */
+	getUsers(token) {
+		return axios.get(`${BASE_URL}/users`, {
+			headers: { Authorization: token },
+		});
+	},
+
+	/**
+	 *
+	 * @param {*} name
+	 */
+	getIp() {
+		return axios.get(`https://www.cloudflare.com/cdn-cgi/trace`);
+	},
 };
 
 export default apis;

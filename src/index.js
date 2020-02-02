@@ -6,6 +6,7 @@ import store from './redux/store';
 import './assets/scss/style.scss';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import 'react-image-gallery/styles/scss/image-gallery.scss';
+import 'react-flags-select/scss/react-flags-select.scss';
 
 ReactDOM.render(
 	<Provider store={store}>

@@ -18,3 +18,16 @@ export const getUser = (state = initialState, action) => {
 			return state;
 	}
 };
+
+export const getUsers = (state = initialState, action) => {
+	switch (action.type) {
+		case constant.USERS_PENDING:
+			return { ...state, pending: true };
+		case constant.USERS_SUCCESS:
+			return { ...state, payload: action.payload, pending: false };
+		case constant.USERS_ERROR:
+			return { ...state, error: action.error, pending: false };
+		default:
+			return state;
+	}
+};

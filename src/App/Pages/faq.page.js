@@ -28,7 +28,14 @@ class Faq extends Component {
 									return (
 										<div className='card mb-3 overflow-hidden rounded border shadow-xs bg-white'>
 											<div className='card-header border-bottom bg-white' id='headingOne'>
-												<button className='btn btn-link w-100 text-left d-flex' type='button' data-toggle='collapse' data-target={`#faq${index}`} aria-expanded='true' aria-controls={`faq${index}`}>
+												<button
+													className='btn btn-link text-secondary w-100 text-left d-flex'
+													type='button'
+													data-toggle='collapse'
+													data-target={`#faq${index}`}
+													aria-expanded='true'
+													aria-controls={`faq${index}`}
+												>
 													{faq.question}
 													<span className='ml-auto'>
 														<FontAwesomeIcon className='mr-1' icon={faChevronDown} />

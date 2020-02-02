@@ -1,18 +1,11 @@
-import loadScript from 'load-script';
+import countries from './countries.json';
 
-const HOST = 'https://maps.googleapis.com/maps/api/js';
-const KEY = 'YOUR API KEY';
-const URL = `${HOST}?key=${KEY}&libraries=places`;
-
-const loadGoogleMapApi = (success = () => {}, error = () => {}) => {
-	if (window.google) {
-		success();
-	} else {
-		loadScript(URL, err => {
-			const callback = err ? error : success;
-			callback();
-		});
-	}
+export default {
+	getCountries() {
+		return countries;
+	},
+	getCountry(name) {
+		const country = countries.find(e => e.alpha2Code === name);
+		return country;
+	},
 };
-
-export default loadGoogleMapApi;

@@ -2,7 +2,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMinusCircle, faSearch, faBell, faThLarge, faLayerGroup, faCog, faUsers, faGripHorizontal, faClone, faHistory, faFilePowerpoint } from '@fortawesome/free-solid-svg-icons';
+import { faMinusCircle, faSearch, faBell, faThLarge, faLayerGroup, faCog, faUsers, faGripHorizontal, faClone, faHistory } from '@fortawesome/free-solid-svg-icons';
 import avatar from '../../../../assets/images/user.svg';
 import Logo from '../../../../assets/images/logo.svg';
 import { Link } from 'react-router-dom';
@@ -21,7 +21,7 @@ function Nav() {
 					<sapn>Admin</sapn>
 				</div>
 			</li>
-			<li className='shadow-sm-top p-2 h-90'>
+			<ul className='shadow-sm-top p-2 h-90'>
 				<div className='d-flex justify-content-between text-secondary-light'>
 					<FontAwesomeIcon className='rotate-90' icon={faMinusCircle} />
 					<FontAwesomeIcon className='rotate-20' icon={faMinusCircle} />
@@ -37,30 +37,55 @@ function Nav() {
 					</div>
 				</li>
 				<li className='nav-item border-top'>
-					<Link className='nav-link text-secondary pl-3' to='/user/dashboard'>
+					<Link className='nav-link text-secondary pl-3' to='/admin/dashboard'>
 						<FontAwesomeIcon className='mr-2' icon={faThLarge} /> Dashboard
 					</Link>
 				</li>
 				<li className='nav-item'>
-					<Link className='nav-link text-secondary nav-link  pl-3' to='/user/category'>
+					<Link className='nav-link text-secondary nav-link  pl-3' to='/admin/category'>
 						<FontAwesomeIcon className='mr-2' icon={faLayerGroup} />
 						Categories
 					</Link>
 				</li>
 				<li className='nav-item'>
-					<Link className='nav-link text-secondary pl-3' to='/user/products'>
+					<Link className='nav-link text-secondary pl-3' to='/admin/products'>
 						<FontAwesomeIcon className='mr-2' icon={faBell} />
 						products
 					</Link>
 				</li>
 				<li className='nav-item'>
-					<Link className='nav-link text-secondary pl-3' to='/user/pages'>
-						<FontAwesomeIcon className='mr-2' icon={faFilePowerpoint} />
+					<Link
+						className='nav-link text-secondary nav-link text-secondary-collapse pl-3'
+						to='/admin/settings'
+						id='hasSubItems'
+						data-toggle='collapse'
+						data-target='#otherPages'
+						aria-controls='otherPages'
+						aria-expanded='false'
+					>
+						<FontAwesomeIcon className='mr-2' icon={faClone} />
 						Pages
 					</Link>
+					<ul className='nav-second-level collapse' id='otherPages' data-parent='#navAccordion'>
+						<li className='nav-item'>
+							<Link className='nav-link text-secondary pl-2' to='/admin/pages'>
+								Vendors Pages
+							</Link>
+						</li>
+						<li className='nav-item'>
+							<Link className='nav-link text-secondary pl-2' to='/admin/faq'>
+								<span className='nav-link text-secondary-text'>Faq</span>
+							</Link>
+						</li>
+						<li className='nav-item'>
+							<Link className='nav-link text-secondary pl-2' to='/admin/about'>
+								<span className='nav-link text-secondary-text'>About-us</span>
+							</Link>
+						</li>
+					</ul>
 				</li>
 				<li className='nav-item'>
-					<Link className='nav-link text-secondary pl-3' to='/user/users'>
+					<Link className='nav-link text-secondary pl-3' to='/admin/users'>
 						<FontAwesomeIcon className='mr-2' icon={faUsers} />
 						Users
 					</Link>
@@ -68,7 +93,7 @@ function Nav() {
 				<li className='nav-item'>
 					<Link
 						className='nav-link text-secondary nav-link text-secondary-collapse pl-3'
-						to='/user/settings'
+						to='/admin/settings'
 						id='hasSubItems'
 						data-toggle='collapse'
 						data-target='#apps'
@@ -80,12 +105,12 @@ function Nav() {
 					</Link>
 					<ul className='nav-second-level collapse' id='apps' data-parent='#navAccordion'>
 						<li className='nav-item'>
-							<Link className='nav-link text-secondary' to='/user/chat'>
+							<Link className='nav-link text-secondary' to='/admin/chat'>
 								<span className='nav-link text-secondary-text'>chat</span>
 							</Link>
 						</li>
 						<li className='nav-item'>
-							<Link className='nav-link text-secondary' to='/user/payments'>
+							<Link className='nav-link text-secondary' to='/admin/payments'>
 								<span className='nav-link text-secondary-text'>comments</span>
 							</Link>
 						</li>
@@ -93,37 +118,6 @@ function Nav() {
 							<a className='nav-link text-secondary' href='#'>
 								<span className='nav-link text-secondary-text'>notification</span>
 							</a>
-						</li>
-					</ul>
-				</li>
-				<li className='nav-item'>
-					<Link
-						className='nav-link text-secondary nav-link text-secondary-collapse pl-3'
-						to='/user/settings'
-						id='hasSubItems'
-						data-toggle='collapse'
-						data-target='#otherPages'
-						aria-controls='otherPages'
-						aria-expanded='false'
-					>
-						<FontAwesomeIcon className='mr-2' icon={faClone} />
-						Other Pages
-					</Link>
-					<ul className='nav-second-level collapse' id='otherPages' data-parent='#navAccordion'>
-						<li className='nav-item'>
-							<Link className='nav-link text-secondary' to='/user/faq'>
-								<span className='nav-link text-secondary-text'>Faq</span>
-							</Link>
-						</li>
-						<li className='nav-item'>
-							<Link className='nav-link text-secondary' to='/user/about'>
-								<span className='nav-link text-secondary-text'>About-us</span>
-							</Link>
-						</li>
-						<li className='nav-item'>
-							<Link className='nav-link text-secondary' href='/user/contact'>
-								<span className='nav-link text-secondary-text'>contact-us</span>
-							</Link>
 						</li>
 					</ul>
 				</li>
@@ -136,7 +130,7 @@ function Nav() {
 				<li className='nav-item'>
 					<Link
 						className='nav-link text-secondary nav-link text-secondary-collapse pl-3'
-						to='/user/settings'
+						to='/admin/settings'
 						id='hasSubItems'
 						data-toggle='collapse'
 						data-target='#collapseSubItems4'
@@ -148,12 +142,12 @@ function Nav() {
 					</Link>
 					<ul className='nav-second-level collapse' id='collapseSubItems4' data-parent='#navAccordion'>
 						<li className='nav-item'>
-							<Link className='nav-link text-secondary' to='/user/settings'>
+							<Link className='nav-link text-secondary' to='/admin/settings'>
 								<span className='nav-link text-secondary-text'>website</span>
 							</Link>
 						</li>
 						<li className='nav-item'>
-							<Link className='nav-link text-secondary' to='/user/payments'>
+							<Link className='nav-link text-secondary' to='/admin/payments'>
 								<span className='nav-link text-secondary-text'>Payments</span>
 							</Link>
 						</li>
@@ -164,7 +158,7 @@ function Nav() {
 						</li>
 					</ul>
 				</li>
-			</li>
+			</ul>
 			<li className='nav-item h-3.5'>
 				<div className='d-flex flex-row-reverse'>
 					<div className='bg-primary d-flex flex-column p-1'>

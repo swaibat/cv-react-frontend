@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Header from './../Components/Header';
 import Footer from './../Components/Footer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Banner from '../../assets/images/img.png';
+import { faChevronRight, faChevronLeft, faCar, faHome, faDesktop } from '@fortawesome/free-solid-svg-icons';
 
 class Landing extends Component {
 	render() {
@@ -9,10 +12,83 @@ class Landing extends Component {
 			<>
 				<Header />
 				<main className='d-flex flex-column align-items-center'>
-					<div className='container-fluid bg-secondary slider'>
-						<h1>Main Content</h1>
+					<div className='container-fluid bg-secondary slider visibility-hidden'>
+						<div id='carouselExampleControls' class='carousel slide slider  ' data-ride='carousel'>
+							<div class='carousel-inner'>
+								<div class='carousel-item active slider'>
+									<img class='d-block w-100' src={Banner} alt='First slide' />
+								</div>
+								<div class='carousel-item slider'>
+									<img class='d-block w-100' src={Banner} alt='Second slide' />
+								</div>
+								<div class='carousel-item slider'>
+									<img class='d-block w-100' src={Banner} alt='Third slide' />
+								</div>
+							</div>
+							<a class='carousel-control-prev' href='#carouselExampleControls' role='button' data-slide='prev'>
+								<span class='carousel-control-prev-icon' aria-hidden='true'></span>
+								<span class='sr-only'>Previous</span>
+							</a>
+							<a class='carousel-control-next' href='#carouselExampleControls' role='button' data-slide='next'>
+								<span class='carousel-control-next-icon' aria-hidden='true'></span>
+								<span class='sr-only'>Next</span>
+							</a>
+						</div>
 					</div>
-					<div className='container p-1 p-md-2 min-vh-80 d-flex w-100 row justify-content-center align-items-center'>
+					<div className='container p-1 p-md-2 min-vh-80 d-flex w-100 row justify-content-center align-items-center '>
+						<div className='d-none align-items-center justify-content-between mt-n6 bg-white w-100 rounded p-3 '>
+							<div className='btn border-0 bg-light'>
+								<FontAwesomeIcon icon={faChevronLeft} />
+							</div>
+							<div className='card cat-card d-flex align-items-center justify-content-around border-0 p-2 bg-light'>
+								<FontAwesomeIcon className='text-primary category-main-icon' icon={faCar} />
+								<h6>vehicles</h6>
+							</div>
+							<div className='card cat-card d-flex align-items-center justify-content-around border-0 p-2 bg-light'>
+								<FontAwesomeIcon className='text-primary category-main-icon' icon={faHome} />
+								<h6>property</h6>
+							</div>
+							<div className='card cat-card d-flex align-items-center justify-content-around border-0 p-2 bg-light'>
+								<FontAwesomeIcon className='text-primary category-main-icon' icon={faDesktop} />
+								<h6>electronics</h6>
+							</div>
+							<div className='card cat-card d-flex align-items-center justify-content-around border-0 p-2 bg-light'>
+								<FontAwesomeIcon className='text-primary category-main-icon' icon={faCar} />
+								<h6>vehicles</h6>
+							</div>
+							<div className='card cat-card d-flex align-items-center justify-content-around border-0 p-2 bg-light'>
+								<FontAwesomeIcon className='text-primary category-main-icon' icon={faCar} />
+								<h6>vehicles</h6>
+							</div>
+							<div className='card cat-card d-flex align-items-center justify-content-around border-0 p-2 bg-light'>
+								<FontAwesomeIcon className='text-primary category-main-icon' icon={faCar} />
+								<h6>vehicles</h6>
+							</div>
+							<div className='card cat-card d-flex align-items-center justify-content-around border-0 p-2 bg-light'>
+								<FontAwesomeIcon className='text-primary category-main-icon' icon={faCar} />
+								<h6>vehicles</h6>
+							</div>
+							<div className='card cat-card d-flex align-items-center justify-content-around border-0 p-2 bg-light'>
+								<FontAwesomeIcon className='text-primary category-main-icon' icon={faCar} />
+								<h6>vehicles</h6>
+							</div>
+							<div className='card cat-card d-flex align-items-center justify-content-around border-0 p-2 bg-light'>
+								<FontAwesomeIcon className='text-primary category-main-icon' icon={faCar} />
+								<h6>vehicles</h6>
+							</div>
+							<div className='card cat-card d-flex align-items-center justify-content-around border-0 p-2 bg-light'>
+								<FontAwesomeIcon className='text-primary category-main-icon' icon={faCar} />
+								<h6>vehicles</h6>
+							</div>
+							<div className='card cat-card d-flex align-items-center justify-content-around border-0 p-2 bg-light'>
+								<FontAwesomeIcon className='text-primary category-main-icon' icon={faCar} />
+								<h6>vehicles</h6>
+							</div>
+
+							<div className='btn border-0 bg-light'>
+								<FontAwesomeIcon icon={faChevronRight} />
+							</div>
+						</div>
 						<div className='h-50 w-100 py-3'>
 							<h5 className='cv-title ml-2'>Similar adverts</h5>
 							<div className='m-0 mt-3 row'>

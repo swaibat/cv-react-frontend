@@ -42,10 +42,11 @@ class Login extends Component {
 	render() {
 		const { payload, error, pending } = this.props;
 		const { visible } = this.state;
-		if (payload && payload.status === 200) {
+		if (payload) {
 			setToken(payload.data.token);
 			window.location.reload();
 		}
+
 		return (
 			<>
 				<Header />
