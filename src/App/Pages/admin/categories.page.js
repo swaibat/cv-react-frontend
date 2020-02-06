@@ -9,6 +9,7 @@ import AdminNav from './components/admin.nav.component';
 import { token } from '../../../helper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobeAfrica, faTrash, faPlus, faEdit, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import Pagination from '../../Components/pagination';
 
 class Categories extends Component {
 	constructor(props) {
@@ -18,6 +19,10 @@ class Categories extends Component {
 			name: '',
 			parentname: '',
 			visible: false,
+			categories: [],
+			currentCategories: [],
+			currentPage: null,
+			totalPages: null,
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleInput = this.handleInput.bind(this);
@@ -25,10 +30,19 @@ class Categories extends Component {
 		this.handleDelete = this.handleDelete.bind(this);
 		this.handleUpdate = this.handleUpdate.bind(this);
 	}
-	componentDidMount() {
+	async componentDidMount() {
 		this.props.init();
 		this.props.getCat();
+		const categories = await category();
+		this.setState({ categories: categories.payload.data });
 	}
+	onPageChanged = data => {
+		const { categories } = this.state;
+		const { currentPage, totalPages, pageLimit } = data;
+		const offset = (currentPage - 1) * pageLimit;
+		const currentCategories = categories.slice(offset, offset + pageLimit);
+		this.setState({ currentPage, currentCategories, totalPages });
+	};
 	handleClick = e => {
 		e.stopPropagation();
 		this.setState({ ParentId: e.target.id, parentname: e.target.name.split('>')[0], name: e.target.name.split('>')[1] });
@@ -58,6 +72,9 @@ class Categories extends Component {
 		this.props.createCat({ name, ParentId: id }, token);
 	};
 	render() {
+		const { categories, currentCategories } = this.state;
+		const total = categories.length;
+		if (total === 0) return null;
 		const { payload } = this.props;
 		return (
 			<>
@@ -73,8 +90,8 @@ class Categories extends Component {
 								Add Category
 							</button>
 							<div className='row'>
-								{payload &&
-									payload.data.map((category, index) => {
+								{currentCategories &&
+									currentCategories.map((category, index) => {
 										return (
 											<div key={index} className='col-md-3 p-2'>
 												<div className='card border-0 shadow-sm'>
@@ -198,7 +215,9 @@ class Categories extends Component {
 										);
 									})}
 							</div>
-							{/* <Pagination /> */}
+							<div className='d-flex flex-row mt-2 align-items-center'>
+								<Pagination totalRecords={total} pageLimit={8} pageNeighbours={1} onPageChanged={this.onPageChanged} />
+							</div>
 						</div>
 					</div>
 					<div className='modal fade' id='exampleModalCenter' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>

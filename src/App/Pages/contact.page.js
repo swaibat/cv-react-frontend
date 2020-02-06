@@ -9,7 +9,7 @@ class NotFound extends Component {
 				<Header />
 				<div className='d-flex flex-wrap align-content-center justify-content-center w-100 mainContainer'>
 					<div className='container min-vh-80'>
-						<div className='row mt-4'>
+						<div className='row mt-5'>
 							<div className='col-md-12 m-auto'>
 								<div className='row bg-white p-3 rounded'>
 									<div className='col-md-6 text-center'>
@@ -33,10 +33,6 @@ class NotFound extends Component {
 													</div>
 													<input type='submit' className='btn btn-primary' value='Send' />
 												</form>
-											</div>
-											<div className='card-footer bg-white'>
-												<p>info@example.com</p>
-												<p>+1(81)567 4764</p>
 											</div>
 										</div>
 									</div>

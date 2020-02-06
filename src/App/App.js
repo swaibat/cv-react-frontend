@@ -23,6 +23,8 @@ import ResetPassword from './Pages/reset.password.page';
 import ConfirmReset from './Pages/password.confirm';
 import Contact from './Pages/contact.page';
 import token from '../helper/index';
+import Users from './Pages/admin/users.page';
+import Profile from './Pages/profile.page';
 
 export class App extends React.Component {
 	render() {
@@ -41,26 +43,26 @@ export class App extends React.Component {
 					<Route exact path='/reset-password' component={ResetPassword} />
 					<Route exact path='/confirm-reset/:token' component={ConfirmReset} />
 					<Route exact path='/contact' component={Contact} />
+					<Route exact path='/profile' component={Profile} />
 					{/* 
 
 					admin routes
 
 					*/}
-					{token().roleId === 1 ? (
+					{token().role === 'admin' && (
 						<>
-							<Route exact path='/user/dashboard' component={Dashboard} />
-							<Route exact path='/user/products/create' component={CreateProduct} />
-							<Route exact path='/user/category' component={Category} />
-							<Route exact path='/user/products' component={AdminProducts} />
-							<Route exact path='/user/countries' component={countries} />
-							<Route exact path='/user/settings' component={settings} />
-							<Route exact path='/user/faq' component={FaqList} />
-							<Route exact path='/user/pages' component={Pages} />
-							<Route exact path='/user/about' component={About} />
-							<Route exact path='/user/chat' component={Chat} />
+							<Route exact path='/admin/dashboard' component={Dashboard} />
+							<Route exact path='/admin/products/create' component={CreateProduct} />
+							<Route exact path='/admin/category' component={Category} />
+							<Route exact path='/admin/products' component={AdminProducts} />
+							<Route exact path='/admin/countries' component={countries} />
+							<Route exact path='/admin/settings' component={settings} />
+							<Route exact path='/admin/faq' component={FaqList} />
+							<Route exact path='/admin/pages' component={Pages} />
+							<Route exact path='/admin/about' component={About} />
+							<Route exact path='/admin/chat' component={Chat} />
+							<Route exact path='/admin/users' component={Users} />
 						</>
-					) : (
-						''
 					)}
 
 					<Route path='*' component={NotFound} />

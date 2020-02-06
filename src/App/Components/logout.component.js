@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import constants from '../../redux/constants';
 import LogoutAction from '../../redux/actions/logout.action';
@@ -23,69 +24,39 @@ export class Logout extends React.Component {
 			window.location.reload();
 		}
 		return (
-			<li className='dropdown mx-2 d-flex flex-row align-items-center'>
+			<li className='dropdown mx-2 d-flex flex-row align-items-center font-weight-light'>
 				<img className='user-avatar-nav img-thumbnail' src={avatar} alt='user' />
-				<Link className='nav-link dropdown-toggle' data-toggle='dropdown' to='#' role='button' aria-haspopup='true' aria-expanded='false'>
+				<Link className='nav-link dropdown-toggle font-weight-light text-secondary' data-toggle='dropdown' to='#' role='button' aria-haspopup='true' aria-expanded='false'>
 					<span>Rumbiiha swaibu</span>
 				</Link>
-				<div className='dropdown-menu shadow notification-pane'>
-					<div className='dropdown-item card border-0 p-0' href='#'>
-						<div className='card-header bg-white py-1 px-2 d-flex'>
-							<span>Inbox</span>
-							<div className='d-flex ml-auto'>
-								<Link className='px-2 border-right' to='/settings'>
-									<small>Mark all as read</small>
+				<div className='dropdown-menu shadow notification-pane' aria-labelledby='dropdownMenuButton'>
+					<a className='dropdown-item' href='#'>
+						<div className='card-header bg-white py-1 px-2 d-flex align-items-center'>
+							<div className='d-flex'>
+								<img className='user-avatar-nav img-thumbnail' src={avatar} alt='user' />
+								<Link className='nav-link text-secondary '>
+									<span>Rumbiiha swaibu</span>
 								</Link>
-								<Link onClick={this.logout} className='mx-2'>
+							</div>
+							<div className='d-flex ml-auto'>
+								<Link onClick={this.logout} className='btn btn-sm btn-primary'>
 									<small>Logout</small>
 								</Link>
 							</div>
 						</div>
-						<div className='card-body px-1 py-2'>
-							<ul className='list-group border-0'>
-								<li className='dropdown-item d-flex flex-column'>
-									<div className='d-flex w-100 justify-content-between'>
-										<p className='mb-1'>List group item heading</p>
-										<small className='ml-2'>3 days</small>
-									</div>
-									<p className='mb-1 text-truncate font-weight-light'>Dapibus ac facilisis in</p>
-								</li>
-								<div className='dropdown-divider' />
-								<li className='dropdown-item d-flex flex-column'>
-									<div className='d-flex w-100 justify-content-between'>
-										<p className='mb-1'>List group item heading</p>
-										<small className='ml-2'>3 days</small>
-									</div>
-									<p className='mb-1 text-truncate font-weight-light'>Dapibus ac facilisis in</p>
-								</li>
-								<div className='dropdown-divider' />
-								<li className='dropdown-item d-flex flex-column'>
-									<div className='d-flex w-100 justify-content-between'>
-										<p className='mb-1'>List group item heading</p>
-										<small className='ml-2'>3 days</small>
-									</div>
-									<p className='mb-1 text-truncate font-weight-light'>Dapibus ac facilisis in</p>
-								</li>
-								<div className='dropdown-divider' />
-								<li className='dropdown-item d-flex flex-column'>
-									<div className='d-flex w-100 justify-content-between'>
-										<p className='mb-1'>List group item heading</p>
-										<small className='ml-2'>3 days</small>
-									</div>
-									<p className='mb-1 text-truncate font-weight-light'>Dapibus ac facilisis in</p>
-								</li>
-								<div className='dropdown-divider' />
-								<li className='dropdown-item d-flex flex-column'>
-									<div className='d-flex w-100 justify-content-between'>
-										<p className='mb-1'>List group item heading</p>
-										<small className='ml-2'>3 days</small>
-									</div>
-									<p className='mb-1 text-truncate font-weight-light'>Dapibus ac facilisis in</p>
-								</li>
-							</ul>
-						</div>
-						<div className='card-footer  py-1 px-2'>show all Notifications</div>
-					</div>
+					</a>
+					<a className='dropdown-item' href='#'>
+						<span className='mb-1'>Account settings</span>
+					</a>
+					<a className='dropdown-item' href='#'>
+						<span className='mb-1'>Dashboard</span>
+					</a>
+					<a className='dropdown-item' href='#'>
+						<span className='mb-1'>Account profile</span>
+					</a>
+					<a className='dropdown-item' href='#'>
+						<span className='mb-1'>Create a new Site</span>
+					</a>
 				</div>
 			</li>
 		);

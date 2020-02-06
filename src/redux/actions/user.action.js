@@ -9,3 +9,12 @@ export const getUser = async (token, id) => {
 		return { type: constant.USER_ERROR, error: error.response.data };
 	}
 };
+
+export const getUsers = async (token, id) => {
+	try {
+		const result = await Api.getUsers(token, id);
+		return { type: constant.USERS_SUCCESS, payload: result.data };
+	} catch (error) {
+		return { type: constant.USERS_ERROR, error: error.response.data };
+	}
+};
