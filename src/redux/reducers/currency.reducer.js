@@ -6,26 +6,26 @@ const initialState = {
 	error: null,
 };
 
-export const GetSettings = (state = initialState, action) => {
+export const GetCurrency = (state = initialState, action) => {
 	switch (action.type) {
-		case constant.SETTINGS_PENDING:
+		case constant.CURRENCY_PENDING:
 			return { ...state, pending: true };
-		case constant.SETTINGS_SUCCESS:
+		case constant.CURRENCY_SUCCESS:
 			return { ...state, payload: action.payload, pending: false };
-		case constant.SETTINGS_ERROR:
+		case constant.CURRENCY_ERROR:
 			return { ...state, error: action.error, pending: false };
 		default:
 			return state;
 	}
 };
 
-export const updateSettings = (state = initialState, action) => {
+export const updateCurrency = (state = initialState, action) => {
 	switch (action.type) {
-		case constant.UPDATE_SETTINGS_PENDING:
+		case constant.UPDATE_CURRENCY_PENDING:
 			return { ...state, pending: true };
-		case constant.UPDATE_SETTINGS_SUCCESS:
+		case constant.UPDATE_CURRENCY_SUCCESS:
 			return { ...state, payload: action.payload, pending: false };
-		case constant.UPDATE_SETTINGS_ERROR:
+		case constant.UPDATE_CURRENCY_ERROR:
 			return { ...state, error: action.error, pending: false };
 		default:
 			return state;

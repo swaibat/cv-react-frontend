@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import constants from '../../redux/constants/index';
-import { connect } from 'react-redux';
+// import constants from '../../redux/constants/index';
+// import { connect } from 'react-redux';
 import decode, { token } from '../../helper';
 import Header from './../Components/Header';
 import Footer from './../Components/Footer';
@@ -83,8 +83,8 @@ class Nav extends Component {
 												<span className='d-flex w-100 align-items-center justify-content-between'>
 													<span className='p-1'>5</span>
 													<span className='w-100'>
-														<div class='progress' style={{ height: '.4rem' }}>
-															<div class='progress-bar bg-primary' role='progressbar' style={{ width: '75%' }} aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'></div>
+														<div className='progress' style={{ height: '.4rem' }}>
+															<div className='progress-bar bg-primary' role='progressbar' style={{ width: '75%' }} aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'></div>
 														</div>
 													</span>
 													<span className='p-1 reviewers-number'>1005</span>
@@ -92,8 +92,8 @@ class Nav extends Component {
 												<span className='d-flex w-100 align-items-center'>
 													<span className='p-1'>4</span>
 													<span className='w-100'>
-														<div class='progress' style={{ height: '.4rem' }}>
-															<div class='progress-bar bg-primary' role='progressbar' style={{ width: '50%' }} aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'></div>
+														<div className='progress' style={{ height: '.4rem' }}>
+															<div className='progress-bar bg-primary' role='progressbar' style={{ width: '50%' }} aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'></div>
 														</div>
 													</span>
 													<span className='p-1 reviewers-number'>500</span>
@@ -101,8 +101,8 @@ class Nav extends Component {
 												<span className='d-flex w-100 align-items-center'>
 													<span className='p-1'>3</span>
 													<span className='w-100'>
-														<div class='progress' style={{ height: '.4rem' }}>
-															<div class='progress-bar bg-primary' role='progressbar' style={{ width: '35%' }} aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'></div>
+														<div className='progress' style={{ height: '.4rem' }}>
+															<div className='progress-bar bg-primary' role='progressbar' style={{ width: '35%' }} aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'></div>
 														</div>
 													</span>
 													<span className='p-1 reviewers-number' style={{ MinminWidth: '3rem' }}>
@@ -112,8 +112,8 @@ class Nav extends Component {
 												<span className='d-flex w-100 align-items-center'>
 													<span className='p-1'>2</span>
 													<span className='w-100'>
-														<div class='progress' style={{ height: '.4rem' }}>
-															<div class='progress-bar bg-primary' role='progressbar' style={{ width: '25%' }} aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'></div>
+														<div className='progress' style={{ height: '.4rem' }}>
+															<div className='progress-bar bg-primary' role='progressbar' style={{ width: '25%' }} aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'></div>
 														</div>
 													</span>
 													<span className='p-1 reviewers-number'>10</span>
@@ -121,8 +121,8 @@ class Nav extends Component {
 												<span className='d-flex w-100 align-items-center'>
 													<span className='p-1'>1</span>
 													<span className='w-100'>
-														<div class='progress' style={{ height: '.4rem' }}>
-															<div class='progress-bar bg-primary' role='progressbar' style={{ width: '15%' }} aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'></div>
+														<div className='progress' style={{ height: '.4rem' }}>
+															<div className='progress-bar bg-primary' role='progressbar' style={{ width: '15%' }} aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'></div>
 														</div>
 													</span>
 													<span className='p-1 reviewers-number'>4</span>
@@ -133,76 +133,76 @@ class Nav extends Component {
 								</div>
 							</div>
 							<div className='col-md-10 bg-white px-0 ml-auto mt-n5 rounded-bottom'>
-								<ul class='nav nav-pills bg-light p-2 shadow-sm' id='pills-tab' role='tablist'>
-									<li class='nav-item'>
-										<a class='nav-link active' id='pills-home-tab' data-toggle='pill' href='#pills-home' role='tab' aria-controls='pills-home' aria-selected='true'>
+								<ul className='nav nav-pills bg-light p-2 shadow-sm' id='pills-tab' role='tablist'>
+									<li className='nav-item'>
+										<a className='nav-link active' id='pills-home-tab' data-toggle='pill' href='#pills-home' role='tab' aria-controls='pills-home' aria-selected='true'>
 											profile
 										</a>
 									</li>
-									<li class='nav-item'>
-										<a class='nav-link' id='pills-profile-tab' data-toggle='pill' href='#pills-profile' role='tab' aria-controls='pills-profile' aria-selected='false'>
+									<li className='nav-item'>
+										<a className='nav-link' id='pills-profile-tab' data-toggle='pill' href='#pills-profile' role='tab' aria-controls='pills-profile' aria-selected='false'>
 											my products
 										</a>
 									</li>
-									<li class='nav-item'>
-										<a class='nav-link' id='pills-contact-tab' data-toggle='pill' href='#pills-contact' role='tab' aria-controls='pills-contact' aria-selected='false'>
+									<li className='nav-item'>
+										<a className='nav-link' id='pills-contact-tab' data-toggle='pill' href='#pills-contact' role='tab' aria-controls='pills-contact' aria-selected='false'>
 											my favourite
 											<span className='badge badge-primary ml-1'>5</span>
 										</a>
 									</li>
-									<li class='nav-item'>
-										<a class='nav-link' id='pills-contact-tab' data-toggle='pill' href='#pills-contact' role='tab' aria-controls='pills-contact' aria-selected='false'>
+									<li className='nav-item'>
+										<a className='nav-link' id='pills-contact-tab' data-toggle='pill' href='#pills-contact' role='tab' aria-controls='pills-contact' aria-selected='false'>
 											my feedback
 										</a>
 									</li>
 								</ul>
-								<div class='tab-content' id='pills-tabContent'>
-									<div class='tab-pane p-4 rounded fade show active' id='pills-home' role='tabpanel' aria-labelledby='pills-home-tab'>
+								<div className='tab-content' id='pills-tabContent'>
+									<div className='tab-pane p-4 rounded fade show active' id='pills-home' role='tabpanel' aria-labelledby='pills-home-tab'>
 										<form>
-											<div class='form-row'>
-												<div class='form-group col-md-6'>
+											<div className='form-row'>
+												<div className='form-group col-md-6'>
 													<label for='inputEmail4'>Firstname</label>
-													<input type='firstName' value={this.state.firstName} class='form-control' onChange={this.handleInput} disabled={!this.state.edit} />
+													<input type='firstName' value={this.state.firstName} className='form-control' onChange={this.handleInput} disabled={!this.state.edit} />
 												</div>
-												<div class='form-group col-md-6'>
+												<div className='form-group col-md-6'>
 													<label for='inputPassword4'>lastname</label>
-													<input type='text' name='lastName' value={this.state.lastName} class='form-control' onChange={this.handleInput} disabled={!this.state.edit} />
+													<input type='text' name='lastName' value={this.state.lastName} className='form-control' onChange={this.handleInput} disabled={!this.state.edit} />
 												</div>
 											</div>
-											<div class='form-row'>
-												<div class='form-group col-md-9'>
+											<div className='form-row'>
+												<div className='form-group col-md-9'>
 													<label for='inputEmail4'>Email</label>
-													<input type='email' name='email' value={this.state.email} class='form-control' disabled />
+													<input type='email' name='email' value={this.state.email} className='form-control' disabled />
 												</div>
-												<div class='form-group col-md-3'>
+												<div className='form-group col-md-3'>
 													<label for='inputEmail4'>Role</label>
-													<select type='text' class='form-control' disabled={!this.state.edit}>
+													<select type='text' className='form-control' disabled={!this.state.edit}>
 														<option value={this.state.roleId}>{this.state.Role && this.state.Role.name}</option>
 														<option value='3'>seller</option>
 													</select>
 												</div>
 											</div>
-											<div class='form-group'>
+											<div className='form-group'>
 												<label for='company'>company</label>
-												<input type='text' value={this.state.company} class='form-control' onChange={this.handleInput} disabled={!this.state.edit} />
+												<input type='text' value={this.state.company} className='form-control' onChange={this.handleInput} disabled={!this.state.edit} />
 											</div>
 
-											<div class='form-row'>
-												<div class='form-group col-md-6'>
+											<div className='form-row'>
+												<div className='form-group col-md-6'>
 													<label for='inputEmail4'>address</label>
-													<input type='email' name='email' value={this.state.address} class='form-control' onChange={this.handleInput} disabled={!this.state.edit} />
+													<input type='email' name='email' value={this.state.address} className='form-control' onChange={this.handleInput} disabled={!this.state.edit} />
 												</div>
-												<div class='form-group col-md-6'>
+												<div className='form-group col-md-6'>
 													<label for='inputPassword4'>telephone</label>
-													<input type='text' value={this.state.telephone} class='form-control' onChange={this.handleInput} disabled={!this.state.edit} />
+													<input type='text' value={this.state.telephone} className='form-control' onChange={this.handleInput} disabled={!this.state.edit} />
 												</div>
 											</div>
 										</form>
 									</div>
-									<div class='tab-pane fade' id='pills-profile' role='tabpanel' aria-labelledby='pills-profile-tab'>
+									<div className='tab-pane fade' id='pills-profile' role='tabpanel' aria-labelledby='pills-profile-tab'>
 										...
 									</div>
-									<div class='tab-pane fade' id='pills-contact' role='tabpanel' aria-labelledby='pills-contact-tab'>
+									<div className='tab-pane fade' id='pills-contact' role='tabpanel' aria-labelledby='pills-contact-tab'>
 										...
 									</div>
 								</div>

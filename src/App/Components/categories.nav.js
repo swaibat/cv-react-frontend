@@ -53,7 +53,7 @@ class Category extends Component {
 									{payload &&
 										payload.data.map((e, index) => {
 											return (
-												<div className='col-md-3 cat-col '>
+												<div key={index} className='col-md-3 cat-col '>
 													<li className='nav-item text-secondary'>
 														<a
 															className='nav-link nav-link-collapse text-secondary py-1'

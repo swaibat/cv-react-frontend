@@ -3,14 +3,11 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLock, faUser, faCheck, faDesktop, faLayerGroup, faThLarge } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import Header from './../Components/Header';
-import Footer from './../Components/Footer';
 
 class registerSuccess extends Component {
 	render() {
 		return (
 			<>
-				<Header />
 				<div className='card text-center bg-transparent border-0'>
 					<div className='card-header bg-white rounded'>
 						<p className='card-text'>Registration successful</p>
@@ -113,7 +110,6 @@ class registerSuccess extends Component {
 						</div>
 					</div>
 				</div>
-				<Footer />
 			</>
 		);
 	}

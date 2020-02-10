@@ -14,7 +14,6 @@ import Dashboard from './Pages/admin/dashboard.page';
 import CreateProduct from './Pages/admin/create.product.page';
 import Category from './Pages/admin/categories.page';
 import AdminProducts from './Pages/admin/products.list.page';
-import countries from './Pages/admin/main';
 import settings from './Pages/admin/Settings.page';
 import Pages from './Pages/admin/pages.page';
 import About from './Pages/admin/about.page';
@@ -55,7 +54,6 @@ export class App extends React.Component {
 							<Route exact path='/admin/products/create' component={CreateProduct} />
 							<Route exact path='/admin/category' component={Category} />
 							<Route exact path='/admin/products' component={AdminProducts} />
-							<Route exact path='/admin/countries' component={countries} />
 							<Route exact path='/admin/settings' component={settings} />
 							<Route exact path='/admin/faq' component={FaqList} />
 							<Route exact path='/admin/pages' component={Pages} />

@@ -30,7 +30,7 @@ export class Logout extends React.Component {
 					<span>Rumbiiha swaibu</span>
 				</Link>
 				<div className='dropdown-menu shadow notification-pane' aria-labelledby='dropdownMenuButton'>
-					<a className='dropdown-item' href='#'>
+					<span className='dropdown-item'>
 						<div className='card-header bg-white py-1 px-2 d-flex align-items-center'>
 							<div className='d-flex'>
 								<img className='user-avatar-nav img-thumbnail' src={avatar} alt='user' />
@@ -44,7 +44,7 @@ export class Logout extends React.Component {
 								</Link>
 							</div>
 						</div>
-					</a>
+					</span>
 					<a className='dropdown-item' href='#'>
 						<span className='mb-1'>Account settings</span>
 					</a>

@@ -7,6 +7,9 @@ import { GetFaq, createFaq, deleteFaq, updateFaq } from './faq.reducer';
 import { GetAbout, createAbout, deleteAbout, updateAbout } from './about.reducer';
 import { getPages, createPage, deletePage, updatePage } from './pages.reducer';
 import { getUser, getUsers } from './user.reducer';
+import { GetCurrency, updateCurrency } from './currency.reducer';
+import { GetSettings, updateSettings } from './settings.reducer';
+import getIp from './ip.reducer';
 import Logout from './logout.reducer';
 import products from './pagination.reducer';
 
@@ -40,6 +43,11 @@ const allReducers = combineReducers({
 	updateAbout,
 	getUser,
 	getUsers,
+	getIp,
+	GetCurrency,
+	updateCurrency,
+	GetSettings,
+	updateSettings,
 });
 
 export default allReducers;

@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 function Nav() {
 	return (
-		<ul className='navbar-nav mr-auto sidenav position-absolute bg-white text-secondary-light vh-100' id='navAccordion'>
+		<ul className='navbar-nav mr-auto sidenav bg-white text-secondary-light vh-100' id='navAccordion'>
 			<li className='nav-item shadow-sm p-2 m-0 h-3 d-flex justify-content-center'>
 				<a className='navbar-brand p-0' href='/'>
 					<img src={Logo} alt='logo' />

@@ -1,5 +1,6 @@
 import constant from '../constants';
 import Api from '../../Api/index';
+import { toast } from 'react-toastify';
 
 export const items = async () => {
 	try {
@@ -22,8 +23,10 @@ export const products = async () => {
 export const createItem = async (data, token) => {
 	try {
 		const result = await Api.createItem(data, token);
+		toast.success(result.data.message);
 		return { type: constant.CREATE_ITEMS_SUCCESS, payload: result.data };
 	} catch (error) {
+		toast.error(error.response.data.message);
 		return { type: constant.CREATE_ITEMS_ERROR, error: error.response.data };
 	}
 };
@@ -58,8 +61,10 @@ export const category = async () => {
 export const createCategory = async (data, token) => {
 	try {
 		const result = await Api.createCategory(data, token);
+		toast.success(result.data.message);
 		return { type: constant.CREATE_CATEGORY_SUCCESS, payload: result.data };
 	} catch (error) {
+		toast.error(error.response.data.message);
 		return { type: constant.CREATE_CATEGORY_ERROR, error: error.response.data };
 	}
 };
@@ -67,8 +72,10 @@ export const createCategory = async (data, token) => {
 export const updateCategory = async (data, token, id) => {
 	try {
 		const result = await Api.updateCategory(data, token, id);
+		toast.success(result.data.message);
 		return { type: constant.UPDATE_CATEGORY_SUCCESS, payload: result.data };
 	} catch (error) {
+		toast.error(error.response.data.message);
 		return { type: constant.UPDATE_CATEGORY_ERROR, error: error.response.data };
 	}
 };
@@ -76,8 +83,10 @@ export const updateCategory = async (data, token, id) => {
 export const deleteCategory = async (token, id) => {
 	try {
 		const result = await Api.deleteCategory(token, id);
+		toast.success(result.data.message);
 		return { type: constant.DELETE_CATEGORY_SUCCESS, payload: result.data };
 	} catch (error) {
+		toast.error(error.response.data.message);
 		return { type: constant.DELETE_CATEGORY_ERROR, error: error.response.data };
 	}
 };

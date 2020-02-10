@@ -3,7 +3,6 @@ $border-radius:.5rem;
 $facebook:#3b5998;
 $twitter: #00acee;
 $secondary:grey;
-$input-border-focus: red;
 $bg-light:#f8f9fa;
 $bg-dark:#2b2b2b;
 $bg-default:#eef2f4;
@@ -11,3 +10,9 @@ $container-max-widths: (sm: 540px,
   md: 720px,
   lg: 960px,
   xl: 1340px) !default;
+
+$ruler: 16px;
+$color-red: #AE1100;
+$color-bg: #EBECF0;
+$color-shadow: #BABECC;
+$color-white: #FFF;

@@ -59,7 +59,7 @@ class Login extends Component {
 									<div className='card-header bg-white border-0'>
 										<span className='card-text cv-title'>User Login</span>
 									</div>
-									<div className='card-body'>
+									<div className='card-body text-center'>
 										<form className='form-signin font-weight-light rounded-sm m-lg-auto' onSubmit={this.handleSubmit}>
 											{error && (
 												<div className='alert alert-danger rounded-sm text-center scale-in-ver-center' role='alert'>
@@ -67,7 +67,7 @@ class Login extends Component {
 												</div>
 											)}
 
-											<div className='d-flex justify-content-center'>
+											<div className='d-flex justify-content-center mb-4'>
 												<button className='social-btns text-danger btn rounded border'>
 													<FontAwesomeIcon icon={faGoogle} />
 												</button>
@@ -79,8 +79,9 @@ class Login extends Component {
 												</button>
 											</div>
 
-											<hr className='my-4' />
-											<div className='input-group form-group mb-3'>
+											<hr className='m-0 mt-4 mb-n3' />
+											<span className='mt-n4 p-3 bg-white'>Or login manually</span>
+											<div className='input-group form-group mb-3 mt-4'>
 												<div className='input-group-prepend rounded-0'>
 													<span className='input-group-text rounded-0 bg-transparent p-0 border-0 text-secondary'>
 														<Icon icon={email} />

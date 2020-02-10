@@ -5,13 +5,46 @@ import AdminNav from './components/admin.nav.component';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCogs } from '@fortawesome/free-solid-svg-icons';
 import EmailSettings from './components/email.settings';
-import ProductSettings from './components/product.settings';
+import ProductSettings from './components/settings.product';
 import ThemeSettings from './components/theme.settings';
-import GeneralSettings from './general.settings';
+import GeneralSettings from './settings.general';
+import local from '../../../redux/actions/local.action';
+import constants from '../../../redux/constants/index';
+import { getSettings, updateSettings } from '../../../redux/actions/settings.action';
+import { connect } from 'react-redux';
+import { getCurrencies } from './../../../helper/get.all.currencies';
 
-class Dashboard extends Component {
+class Settings extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {};
+		this.handleClick = this.handleClick.bind(this);
+	}
+	async componentDidMount() {
+		this.props.init();
+		this.props.settings();
+		this.props.local();
+		getCurrencies();
+		const { payload } = await getSettings();
+		this.setState({ ...payload.data });
+	}
+	handleClick(e) {
+		e.preventDefault();
+		this.setState({ currencySymbol: e.target.id, flag: e.target.name });
+	}
+	handleInput = e => {
+		const target = e.target;
+		const value = target.type === 'radio' ? (target.id.match('code') ? 'code' : 'symbol') : target.checked;
+		const name = target.id.match('-') ? target.id.split('-')[0] : target.id;
+		this.setState({ [name]: value });
+	};
+	handleSubmit = async e => {
+		e.preventDefault();
+		this.setState({ saved: true });
+		const { currencies, currencyFlagDisplay, autoCurrency, autoProductApproval, currencyDisplayBy, alpha2Code } = this.state;
+		this.props.update({ currency: currencies && currencies[0].code, currencyCountry: alpha2Code, currencyFlagDisplay, autoCurrency, autoProductApproval, currencyDisplayBy });
+	};
 	render() {
-		console.log('this.props', this.state);
 		return (
 			<>
 				<Sidenav />
@@ -88,11 +121,11 @@ class Dashboard extends Component {
 							<div className='col-11'>
 								<div className='tab-content' id='v-pills-tabContent'>
 									{/* general settings */}
-									<GeneralSettings />
+									<GeneralSettings data={this} />
 									{/* general settings */}
-									<ThemeSettings />
+									<ThemeSettings data={this} />
 									{/* email settings */}
-									<EmailSettings />
+									<EmailSettings data={this} />
 									{/* general settings */}
 									<div className='tab-pane bg-white rounded p-3 fade shadow-xs' id='v-pills-settings' role='tabpanel' aria-labelledby='v-pills-settings-tab'>
 										Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua anim Lorem sint. Veniam sint duis incididunt do esse magna mollit excepteur laborum qui. Id id reprehenderit sit est
@@ -101,7 +134,7 @@ class Dashboard extends Component {
 									</div>
 
 									{/* general settings */}
-									<ProductSettings />
+									{this.props.payload && <ProductSettings data={this} />}
 								</div>
 							</div>
 						</div>
@@ -112,4 +145,32 @@ class Dashboard extends Component {
 	}
 }
 
-export default Dashboard;
+const mapDispatchToProps = dispatch => {
+	return {
+		init: () =>
+			dispatch({
+				type: constants.SETTINGS_PENDING,
+				pending: true,
+			}),
+
+		settings: async () => dispatch(await getSettings()),
+		update: async (data, token) => dispatch(await updateSettings(data, token)),
+		local: async () => dispatch(await local()),
+	};
+};
+
+const mapStateToProps = state => {
+	return {
+		payload: state.GetSettings.payload,
+		pending: state.GetSettings.pending,
+		error: state.GetSettings.error,
+		updatePayload: state.updateSettings.payload,
+		updatePending: state.updateSettings.pending,
+		updateError: state.updateSettings.error,
+		localPayload: state.getIp.payload,
+		localPending: state.getIp.pending,
+		localError: state.getIp.error,
+	};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Settings);

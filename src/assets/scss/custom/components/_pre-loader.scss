@@ -32,8 +32,9 @@
 	}
 	img,
 	input,
-	.input-group-text {
-		visibility: hidden;
+	.input-group-text,
+	.custom-control-inline {
+		visibility: hidden !important;
 	}
 
 	svg {
