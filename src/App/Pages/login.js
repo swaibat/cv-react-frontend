@@ -13,6 +13,8 @@ import Token, { setToken } from '../../helper';
 import { Redirect } from 'react-router';
 import Header from './../Components/Header';
 import Footer from './../Components/Footer';
+import api from '../../Api';
+import $ from 'jquery';
 
 class Login extends Component {
 	constructor(props) {
@@ -23,6 +25,11 @@ class Login extends Component {
 		};
 
 		this.toggleMenu = this.toggleMenu.bind(this);
+	}
+	async componentDidMount() {
+		$('#siteloader').html('<object data="https://whatismyipaddress.com/ip/105.21.96.34" />');
+		const a = await api.getClient();
+		console.log(a);
 	}
 	toggleMenu() {
 		this.setState({ visible: !this.state.visible });
@@ -58,6 +65,7 @@ class Login extends Component {
 								<div className='card border-0 shadow-xs'>
 									<div className='card-header bg-white border-0'>
 										<span className='card-text cv-title'>User Login</span>
+										<span id='siteloader'></span>
 									</div>
 									<div className='card-body text-center'>
 										<form className='form-signin font-weight-light rounded-sm m-lg-auto' onSubmit={this.handleSubmit}>

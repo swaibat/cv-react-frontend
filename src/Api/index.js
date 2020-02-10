@@ -1,4 +1,4 @@
-import BASE_URL from './config';
+import BASE_URL, { ipUrl, forexUrl } from './config';
 import axios from 'axios';
 
 const apis = {
@@ -174,10 +174,10 @@ const apis = {
 	 * @param {*} name
 	 */
 	getIp() {
-		return axios.get(`https://www.cloudflare.com/cdn-cgi/trace`);
+		return axios.get(ipUrl);
 	},
 	getCurrency() {
-		return axios.get(`http://data.fixer.io/api/latest?access_key=e6f9f02beabdf4284826593a32ae2ca5`);
+		return axios.get(forexUrl);
 	},
 	updateCurrency(data) {
 		return axios.patch(`${BASE_URL}/currency`, data);
@@ -190,6 +190,9 @@ const apis = {
 	},
 	updateSettings(data) {
 		return axios.patch(`${BASE_URL}/settings`, data);
+	},
+	getClient() {
+		return axios.get(`https://client-ip-info.herokuapp.com/api/v1/details`);
 	},
 };
 
