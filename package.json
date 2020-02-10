@@ -99,6 +99,7 @@
 		"cron": "^1.8.2",
 		"google-maps-react": "^2.0.2",
 		"history": "^4.10.1",
+		"html-to-json": "^0.6.0",
 		"identity-obj-proxy": "^3.0.0",
 		"install": "^0.13.0",
 		"jquery": "^3.4.1",

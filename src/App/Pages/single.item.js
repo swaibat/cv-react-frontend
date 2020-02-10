@@ -53,55 +53,53 @@ class Item extends Component {
 									</p>
 								</div>
 							</div>
-							<div className='col-md-7 p-0 m-0 pr-2 text-secondary'>
-								<div className='w-100 border p-2 my-2 mb-3 rounded'>
-									<div className='d-flex'>
-										<h3 className='font-weight-bold text-primary'>{payload && payload.data.name}</h3>
-										<div className='ml-auto'>
-											<button className='btn text-secondary'>
-												<FontAwesomeIcon icon={faShareSquare} />
-											</button>
-											<button className='btn text-secondary'>
-												<FontAwesomeIcon icon={faHeart} />
-											</button>
+							<div className='row col-md-7 p-0 m-0 pr-2 text-secondary'>
+								<div className='col-md-7'>
+									<div className='w-100 border p-2 my-2 mb-3 rounded'>
+										<div className='d-flex'>
+											<h3 className='font-weight-bold text-primary'>{payload && payload.data.name}</h3>
+											<div className='ml-auto'>
+												<button className='btn text-secondary'>
+													<FontAwesomeIcon icon={faShareSquare} />
+												</button>
+												<button className='btn text-secondary'>
+													<FontAwesomeIcon icon={faHeart} />
+												</button>
+											</div>
+										</div>
+										<h5 className=''>{payload && payload.data.price}</h5>
+										<div className='d-flex justify-content-between'>
+											<p>kampala,Ug</p>
+											<small>
+												<strong>published:</strong> 4 hours ago
+											</small>
 										</div>
 									</div>
-									<h5 className=''>{payload && payload.data.price}</h5>
-									<div className='d-flex justify-content-between'>
-										<p>kampala,Ug</p>
-										<small>
-											<strong>published:</strong> 4 hours ago
-										</small>
+									<div className='card h-auto w-100 mb-3 overflow-hidden'>
+										<table className='table card-specs'>
+											<thead className='border-0 thead-light'>
+												<tr>
+													<th scope='col'>Name</th>
+													<th scope='col'>First</th>
+												</tr>
+											</thead>
+											<tbody>
+												{payload &&
+													Object.entries(payload.data.adons).map((e, i) => {
+														return (
+															<tr>
+																<td className='text-left font-weight-bold text-capitalize'>{e[0]}</td>
+																<td className='text-left'>{e[1]}</td>
+															</tr>
+														);
+													})}
+											</tbody>
+										</table>
 									</div>
 								</div>
-								<div className='row'>
-									<div className='col-7'>
-										<div className='card h-auto w-100 mb-3 overflow-hidden'>
-											<table className='table card-specs'>
-												<thead className='border-0 thead-light'>
-													<tr>
-														<th scope='col'>Name</th>
-														<th scope='col'>First</th>
-													</tr>
-												</thead>
-												<tbody>
-													{payload &&
-														Object.entries(payload.data.adons).map((e, i) => {
-															return (
-																<tr>
-																	<td className='text-left font-weight-bold text-capitalize'>{e[0]}</td>
-																	<td className='text-left'>{e[1]}</td>
-																</tr>
-															);
-														})}
-												</tbody>
-											</table>
-										</div>
-									</div>
-									<div className='col-5 pl-0'>
-										<div className='card h-auto w-100 overflow-hidden mb-3'>
-											<div id='map'></div>
-										</div>
+								<div className='col-md-5 pl-0'>
+									<div className='card h-auto w-100 overflow-hidden mb-3'>
+										<div id='map'></div>
 									</div>
 								</div>
 							</div>
