@@ -192,7 +192,7 @@ const apis = {
 		return axios.patch(`${BASE_URL}/settings`, data);
 	},
 	getClient() {
-		return axios.get(`https://client-ip-info.herokuapp.com/api/v1/details`);
+		return axios.get(`https://get.client-ip.com/lookup`);
 	},
 };
 

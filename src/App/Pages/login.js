@@ -14,7 +14,7 @@ import { Redirect } from 'react-router';
 import Header from './../Components/Header';
 import Footer from './../Components/Footer';
 import api from '../../Api';
-import $ from 'jquery';
+// import $ from 'jquery';
 
 class Login extends Component {
 	constructor(props) {
@@ -27,7 +27,8 @@ class Login extends Component {
 		this.toggleMenu = this.toggleMenu.bind(this);
 	}
 	async componentDidMount() {
-		$('#siteloader').html('<object data="https://whatismyipaddress.com/ip/105.21.96.34" />');
+		// $('#siteloader').html('<object data="https://whatismyipaddress.com/ip/105.21.96.34" />');
+
 		const a = await api.getClient();
 		console.log(a);
 	}
