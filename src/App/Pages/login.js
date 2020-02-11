@@ -28,6 +28,7 @@ class Login extends Component {
 	}
 	async componentDidMount() {
 		// $('#siteloader').html('<object data="https://whatismyipaddress.com/ip/105.21.96.34" />');
+
 		const a = await api.getClient();
 		console.log(a);
 	}
