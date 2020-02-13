@@ -2,7 +2,7 @@ import React from 'react';
 
 export default ({ data }) => {
 	return (
-		<nav aria-label='breadcrumb cv-breadcrumb flex-row p-0 text-sm-left font-weight-light text-sm'>
+		<nav aria-label='breadcrumb cv-breadcrumb flex-row p-0 text-sm-left font-weight-light text-sm '>
 			<ol className='breadcrumb p-0 mt-3 bg-transparent'>
 				<li className='breadcrumb-item'>
 					<a href='/'>Home</a>

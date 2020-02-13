@@ -18,3 +18,12 @@ export const verifyUser = async payload => {
 		return { type: constant.VERIFY_ERROR, error: error.response.data };
 	}
 };
+
+export const verifyUserCode = async (phone, code) => {
+	try {
+		const result = await Api.verifyUserCode(phone, code);
+		return { type: constant.VERIFY_CODE_SUCCESS, payload: result.data };
+	} catch (error) {
+		return { type: constant.VERIFY_CODE_ERROR, error: error.response.data };
+	}
+};

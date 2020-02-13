@@ -10,11 +10,12 @@
 }
 .loader {
 	.input-group,
-	.btn,
+	a,
 	img,
 	.link-text,
 	svg,
-	p {
+	span,
+	.breadcrumb-item, p {
 		animation-duration: 1s;
 		animation-fill-mode: forwards;
 		animation-iteration-count: infinite;
@@ -33,6 +34,8 @@
 	img,
 	input,
 	.input-group-text,
+	span *,
+	img,
 	.custom-control-inline {
 		visibility: hidden !important;
 	}
@@ -49,5 +52,10 @@
 	.form-row {
 		margin-right: 0;
 		margin-left: 0;
+	}
+	.breadcrumb-item {
+		&::before {
+			visibility: hidden;
+		}
 	}
 }

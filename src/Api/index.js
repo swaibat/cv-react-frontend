@@ -8,8 +8,11 @@ const apis = {
 	register(data, token) {
 		return axios.post(`${BASE_URL}/users/register/${token}`, data);
 	},
-	verifyUser(email) {
-		return axios.post(`${BASE_URL}/users/verify`, email);
+	verifyUser(data) {
+		return axios.post(`${BASE_URL}/users/verify`, data);
+	},
+	verifyUserCode(telephone, code) {
+		return axios.post(`${BASE_URL}/users/verify/${code}`, telephone);
 	},
 	getItems() {
 		return axios.get(`${BASE_URL}/products`);
@@ -193,6 +196,21 @@ const apis = {
 	},
 	getClient() {
 		return axios.get(`https://get.client-ip.com/lookup`);
+	},
+	addToFavourite(id, token) {
+		return axios.get(`${BASE_URL}/favourite/${id}`, {
+			headers: { Authorization: token },
+		});
+	},
+	viewFavourite(token) {
+		return axios.get(`${BASE_URL}/favourite`, {
+			headers: { Authorization: token },
+		});
+	},
+	removeFavourite(id, token) {
+		return axios.delete(`${BASE_URL}/favourite/${id}`, {
+			headers: { Authorization: token },
+		});
 	},
 };
 

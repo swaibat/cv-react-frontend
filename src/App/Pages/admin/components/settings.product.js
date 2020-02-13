@@ -13,47 +13,51 @@ function ProductSettings({ data }) {
 	const changes = Compare(state, payload.data);
 	return (
 		<>
-			<div className='tab-pane bg-white rounded p-3 fade shadow-xs show active' id='v-pills-products' role='tabpanel' aria-labelledby='v-pills-products-tab'>
+			<div className='tab-pane bg-white rounded p-3 fade shadow-xs' id='v-pills-products' role='tabpanel' aria-labelledby='v-pills-products-tab'>
 				<form className='h-100' onSubmit={data.handleSubmit}>
-					<li className='d-flex justify-content-between align-items-center py-3 border-bottom'>
-						<div className=''>
-							<h6>Seletect default currency</h6>
-							<small className='font-weight-light w-75'>
-								this is the innitial currency for your system which can later be automatically converted according tou your users location if{' '}
-								<strong className='font-weight-bold'>Auto detect countries currency</strong> is enabaled or else or users will get product prices in this curency
-							</small>
-						</div>
-						<div className='input-group w-25 flex-row-reverse'>
-							<div className='input-group-append'>
-								<span className='input-group-text cv-input-group-text rounded-0 bg-transparent p-0 text-secondary pl-2' id='basic-addon2'>
-									{(data.state.currencies && data.state.currencies[0].name) || country.currencies[0].name}
-								</span>
+					<div className='form-group form-row align-items-center'>
+						<label for='inputPassword' className='col-md-8 col-form-label'>
+							<div className=''>
+								<h6>Seletect default currency</h6>
+								<small className='font-weight-light'>
+									this is the innitial currency for your system which can later be automatically converted according tou your users location if{' '}
+									<strong className='font-weight-bold'>Auto detect countries currency</strong> is enabaled or else or users will get product prices in this curency
+								</small>
 							</div>
-							<div className='input-group-prepend'>
-								<button
-									className='btn btn-link dropdown-toggle d-flex align-items-center rounded-0 bg-transparent p-0 border-bottom  text-secondary'
-									type='button'
-									data-toggle='dropdown'
-									aria-haspopup='true'
-									aria-expanded='false'
-								>
-									<img height='17' width='30' className='pr-1' src={`http://localhost:5000/flags/${data.state.flag || country.flag}`} alt='flag' />{' '}
-									{(state.currencies && state.currencies[0].symbol) || country.currencies[0].symbol}
-								</button>
-								<div className='dropdown-menu country-select rounded-sm shadow-xs'>
-									{countries.map((e, index) => {
-										return (
-											<a key={index} onClick={() => data.setState({ ...e })} className='dropdown-item d-flex align-items-center' href='#'>
-												<img height='17' width='30' className='pr-1' src={`http://localhost:5000/flags/${e.flag}`} alt='flag' />
-												<span className='px-1'>{e.name}</span>
-												<small className='text-secondary'>{e.currencies[0].symbol}</small>
-											</a>
-										);
-									})}
+						</label>
+						<div className='col-md-4'>
+							<div className='input-group flex-row-reverse'>
+								<div className='input-group-append'>
+									<span className='input-group-text cv-input-group-text rounded-0 bg-transparent p-0 text-secondary pl-2' id='basic-addon2'>
+										{(data.state.currencies && data.state.currencies[0].name) || country.currencies[0].name}
+									</span>
+								</div>
+								<div className='input-group-prepend'>
+									<button
+										className='btn btn-link dropdown-toggle d-flex align-items-center rounded-0 bg-transparent p-0 border-bottom  text-secondary'
+										type='button'
+										data-toggle='dropdown'
+										aria-haspopup='true'
+										aria-expanded='false'
+									>
+										<img height='17' width='30' className='pr-1' src={`http://localhost:5000/flags/${data.state.flag || country.flag}`} alt='flag' />{' '}
+										{(state.currencies && state.currencies[0].symbol) || country.currencies[0].symbol}
+									</button>
+									<div className='dropdown-menu country-select rounded-sm shadow-xs'>
+										{countries.map((e, index) => {
+											return (
+												<a key={index} onClick={() => data.setState({ ...e })} className='dropdown-item d-flex align-items-center' href='#'>
+													<img height='17' width='30' className='pr-1' src={`http://localhost:5000/flags/${e.flag}`} alt='flag' />
+													<span className='px-1'>{e.name}</span>
+													<small className='text-secondary'>{e.currencies[0].symbol}</small>
+												</a>
+											);
+										})}
+									</div>
 								</div>
 							</div>
 						</div>
-					</li>
+					</div>
 					<li className='d-flex justify-content-between py-3 border-bottom'>
 						<div className=''>
 							<h6>Auto detect countries currency</h6>

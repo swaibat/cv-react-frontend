@@ -31,3 +31,16 @@ export const verifyUser = (state = initialState, action) => {
 			return state;
 	}
 };
+
+export const verifyUserCode = (state = initialState, action) => {
+	switch (action.type) {
+		case constant.VERIFY_CODE_PENDING:
+			return { ...state, pending: true };
+		case constant.VERIFY_CODE_SUCCESS:
+			return { ...state, payload: action.payload, pending: false };
+		case constant.VERIFY_CODE_ERROR:
+			return { ...state, error: action.error, pending: false };
+		default:
+			return state;
+	}
+};

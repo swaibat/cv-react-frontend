@@ -29,9 +29,6 @@ class Header extends Component {
 					</button>
 					<ul className='nav ml-auto'>
 						<li className='nav-item dropdown mx-2'>
-							<a className='nav-link' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'>
-								<FontAwesomeIcon className='cv-nav-icons' icon={faCommentAlt} />
-							</a>
 							<div className='dropdown-menu shadow notification-pane'>
 								<div className='dropdown-item card border-0 p-0' href='#'>
 									<div className='card-header bg-white py-1 px-2 d-flex'>

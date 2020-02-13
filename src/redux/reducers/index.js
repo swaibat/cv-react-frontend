@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import LoginReducer from './login.reducer';
-import RegisterReducer, { verifyUser } from './register.reducer';
+import RegisterReducer, { verifyUser, verifyUserCode } from './register.reducer';
 import { Items, getProducts, CatItems, categories, singleItem, createItem, createCategory, updateCategory, deleteCategory } from './items.reducer';
 import Settings from './settings.reducer';
 import { GetFaq, createFaq, deleteFaq, updateFaq } from './faq.reducer';
@@ -12,6 +12,8 @@ import { GetSettings, updateSettings } from './settings.reducer';
 import getIp from './ip.reducer';
 import Logout from './logout.reducer';
 import products from './pagination.reducer';
+import { clentInfo } from './country.info.reducer';
+import Favourite from './favourite.reducer';
 
 const allReducers = combineReducers({
 	LoginReducer,
@@ -48,6 +50,11 @@ const allReducers = combineReducers({
 	updateCurrency,
 	GetSettings,
 	updateSettings,
+	clentInfo,
+	verifyUserCode,
+	AddToFavourite: Favourite.addToFavourite,
+	ViewFavourite: Favourite.viewFavourite,
+	RemoveFavourite: Favourite.removeFavourite,
 });
 
 export default allReducers;

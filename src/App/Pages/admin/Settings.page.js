@@ -8,6 +8,7 @@ import EmailSettings from './components/email.settings';
 import ProductSettings from './components/settings.product';
 import ThemeSettings from './components/theme.settings';
 import GeneralSettings from './settings.general';
+import MessageSettings from './components/settings.messages';
 import local from '../../../redux/actions/local.action';
 import constants from '../../../redux/constants/index';
 import { getSettings, updateSettings } from '../../../redux/actions/settings.action';
@@ -114,7 +115,7 @@ class Settings extends Component {
 										aria-selected='false'
 									>
 										<FontAwesomeIcon className='m-auto' icon={faCogs} />
-										others
+										Products
 									</a>
 								</div>
 							</div>
@@ -127,12 +128,7 @@ class Settings extends Component {
 									{/* email settings */}
 									<EmailSettings data={this} />
 									{/* general settings */}
-									<div className='tab-pane bg-white rounded p-3 fade shadow-xs' id='v-pills-settings' role='tabpanel' aria-labelledby='v-pills-settings-tab'>
-										Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua anim Lorem sint. Veniam sint duis incididunt do esse magna mollit excepteur laborum qui. Id id reprehenderit sit est
-										eu aliqua occaecat quis et velit excepteur laborum mollit dolore eiusmod. Ipsum dolor in occaecat commodo et voluptate minim reprehenderit mollit pariatur. Deserunt non laborum
-										enim et cillum eu deserunt excepteur ea incididunt minim occaecat.
-									</div>
-
+									{this.props.payload && <MessageSettings data={this} />}
 									{/* general settings */}
 									{this.props.payload && <ProductSettings data={this} />}
 								</div>

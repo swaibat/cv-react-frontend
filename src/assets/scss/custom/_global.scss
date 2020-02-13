@@ -251,17 +251,24 @@ body {
 	height: 9rem;
 }
 
-.profile-image{
+.profile-image {
 	height: 7rem;
 	width: 7rem;
 }
 
-.profile-holder{
-    margin-top: -4rem;
+.profile-holder {
+	margin-top: -4rem;
 }
 
-.country-select{
+.country-select {
 	max-height: 170px;
 	width: 230px;
 	overflow: scroll;
+}
+
+.vcode-input {
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	font-size: 18px;
 }
