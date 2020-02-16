@@ -39,7 +39,7 @@ class CategoryItem extends Component {
 	}
 
 	render() {
-		const { pending, settingsPayload } = this.props;
+		const { settingsPayload } = this.props;
 		this.props.payload && setTimeout(() => this.setState({ payload: this.props.payload, pending: false }), 5000);
 		const { payload } = this.state;
 		return (
