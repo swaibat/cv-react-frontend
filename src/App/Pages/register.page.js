@@ -10,9 +10,10 @@ import Token from '../../helper';
 import { Redirect } from 'react-router';
 import Header from './../Components/Header';
 import Footer from './../Components/Footer';
-import local from '../../redux/actions/local.action';
-import { getLocal } from '../../helper/users.location.ops';
 import { Link } from 'react-router-dom';
+import countries from '../../helper/countries.json';
+import { getClientInfo } from '../../redux/actions/country.info.action';
+import dynamic from 'next/dynamic';
 
 class Register extends Component {
 	constructor(props) {
@@ -22,16 +23,13 @@ class Register extends Component {
 			visible: false,
 			latitude: '',
 			longitude: '',
-			callingCodes: ['46'],
-			flag: 'swe.svg',
 		};
 		this.handleClick = this.handleClick.bind(this);
+		this.handleInput = this.handleInput.bind(this);
 	}
 	async componentDidMount() {
 		this.props.loading();
-		this.props.local();
-		const locationData = await getLocal();
-		this.setState({ flag: locationData.flag, callingCode: locationData.callingCodes, countries: locationData.countries });
+		this.props.clientInfo();
 	}
 	handleClick(e) {
 		e.preventDefault();
@@ -56,12 +54,12 @@ class Register extends Component {
 		this.props.register(data, token);
 	};
 	render() {
-		const { payload, error, pending, localPending } = this.props;
+		const { payload, error, pending, clientPending, clientPayload } = this.props;
 		return (
 			<>
 				<Header />
 				{Token() ? <Redirect to='/' /> : ''}
-				<main className={`d-flex flex-column align-items-center min-vh-85 ${localPending ? 'loader' : ''} `}>
+				<main className={`d-flex flex-column align-items-center min-vh-85 ${clientPending ? 'loader' : ''} `}>
 					<div className='container m-auto'>
 						<div className='row justify-content-sm-center'>
 							<div className='col-sm-7 col-md-7'>
@@ -133,7 +131,15 @@ class Register extends Component {
 																		<span className='input-group-text bg-transparent cv-input-group-text rounded-0 p-0 border-bottom text-secondary'>
 																			<FontAwesomeIcon icon={faMapMarkedAlt} />
 																		</span>
-																		<input id='autocomplete' name='address' type='text' className='form-control custom-input' value={this.state.address} onChange={this.handleInput} />
+																		<input
+																			id='autocomplete'
+																			name='address'
+																			type='text'
+																			className='form-control custom-input'
+																			value={clientPayload && clientPayload.address1}
+																			onChange={this.handleInput}
+																			disabled
+																		/>
 																	</div>
 																	<div className='input-group mb-3'>
 																		<div className='input-group-prepend'>
@@ -144,19 +150,19 @@ class Register extends Component {
 																				aria-haspopup='true'
 																				aria-expanded='false'
 																			>
-																				<img height='17' width='30' className='pr-1' src={`http://localhost:5000/flags/${this.state.flag}`} alt='flag' />+{this.state.callingCode}
+																				<img height='17' width='30' className='pr-1' src={`http://localhost:5000/flags/${this.state.flag || (clientPayload && clientPayload.flag)}`} alt='flag' />+
+																				{this.state.callingCode || (clientPayload && clientPayload.callingCodes)}
 																			</button>
 																			<div className='dropdown-menu country-select rounded-sm shadow-xs'>
-																				{this.state.countries &&
-																					this.state.countries.map((e, index) => {
-																						return (
-																							<a key={index} onClick={this.handleClick} id={e.callingCodes} name={e.flag} className='dropdown-item d-flex align-items-center' href='#'>
-																								<img height='17' width='30' className='pr-1' src={`http://localhost:5000/flags/${e.flag}`} alt='flag' />
-																								<span className='px-1'>{e.name}</span>
-																								<small className='text-secondary'>+{e.callingCodes}</small>
-																							</a>
-																						);
-																					})}
+																				{countries.map((e, index) => {
+																					return (
+																						<a key={index} onClick={this.handleClick} id={e.callingCodes} name={e.flag} className='dropdown-item d-flex align-items-center' href='#'>
+																							<img height='17' width='30' className='pr-1' src={`http://localhost:5000/flags/${e.flag}`} alt='flag' />
+																							<span className='px-1'>{e.name}</span>
+																							<small className='text-secondary'>+{e.callingCodes}</small>
+																						</a>
+																					);
+																				})}
 																			</div>
 																		</div>
 																		<input
@@ -169,7 +175,6 @@ class Register extends Component {
 																			required
 																		/>
 																	</div>
-
 																	<div className='input-group form-group mb-3'>
 																		<div className='input-group-prepend rounded-0'>
 																			<span className='input-group-text cv-input-group-text rounded-0 bg-transparent p-0 text-secondary'>
@@ -251,11 +256,11 @@ const mapDispatchToProps = dispatch => {
 			}),
 		loading: () =>
 			dispatch({
-				type: constants.IP_PENDING,
+				type: constants.CLIENT_INFO_PENDING,
 				pending: true,
 			}),
 		register: async (email, token) => dispatch(await register(email, token)),
-		local: async () => dispatch(await local()),
+		clientInfo: async () => dispatch(await getClientInfo()),
 	};
 };
 
@@ -264,9 +269,9 @@ const mapStateToProps = state => {
 		payload: state.RegisterReducer.payload,
 		pending: state.RegisterReducer.pending,
 		error: state.RegisterReducer.error,
-		localPayload: state.getIp.payload,
-		localPending: state.getIp.pending,
-		localError: state.getIp.error,
+		clientPayload: state.clentInfo.payload,
+		clientPending: state.clentInfo.pending,
+		clientError: state.clentInfo.error,
 	};
 };
 

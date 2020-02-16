@@ -5,7 +5,7 @@ function ProductSettings() {
 	return (
 		<div className='tab-pane bg-white rounded p-3 fade shadow-xs show active' id='v-pills-products' role='tabpanel' aria-labelledby='v-pills-products-tab'>
 			<form className='h-100'>
-				<li class='d-flex justify-content-between py-3 border-bottom'>
+				<li className='d-flex justify-content-between py-3 border-bottom'>
 					<div className=''>
 						<h6>Auto detect countries currency</h6>
 						<p className='font-weight-light'>these feature automatically detects and converts currency to local currency if disabled you will have to add currency manually</p>
@@ -15,7 +15,7 @@ function ProductSettings() {
 						<label className='custom-control-label' for='switch1' />
 					</div>
 				</li>
-				<li class='d-flex justify-content-between py-3 border-bottom'>
+				<li className='d-flex justify-content-between py-3 border-bottom'>
 					<div className=''>
 						<h6>Auto detect countries currency</h6>
 						<p className='font-weight-light'>these feature automatically detects and converts currency to local currency if disabled you will have to add currency manually</p>
@@ -25,7 +25,7 @@ function ProductSettings() {
 						<label className='custom-control-label' for='switch1' />
 					</div>
 				</li>
-				<li class='d-flex justify-content-between py-3'>
+				<li className='d-flex justify-content-between py-3'>
 					<div className=''>
 						<h6>Automatic Product Approval</h6>
 						<p className='font-weight-light'>if you set this on all products will be aproved automatically and visible by everyone on your website</p>

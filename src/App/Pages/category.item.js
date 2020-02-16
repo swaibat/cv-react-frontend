@@ -10,6 +10,7 @@ import Footer from './../Components/Footer';
 import { GetCurrency } from '../../redux/actions/currency.action';
 import local from '../../redux/actions/local.action';
 import { getSettings } from '../../redux/actions/settings.action';
+import dummy from '../../helper/preloader.helper.json';
 
 class CategoryItem extends Component {
 	constructor(props) {
@@ -17,6 +18,8 @@ class CategoryItem extends Component {
 
 		this.state = {
 			visible: 12,
+			pending: true,
+			payload: dummy,
 		};
 
 		this.loadMore = this.loadMore.bind(this);
@@ -29,7 +32,6 @@ class CategoryItem extends Component {
 	}
 	componentDidMount() {
 		const { name, sub } = this.props.match.params;
-		this.props.init();
 		this.props.items(sub || name);
 		this.props.getCurrency();
 		this.props.local();
@@ -37,19 +39,27 @@ class CategoryItem extends Component {
 	}
 
 	render() {
-		const { payload, settingsPayload } = this.props;
+		const { pending, settingsPayload } = this.props;
+		this.props.payload && setTimeout(() => this.setState({ payload: this.props.payload, pending: false }), 5000);
+		const { payload } = this.state;
 		return (
 			<>
 				<Header />
-				<main className='d-flex flex-column align-items-center'>
+				<main className={`d-flex flex-column align-items-center justify-content-start text-left ${this.state.pending && 'loader'}`}>
 					<div className='container p-1 p-md-2 min-vh-80 d-flex w-100 row justify-content-center align-items-center'>
-						<Bread data={payload && this.props.match.params} />
-						<div className='row'>
-							<div className='row'>{payload && settingsPayload && <Card data={payload.data} visible={this.state.visible} all={this.props} />}</div>
-							<button onClick={this.loadMore} className='btn bg-white text-primary btn-block text-center py-3 mt-3 mb-4 shadow-xs'>
-								load more
-							</button>
-						</div>
+						{payload && settingsPayload && (
+							<>
+								<div className='w-100'>
+									<Bread data={payload && this.props.match.params} />
+								</div>
+								<div className='row w-100'>
+									<Card data={this} />
+								</div>
+								<div onClick={this.loadMore} className='btn bg-white text-primary btn-block text-center py-3 mt-3 mb-4 shadow-xs'>
+									<span>load more</span>
+								</div>
+							</>
+						)}
 					</div>
 				</main>
 				<Footer />

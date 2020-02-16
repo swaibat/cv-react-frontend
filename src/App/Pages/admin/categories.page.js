@@ -167,7 +167,7 @@ class Categories extends Component {
 																	</span>
 																</li>
 															) : category.sub.length === 0 ? (
-																<li class={`list-group-item list-group-item-sm border-0 text-center m-auto`}>
+																<li className={`list-group-item list-group-item-sm border-0 text-center m-auto`}>
 																	<p className='mb-1 mt-n3'>Oops No sub Categories</p>
 																	<button name={category.name} id={category.id} className='btn btn-secondary btn-sm' data-toggle='modal' data-target='#exampleModalCenter' onClick={this.handleClick}>
 																		<FontAwesomeIcon className='mr-2' icon={faPlus} />
