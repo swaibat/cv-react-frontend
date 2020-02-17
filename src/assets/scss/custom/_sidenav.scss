@@ -75,27 +75,23 @@ li {
 }
 
 // favourite sidenav
-.fav-side-btn.collapsed{
-	right: -.5rem;
-	// transition: 0.35s;
-}
+
 .fav-side-btn{
-	position: fixed;
-	right: 297px;
 	top: 7.5rem;
+	position: absolute;
+	margin-left: -4.5rem; 
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
-	// transition: 0.35s;
 }
+
 .fav-sidenav {
+	transition: 0.3s;
 	height: 100%;
 	width: 0;
 	position: fixed;
 	z-index: 1;
 	top: 0;
-	right: 0;
 	overflow-x: visible !important;
-	transition: none;
 	padding-top: 60px;
 	a {
 		padding: 8px 8px 8px 32px;
@@ -103,9 +99,6 @@ li {
 		font-size: 25px;
 		display: block;
 		transition: 0.3s;
-	}
-	& > * {
-		transition: none;
 	}
 	&:hover {
 		color: #f1f1f1;
@@ -117,8 +110,13 @@ li {
 		font-size: 36px;
 		margin-left: 50px;
 	}
-	&.collapse.show {
-		width: 300px;
+	&.opened {
+		width: 320px;
+		right: 0;
+	}
+	&.closed {
+		width: 10px;
+		right: -2rem;
 	}
 }
 

@@ -2,7 +2,6 @@ import { combineReducers } from 'redux';
 import LoginReducer from './login.reducer';
 import RegisterReducer, { verifyUser, verifyUserCode } from './register.reducer';
 import { Items, getProducts, CatItems, categories, singleItem, createItem, createCategory, updateCategory, deleteCategory } from './items.reducer';
-import Settings from './settings.reducer';
 import { GetFaq, createFaq, deleteFaq, updateFaq } from './faq.reducer';
 import { GetAbout, createAbout, deleteAbout, updateAbout } from './about.reducer';
 import { getPages, createPage, deletePage, updatePage } from './pages.reducer';
@@ -14,6 +13,7 @@ import Logout from './logout.reducer';
 import products from './pagination.reducer';
 import { clentInfo } from './country.info.reducer';
 import Favourite from './favourite.reducer';
+import Chat from './chat.reducer';
 
 const allReducers = combineReducers({
 	LoginReducer,
@@ -31,7 +31,6 @@ const allReducers = combineReducers({
 	deleteCategory,
 	getProducts,
 	products,
-	Settings,
 	createFaq,
 	deleteFaq,
 	getPages,
@@ -55,6 +54,8 @@ const allReducers = combineReducers({
 	AddToFavourite: Favourite.addToFavourite,
 	ViewFavourite: Favourite.viewFavourite,
 	RemoveFavourite: Favourite.removeFavourite,
+	GetChat: Chat.getChat,
+	PostChat: Chat.postChat,
 });
 
 export default allReducers;

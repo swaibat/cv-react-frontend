@@ -13,7 +13,7 @@ import Footer from './../Components/Footer';
 import { Link } from 'react-router-dom';
 import countries from '../../helper/countries.json';
 import { getClientInfo } from '../../redux/actions/country.info.action';
-import dynamic from 'next/dynamic';
+import { withRouter } from 'react-router-dom';
 
 class Register extends Component {
 	constructor(props) {
@@ -275,4 +275,4 @@ const mapStateToProps = state => {
 	};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Register);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Register));

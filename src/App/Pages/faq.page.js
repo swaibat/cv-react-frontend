@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import Header from './../Components/Header';
 import Footer from './../Components/Footer';
+import { withRouter } from 'react-router-dom';
 
 class Faq extends Component {
 	componentDidMount() {
@@ -78,4 +79,4 @@ const mapStateToProps = state => {
 	};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Faq);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Faq));

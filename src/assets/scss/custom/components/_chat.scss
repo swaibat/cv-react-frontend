@@ -1,13 +1,79 @@
-.mw-85{
-    max-width: 85%;
+.mw-85 {
+	max-width: 85%;
 }
-.vh-71{
-    height: 71vh;
+.vh-71 {
+	height: 63vh;
 }
-.chat-icon{
- font-size: 1.5rem;
+.chat-icon {
+	font-size: 1.5rem;
 }
 hr.hr {
 	border-top: 1px solid #8c8b8b;
 	border-bottom: 1px solid #fff;
+}
+.cart-text {
+	width: 10rem;
+}
+.overflow-y-auto {
+	overflow-y: auto;
+}
+.clearfix::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+aside.emoji-picker-react .content-wrapper {
+	flex: 1;
+	overflow: hidden;
+	position: relative;
+	margin-left: 0;
+}
+
+aside.emoji-picker-react {
+	border-radius: 5px;
+	position: absolute;
+}
+
+.emoji-picker-react .emoji-group:before {
+	text-transform: capitalize;
+	font-weight: 100;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.chat-modal {
+	width: 350px;
+	max-height: 600px;
+	right: 1rem;
+	bottom: 0;
+	position: fixed;
+	z-index: 1000;
+	.chat-window {
+		max-height:400px;
+	}
+	p{
+		color: #dfdfdf;
+		margin-bottom: -.27rem !important;
+	}
+	small{
+		color: #a8a8a8;
+	}
+	.chat-card {
+		border-bottom-left-radius: 0 !important;
+		border-bottom-right-radius: 0 !important;
+	}
+	.chat-modal-header {
+		background: darken($color: $primary, $amount: 20);
+		.badge{
+		 margin-top: -.7rem;
+		 position: absolute;
+		 margin-left: -2.8rem;
+		 padding: .3rem .6rem;
+		 border-top-left-radius: 0 !important;
+		border-bottom-right-radius: 0 !important;
+		}
+	}
 }

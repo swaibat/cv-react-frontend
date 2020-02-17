@@ -140,13 +140,13 @@ class Registerform extends Component {
 												<label className='mr-4 p-0 m-0'>user type:</label>
 												<div className='form-check form-check-inline'>
 													<input className='form-check-input' type='radio' name='RoleId' id='exampleRadios1' value='1' checked />
-													<label className='form-check-label' for='exampleRadios1'>
+													<label className='form-check-label' htmlFor='exampleRadios1'>
 														Buyer
 													</label>
 												</div>
 												<div className='form-check'>
 													<input className='form-check-input' type='radio' name='RoleId' id='exampleRadios2' value='2' />
-													<label className='form-check-label' for='exampleRadios2'>
+													<label className='form-check-label' htmlFor='exampleRadios2'>
 														Seller
 													</label>
 												</div>

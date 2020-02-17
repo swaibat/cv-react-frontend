@@ -6,9 +6,9 @@ import value from '../../helper/thousands.helper';
 import Like from '../Components/like.button';
 
 function Card({ data }) {
-	const { localPayload, currencyPayload, settingsPayload } = data.props;
+	const { localPayload, currencyPayload, settingsPayload, payload } = data.props;
 	const localCurrency = settingsPayload.data.autoCurrency ? localPayload && localPayload.alpha2Code : '';
-	return data.props.payload.data.slice(0, data.state.visible).map((e, i) => {
+	return payload.data.slice(0, data.state.visible).map((e, i) => {
 		/**
 		 * @params
 		 * (currency-settings, product-price, all-currencies-data, local-currency, currency-display-fomat(code/symbol))
@@ -22,7 +22,7 @@ function Card({ data }) {
 					</Link>
 					<div className='card-footer bg-transparent overflow-hidden text-truncate'>
 						<span className='heart text-primary shadow-sm'>
-							<Like id={e.id} />
+							<Like id={e.id} {...data} />
 						</span>
 						<Link to={`/products/${e.name}`} className='card-text mb-1 text-truncate text-secondary'>
 							{e.name}

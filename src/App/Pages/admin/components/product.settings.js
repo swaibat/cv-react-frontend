@@ -12,7 +12,7 @@ function ProductSettings() {
 					</div>
 					<div className='custom-control custom-switch'>
 						<input name='negotiable' type='checkbox' className='custom-control-input ml-auto' id='switch1' checked />
-						<label className='custom-control-label' for='switch1' />
+						<label className='custom-control-label' htmlFor='switch1' />
 					</div>
 				</li>
 				<li className='d-flex justify-content-between py-3 border-bottom'>
@@ -22,7 +22,7 @@ function ProductSettings() {
 					</div>
 					<div className='custom-control custom-switch'>
 						<input name='negotiable' type='checkbox' className='custom-control-input ml-auto' id='switch1' checked />
-						<label className='custom-control-label' for='switch1' />
+						<label className='custom-control-label' htmlFor='switch1' />
 					</div>
 				</li>
 				<li className='d-flex justify-content-between py-3'>
@@ -32,7 +32,7 @@ function ProductSettings() {
 					</div>
 					<div className='custom-control custom-switch'>
 						<input name='negotiable' type='checkbox' className='custom-control-input ml-auto' id='switch1' checked />
-						<label className='custom-control-label' for='switch1' />
+						<label className='custom-control-label' htmlFor='switch1' />
 					</div>
 				</li>
 				<div className='form-row'>

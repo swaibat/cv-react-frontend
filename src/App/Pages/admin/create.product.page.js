@@ -91,11 +91,11 @@ class CreateItem extends Component {
 							<form onSubmit={this.handleSubmit}>
 								<div className='form-row'>
 									<div className='form-group col-md-6'>
-										<label for='category'>title</label>
+										<label htmlFor='category'>title</label>
 										<input type='text' name='name' className='form-control' placeholder='enter title' onChange={this.handleInput} />
 									</div>
 									<div className='form-group col-md-3'>
-										<label for='category'>category</label>
+										<label htmlFor='category'>category</label>
 										<select name='CategoryId' className='form-control' onChange={this.handleInput}>
 											<option value={false}>Select category</option>
 											{categories &&
@@ -107,21 +107,21 @@ class CreateItem extends Component {
 										</select>
 									</div>
 									<div className='form-group col-md-3'>
-										<label for='Sub category'>Sub category</label>
+										<label htmlFor='Sub category'>Sub category</label>
 										<select name='subCategoryId' className='form-control' onChange={this.handleInput} disabled={this.state && getc(categories.data, this.state.categoryId) === false ? true : false}>
-											<option selected>Select sub-category</option>
+											<option defaultValue>Select sub-category</option>
 											{this.state && getc(categories.data, this.state.CategoryId)}
 										</select>
 									</div>
 								</div>
 								<div className='form-row m-0'>
 									<div className='form-group col-md-9'>
-										<label for='description'>Description</label>
+										<label htmlFor='description'>Description</label>
 										<textarea name='description' rows='3' placeholder='item description' className='form-control' onChange={this.handleInput} />
 									</div>
 									<div className='form-group col-md-3 mb-0'>
 										<div className='form-group'>
-											<label for='price'>Price</label>
+											<label htmlFor='price'>Price</label>
 											<div className='input-group'>
 												<div className='input-group-prepend'>
 													<span className='input-group-text' id='basic-addon1'>
@@ -132,33 +132,33 @@ class CreateItem extends Component {
 											</div>
 										</div>
 										<div className='form-group d-flex mb-0'>
-											<label className='pr-3' for='inputState'>
+											<label className='pr-3' htmlFor='inputState'>
 												Price Negotiable
 											</label>
 											<div className='custom-control custom-switch'>
 												<input name='negotiable' type='checkbox' className='custom-control-input custom-control-input-lg' id='switch1' onChange={this.handleInput} />
-												<label className='custom-control-label' for='switch1' />
+												<label className='custom-control-label' htmlFor='switch1' />
 											</div>
 										</div>
 									</div>
 								</div>
 								<div className='form-group'>
-									<label for='inputZip'>upload images</label>
+									<label htmlFor='inputZip'>upload images</label>
 									<div className='input-group'>
 										<Dropzone onChangeStatus={this.handleChangeStatus} accept='image/*' />
 									</div>
 								</div>
 								<div className='form-row'>
 									<div className='form-group col-md-2'>
-										<label for='color'>Color</label>
+										<label htmlFor='color'>Color</label>
 										<input type='text' name='color' className='form-control form-control-sm' onChange={this.handleInput} />
 									</div>
 									<div className='form-group col-md-2'>
-										<label for='milage'>milage</label>
+										<label htmlFor='milage'>milage</label>
 										<input type='text' name='milage' className='form-control form-control-sm' onChange={this.handleInput} />
 									</div>
 									<div className='form-group col-md-2'>
-										<label for='transition'>Transition</label>
+										<label htmlFor='transition'>Transition</label>
 										<select type='text' name='transition' className='form-control form-control-sm' onChange={this.handleInput}>
 											<option value=''>select transition</option>
 											<option value='automatic'>automatic</option>
@@ -166,7 +166,7 @@ class CreateItem extends Component {
 										</select>
 									</div>
 									<div className='form-group col-md-2'>
-										<label for='inputZip'>fuel</label>
+										<label htmlFor='inputZip'>fuel</label>
 										<select name='fuel' type='text' className='form-control form-control-sm' onChange={this.handleInput}>
 											<option value=''>select year</option>
 											<option value='petrol'>petrol</option>
@@ -178,7 +178,7 @@ class CreateItem extends Component {
 										</select>
 									</div>
 									<div className='form-group col-md-2'>
-										<label for='inputZip'>engine size</label>
+										<label htmlFor='inputZip'>engine size</label>
 										<select name='engine' className='form-control form-control-sm' onChange={this.handleInput}>
 											<option value=''>select engine size</option>
 											<option>700</option>
@@ -193,18 +193,18 @@ class CreateItem extends Component {
 										</select>
 									</div>
 									<div className='form-group col-md-2'>
-										<label for='year'>Year</label>
+										<label htmlFor='year'>Year</label>
 										<select name='year' className='form-control form-control-sm' onChange={this.handleInput}>
 											{years()}
 										</select>
 									</div>
 									<div className='form-group col-md-2'>
-										<label for='brand'>Car brand</label>
+										<label htmlFor='brand'>Car brand</label>
 										<input list='carsData' type='text' name='brand' className='form-control form-control-sm' onChange={this.handleInput} />
 										<datalist id='carsData'>{brands}</datalist>
 									</div>
 									<div className='form-group col-md-2'>
-										<label for='model'>car model</label>
+										<label htmlFor='model'>car model</label>
 										<input list='car-model' type='text' name='model' className='form-control form-control-sm' onChange={this.handleInput} />
 										<datalist id='car-model'>{this.state && models(this.state.brand)}</datalist>
 									</div>

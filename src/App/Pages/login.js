@@ -14,6 +14,7 @@ import { Redirect } from 'react-router';
 import Header from './../Components/Header';
 import Footer from './../Components/Footer';
 import location from '../../helper/google';
+import { withRouter } from 'react-router-dom';
 
 class Login extends Component {
 	constructor(props) {
@@ -163,4 +164,4 @@ const mapStateToProps = state => {
 	};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));
