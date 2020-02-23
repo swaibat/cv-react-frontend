@@ -1,7 +1,7 @@
 import Location from './google';
 
-export const getCurrencies = () => {
-	const countries = Location.getCountries();
+export default () => {
+	const countries = Location.getLocation();
 	const currencies = countries.map(e => {
 		return { country: e.name, flag: e.flag, currency: e.currencies[0] };
 	});

@@ -9,29 +9,29 @@ function GeneralSettings() {
 			<form>
 				<div className='form-row'>
 					<div className='form-group col-md-12'>
-						<label for='inputEmail4'>Site Name</label>
+						<label htmlFor='inputEmail4'>Site Name</label>
 						<input type='email' className='form-control' id='inputEmail4' />
 					</div>
 					<div className='form-group col-md-12'>
-						<label for='inputPassword4'>Site Description</label>
+						<label htmlFor='inputPassword4'>Site Description</label>
 						<textarea className='form-control' placeholder='enter description'></textarea>
 					</div>
 				</div>
 				<div className='form-row'>
 					<div className='form-group col-md-4'>
-						<label for='inputZip'>Upload Favicon</label>
+						<label htmlFor='inputZip'>Upload Favicon</label>
 						<div className='input-group'>
 							<Dropzone accept='image/*' />
 						</div>
 					</div>
 					<div className='form-group col-md-4'>
-						<label for='inputZip'>Upload Light Logo</label>
+						<label htmlFor='inputZip'>Upload Light Logo</label>
 						<div className='input-group'>
 							<Dropzone accept='image/*' />
 						</div>
 					</div>
 					<div className='form-group col-md-4'>
-						<label for='inputZip'>Upload Dark Logo</label>
+						<label htmlFor='inputZip'>Upload Dark Logo</label>
 						<div className='input-group'>
 							<Dropzone accept='image/*' />
 						</div>
@@ -39,32 +39,32 @@ function GeneralSettings() {
 				</div>
 				<div className='form-row'>
 					<div className='form-group col-md-4'>
-						<label for='inputAddress2'>Company Address</label>
+						<label htmlFor='inputAddress2'>Company Address</label>
 						<input type='text' className='form-control' id='inputAddress2' placeholder='Apartment, studio, or floor' />
 					</div>
 					<div className='form-group col-md-4'>
-						<label for='inputAddress'>Contact Email</label>
+						<label htmlFor='inputAddress'>Contact Email</label>
 						<input type='text' className='form-control' id='inputAddress' placeholder='1234 Main St' />
 					</div>
 					<div className='form-group col-md-4'>
-						<label for='inputAddress'>Contact Phone</label>
+						<label htmlFor='inputAddress'>Contact Phone</label>
 						<input type='text' className='form-control' id='inputAddress' placeholder='1234 Main St' />
 					</div>
 				</div>
 				<div className='form-row'>
 					<div className='form-group col-md-4'>
-						<label for='inputCity'>Facebook Page</label>
+						<label htmlFor='inputCity'>Facebook Page</label>
 						<input type='text' className='form-control' id='inputCity' />
 					</div>
 					<div className='form-group col-md-4'>
-						<label for='inputState'>Twitter Page</label>
+						<label htmlFor='inputState'>Twitter Page</label>
 						<select id='inputState' className='form-control'>
-							<option selected>Choose...</option>
+							<option defaultValue>Choose...</option>
 							<option>...</option>
 						</select>
 					</div>
 					<div className='form-group col-md-4'>
-						<label for='inputZip'>Youtube Channel</label>
+						<label htmlFor='inputZip'>Youtube Channel</label>
 						<input type='text' className='form-control' id='inputZip' />
 					</div>
 				</div>

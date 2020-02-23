@@ -18,7 +18,7 @@ function Nav() {
 			<li className='nav-item h-7 d-flex justify-content-between'>
 				<div className='nav-link m-auto d-flex flex-column text-center' href='#'>
 					<img className='nav-avatar img-thumbnail' src={avatar} alt='user' />
-					<sapn>Admin</sapn>
+					<span>Admin</span>
 				</div>
 			</li>
 			<ul className='shadow-sm-top p-2 h-90'>

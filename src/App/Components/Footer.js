@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import Favourite from './favourite.component';
+import ChatWidget from '../Components/chat';
 
 class Footer extends Component {
 	render() {
 		return (
 			<>
-				<Favourite />
+				<ChatWidget />
+				<Favourite {...this.props} />
 				<footer className='footer bg-dark pt-0'>
 					<div className='container'>
 						<div className='row d-flex justify-content-between py-2'>

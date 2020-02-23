@@ -13,21 +13,27 @@ import local from '../../../redux/actions/local.action';
 import constants from '../../../redux/constants/index';
 import { getSettings, updateSettings } from '../../../redux/actions/settings.action';
 import { connect } from 'react-redux';
-import { getCurrencies } from './../../../helper/get.all.currencies';
 
 class Settings extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
+		this.state = {
+			data: '',
+			location: '',
+		};
 		this.handleClick = this.handleClick.bind(this);
 	}
 	async componentDidMount() {
 		this.props.init();
 		this.props.settings();
 		this.props.local();
-		getCurrencies();
-		const { payload } = await getSettings();
-		this.setState({ ...payload.data });
+	}
+	componentWillReceiveProps(nextProps) {
+		if (nextProps.payload !== this.props.payload) {
+			this.setState({ data: nextProps.payload.data });
+		} else if (nextProps.localPayload !== this.props.localPayload) {
+			this.setState({ location: nextProps.localPayload });
+		}
 	}
 	handleClick(e) {
 		e.preventDefault();
@@ -46,6 +52,7 @@ class Settings extends Component {
 		this.props.update({ currency: currencies && currencies[0].code, currencyCountry: alpha2Code, currencyFlagDisplay, autoCurrency, autoProductApproval, currencyDisplayBy });
 	};
 	render() {
+		const { data } = this.state;
 		return (
 			<>
 				<Sidenav />
@@ -119,19 +126,22 @@ class Settings extends Component {
 									</a>
 								</div>
 							</div>
+
 							<div className='col-11'>
-								<div className='tab-content' id='v-pills-tabContent'>
-									{/* general settings */}
-									<GeneralSettings data={this} />
-									{/* general settings */}
-									<ThemeSettings data={this} />
-									{/* email settings */}
-									<EmailSettings data={this} />
-									{/* general settings */}
-									{this.props.payload && <MessageSettings data={this} />}
-									{/* general settings */}
-									{this.props.payload && <ProductSettings data={this} />}
-								</div>
+								{data && (
+									<div className='tab-content' id='v-pills-tabContent'>
+										{/* general settings */}
+										{/* <GeneralSettings data={this} /> */}
+										{/* general settings */}
+										{/* <ThemeSettings data={this} /> */}
+										{/* email settings */}
+										{/* <EmailSettings data={this} /> */}
+										{/* general settings */}
+										{/* <MessageSettings {...this.props} /> */}
+										{/* general settings */}
+										<ProductSettings {...this} set={this} />
+									</div>
+								)}
 							</div>
 						</div>
 					</div>

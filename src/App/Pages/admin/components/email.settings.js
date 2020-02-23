@@ -8,34 +8,34 @@ function EmailSettings() {
 			<form className='mt-3'>
 				<div className='form-row border-bottom'>
 					<div className='form-group col-md-5'>
-						<label for='inputEmail4'>Email type</label>
+						<label htmlFor='inputEmail4'>Email type</label>
 						<select type='email' className='form-control' id='inputEmail4' placeholder='Email'>
 							<option>Smtp</option>
 						</select>
 					</div>
 					<div className='form-group col-md-5'>
-						<label for='inputEmail4'>Server Name</label>
+						<label htmlFor='inputEmail4'>Server Name</label>
 						<select type='email' className='form-control' id='inputEmail4' placeholder='Email'>
 							<option>smtp.gmail.com</option>
 						</select>
 					</div>
 					<div className='form-group col-md-2'>
-						<label for='inputEmail4'>Port</label>
+						<label htmlFor='inputEmail4'>Port</label>
 						<select type='email' className='form-control' id='inputEmail4' placeholder='Email'>
 							<option>465</option>
 							<option>587</option>
 						</select>
 					</div>
 					<div className='form-group col-md-5'>
-						<label for='inputEmail4'>Smtp Authentication Email</label>
+						<label htmlFor='inputEmail4'>Smtp Authentication Email</label>
 						<input type='email' placeholder='enter sender email' className='form-control' id='inputEmail4' />
 					</div>
 					<div className='form-group col-md-5'>
-						<label for='inputEmail4'>Smtp Authentication Password</label>
+						<label htmlFor='inputEmail4'>Smtp Authentication Password</label>
 						<input type='password' placeholder='enter sender Password' className='form-control' id='inputEmail4' />
 					</div>
 					<div className='form-group col-md-2'>
-						<label for='inputEmail4'>Send Security</label>
+						<label htmlFor='inputEmail4'>Send Security</label>
 						<select type='email' className='form-control' id='inputEmail4' placeholder='Email'>
 							<option>false</option>
 							<option>true</option>
@@ -62,7 +62,7 @@ function EmailSettings() {
 				</div>
 				<div className='custom-control custom-switch'>
 					<input name='negotiable' type='checkbox' className='custom-control-input ml-auto' id='switch1' checked />
-					<label className='custom-control-label' for='switch1' />
+					<label className='custom-control-label' htmlFor='switch1' />
 				</div>
 			</div>
 			<div className='py-3 d-flex align-items-center justify-content-between border-bottom'>
@@ -77,21 +77,21 @@ function EmailSettings() {
 					<p className='font-weight-light'>User signs up as a member</p>
 					<div className='custom-control custom-switch'>
 						<input name='negotiable' type='checkbox' className='custom-control-input ml-auto' id='switch1' checked />
-						<label className='custom-control-label' for='switch1' />
+						<label className='custom-control-label' htmlFor='switch1' />
 					</div>
 				</div>
 				<div className='d-flex justify-content-between'>
 					<p className='font-weight-light'>user posts a new item</p>
 					<div className='custom-control custom-switch'>
 						<input name='negotiable' type='checkbox' className='custom-control-input ml-auto' id='switch1' checked />
-						<label className='custom-control-label' for='switch1' />
+						<label className='custom-control-label' htmlFor='switch1' />
 					</div>
 				</div>
 				<div className='d-flex justify-content-between'>
 					<p className='font-weight-light'>user creates a new page</p>
 					<div className='custom-control custom-switch'>
 						<input name='negotiable' type='checkbox' className='custom-control-input ml-auto' id='switch1' checked />
-						<label className='custom-control-label' for='switch1' />
+						<label className='custom-control-label' htmlFor='switch1' />
 					</div>
 				</div>
 			</li>
@@ -101,14 +101,14 @@ function EmailSettings() {
 					<p className='font-weight-light'>scheduled social post is hared</p>
 					<div className='custom-control custom-switch'>
 						<input name='negotiable' type='checkbox' className='custom-control-input ml-auto' id='switch1' checked />
-						<label className='custom-control-label' for='switch1' />
+						<label className='custom-control-label' htmlFor='switch1' />
 					</div>
 				</div>
 				<div className='d-flex justify-content-between'>
 					<p className='font-weight-light'>visitor signs up as a member</p>
 					<div className='custom-control custom-switch'>
 						<input name='negotiable' type='checkbox' className='custom-control-input ml-auto' id='switch1' checked />
-						<label className='custom-control-label' for='switch1' />
+						<label className='custom-control-label' htmlFor='switch1' />
 					</div>
 				</div>
 			</li>

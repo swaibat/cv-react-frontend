@@ -14,19 +14,29 @@ class Favourite extends Component {
 		this.state = {
 			pending: true,
 			data: [],
+			items: [],
+			navOpen: false,
 		};
 		this.handleClick = this.handleClick.bind(this);
+		this.openNav = this.openNav.bind(this);
 	}
 	componentDidMount() {
 		this.props.favourites(token);
 	}
 	componentWillReceiveProps(nextProps) {
 		// Any time props.email changes, update state.
-		if (nextProps.payload !== this.props.payload) {
+		if (nextProps.payloads !== this.props.payloads) {
 			this.setState({
-				data: nextProps.payload.data,
+				data: nextProps.payloads.data,
+			});
+		} else if (nextProps.payload !== this.props.payload) {
+			this.setState({
+				items: nextProps.payload.data,
 			});
 		}
+	}
+	openNav() {
+		this.setState({ navOpen: !this.state.navOpen });
 	}
 	handleClick(e) {
 		e.preventDefault();
@@ -39,36 +49,39 @@ class Favourite extends Component {
 		this.setState({ data });
 	}
 	render() {
-		const { data } = this.state;
-		// const items = this.props.props.data.props.payload.data;
+		const { data, items, navOpen } = this.state;
+		// console.log(this.props);
+		// const favourite = this.props.payload && this.props.payload.data.filter(e => data.map((x, i) => e.id === x.ProductId));
+		const favourite = data.map(e => items.find(x => x.id === e.ProductId));
 		return (
 			<>
-				<span className='btn border-0 btn-primary fav-side-btn collapsed pr-4 pt-3' data-toggle='collapse' data-target='#collapseExample' aria-expanded='false' aria-controls='collapseExample'>
-					<FontAwesomeIcon className='cv-nav-icons' icon={faHeart} />
-					<span className='badge badge-light position-absolute ml-n1 mt-2'>3</span>
-				</span>
-				<div id='collapseExample' className='fav-sidenav collapse no-transition p-3 bg-white shadow text-secondary' data-parent='#categoriesAccordion'>
+				<div className={`fav-sidenav p-3 bg-white shadow text-secondary ${navOpen ? 'opened' : 'closed'}`}>
+					<span className='btn border-0 btn-primary fav-side-btn pr-4 pt-3' onClick={this.openNav}>
+						<FontAwesomeIcon className='cv-nav-icons' icon={faHeart} />
+						<span className='badge badge-light position-absolute ml-n1 mt-2'>3</span>
+					</span>
 					<span className=''>
 						<h5 className='text'>My favourite</h5>
 					</span>
 					<hr />
-					<ul className='list-unstyled bg-light'>
-						{data.map((e, i) => {
-							return (
-								<li key={i} className='media shadow-xs p-1 my-2 rounded-sm bg-white'>
-									<img height='50' width='70' className='mr-3' src={image} alt='mage' />
-									<div className='media-body d-flex justify-content-between'>
-										<span className='d-flex flex-column'>
-											<span className='mt-0 mb-1 text-capitalize text-secondary'>Toyota Spacio</span>
-											<span className='text-primary'>shs 5000</span>
-										</span>
-										<span id={`${i}-${e.ProductId}`} onClick={this.handleClick} className='btn btn-sm'>
-											&times;
-										</span>
-									</div>
-								</li>
-							);
-						})}
+					<ul className='list-unstyled'>
+						{favourite[0] &&
+							favourite.map((e, i) => {
+								return (
+									<li key={i} className='media p-1 my-2 border-bottom'>
+										<img height='45' width='60' className='mr-3' src={image} alt='mage' />
+										<div className='media-body d-flex justify-content-between'>
+											<span className='d-flex flex-column'>
+												<span className='mt-0 mb-1 text-capitalize text-secondary text-truncate cart-text'>{e.name}</span>
+												<span className='text-primary'>{e.price}</span>
+											</span>
+											<span id={`${i}-${e.id}`} onClick={this.handleClick} className='btn btn-sm'>
+												&times;
+											</span>
+										</div>
+									</li>
+								);
+							})}
 					</ul>
 				</div>
 			</>
@@ -78,7 +91,7 @@ class Favourite extends Component {
 
 export function mapStateToProps(state) {
 	return {
-		payload: state.ViewFavourite.payload,
+		payloads: state.ViewFavourite.payload,
 		error: state.ViewFavourite.error,
 		pending: state.ViewFavourite.pending,
 		delPayload: state.RemoveFavourite.payload,

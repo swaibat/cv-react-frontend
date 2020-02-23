@@ -161,21 +161,21 @@ class Nav extends Component {
 										<form>
 											<div className='form-row'>
 												<div className='form-group col-md-6'>
-													<label for='inputEmail4'>Firstname</label>
+													<label htmlFor='inputEmail4'>Firstname</label>
 													<input type='firstName' value={this.state.firstName} className='form-control' onChange={this.handleInput} disabled={!this.state.edit} />
 												</div>
 												<div className='form-group col-md-6'>
-													<label for='inputPassword4'>lastname</label>
+													<label htmlFor='inputPassword4'>lastname</label>
 													<input type='text' name='lastName' value={this.state.lastName} className='form-control' onChange={this.handleInput} disabled={!this.state.edit} />
 												</div>
 											</div>
 											<div className='form-row'>
 												<div className='form-group col-md-9'>
-													<label for='inputEmail4'>Email</label>
+													<label htmlFor='inputEmail4'>Email</label>
 													<input type='email' name='email' value={this.state.email} className='form-control' disabled />
 												</div>
 												<div className='form-group col-md-3'>
-													<label for='inputEmail4'>Role</label>
+													<label htmlFor='inputEmail4'>Role</label>
 													<select type='text' className='form-control' disabled={!this.state.edit}>
 														<option value={this.state.roleId}>{this.state.Role && this.state.Role.name}</option>
 														<option value='3'>seller</option>
@@ -183,17 +183,17 @@ class Nav extends Component {
 												</div>
 											</div>
 											<div className='form-group'>
-												<label for='company'>company</label>
+												<label htmlFor='company'>company</label>
 												<input type='text' value={this.state.company} className='form-control' onChange={this.handleInput} disabled={!this.state.edit} />
 											</div>
 
 											<div className='form-row'>
 												<div className='form-group col-md-6'>
-													<label for='inputEmail4'>address</label>
+													<label htmlFor='inputEmail4'>address</label>
 													<input type='email' name='email' value={this.state.address} className='form-control' onChange={this.handleInput} disabled={!this.state.edit} />
 												</div>
 												<div className='form-group col-md-6'>
-													<label for='inputPassword4'>telephone</label>
+													<label htmlFor='inputPassword4'>telephone</label>
 													<input type='text' value={this.state.telephone} className='form-control' onChange={this.handleInput} disabled={!this.state.edit} />
 												</div>
 											</div>

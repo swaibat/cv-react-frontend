@@ -212,6 +212,16 @@ const apis = {
 			headers: { Authorization: token },
 		});
 	},
+	getChat(token) {
+		return axios.get(`${BASE_URL}/chats`, {
+			headers: { Authorization: token },
+		});
+	},
+	createChat(data, token) {
+		return axios.post(`${BASE_URL}/chats`, data, {
+			headers: { Authorization: token },
+		});
+	},
 };
 
 export default apis;
