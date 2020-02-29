@@ -41,7 +41,12 @@ class Verify extends Component {
 										<div className='bd-example bd-example-tabs'>
 											<div className='row'>
 												<div className='col-2 ml-0 pl-0'>
-													<div className='nav flex-column nav-pills' id='v-pills-tab' role='tablist' aria-orientation='vertical'>
+													<div
+														className='nav flex-column nav-pills'
+														id='v-pills-tab'
+														role='tablist'
+														aria-orientation='vertical'
+													>
 														<a
 															className='nav-link d-flex flex-column bg-white mb-3'
 															id='v-pills-home-tab'
@@ -54,11 +59,17 @@ class Verify extends Component {
 															<FontAwesomeIcon className='m-auto' icon={faLock} />
 															Verify
 														</a>
-														<a href='#v-pills-home' className='nav-link text-center active d-flex flex-column'>
+														<a
+															href='#v-pills-home'
+															className='nav-link text-center active d-flex flex-column'
+														>
 															<FontAwesomeIcon className='m-auto' icon={faUser} />
 															Reset
 														</a>
-														<a href='#v-pills-home' className='nav-link d-flex flex-column bg-white mt-3'>
+														<a
+															href='#v-pills-home'
+															className='nav-link d-flex flex-column bg-white mt-3'
+														>
 															<FontAwesomeIcon className='m-auto' icon={faCheck} />
 															Success
 														</a>
@@ -66,11 +77,22 @@ class Verify extends Component {
 												</div>
 												<div className='col-10 bg-white p-4 rounded'>
 													<div className='tab-content' id='v-pills-tabContent'>
-														<div className='tab-pane fade show active' id='v-pills-home' role='tabpanel' aria-labelledby='v-pills-home-tab'>
+														<div
+															className='tab-pane fade show active'
+															id='v-pills-home'
+															role='tabpanel'
+															aria-labelledby='v-pills-home-tab'
+														>
 															<p>password reset instructions will be sent to your email</p>
-															<form className='font-weight-light rounded-sm' onSubmit={this.handleSubmit}>
+															<form
+																className='font-weight-light rounded-sm'
+																onSubmit={this.handleSubmit}
+															>
 																{error && (
-																	<div className='alert alert-danger rounded-sm text-center scale-in-ver-center' role='alert'>
+																	<div
+																		className='alert alert-danger rounded-sm text-center scale-in-ver-center'
+																		role='alert'
+																	>
 																		{error.message}
 																	</div>
 																)}
@@ -81,7 +103,14 @@ class Verify extends Component {
 																			<FontAwesomeIcon icon={faLock} />
 																		</span>
 																	</div>
-																	<input name='password' type='password' className='form-control custom-input' placeholder='enter your password' onChange={this.handleInput} required />
+																	<input
+																		name='password'
+																		type='password'
+																		className='form-control custom-input'
+																		placeholder='enter your password'
+																		onChange={this.handleInput}
+																		required
+																	/>
 																	<div className='input-group-append'>
 																		<span className='btn p-0 border-0 my-auto invisible'>
 																			<FontAwesomeIcon icon={faEye} />
@@ -94,7 +123,14 @@ class Verify extends Component {
 																			<FontAwesomeIcon icon={faLock} />
 																		</span>
 																	</div>
-																	<input name='cpmfrimPassword' type='password' className='form-control custom-input' placeholder='confirm password' onChange={this.handleInput} required />
+																	<input
+																		name='cpmfrimPassword'
+																		type='password'
+																		className='form-control custom-input'
+																		placeholder='confirm password'
+																		onChange={this.handleInput}
+																		required
+																	/>
 																	<div className='input-group-append'>
 																		<span className='btn p-0 border-0 my-auto invisible'>
 																			<FontAwesomeIcon icon={faEye} />
@@ -103,15 +139,29 @@ class Verify extends Component {
 																</div>
 																<div className='checkbox mb-3 font-weight-light'>
 																	<label>
-																		<input className='mr-2' type='checkbox' value='remember-me' required /> I agree with terms and conditions
+																		<input
+																			className='mr-2'
+																			type='checkbox'
+																			value='remember-me'
+																			required
+																		/>{' '}
+																		I agree with terms and conditions
 																	</label>
 																</div>
 																{pending ? (
-																	<button className='btn font-weight-light rounded-sm btn-primary btn-block' type='submit' disabled>
-																		<span className='spinner-border spinner-border-sm mr-2'></span>sending....
+																	<button
+																		className='btn font-weight-light rounded-sm btn-primary btn-block'
+																		type='submit'
+																		disabled
+																	>
+																		<span className='spinner-border spinner-border-sm mr-2'></span>
+																		sending....
 																	</button>
 																) : (
-																	<button className='btn font-weight-light rounded-sm btn-primary btn-block' type='submit'>
+																	<button
+																		className='btn font-weight-light rounded-sm btn-primary btn-block'
+																		type='submit'
+																	>
 																		reset
 																	</button>
 																)}

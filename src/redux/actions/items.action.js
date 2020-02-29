@@ -31,6 +31,17 @@ export const createItem = async (data, token) => {
 	}
 };
 
+export const updateItem = async (data, token, id) => {
+	try {
+		const result = await Api.updateItem(data, token, id);
+		toast.success(result.data.message);
+		return { type: constant.UPDATE_ITEMS_SUCCESS, payload: result.data };
+	} catch (error) {
+		toast.error(error.response.data.message);
+		return { type: constant.UPDATE_ITEMS_ERROR, error: error.response.data };
+	}
+};
+
 export const singleItems = async name => {
 	try {
 		const result = await Api.singleItem(name);

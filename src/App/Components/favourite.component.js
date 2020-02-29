@@ -55,7 +55,11 @@ class Favourite extends Component {
 		const favourite = data.map(e => items.find(x => x.id === e.ProductId));
 		return (
 			<>
-				<div className={`fav-sidenav p-3 bg-white shadow text-secondary ${navOpen ? 'opened' : 'closed'}`}>
+				<div
+					className={`fav-sidenav p-3 bg-white shadow text-secondary ${
+						navOpen ? 'opened' : 'closed'
+					}`}
+				>
 					<span className='btn border-0 btn-primary fav-side-btn pr-4 pt-3' onClick={this.openNav}>
 						<FontAwesomeIcon className='cv-nav-icons' icon={faHeart} />
 						<span className='badge badge-light position-absolute ml-n1 mt-2'>3</span>
@@ -72,7 +76,9 @@ class Favourite extends Component {
 										<img height='45' width='60' className='mr-3' src={image} alt='mage' />
 										<div className='media-body d-flex justify-content-between'>
 											<span className='d-flex flex-column'>
-												<span className='mt-0 mb-1 text-capitalize text-secondary text-truncate cart-text'>{e.name}</span>
+												<span className='mt-0 mb-1 text-capitalize text-secondary text-truncate cart-text'>
+													{e.name}
+												</span>
 												<span className='text-primary'>{e.price}</span>
 											</span>
 											<span id={`${i}-${e.id}`} onClick={this.handleClick} className='btn btn-sm'>

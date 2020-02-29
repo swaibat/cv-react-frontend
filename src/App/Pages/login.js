@@ -67,9 +67,15 @@ class Login extends Component {
 										<span id='siteloader'></span>
 									</div>
 									<div className='card-body text-center'>
-										<form className='form-signin font-weight-light rounded-sm m-lg-auto' onSubmit={this.handleSubmit}>
+										<form
+											className='form-signin font-weight-light rounded-sm m-lg-auto'
+											onSubmit={this.handleSubmit}
+										>
 											{error && (
-												<div className='alert alert-danger rounded-sm text-center scale-in-ver-center' role='alert'>
+												<div
+													className='alert alert-danger rounded-sm text-center scale-in-ver-center'
+													role='alert'
+												>
 													{error.message}
 												</div>
 											)}
@@ -94,7 +100,13 @@ class Login extends Component {
 														<Icon icon={email} />
 													</span>
 												</div>
-												<input type='email' className='form-control custom-input' placeholder='email' onChange={this.handleInput} required />
+												<input
+													type='email'
+													className='form-control custom-input'
+													placeholder='email'
+													onChange={this.handleInput}
+													required
+												/>
 												<div className='input-group-append'>
 													<span className='btn p-0 border-0 my-auto invisible'>
 														<Icon icon={lock} />
@@ -107,24 +119,42 @@ class Login extends Component {
 														<Icon icon={lock} />
 													</span>
 												</div>
-												<input type={visible ? 'text' : 'password'} className='form-control custom-input' placeholder='password' onChange={this.handleInput} required />
+												<input
+													type={visible ? 'text' : 'password'}
+													className='form-control custom-input'
+													placeholder='password'
+													onChange={this.handleInput}
+													required
+												/>
 												<div className='input-group-append'>
-													<span onClick={this.toggleMenu} className='btn p-0 border-0 my-auto text-secondary'>
+													<span
+														onClick={this.toggleMenu}
+														className='btn p-0 border-0 my-auto text-secondary'
+													>
 														<Icon icon={visible ? eyeClose : eye} />
 													</span>
 												</div>
 											</div>
 											<div className='checkbox mb-3 font-weight-light'>
 												<label>
-													<input className='mr-2' type='checkbox' value='remember-me' /> Keep me logged in
+													<input className='mr-2' type='checkbox' value='remember-me' /> Keep me
+													logged in
 												</label>
 											</div>
 											{pending ? (
-												<button className='btn font-weight-light rounded-sm btn-primary btn-block' type='submit' disabled>
-													<span className='spinner-border spinner-border-sm mr-2'></span>Logging in....
+												<button
+													className='btn font-weight-light rounded-sm btn-primary btn-block'
+													type='submit'
+													disabled
+												>
+													<span className='spinner-border spinner-border-sm mr-2'></span>Logging
+													in....
 												</button>
 											) : (
-												<button className='btn font-weight-light rounded-sm btn-primary btn-block' type='submit'>
+												<button
+													className='btn font-weight-light rounded-sm btn-primary btn-block'
+													type='submit'
+												>
 													Login
 												</button>
 											)}

@@ -57,18 +57,42 @@ class CreateItem extends Component {
 						</ul>
 						<ul className='d-flex'>
 							<li className='nav-item mx-3'>
-								<a className='nav-link text-white' href='#' data-toggle='tooltip' data-placement='bottom' title='visit website'>
+								<a
+									className='nav-link text-white'
+									href='#'
+									data-toggle='tooltip'
+									data-placement='bottom'
+									title='visit website'
+								>
 									<FontAwesomeIcon className='admin-nav-icons' icon={faGlobeAfrica} />
 								</a>
 							</li>
 							<li className='nav-item mx-3'>
-								<a className='nav-link text-white' href='#' data-toggle='tooltip' data-placement='bottom' title='Notifications'>
+								<a
+									className='nav-link text-white'
+									href='#'
+									data-toggle='tooltip'
+									data-placement='bottom'
+									title='Notifications'
+								>
 									<FontAwesomeIcon className='admin-nav-icons' icon={faBell} />
 									<span className='badge badge-light mt-n2 ml-n1 position-absolute'>5</span>
 								</a>
 							</li>
-							<li className='dropdown ml-3' data-toggle='tooltip' data-placement='bottom' title='Notifications'>
-								<button className='btn bg-transparent text-white dropdown-toggle' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+							<li
+								className='dropdown ml-3'
+								data-toggle='tooltip'
+								data-placement='bottom'
+								title='Notifications'
+							>
+								<button
+									className='btn bg-transparent text-white dropdown-toggle'
+									type='button'
+									id='dropdownMenuButton'
+									data-toggle='dropdown'
+									aria-haspopup='true'
+									aria-expanded='false'
+								>
 									admin
 								</button>
 								<div className='dropdown-menu' aria-labelledby='dropdownMenuButton'>
@@ -92,7 +116,13 @@ class CreateItem extends Component {
 								<div className='form-row'>
 									<div className='form-group col-md-6'>
 										<label htmlFor='category'>title</label>
-										<input type='text' name='name' className='form-control' placeholder='enter title' onChange={this.handleInput} />
+										<input
+											type='text'
+											name='name'
+											className='form-control'
+											placeholder='enter title'
+											onChange={this.handleInput}
+										/>
 									</div>
 									<div className='form-group col-md-3'>
 										<label htmlFor='category'>category</label>
@@ -108,7 +138,16 @@ class CreateItem extends Component {
 									</div>
 									<div className='form-group col-md-3'>
 										<label htmlFor='Sub category'>Sub category</label>
-										<select name='subCategoryId' className='form-control' onChange={this.handleInput} disabled={this.state && getc(categories.data, this.state.categoryId) === false ? true : false}>
+										<select
+											name='subCategoryId'
+											className='form-control'
+											onChange={this.handleInput}
+											disabled={
+												this.state && getc(categories.data, this.state.categoryId) === false
+													? true
+													: false
+											}
+										>
 											<option defaultValue>Select sub-category</option>
 											{this.state && getc(categories.data, this.state.CategoryId)}
 										</select>
@@ -117,7 +156,13 @@ class CreateItem extends Component {
 								<div className='form-row m-0'>
 									<div className='form-group col-md-9'>
 										<label htmlFor='description'>Description</label>
-										<textarea name='description' rows='3' placeholder='item description' className='form-control' onChange={this.handleInput} />
+										<textarea
+											name='description'
+											rows='3'
+											placeholder='item description'
+											className='form-control'
+											onChange={this.handleInput}
+										/>
 									</div>
 									<div className='form-group col-md-3 mb-0'>
 										<div className='form-group'>
@@ -128,7 +173,15 @@ class CreateItem extends Component {
 														$
 													</span>
 												</div>
-												<input name='price' type='number' className='form-control' placeholder='e.g 300' aria-label='e.g 300' aria-describedby='basic-addon1' onChange={this.handleInput} />
+												<input
+													name='price'
+													type='number'
+													className='form-control'
+													placeholder='e.g 300'
+													aria-label='e.g 300'
+													aria-describedby='basic-addon1'
+													onChange={this.handleInput}
+												/>
 											</div>
 										</div>
 										<div className='form-group d-flex mb-0'>
@@ -136,7 +189,13 @@ class CreateItem extends Component {
 												Price Negotiable
 											</label>
 											<div className='custom-control custom-switch'>
-												<input name='negotiable' type='checkbox' className='custom-control-input custom-control-input-lg' id='switch1' onChange={this.handleInput} />
+												<input
+													name='negotiable'
+													type='checkbox'
+													className='custom-control-input custom-control-input-lg'
+													id='switch1'
+													onChange={this.handleInput}
+												/>
 												<label className='custom-control-label' htmlFor='switch1' />
 											</div>
 										</div>
@@ -151,15 +210,30 @@ class CreateItem extends Component {
 								<div className='form-row'>
 									<div className='form-group col-md-2'>
 										<label htmlFor='color'>Color</label>
-										<input type='text' name='color' className='form-control form-control-sm' onChange={this.handleInput} />
+										<input
+											type='text'
+											name='color'
+											className='form-control form-control-sm'
+											onChange={this.handleInput}
+										/>
 									</div>
 									<div className='form-group col-md-2'>
 										<label htmlFor='milage'>milage</label>
-										<input type='text' name='milage' className='form-control form-control-sm' onChange={this.handleInput} />
+										<input
+											type='text'
+											name='milage'
+											className='form-control form-control-sm'
+											onChange={this.handleInput}
+										/>
 									</div>
 									<div className='form-group col-md-2'>
 										<label htmlFor='transition'>Transition</label>
-										<select type='text' name='transition' className='form-control form-control-sm' onChange={this.handleInput}>
+										<select
+											type='text'
+											name='transition'
+											className='form-control form-control-sm'
+											onChange={this.handleInput}
+										>
 											<option value=''>select transition</option>
 											<option value='automatic'>automatic</option>
 											<option value='manual'>manual</option>
@@ -167,7 +241,12 @@ class CreateItem extends Component {
 									</div>
 									<div className='form-group col-md-2'>
 										<label htmlFor='inputZip'>fuel</label>
-										<select name='fuel' type='text' className='form-control form-control-sm' onChange={this.handleInput}>
+										<select
+											name='fuel'
+											type='text'
+											className='form-control form-control-sm'
+											onChange={this.handleInput}
+										>
 											<option value=''>select year</option>
 											<option value='petrol'>petrol</option>
 											<option value='diesel'>diesel</option>
@@ -179,7 +258,11 @@ class CreateItem extends Component {
 									</div>
 									<div className='form-group col-md-2'>
 										<label htmlFor='inputZip'>engine size</label>
-										<select name='engine' className='form-control form-control-sm' onChange={this.handleInput}>
+										<select
+											name='engine'
+											className='form-control form-control-sm'
+											onChange={this.handleInput}
+										>
 											<option value=''>select engine size</option>
 											<option>700</option>
 											<option>1000</option>
@@ -194,18 +277,34 @@ class CreateItem extends Component {
 									</div>
 									<div className='form-group col-md-2'>
 										<label htmlFor='year'>Year</label>
-										<select name='year' className='form-control form-control-sm' onChange={this.handleInput}>
+										<select
+											name='year'
+											className='form-control form-control-sm'
+											onChange={this.handleInput}
+										>
 											{years()}
 										</select>
 									</div>
 									<div className='form-group col-md-2'>
 										<label htmlFor='brand'>Car brand</label>
-										<input list='carsData' type='text' name='brand' className='form-control form-control-sm' onChange={this.handleInput} />
+										<input
+											list='carsData'
+											type='text'
+											name='brand'
+											className='form-control form-control-sm'
+											onChange={this.handleInput}
+										/>
 										<datalist id='carsData'>{brands}</datalist>
 									</div>
 									<div className='form-group col-md-2'>
 										<label htmlFor='model'>car model</label>
-										<input list='car-model' type='text' name='model' className='form-control form-control-sm' onChange={this.handleInput} />
+										<input
+											list='car-model'
+											type='text'
+											name='model'
+											className='form-control form-control-sm'
+											onChange={this.handleInput}
+										/>
 										<datalist id='car-model'>{this.state && models(this.state.brand)}</datalist>
 									</div>
 								</div>

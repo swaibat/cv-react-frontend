@@ -7,8 +7,8 @@ import constants from '../../../redux/constants/index';
 import Sidenav from './components/sidenav';
 import AdminNav from './components/admin.nav.component';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
-import Pagination from '../../Components/pagination';
+import { faPlus, faEdit, faTrash, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import Pagination from '../../components/pagination';
 import img from '../../../assets/images/img.png';
 import * as timeago from 'timeago.js';
 import { Link } from 'react-router-dom';
@@ -54,8 +54,11 @@ class AdminItems extends Component {
 					<AdminNav />
 					<div className='container-fluid mt-n2'>
 						<h5 className='cv-title title-light'>Products</h5>
-						<div className='w-100 bg-default p-3 mt-4 rounded'>
-							<Link className='btn btn-sm btn-success add-btn shadow-xs' to='/user/products/create'>
+						<div className='w-100 bg-white p-3 mt-4 rounded'>
+							<Link
+								className='btn btn-sm btn-success add-btn shadow-xs'
+								to='/admin/products/create'
+							>
 								<FontAwesomeIcon className='mr-2' icon={faPlus} />
 								Add Product
 							</Link>
@@ -83,16 +86,35 @@ class AdminItems extends Component {
 													</td>
 													<td>
 														<div className='custom-control custom-switch'>
-															<input name='negotiable' type='checkbox' className='custom-control-input custom-control-input-lg' id={index} />
+															<input
+																name='negotiable'
+																type='checkbox'
+																className='custom-control-input custom-control-input-lg'
+																id={index}
+															/>
 															<label className='custom-control-label' for={index} />
 														</div>
 													</td>
 													<td className='text-right'>
-														<div className='btn-group-vertical btn-group-sm mr-n2' role='group' aria-label='First group'>
-															<button type='button' className='btn text-primary border-bottom'>
+														<Link
+															type='button'
+															className='btn text-success btn-sm border'
+															to={`/products/${product.id}`}
+														>
+															<FontAwesomeIcon icon={faExternalLinkAlt} />
+														</Link>
+														<div
+															className='btn-group-vertical btn-group-sm mr-n2'
+															role='group'
+															aria-label='First group'
+														>
+															<Link
+																className='btn text-primary border-bottom'
+																to={`/products/${product.id}/edit`}
+															>
 																<FontAwesomeIcon icon={faEdit} />
-															</button>
-															<button type='button' className='btn text-secondary'>
+															</Link>
+															<button type='button' className='btn text-danger'>
 																<FontAwesomeIcon icon={faTrash} />
 															</button>
 														</div>
@@ -103,7 +125,12 @@ class AdminItems extends Component {
 								</table>
 							</div>
 							<div className='d-flex flex-row mt-2 align-items-center'>
-								<Pagination totalRecords={totalItems} pageLimit={6} pageNeighbours={1} onPageChanged={this.onPageChanged} />
+								<Pagination
+									totalRecords={totalItems}
+									pageLimit={9}
+									pageNeighbours={1}
+									onPageChanged={this.onPageChanged}
+								/>
 							</div>
 						</div>
 					</div>

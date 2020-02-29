@@ -2,14 +2,25 @@
 /* eslint-disable no-unused-expressions */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { category, createCategory, updateCategory, deleteCategory } from '../../../redux/actions/items.action';
+import {
+	category,
+	createCategory,
+	updateCategory,
+	deleteCategory,
+} from '../../../redux/actions/items.action';
 import constants from '../../../redux/constants/index';
 import Sidenav from './components/sidenav';
 import AdminNav from './components/admin.nav.component';
 import { token } from '../../../helper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGlobeAfrica, faTrash, faPlus, faEdit, faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import Pagination from '../../Components/pagination';
+import {
+	faGlobeAfrica,
+	faTrash,
+	faPlus,
+	faEdit,
+	faChevronDown,
+} from '@fortawesome/free-solid-svg-icons';
+import Pagination from '../../components/pagination';
 import { DeleteModal, CreateModal, UpdateModal, BulkDel } from './modals';
 
 class Categories extends Component {
@@ -47,12 +58,18 @@ class Categories extends Component {
 	};
 	handleClick = e => {
 		e.stopPropagation();
-		this.setState({ ParentId: e.target.id, parentname: e.target.name.split('>')[0], name: e.target.name.split('>')[1] });
+		this.setState({
+			ParentId: e.target.id,
+			parentname: e.target.name.split('>')[0],
+			name: e.target.name.split('>')[1],
+		});
 	};
 	handleDelete = e => {
 		e.preventDefault();
 		const { ParentId } = this.state;
-		ParentId ? this.props.delete(token, ParentId) : this.state.bulk.map(sub => this.props.delete(token, sub.split('>')[1]));
+		ParentId
+			? this.props.delete(token, ParentId)
+			: this.state.bulk.map(sub => this.props.delete(token, sub.split('>')[1]));
 	};
 	handleUpdate = e => {
 		e.preventDefault();
@@ -79,18 +96,41 @@ class Categories extends Component {
 		const { categories, currentCategories } = this.state;
 		const total = categories.length;
 		if (total === 0) return null;
-		const { pending, createPayload, deletePayload, updatePayload, deleteError, createError, updateError } = this.props;
-		(deletePayload || createPayload || updatePayload || deleteError || createError || updateError) && setTimeout(() => window.location.reload(), 2000);
+		const {
+			pending,
+			createPayload,
+			deletePayload,
+			updatePayload,
+			deleteError,
+			createError,
+			updateError,
+		} = this.props;
+		(deletePayload ||
+			createPayload ||
+			updatePayload ||
+			deleteError ||
+			createError ||
+			updateError) &&
+			setTimeout(() => window.location.reload(), 2000);
 		return (
 			<>
 				<Sidenav />
 				<div className='header-bg' />
-				<main className={`content-wrapper d-flex flex-column align-items-center min-h-display ${pending ? 'loader' : ''}`}>
+				<main
+					className={`content-wrapper d-flex flex-column align-items-center min-h-display ${
+						pending ? 'loader' : ''
+					}`}
+				>
 					<AdminNav />
 					<div className='container-fluid mt-n2'>
 						<h5 className='cv-title title-light'>Categories</h5>
 						<div className='w-100 bg-default p-3 mt-4 rounded'>
-							<button className='btn btn-sm btn-success add-btn shadow-xs' data-toggle='modal' data-target='#exampleModalCenter' onClick={this.handleClick}>
+							<button
+								className='btn btn-sm btn-success add-btn shadow-xs'
+								data-toggle='modal'
+								data-target='#exampleModalCenter'
+								onClick={this.handleClick}
+							>
 								<FontAwesomeIcon className='mr-2' icon={faPlus} />
 								Add Category
 							</button>
@@ -104,33 +144,76 @@ class Categories extends Component {
 														<span className='text-primary category-icon d-flex justify-content-center align-items-center shadow-xs '>
 															<FontAwesomeIcon className='admin-nav-icons' icon={faGlobeAfrica} />
 														</span>
-														<span className='card-text ml-2 text-truncate'>{this.state && category.id === parseInt(this.state.ParentId) ? this.state.parentname : category.name}</span>
-														<span className='badge badge-primary badge-pill ml-auto'>{category.sub.length}</span>
-														<button name={`${category.name}>${''}`} id={category.id} className='btn btn-sm ml-1' data-toggle='modal' data-target='#exampleModalCenter' onClick={this.handleClick}>
+														<span className='card-text ml-2 text-truncate'>
+															{this.state && category.id === parseInt(this.state.ParentId)
+																? this.state.parentname
+																: category.name}
+														</span>
+														<span className='badge badge-primary badge-pill ml-auto'>
+															{category.sub.length}
+														</span>
+														<button
+															name={`${category.name}>${''}`}
+															id={category.id}
+															className='btn btn-sm ml-1'
+															data-toggle='modal'
+															data-target='#exampleModalCenter'
+															onClick={this.handleClick}
+														>
 															<FontAwesomeIcon className='text-secondary' icon={faPlus} />
 														</button>
 													</div>
 													<div className='card-body p-1'>
 														<div className='d-flex w-100'>
 															<span className='cv-title text-secondary'>sub categories</span>
-															{this.state.bulk.length !== 0 && this.state.bulk.find(e => e.split('>')[2] === category.name) && (
-																<button className='btn btn-sm ml-auto btn-outline-secondary' data-toggle='modal' data-target='#bulkDelete'>
-																	<FontAwesomeIcon icon={faTrash} />
-																	<spam className='badge badge-danger'>{this.state.bulk.filter(e => e.split('>')[2] === category.name).length}</spam>
-																</button>
-															)}
+															{this.state.bulk.length !== 0 &&
+																this.state.bulk.find(e => e.split('>')[2] === category.name) && (
+																	<button
+																		className='btn btn-sm ml-auto btn-outline-secondary'
+																		data-toggle='modal'
+																		data-target='#bulkDelete'
+																	>
+																		<FontAwesomeIcon icon={faTrash} />
+																		<spam className='badge badge-danger'>
+																			{
+																				this.state.bulk.filter(
+																					e => e.split('>')[2] === category.name,
+																				).length
+																			}
+																		</spam>
+																	</button>
+																)}
 														</div>
 														<ul className='list-group list-group-flush mt-2 hr-9 overflow-y-scroll text-secondary'>
 															{category.sub.map((sub, key) => {
 																return (
-																	<li key={key} className='list-group-item list-group-item-sm border-0 d-flex align-items-center category-list text-capitalize'>
+																	<li
+																		key={key}
+																		className='list-group-item list-group-item-sm border-0 d-flex align-items-center category-list text-capitalize'
+																	>
 																		<span className='custom-control custom-checkbox'>
-																			<input name='CategoryId' type='checkbox' className='custom-control-input' id={`${sub.name}>${sub.id}>${category.name}`} onChange={this.handleInput} />
-																			<label className='custom-control-label' for={`${sub.name}>${sub.id}>${category.name}`}>
-																				{this.state && sub.id === parseInt(this.state.ParentId) ? this.state.name : sub.name}
+																			<input
+																				name='CategoryId'
+																				type='checkbox'
+																				className='custom-control-input'
+																				id={`${sub.name}>${sub.id}>${category.name}`}
+																				onChange={this.handleInput}
+																			/>
+																			<label
+																				className='custom-control-label'
+																				for={`${sub.name}>${sub.id}>${category.name}`}
+																			>
+																				{this.state && sub.id === parseInt(this.state.ParentId)
+																					? this.state.name
+																					: sub.name}
 																			</label>
 																		</span>
-																		<div className='btn-group btn-group-sm ml-auto mr-1' role='group' aria-label='Basic example' onClick={this.handleClick}>
+																		<div
+																			className='btn-group btn-group-sm ml-auto mr-1'
+																			role='group'
+																			aria-label='Basic example'
+																			onClick={this.handleClick}
+																		>
 																			<button
 																				name={`${category.name}>${sub.name}`}
 																				id={sub.id}
@@ -160,16 +243,29 @@ class Categories extends Component {
 															{this.state.name && category.id === parseInt(this.state.ParentId) ? (
 																<li className='list-group-item list-group-item-sm border-0'>
 																	<span className='custom-control custom-checkbox '>
-																		<input type='checkbox' className='custom-control-input' id={this.state.name} />
+																		<input
+																			type='checkbox'
+																			className='custom-control-input'
+																			id={this.state.name}
+																		/>
 																		<label className='custom-control-label' for={this.state.name}>
 																			{this.state.name}
 																		</label>
 																	</span>
 																</li>
 															) : category.sub.length === 0 ? (
-																<li className={`list-group-item list-group-item-sm border-0 text-center m-auto`}>
+																<li
+																	className={`list-group-item list-group-item-sm border-0 text-center m-auto`}
+																>
 																	<p className='mb-1 mt-n3'>Oops No sub Categories</p>
-																	<button name={category.name} id={category.id} className='btn btn-secondary btn-sm' data-toggle='modal' data-target='#exampleModalCenter' onClick={this.handleClick}>
+																	<button
+																		name={category.name}
+																		id={category.id}
+																		className='btn btn-secondary btn-sm'
+																		data-toggle='modal'
+																		data-target='#exampleModalCenter'
+																		onClick={this.handleClick}
+																	>
 																		<FontAwesomeIcon className='mr-2' icon={faPlus} />
 																		add one
 																	</button>
@@ -182,15 +278,30 @@ class Categories extends Component {
 															<span className='d-flex justify-content-center bg-secondary'>
 																<small className='d-flex align-items-center position-absolute bg-light rounded-sm px-2 py-0 text-secondary border'>
 																	<FontAwesomeIcon icon={faChevronDown} />
-																	<span className='ml-1'>{category.sub.length - 4} more row(s)</span>
+																	<span className='ml-1'>
+																		{category.sub.length - 4} more row(s)
+																	</span>
 																</small>
 															</span>
 														)}
 													</div>
 													<div className='card-footer d-flex p-2 align-items-center shadow-sm-top bg-white text-secondary'>
-														<span className='card-text text-truncate'>{this.state && category.id === parseInt(this.state.ParentId) ? this.state.parentname : category.name}</span>
-														<div className='btn-group btn-group-sm ml-auto' role='group' aria-label='Basic example'>
-															<div className='btn-group btn-group-sm ml-auto mr-1' role='group' aria-label='Basic example' onClick={this.handleClick}>
+														<span className='card-text text-truncate'>
+															{this.state && category.id === parseInt(this.state.ParentId)
+																? this.state.parentname
+																: category.name}
+														</span>
+														<div
+															className='btn-group btn-group-sm ml-auto'
+															role='group'
+															aria-label='Basic example'
+														>
+															<div
+																className='btn-group btn-group-sm ml-auto mr-1'
+																role='group'
+																aria-label='Basic example'
+																onClick={this.handleClick}
+															>
 																<button
 																	name={`${category.name}>${''}`}
 																	id={category.id}
@@ -222,7 +333,12 @@ class Categories extends Component {
 									})}
 							</div>
 							<div className='d-flex flex-row mt-2 align-items-center'>
-								<Pagination totalRecords={total} pageLimit={8} pageNeighbours={1} onPageChanged={this.onPageChanged} />
+								<Pagination
+									totalRecords={total}
+									pageLimit={8}
+									pageNeighbours={1}
+									onPageChanged={this.onPageChanged}
+								/>
 							</div>
 						</div>
 					</div>

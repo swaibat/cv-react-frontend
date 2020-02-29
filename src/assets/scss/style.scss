@@ -1,8 +1,7 @@
 // import scss bootstrap module
 @import './variables';
-@import './node_modules/bootstrap/scss/bootstrap.scss';
-@import './node_modules/react-toastify/scss/main.scss';
-
+@import 'bootstrap/scss/bootstrap.scss';
+@import 'react-toastify/scss/main.scss';
 
 @import './custom/sidenav';
 @import './custom/template.scss';
@@ -17,7 +16,7 @@
 @import './custom/components/specs.table';
 @import './custom/components/category.nav';
 @import './custom/components/navigation';
-@import './custom/components/uploader';
+@import './../../App/components/products/products';
 @import './custom/components/table';
 @import './custom/components/humberger';
 @import './custom/components/theme.frame';
@@ -26,9 +25,9 @@
 @import './custom/components/pre-loader';
 @import './custom/components/toast';
 @import './custom/components/like';
+@import './custom/components/dropdown';
 
 // mixins
 @import './custom/mixins/transition';
 // pages
 @import './custom/pages/contact.page';
-

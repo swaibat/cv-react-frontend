@@ -33,7 +33,11 @@ class Faq extends Component {
 	};
 	handleClick = e => {
 		e.stopPropagation();
-		this.setState({ id: e.target.id, question: e.target.name.split('>')[0], answer: e.target.name.split('>')[1] });
+		this.setState({
+			id: e.target.id,
+			question: e.target.name.split('>')[0],
+			answer: e.target.name.split('>')[1],
+		});
 	};
 	handleUpdate = e => {
 		e.preventDefault();
@@ -66,7 +70,12 @@ class Faq extends Component {
 					<div className='container-fluid mt-n2'>
 						<h5 className='cv-title title-light'>Categories</h5>
 						<div className='w-100 bg-default p-3 mt-4 rounded'>
-							<button className='btn btn-sm btn-success add-btn shadow-xs' data-toggle='modal' data-target='#exampleModalCenter' onClick={this.handleClick}>
+							<button
+								className='btn btn-sm btn-success add-btn shadow-xs'
+								data-toggle='modal'
+								data-target='#exampleModalCenter'
+								onClick={this.handleClick}
+							>
 								<FontAwesomeIcon className='mr-2' icon={faPlus} />
 								Add Faq
 							</button>
@@ -74,15 +83,29 @@ class Faq extends Component {
 								{payload &&
 									payload.data.map((faq, index) => {
 										return (
-											<div key={index} className='card mb-3 overflow-hidden rounded shadow-xs bg-white border-0'>
+											<div
+												key={index}
+												className='card mb-3 overflow-hidden rounded shadow-xs bg-white border-0'
+											>
 												<div className='d-flex card-header border-bottom bg-white' id='headingOne'>
-													<button className='btn btn-link w-100 text-left d-flex' type='button' data-toggle='collapse' data-target={`#faq${index}`} aria-expanded='true' aria-controls={`faq${index}`}>
+													<button
+														className='btn btn-link w-100 text-left d-flex'
+														type='button'
+														data-toggle='collapse'
+														data-target={`#faq${index}`}
+														aria-expanded='true'
+														aria-controls={`faq${index}`}
+													>
 														{faq.question}
 														<span className='ml-auto'>
 															<FontAwesomeIcon className='mr-1' icon={faChevronDown} />
 														</span>
 													</button>
-													<div className='btn-group btn-group-sm mr-n2 ml-auto' role='group' aria-label='First group'>
+													<div
+														className='btn-group btn-group-sm mr-n2 ml-auto'
+														role='group'
+														aria-label='First group'
+													>
 														<button
 															id={faq.id}
 															name={`${faq.question}>${faq.answer}`}
@@ -108,7 +131,12 @@ class Faq extends Component {
 													</div>
 												</div>
 
-												<div id={`faq${index}`} className='collapse' aria-labelledby='headingOne' data-parent='#accordionExample'>
+												<div
+													id={`faq${index}`}
+													className='collapse'
+													aria-labelledby='headingOne'
+													data-parent='#accordionExample'
+												>
 													<div className='card-body'>{faq.answer}</div>
 												</div>
 											</div>
@@ -119,7 +147,14 @@ class Faq extends Component {
 					</div>
 				</main>
 				{/* create model */}
-				<div className='modal fade' id='exampleModalCenter' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenter' aria-hidden='true'>
+				<div
+					className='modal fade'
+					id='exampleModalCenter'
+					tabindex='-1'
+					role='dialog'
+					aria-labelledby='exampleModalCenter'
+					aria-hidden='true'
+				>
 					<div className='modal-dialog modal-dialog-centered' role='document'>
 						<div className='modal-content'>
 							<div className='modal-header border-0'>
@@ -133,14 +168,30 @@ class Faq extends Component {
 							<form onSubmit={this.handleSubmit}>
 								<div className='modal-body'>
 									<div className='form-group'>
-										<input name='question' placeholder='enter question' type='text' className='form-control rounded-sm' onChange={this.handleInput} />
+										<input
+											name='question'
+											placeholder='enter question'
+											type='text'
+											className='form-control rounded-sm'
+											onChange={this.handleInput}
+										/>
 									</div>
 									<div className='form-group'>
-										<textarea name='answer' rows='4' className='form-control' placeholder='enter the answer' onChange={this.handleInput} />
+										<textarea
+											name='answer'
+											rows='4'
+											className='form-control'
+											placeholder='enter the answer'
+											onChange={this.handleInput}
+										/>
 									</div>
 								</div>
 								<div className='modal-footer'>
-									<button type='button' className='btn btn-sm btn-secondary mr-auto' data-dismiss='modal'>
+									<button
+										type='button'
+										className='btn btn-sm btn-secondary mr-auto'
+										data-dismiss='modal'
+									>
 										Close
 									</button>
 									<button type='submit' className='btn btn-sm btn-primary'>
@@ -152,7 +203,13 @@ class Faq extends Component {
 					</div>
 				</div>
 				{/* delete model */}
-				<div className='modal fade bd-example-modal-sm' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'>
+				<div
+					className='modal fade bd-example-modal-sm'
+					tabindex='-1'
+					role='dialog'
+					aria-labelledby='mySmallModalLabel'
+					aria-hidden='true'
+				>
 					<div className='modal-dialog modal-dialog-centered'>
 						<div className='modal-content'>
 							<div className='modal-header border-0'>
@@ -165,11 +222,16 @@ class Faq extends Component {
 							</div>
 							<div className='modal-body'>
 								<p>
-									Are you sure you wan to delete <emp className='text-primary text-capitalize'>{this.state.name}</emp>
+									Are you sure you wan to delete{' '}
+									<emp className='text-primary text-capitalize'>{this.state.name}</emp>
 								</p>
 							</div>
 							<div className='modal-footer'>
-								<button type='button' className='btn btn-sm btn-secondary mr-auto' data-dismiss='modal'>
+								<button
+									type='button'
+									className='btn btn-sm btn-secondary mr-auto'
+									data-dismiss='modal'
+								>
 									Cancel
 								</button>
 								<button type='button' onClick={this.handleDelete} className='btn btn-sm btn-danger'>
@@ -180,7 +242,14 @@ class Faq extends Component {
 					</div>
 				</div>
 				{/* update model */}
-				<div className='modal fade' id='updateModal' tabindex='-1' role='dialog' aria-labelledby='updateModal' aria-hidden='true'>
+				<div
+					className='modal fade'
+					id='updateModal'
+					tabindex='-1'
+					role='dialog'
+					aria-labelledby='updateModal'
+					aria-hidden='true'
+				>
 					<div className='modal-dialog modal-dialog-centered' role='document'>
 						<div className='modal-content'>
 							<div className='modal-header border-0'>
@@ -194,14 +263,32 @@ class Faq extends Component {
 							<form onSubmit={this.handleUpdate}>
 								<div className='modal-body'>
 									<div className='form-group'>
-										<input name='question' value={this.state.question} placeholder='enter question' type='text' className='form-control rounded-sm' onChange={this.handleInput} />
+										<input
+											name='question'
+											value={this.state.question}
+											placeholder='enter question'
+											type='text'
+											className='form-control rounded-sm'
+											onChange={this.handleInput}
+										/>
 									</div>
 									<div className='form-group'>
-										<textarea name='answer' value={this.state.answer} rows='4' className='form-control' placeholder='enter the answer' onChange={this.handleInput} />
+										<textarea
+											name='answer'
+											value={this.state.answer}
+											rows='4'
+											className='form-control'
+											placeholder='enter the answer'
+											onChange={this.handleInput}
+										/>
 									</div>
 								</div>
 								<div className='modal-footer'>
-									<button type='button' className='btn btn-sm btn-secondary mr-auto' data-dismiss='modal'>
+									<button
+										type='button'
+										className='btn btn-sm btn-secondary mr-auto'
+										data-dismiss='modal'
+									>
 										Close
 									</button>
 									<button type='submit' className='btn btn-sm btn-primary'>

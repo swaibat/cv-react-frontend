@@ -11,10 +11,14 @@ export const delToken = () => {
 export const token = localStorage.getItem('cv-token');
 
 const getToken = token => {
-	const data = jwt.verify(token || localStorage.getItem('cv-token'), 'ssdhjcbbjkssndahjkfcbcjdsdh', (err, decoded) => {
-		if (err) return '';
-		return decoded;
-	});
+	const data = jwt.verify(
+		token || localStorage.getItem('cv-token'),
+		'ssdhjcbbjkssndahjkfcbcjdsdh',
+		(err, decoded) => {
+			if (err) return '';
+			return decoded;
+		},
+	);
 	return data;
 };
 

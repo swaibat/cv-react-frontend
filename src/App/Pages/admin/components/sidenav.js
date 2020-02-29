@@ -2,14 +2,29 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMinusCircle, faSearch, faBell, faThLarge, faLayerGroup, faCog, faUsers, faGripHorizontal, faClone, faHistory } from '@fortawesome/free-solid-svg-icons';
+import {
+	faMinusCircle,
+	faSearch,
+	faBell,
+	faThLarge,
+	faLayerGroup,
+	faCog,
+	faUsers,
+	faGripHorizontal,
+	faClone,
+	faHistory,
+	faCircle,
+} from '@fortawesome/free-solid-svg-icons';
 import avatar from '../../../../assets/images/user.svg';
 import Logo from '../../../../assets/images/logo.svg';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function Nav() {
 	return (
-		<ul className='navbar-nav mr-auto sidenav bg-white text-secondary-light vh-100' id='navAccordion'>
+		<ul
+			className='navbar-nav mr-auto sidenav bg-white text-secondary-light vh-100'
+			id='navAccordion'
+		>
 			<li className='nav-item shadow-sm p-2 m-0 h-3 d-flex justify-content-center'>
 				<a className='navbar-brand p-0' href='/'>
 					<img src={Logo} alt='logo' />
@@ -21,102 +36,163 @@ function Nav() {
 					<span>Admin</span>
 				</div>
 			</li>
-			<ul className='shadow-sm-top p-2 h-90'>
-				<div className='d-flex justify-content-between text-secondary-light'>
+			<ul className='shadow-sm-top pl-0 h-90'>
+				<div className='d-flex justify-content-between text-secondary-light px-2 pt-2'>
 					<FontAwesomeIcon className='rotate-90' icon={faMinusCircle} />
 					<FontAwesomeIcon className='rotate-20' icon={faMinusCircle} />
 				</div>
-				<li className='nav-item pt-2'>
+				<li className='nav-item pt-2 px-2'>
 					<div className='input-group mt-2 mb-3'>
-						<input type='text' className='form-control form-control-sm' placeholder='' aria-label="Recipient's username" aria-describedby='basic-addon2' />
+						<input
+							type='text'
+							className='form-control form-control-sm'
+							placeholder=''
+							aria-label="Recipient's username"
+							aria-describedby='basic-addon2'
+						/>
 						<div className='input-group-append'>
-							<span className='input-group-text bg-white rounded-sm-right text-secondary-light' id='basic-addon2'>
+							<span
+								className='input-group-text bg-white rounded-sm-right text-secondary-light'
+								id='basic-addon2'
+							>
 								<FontAwesomeIcon icon={faSearch} />
 							</span>
 						</div>
 					</div>
 				</li>
 				<li className='nav-item border-top'>
-					<Link className='nav-link text-secondary pl-3' to='/admin/dashboard'>
+					<NavLink
+						className='nav-link text-secondary pl-3 cv-sidenav'
+						to='/admin/dashboard'
+						activeClassName='selected'
+					>
 						<FontAwesomeIcon className='mr-2' icon={faThLarge} /> Dashboard
-					</Link>
+					</NavLink>
 				</li>
 				<li className='nav-item'>
-					<Link className='nav-link text-secondary nav-link  pl-3' to='/admin/category'>
+					<NavLink
+						className='nav-link text-secondary nav-link  pl-3 cv-sidenav'
+						to='/admin/category'
+						activeClassName='selected'
+					>
 						<FontAwesomeIcon className='mr-2' icon={faLayerGroup} />
 						Categories
-					</Link>
+					</NavLink>
 				</li>
 				<li className='nav-item'>
-					<Link className='nav-link text-secondary pl-3' to='/admin/products'>
+					<NavLink
+						className='nav-link text-secondary pl-3 cv-sidenav'
+						to='/admin/products'
+						activeClassName='selected'
+					>
 						<FontAwesomeIcon className='mr-2' icon={faBell} />
 						products
-					</Link>
+					</NavLink>
 				</li>
 				<li className='nav-item'>
-					<Link
-						className='nav-link text-secondary nav-link text-secondary-collapse pl-3'
-						to='/admin/settings'
+					<NavLink
+						className='nav-link text-secondary nav-link text-secondary-collapse pl-3 cv-sidenav'
+						to='/admin/pages'
 						id='hasSubItems'
 						data-toggle='collapse'
 						data-target='#otherPages'
 						aria-controls='otherPages'
 						aria-expanded='false'
+						activeClassName='selected'
 					>
 						<FontAwesomeIcon className='mr-2' icon={faClone} />
 						Pages
-					</Link>
-					<ul className='nav-second-level collapse' id='otherPages' data-parent='#navAccordion'>
-						<li className='nav-item'>
-							<Link className='nav-link text-secondary pl-2' to='/admin/pages'>
-								Vendors Pages
+					</NavLink>
+					<ul
+						className='nav-second-level cv-collapse collapse'
+						id='otherPages'
+						data-parent='#navAccordion'
+					>
+						<li className='nav-item py-0'>
+							<Link className='nav-link text-secondary pl-2 ' to='/admin/pages'>
+								<span className='nav-link text-secondary-text p-0 ml-n3'>
+									<FontAwesomeIcon className='cv-nav-icon' icon={faCircle} />
+									Vendors Pages
+								</span>
 							</Link>
 						</li>
-						<li className='nav-item'>
-							<Link className='nav-link text-secondary pl-2' to='/admin/faq'>
-								<span className='nav-link text-secondary-text'>Faq</span>
-							</Link>
+						<li className='nav-item py-0'>
+							<NavLink
+								className='nav-link text-secondary pl-2 '
+								to='/admin/pages/faq'
+								activeClassName='selected'
+							>
+								<span className='nav-link text-secondary-text p-0 ml-n3'>
+									<FontAwesomeIcon className='cv-nav-icon' icon={faCircle} />
+									Faq
+								</span>
+							</NavLink>
 						</li>
-						<li className='nav-item'>
-							<Link className='nav-link text-secondary pl-2' to='/admin/about'>
-								<span className='nav-link text-secondary-text'>About-us</span>
+						<li className='nav-item py-0'>
+							<Link className='nav-link text-secondary pl-2 ' to='/admin/pages/about'>
+								<span className='nav-link text-secondary-text p-0 ml-n3'>
+									<FontAwesomeIcon className='cv-nav-icon' icon={faCircle} />
+									About-us
+								</span>
 							</Link>
 						</li>
 					</ul>
 				</li>
 				<li className='nav-item'>
-					<Link className='nav-link text-secondary pl-3' to='/admin/users'>
+					<NavLink
+						className='nav-link text-secondary pl-3 cv-sidenav'
+						to='/admin/users'
+						activeClassName='selected'
+					>
 						<FontAwesomeIcon className='mr-2' icon={faUsers} />
 						Users
-					</Link>
+					</NavLink>
 				</li>
 				<li className='nav-item'>
-					<Link
-						className='nav-link text-secondary nav-link text-secondary-collapse pl-3'
-						to='/admin/settings'
+					<NavLink
+						className='nav-link text-secondary nav-link text-secondary-collapse cv-sidenav pl-3'
+						to='/admin/chat'
 						id='hasSubItems'
 						data-toggle='collapse'
 						data-target='#apps'
 						aria-controls='apps'
 						aria-expanded='false'
+						activeClassName='selected'
 					>
 						<FontAwesomeIcon className='mr-2' icon={faGripHorizontal} />
 						Apps
-					</Link>
-					<ul className='nav-second-level collapse' id='apps' data-parent='#navAccordion'>
+					</NavLink>
+					<ul
+						className='nav-second-level cv-collapse collapse'
+						id='apps'
+						data-parent='#navAccordion'
+					>
 						<li className='nav-item'>
-							<Link className='nav-link text-secondary' to='/admin/chat'>
-								<span className='nav-link text-secondary-text'>chat</span>
+							<NavLink
+								className='nav-link text-secondary pl-2'
+								to='/admin/chat'
+								activeClassName='selected'
+							>
+								<span className='nav-link text-secondary-text p-0 ml-n3'>
+									<FontAwesomeIcon className='cv-nav-icon' icon={faCircle} />
+									chat
+								</span>
+							</NavLink>
+						</li>
+						<li className='nav-item'>
+							<Link className='nav-link text-secondary pl-2' to='/admin/payments'>
+								<span className='nav-link text-secondary-text p-0 ml-n3'>
+									<FontAwesomeIcon className='cv-nav-icon' icon={faCircle} />
+									comments
+								</span>
 							</Link>
 						</li>
 						<li className='nav-item'>
-							<Link className='nav-link text-secondary' to='/admin/payments'>
-								<span className='nav-link text-secondary-text'>comments</span>
-							</Link>
-						</li>
-						<li className='nav-item'>
-							<a className='nav-link text-secondary' href='#'>
-								<span className='nav-link text-secondary-text'>notification</span>
+							<a className='nav-link text-secondary pl-2' href='#'>
+								<span className='nav-link text-secondary-text p-0 ml-n3'>
+									<FontAwesomeIcon className='cv-nav-icon' icon={faCircle} />
+									notification
+								</span>
 							</a>
 						</li>
 					</ul>
@@ -140,7 +216,11 @@ function Nav() {
 						<FontAwesomeIcon className='mr-2' icon={faCog} />
 						settings
 					</Link>
-					<ul className='nav-second-level collapse' id='collapseSubItems4' data-parent='#navAccordion'>
+					<ul
+						className='nav-second-level cv-collapse collapse'
+						id='collapseSubItems4'
+						data-parent='#navAccordion'
+					>
 						<li className='nav-item'>
 							<Link className='nav-link text-secondary' to='/admin/settings'>
 								<span className='nav-link text-secondary-text'>website</span>

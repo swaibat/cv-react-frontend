@@ -8,7 +8,13 @@ export default ({ data }) => {
 					<a href='/'>Home</a>
 				</li>
 				{data && data.sub ? (
-					<li className='breadcrumb-item'>{data && <a href={`/category/${data.name.replace(/-/g, ' ')}`}>{data.name.replace(/-/g, ' ')}</a>}</li>
+					<li className='breadcrumb-item'>
+						{data && (
+							<a href={`/category/${data.name.replace(/-/g, ' ')}`}>
+								{data.name.replace(/-/g, ' ')}
+							</a>
+						)}
+					</li>
 				) : (
 					<li className='breadcrumb-item active' aria-current='page'>
 						{data && data.name}

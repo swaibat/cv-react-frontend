@@ -25,7 +25,9 @@ class Items extends Component {
 					<div className='product-title w-100'>
 						<h4>Featured</h4>
 					</div>
-					<div className='sponsor-container d-flex w-100 row justify-content-center align-items-center'>{payload && <Card data={payload.data} />}</div>
+					<div className='sponsor-container d-flex w-100 row justify-content-center align-items-center'>
+						{payload && <Card data={payload.data} />}
+					</div>
 				</main>
 				<Footer />
 			</>

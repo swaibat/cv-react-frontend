@@ -22,6 +22,11 @@ const apis = {
 			headers: { Authorization: token },
 		});
 	},
+	updateItem(data, token, name) {
+		return axios.patch(`${BASE_URL}/products/${name}`, data, {
+			headers: { Authorization: token },
+		});
+	},
 	getItemsByCategory(name) {
 		return axios.get(`${BASE_URL}/category/${name}`);
 	},

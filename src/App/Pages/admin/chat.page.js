@@ -10,7 +10,14 @@ import Sidenav from './components/sidenav';
 import AdminNav from './components/admin.nav.component';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import getTokenData, { token } from '../../../helper';
-import { faCog, faPen, faPaperPlane, faImage, faPaperclip, faGrin } from '@fortawesome/free-solid-svg-icons';
+import {
+	faCog,
+	faPen,
+	faPaperPlane,
+	faImage,
+	faPaperclip,
+	faGrin,
+} from '@fortawesome/free-solid-svg-icons';
 import image from '../../../assets/images/user.svg';
 import ReactTooltip from 'react-tooltip';
 import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react';
@@ -51,13 +58,20 @@ class Page extends React.Component {
 	}
 	handleChange(event) {
 		this.setState({ message: event.target.value });
-		event.target.value.length > 0 ? this.setState({ isTyping: true }) : this.setState({ isTyping: false });
+		event.target.value.length > 0
+			? this.setState({ isTyping: true })
+			: this.setState({ isTyping: false });
 	}
 	handleSubmit(event) {
 		event.preventDefault();
 		const { ReceiverId, message, fullNames } = this.state;
 		this.props.create({ ReceiverId, message }, token);
-		this.setState({ data: { ...this.state.data, [ReceiverId]: [...this.state.messages, { ReceiverId, fullNames, message }] } });
+		this.setState({
+			data: {
+				...this.state.data,
+				[ReceiverId]: [...this.state.messages, { ReceiverId, fullNames, message }],
+			},
+		});
 		this.setState({ message: '' });
 	}
 	onEmojiClick(event, emojiObject) {
@@ -91,7 +105,6 @@ class Page extends React.Component {
 
 	render() {
 		const { data, ReceiverId, emojiModalOpen, userId } = this.state;
-		console.log(this.state);
 		return (
 			<>
 				<Sidenav />
@@ -105,17 +118,32 @@ class Page extends React.Component {
 								<div className='col-md-3 border-right p-1'>
 									<nav className='max-vh-80 overflow-y-scroll'>
 										<div className='list-group'>
-											<a href='#' className='list-group-item border-0 rounded list-group-item-action'>
+											<a
+												href='#'
+												className='list-group-item border-0 rounded list-group-item-action'
+											>
 												<div className='media d-flex align-items-center'>
-													<img className='mr-3 rounded-circle' height='50' src={image} alt='Generic placeholder image' />
+													<img
+														className='mr-3 rounded-circle'
+														height='50'
+														src={image}
+														alt='Generic placeholder image'
+													/>
 													<div className='media-body text-truncate'>
 														<h5 className='mb-1 front-weight-bolder'>Media heading</h5>
 													</div>
 												</div>
 											</a>
-											<a href='#' className='list-group-item border-bottom border-0 rounded list-group-item-action'>
+											<a
+												href='#'
+												className='list-group-item border-bottom border-0 rounded list-group-item-action'
+											>
 												<div className='input-group input-group-sm'>
-													<input type='text' className='form-control' aria-label='Amount (to the nearest dollar)' />
+													<input
+														type='text'
+														className='form-control'
+														aria-label='Amount (to the nearest dollar)'
+													/>
 													<div className='input-group-append'>
 														<span className='input-group-text'>0</span>
 													</div>
@@ -125,19 +153,34 @@ class Page extends React.Component {
 												const chatHistory = user[1][0];
 												if (chatHistory) {
 													const { receiver, sender } = chatHistory;
-													const displayName = (sender.id !== userId && sender.firstName) || (receiver.id !== userId && receiver.firstName);
+													const displayName =
+														(sender.id !== userId && sender.firstName) ||
+														(receiver.id !== userId && receiver.firstName);
 													return (
 														<li
 															key={index}
 															id={user[0]}
-															onClick={() => this.setState({ messages: user[1], ReceiverId: user[0], fullNames: 'admin admin' })}
+															onClick={() =>
+																this.setState({
+																	messages: user[1],
+																	ReceiverId: user[0],
+																	fullNames: 'admin admin',
+																})
+															}
 															className='list-group-item border-0 rounded list-group-item-action'
 														>
 															<div className='media align-items-center'>
-																<img className='mr-3 rounded-circle' height='40' src={image} alt={chatHistory.fullNames} />
+																<img
+																	className='mr-3 rounded-circle'
+																	height='40'
+																	src={image}
+																	alt={chatHistory.fullNames}
+																/>
 																<div className='media-body text-truncate'>
 																	<p className='mb-1 front-weight-bolder'>{displayName}</p>
-																	<span className='text-secondary'>{user[1][user[1].length - 1].message}</span>
+																	<span className='text-secondary'>
+																		{user[1][user[1].length - 1].message}
+																	</span>
 																</div>
 																<div className='d-flex flex-column justify-content-end align-items-end'>
 																	<small>2 days ago</small>
@@ -147,7 +190,11 @@ class Page extends React.Component {
 														</li>
 													);
 												} else {
-													return <li className='list-group-item border-0 rounded list-group-item-action'>no users</li>;
+													return (
+														<li className='list-group-item border-0 rounded list-group-item-action'>
+															no users
+														</li>
+													);
 												}
 											})}
 										</div>
@@ -159,7 +206,9 @@ class Page extends React.Component {
 											<img className='rounded-circle' height='40' src={image} alt='image' />
 											<a className='nav-link d-flex flex-column' href='#'>
 												<span>John Doe</span>
-												<small className='text-secondary font-weight-light'>active 56 minutes ago</small>
+												<small className='text-secondary font-weight-light'>
+													active 56 minutes ago
+												</small>
 											</a>
 										</li>
 										<ul className='nav-item ml-auto d-flex align-items-center'>
@@ -176,16 +225,35 @@ class Page extends React.Component {
 										</ul>
 									</ul>
 									<div className='d-flex flex-column align-items-start mb-auto mx-2'>
-										<div className='p-2 mb-auto vh-71 w-100 overflow-y-auto chat-container' id='chat'>
+										<div
+											className='p-2 mb-auto vh-71 w-100 overflow-y-auto chat-container'
+											id='chat'
+										>
 											{!_.isEmpty(data) &&
 												data[ReceiverId].map((chat, index) => {
 													const { ReceiverId } = chat;
 													const sent = ReceiverId === userId;
 													return (
-														<div key={index} className={!sent ? 'd-flex flex-row-reverse' : 'd-flex'}>
-															{sent && <img className='mr-3 rounded-circle' height='45' src={image} alt='user' />}
+														<div
+															key={index}
+															className={!sent ? 'd-flex flex-row-reverse' : 'd-flex'}
+														>
+															{sent && (
+																<img
+																	className='mr-3 rounded-circle'
+																	height='45'
+																	src={image}
+																	alt='user'
+																/>
+															)}
 															<div className='media my-2 mw-85'>
-																<div className={`media-body text-white p-2 rounded chat-bubble ${!sent ? 'bg-primary text-white send' : 'receive'}`}>{chat.message}</div>
+																<div
+																	className={`media-body text-white p-2 rounded chat-bubble ${
+																		!sent ? 'bg-primary text-white send' : 'receive'
+																	}`}
+																>
+																	{chat.message}
+																</div>
 															</div>
 														</div>
 													);
@@ -193,7 +261,11 @@ class Page extends React.Component {
 										</div>
 										{emojiModalOpen && (
 											<span className='position-absolute'>
-												<button type='button' className='bg-light border-0' onClick={this.handleEmojiModal}>
+												<button
+													type='button'
+													className='bg-light border-0'
+													onClick={this.handleEmojiModal}
+												>
 													x
 												</button>
 												<Picker onEmojiClick={this.onEmojiClick} skinTone={SKIN_TONE_MEDIUM_DARK} />
@@ -201,16 +273,29 @@ class Page extends React.Component {
 										)}
 										<div className='w-100'>
 											<small>shau is typing . . .</small>
-											<form className='input-group d-flex align-items-end py-2' onSubmit={this.handleSubmit}>
+											<form
+												className='input-group d-flex align-items-end py-2'
+												onSubmit={this.handleSubmit}
+											>
 												<div className='input-group-append'>
-													<span className='input-group-text bg-white text-primary border-0 cursor-pointer' onClick={this.handleEmojiModal}>
+													<span
+														className='input-group-text bg-white text-primary border-0 cursor-pointer'
+														onClick={this.handleEmojiModal}
+													>
 														<FontAwesomeIcon className='chat-icon' icon={faGrin} />
 													</span>
 													<span className='input-group-text bg-white text-primary border-0'>
 														<FontAwesomeIcon className='chat-icon' icon={faImage} />
 													</span>
 												</div>
-												<input type='text' className='form-control rounded-left' min='1' value={this.state.message} onChange={this.handleChange} required />
+												<input
+													type='text'
+													className='form-control rounded-left'
+													min='1'
+													value={this.state.message}
+													onChange={this.handleChange}
+													required
+												/>
 												<div className='input-group-append'>
 													<button className='input-group-text bg-white text-primary'>
 														<span>

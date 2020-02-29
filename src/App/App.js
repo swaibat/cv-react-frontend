@@ -12,6 +12,7 @@ import FaqList from './Pages/admin/faqs.list.page';
 import VerifyUser from './Pages/verify.user.page';
 import Dashboard from './Pages/admin/dashboard.page';
 import CreateProduct from './Pages/admin/create.product.page';
+import EditProduct from './components/products/product.edit';
 import Category from './Pages/admin/categories.page';
 import AdminProducts from './Pages/admin/products.list.page';
 import settings from './Pages/admin/Settings.page';
@@ -21,16 +22,22 @@ import Chat from './Pages/admin/chat.page';
 import ResetPassword from './Pages/reset.password.page';
 import ConfirmReset from './Pages/password.confirm';
 import Contact from './Pages/contact.page';
-import token from '../helper/index';
+import Token, { token } from '../helper/index';
 import Users from './Pages/admin/users.page';
 import Profile from './Pages/profile.page';
+import { initializeSocketIo } from '../helper/socket.io';
+import { toast } from 'react-toastify';
 
+toast.configure();
 export class App extends React.Component {
+	componentDidMount() {
+		initializeSocketIo(token);
+	}
 	render() {
 		return (
 			<Router>
 				<Switch>
-					<Route exact path='/' component={Landing} />
+					<Route exact path='/' render={props => <Landing {...props} session={true} />} />
 					<Route exact path='/login' component={Login} />
 					<Route exact path='/register/:token' component={Register} />
 					<Route exact path='/verify' component={VerifyUser} />
@@ -48,16 +55,17 @@ export class App extends React.Component {
 					admin routes
 
 					*/}
-					{token().role === 'admin' && (
+					{Token().role === 'admin' && (
 						<>
 							<Route exact path='/admin/dashboard' component={Dashboard} />
 							<Route exact path='/admin/products/create' component={CreateProduct} />
+							<Route exact path='/products/:id/edit' component={EditProduct} />
 							<Route exact path='/admin/category' component={Category} />
 							<Route exact path='/admin/products' component={AdminProducts} />
 							<Route exact path='/admin/settings' component={settings} />
-							<Route exact path='/admin/faq' component={FaqList} />
+							<Route exact path='/admin/pages/faq' component={FaqList} />
 							<Route exact path='/admin/pages' component={Pages} />
-							<Route exact path='/admin/about' component={About} />
+							<Route exact path='/admin/pages/about' component={About} />
 							<Route exact path='/admin/chat' component={Chat} />
 							<Route exact path='/admin/users' component={Users} />
 						</>
