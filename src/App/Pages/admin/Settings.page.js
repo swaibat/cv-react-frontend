@@ -41,15 +41,30 @@ class Settings extends Component {
 	}
 	handleInput = e => {
 		const target = e.target;
-		const value = target.type === 'radio' ? (target.id.match('code') ? 'code' : 'symbol') : target.checked;
+		const value =
+			target.type === 'radio' ? (target.id.match('code') ? 'code' : 'symbol') : target.checked;
 		const name = target.id.match('-') ? target.id.split('-')[0] : target.id;
 		this.setState({ [name]: value });
 	};
 	handleSubmit = async e => {
 		e.preventDefault();
 		this.setState({ saved: true });
-		const { currencies, currencyFlagDisplay, autoCurrency, autoProductApproval, currencyDisplayBy, alpha2Code } = this.state;
-		this.props.update({ currency: currencies && currencies[0].code, currencyCountry: alpha2Code, currencyFlagDisplay, autoCurrency, autoProductApproval, currencyDisplayBy });
+		const {
+			currencies,
+			currencyFlagDisplay,
+			autoCurrency,
+			autoProductApproval,
+			currencyDisplayBy,
+			alpha2Code,
+		} = this.state;
+		this.props.update({
+			currency: currencies && currencies[0].code,
+			currencyCountry: alpha2Code,
+			currencyFlagDisplay,
+			autoCurrency,
+			autoProductApproval,
+			currencyDisplayBy,
+		});
 	};
 	render() {
 		const { data } = this.state;
@@ -63,7 +78,12 @@ class Settings extends Component {
 						<h5 className='cv-title title-light'>Settings</h5>
 						<div className='row mt-4'>
 							<div className='col-1'>
-								<div className='nav flex-column settings-nav nav-pills' id='v-pills-tab' role='tablist' aria-orientation='vertical'>
+								<div
+									className='nav flex-column settings-nav nav-pills'
+									id='v-pills-tab'
+									role='tablist'
+									aria-orientation='vertical'
+								>
 									<a
 										className='nav-link shadow-xs d-flex flex-column active'
 										id='v-pills-home-tab'

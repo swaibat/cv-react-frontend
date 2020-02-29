@@ -2,7 +2,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import constants from '../../redux/constants';
-import { addToFavourite, viewFavourite, removeFavourite } from '../../redux/actions/favourite.action';
+import {
+	addToFavourite,
+	viewFavourite,
+	removeFavourite,
+} from '../../redux/actions/favourite.action';
 import { connect } from 'react-redux';
 import { token } from '../../helper';
 
@@ -37,7 +41,13 @@ export class Like extends React.Component {
 		const { id, data } = this.state;
 		return (
 			<>
-				<input onChange={this.handleFavourite} className='like-checkbox' type='checkbox' id={`checkbox-${id}`} checked={data.find(e => e.ProductId === id)} />
+				<input
+					onChange={this.handleFavourite}
+					className='like-checkbox'
+					type='checkbox'
+					id={`checkbox-${id}`}
+					checked={data.find(e => e.ProductId === id)}
+				/>
 				<label className='like-label' htmlFor={`checkbox-${id}`}>
 					<svg id='heart-svg' viewBox='467 392 58 57' xmlns='http://www.w3.org/2000/svg'>
 						<g id='Group' fill='none' fill-rule='evenodd' transform='translate(467 392)'>

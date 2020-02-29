@@ -21,15 +21,29 @@ class NotFound extends Component {
 												<form>
 													<div className='form-group'>
 														<label htmlFor='exampleFormControlInput1'>Email address</label>
-														<input type='email' className='form-control' id='exampleFormControlInput1' placeholder='name@example.com' />
+														<input
+															type='email'
+															className='form-control'
+															id='exampleFormControlInput1'
+															placeholder='name@example.com'
+														/>
 													</div>
 													<div className='form-group'>
 														<label htmlFor='exampleFormControlInput1'>Subject</label>
-														<input type='email' className='form-control' id='exampleFormControlInput1' placeholder='enter subject' />
+														<input
+															type='email'
+															className='form-control'
+															id='exampleFormControlInput1'
+															placeholder='enter subject'
+														/>
 													</div>
 													<div className='form-group'>
 														<label htmlFor='exampleFormControlTextarea1'>Enter message</label>
-														<textarea className='form-control' id='exampleFormControlTextarea1' rows='5' />
+														<textarea
+															className='form-control'
+															id='exampleFormControlTextarea1'
+															rows='5'
+														/>
 													</div>
 													<input type='submit' className='btn btn-primary' value='Send' />
 												</form>

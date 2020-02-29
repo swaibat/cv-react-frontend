@@ -6,5 +6,11 @@ export default (defaultCurrency, price, payload, localCountry, type) => {
 	const actualCountry = Location.getCountry(localCountry || defaultCurrency);
 	const Asymbol = actualCountry.currencies[0][type];
 	const actualCurrencyCountry = actualCountry.currencies[0].code;
-	return { flag: actualCountry.flag, currencyCode: Asymbol, price: parseInt((price / payload.data.rates[currencyCountry]) * payload.data.rates[actualCurrencyCountry]) };
+	return {
+		flag: actualCountry.flag,
+		currencyCode: Asymbol,
+		price: parseInt(
+			(price / payload.data.rates[currencyCountry]) * payload.data.rates[actualCurrencyCountry],
+		),
+	};
 };

@@ -5,7 +5,12 @@ import Dropzone from 'react-dropzone-uploader';
 
 function GeneralSettings() {
 	return (
-		<div className='tab-pane bg-white rounded p-3 fade shadow-xs  ' id='v-pills-home' role='tabpanel' aria-labelledby='v-pills-home-tab'>
+		<div
+			className='tab-pane bg-white rounded p-3 fade shadow-xs  '
+			id='v-pills-home'
+			role='tabpanel'
+			aria-labelledby='v-pills-home-tab'
+		>
 			<form>
 				<div className='form-row'>
 					<div className='form-group col-md-12'>
@@ -40,15 +45,30 @@ function GeneralSettings() {
 				<div className='form-row'>
 					<div className='form-group col-md-4'>
 						<label htmlFor='inputAddress2'>Company Address</label>
-						<input type='text' className='form-control' id='inputAddress2' placeholder='Apartment, studio, or floor' />
+						<input
+							type='text'
+							className='form-control'
+							id='inputAddress2'
+							placeholder='Apartment, studio, or floor'
+						/>
 					</div>
 					<div className='form-group col-md-4'>
 						<label htmlFor='inputAddress'>Contact Email</label>
-						<input type='text' className='form-control' id='contact-email' placeholder='1234 Main St' />
+						<input
+							type='text'
+							className='form-control'
+							id='contact-email'
+							placeholder='1234 Main St'
+						/>
 					</div>
 					<div className='form-group col-md-4'>
 						<label htmlFor='inputAddress'>Contact Phone</label>
-						<input type='text' className='form-control' id='contact-phone' placeholder='1234 Main St' />
+						<input
+							type='text'
+							className='form-control'
+							id='contact-phone'
+							placeholder='1234 Main St'
+						/>
 					</div>
 				</div>
 				<div className='form-row'>

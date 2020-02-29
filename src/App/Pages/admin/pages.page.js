@@ -35,7 +35,12 @@ class Page extends Component {
 					<div className='container-fluid mt-n2'>
 						<h5 className='cv-title title-light'>Products</h5>
 						<div className='w-100 bg-default p-3 mt-4 rounded'>
-							<button className='btn btn-sm btn-success add-btn shadow-xs' data-toggle='modal' data-target='#exampleModalCenter' onClick={this.handleClick}>
+							<button
+								className='btn btn-sm btn-success add-btn shadow-xs'
+								data-toggle='modal'
+								data-target='#exampleModalCenter'
+								onClick={this.handleClick}
+							>
 								<FontAwesomeIcon className='mr-2' icon={faPlus} />
 								Add Product
 							</button>
@@ -63,12 +68,21 @@ class Page extends Component {
 													</td>
 													<td>
 														<div className='custom-control custom-switch'>
-															<input name='negotiable' type='checkbox' className='custom-control-input custom-control-input-lg' id={index} />
+															<input
+																name='negotiable'
+																type='checkbox'
+																className='custom-control-input custom-control-input-lg'
+																id={index}
+															/>
 															<label className='custom-control-label' for={index} />
 														</div>
 													</td>
 													<td className='text-right'>
-														<div className='btn-group-vertical btn-group-sm mr-n2' role='group' aria-label='First group'>
+														<div
+															className='btn-group-vertical btn-group-sm mr-n2'
+															role='group'
+															aria-label='First group'
+														>
 															<button type='button' className='btn text-primary border-bottom'>
 																<FontAwesomeIcon icon={faEdit} />
 															</button>

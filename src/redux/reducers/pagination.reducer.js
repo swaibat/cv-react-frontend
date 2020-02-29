@@ -37,7 +37,10 @@ function reducer(state = initialState, action) {
 			};
 		case 'ON_PAGE_CHANGED_ACTION':
 			const tempOffset = (action.currentPage - 1) * state.pageLimit;
-			const tempCurrentCountries = state.allCountries.slice(tempOffset, tempOffset + state.pageLimit);
+			const tempCurrentCountries = state.allCountries.slice(
+				tempOffset,
+				tempOffset + state.pageLimit,
+			);
 			return {
 				...state,
 				currentPage: action.currentPage,

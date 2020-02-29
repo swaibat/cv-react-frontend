@@ -23,7 +23,11 @@ class Vehicle extends Component {
 							<Icon icon={Arrow} />
 						</span>
 					</a>
-					<ul className='nav-second-level collapse show' id='collapseSubItems1' data-parent='#navAccordion'>
+					<ul
+						className='nav-second-level collapse show'
+						id='collapseSubItems1'
+						data-parent='#navAccordion'
+					>
 						<CarsBrand />
 					</ul>
 				</li>
@@ -42,7 +46,11 @@ class Vehicle extends Component {
 							<Icon icon={Arrow} />
 						</span>
 					</a>
-					<ul className='nav-second-level collapse' id='collapseSubItems2' data-parent='#navAccordion'>
+					<ul
+						className='nav-second-level collapse'
+						id='collapseSubItems2'
+						data-parent='#navAccordion'
+					>
 						<li className='form-group my-3'>
 							<select id='inputState' className='form-control form-control-sm'>
 								<option value=''>Body type (all)</option>
@@ -85,7 +93,11 @@ class Vehicle extends Component {
 							<Icon icon={Arrow} />
 						</span>
 					</a>
-					<ul className='nav-second-level collapse' id='collapseSubItems3' data-parent='#navAccordion'>
+					<ul
+						className='nav-second-level collapse'
+						id='collapseSubItems3'
+						data-parent='#navAccordion'
+					>
 						<li className='my-3'>
 							<div className='form-group mb-2 flex-fill'>
 								<select id='inputState' className='form-control form-control-sm'>
@@ -133,7 +145,11 @@ class Vehicle extends Component {
 							<Icon icon={Arrow} />
 						</span>
 					</a>
-					<ul className='nav-second-level collapse' id='collapseSubItems4' data-parent='#navAccordion'>
+					<ul
+						className='nav-second-level collapse'
+						id='collapseSubItems4'
+						data-parent='#navAccordion'
+					>
 						<li className='my-3'>
 							<div className='form-group mb-2 flex-fill'>
 								<select id='inputState' className='form-control form-control-sm'>
@@ -181,7 +197,11 @@ class Vehicle extends Component {
 							<Icon icon={Arrow} />
 						</span>
 					</a>
-					<ul className='nav-second-level collapse' id='collapseSubItems5' data-parent='#navAccordion'>
+					<ul
+						className='nav-second-level collapse'
+						id='collapseSubItems5'
+						data-parent='#navAccordion'
+					>
 						<li className='my-3'>
 							<div className='form-group mb-2 flex-fill'>
 								<select id='inputState' className='form-control form-control-sm'>
@@ -229,7 +249,11 @@ class Vehicle extends Component {
 							<Icon icon={Arrow} />
 						</span>
 					</a>
-					<ul className='nav-second-level collapse' id='collapseSubItems6' data-parent='#navAccordion'>
+					<ul
+						className='nav-second-level collapse'
+						id='collapseSubItems6'
+						data-parent='#navAccordion'
+					>
 						<li className='my-3'>
 							<div className='form-group mb-2 flex-fill'>
 								<select id='inputState' className='form-control form-control-sm'>

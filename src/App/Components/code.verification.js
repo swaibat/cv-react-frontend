@@ -35,16 +35,68 @@ class Code extends Component {
 		return (
 			<div className='col-7 m-auto'>
 				<img height='100' className='m-auto' src={message} alt='sms' />
-				<form className='font-weight-light rounded-sm text-center mt-3 mb-5' onSubmit={data.handleVerify}>
+				<form
+					className='font-weight-light rounded-sm text-center mt-3 mb-5'
+					onSubmit={data.handleVerify}
+				>
 					<div className='py-3'>
 						<label htmlFor='vcode1'>Enter 6-digit verification code</label>
 						<div className='vcode d-flex justify-content-center' id='vcode'>
-							<input name='code1' type='phone' pattern='[0-9]+' className='vcode-input form-control form-control-lg mx-2' maxlength='1' id='vcode1' onChange={data.handleInput} required />
-							<input name='code2' type='phone' pattern='[0-9]+' className='vcode-input form-control form-control-lg mx-2' maxlength='1' onChange={data.handleInput} required />
-							<input name='code3' type='phone' pattern='[0-9]+' className='vcode-input form-control form-control-lg mx-2' maxlength='1' onChange={data.handleInput} required />
-							<input name='code4' type='phone' pattern='[0-9]+' className='vcode-input form-control form-control-lg mx-2' maxlength='1' onChange={data.handleInput} required />
-							<input name='code5' type='phone' pattern='[0-9]+' className='vcode-input form-control form-control-lg mx-2' maxlength='1' onChange={data.handleInput} required />
-							<input name='code6' type='phone' pattern='[0-9]+' className='vcode-input form-control form-control-lg mx-2' maxlength='1' onChange={data.handleInput} required />
+							<input
+								name='code1'
+								type='phone'
+								pattern='[0-9]+'
+								className='vcode-input form-control form-control-lg mx-2'
+								maxlength='1'
+								id='vcode1'
+								onChange={data.handleInput}
+								required
+							/>
+							<input
+								name='code2'
+								type='phone'
+								pattern='[0-9]+'
+								className='vcode-input form-control form-control-lg mx-2'
+								maxlength='1'
+								onChange={data.handleInput}
+								required
+							/>
+							<input
+								name='code3'
+								type='phone'
+								pattern='[0-9]+'
+								className='vcode-input form-control form-control-lg mx-2'
+								maxlength='1'
+								onChange={data.handleInput}
+								required
+							/>
+							<input
+								name='code4'
+								type='phone'
+								pattern='[0-9]+'
+								className='vcode-input form-control form-control-lg mx-2'
+								maxlength='1'
+								onChange={data.handleInput}
+								required
+							/>
+							<input
+								name='code5'
+								type='phone'
+								pattern='[0-9]+'
+								className='vcode-input form-control form-control-lg mx-2'
+								maxlength='1'
+								onChange={data.handleInput}
+								required
+							/>
+							<input
+								name='code6'
+								type='phone'
+								pattern='[0-9]+'
+								className='vcode-input form-control form-control-lg mx-2'
+								maxlength='1'
+								onChange={data.handleInput}
+								required
+							/>
 						</div>
 					</div>
 					<button type='submit' className='btn btn-sm btn-primary mt-3 px-4'>

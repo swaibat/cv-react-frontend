@@ -6,7 +6,7 @@ import constants from '../../redux/constants/index';
 import { category } from '../../redux/actions/items.action';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 class Category extends Component {
 	componentDidMount() {
@@ -20,24 +20,20 @@ class Category extends Component {
 		const page = window.location.href.match(/(login|register|verify)/);
 		return (
 			<div className={page ? 'd-none' : 'nav-scroller bg-white'}>
-				<nav className='nav nav-underline text-capitalize justify-content-center cv-category-nav' id='navAccordion'>
+				<nav
+					className='nav nav-underline text-capitalize justify-content-center cv-category-nav'
+					id='navAccordion'
+				>
 					<li className='nav-item'>
-						<a
-							href='/'
-							className={`nav-link nav-link-collapse cv-nav${pathname === '/' ? ' active' : ''}`}
-							id='hasSubItems'
-							data-toggle='collapse'
-							data-target='#Home'
-							aria-controls='Home'
-							aria-expanded='true'
-						>
+						<NavLink exact to='/' className={'nav-link cv-nav'} activeClassName='selected'>
 							Home
-						</a>
+						</NavLink>
 					</li>
-					<ul className='nav-second-level z-index-1050  p-nav collapse position-absolute show' id='Home' data-parent='#navAccordion'></ul>
 					<li className='nav-item'>
 						<a
-							className={`nav-link nav-link-collapse cv-nav${href.match(/category/) ? ' active' : ''}`}
+							className={`nav-link nav-link-collapse cv-nav${
+								href.match(/category/) ? ' active' : ''
+							}`}
 							href='#'
 							id='hasSubItems'
 							data-toggle='collapse'
@@ -47,7 +43,11 @@ class Category extends Component {
 						>
 							categories
 						</a>
-						<ul className='nav-second-level z-index-1050 bg-light p-nav collapse position-absolute shadow-sm' id='collapseSubItemsCategories' data-parent='#navAccordion'>
+						<ul
+							className='nav-second-level z-index-1050 bg-light p-nav collapse position-absolute shadow-sm'
+							id='collapseSubItemsCategories'
+							data-parent='#navAccordion'
+						>
 							<div className='w-75 bg-light h-auto m-auto nav-cats'>
 								<div className='row py-3' id='categoriesAccordion'>
 									{payload &&
@@ -66,11 +66,18 @@ class Category extends Component {
 														>
 															{e.name}
 														</a>
-														<ul className='nav-second-level z-index-1050 collapse' id={`Cat${index}`} data-parent='#categoriesAccordion'>
+														<ul
+															className='nav-second-level z-index-1050 collapse'
+															id={`Cat${index}`}
+															data-parent='#categoriesAccordion'
+														>
 															{e.sub.map((sub, i) => {
 																return (
 																	<li key={i} className='nav-item'>
-																		<Link className='nav-link py-1' to={`/category/${e.name}/${sub.name}`}>
+																		<Link
+																			className='nav-link py-1'
+																			to={`/category/${e.name}/${sub.name}`}
+																		>
 																			<span className='nav-link-text'>{sub.name}</span>
 																		</Link>
 																	</li>
@@ -98,13 +105,29 @@ class Category extends Component {
 						>
 							Shops
 						</a>
-						<ul className='nav-second-level z-index-1050  p-nav collapse bg-white position-absolute text-left' id='category7' data-parent='#categoryNav'></ul>
+						<ul
+							className='nav-second-level z-index-1050  p-nav collapse bg-white position-absolute text-left'
+							id='category7'
+							data-parent='#categoryNav'
+						></ul>
 					</li>
 					<li className='nav-item'>
-						<a className='nav-link nav-link-collapse cv-nav' href='#' id='hasSubItems' data-toggle='collapse' data-target='#services' aria-controls='services' aria-expanded='false'>
+						<a
+							className='nav-link nav-link-collapse cv-nav'
+							href='#'
+							id='hasSubItems'
+							data-toggle='collapse'
+							data-target='#services'
+							aria-controls='services'
+							aria-expanded='false'
+						>
 							Services
 						</a>
-						<ul className='nav-second-level z-index-1050 z-index-md p-nav collapse position-absolute' id='services' data-parent='#navAccordion'>
+						<ul
+							className='nav-second-level z-index-1050 z-index-md p-nav collapse position-absolute'
+							id='services'
+							data-parent='#navAccordion'
+						>
 							<li className='nav-item'>
 								<a className='nav-link' href='#'>
 									<span className='nav-link-text'>Item 2.1</span>
@@ -118,14 +141,18 @@ class Category extends Component {
 						</ul>
 					</li>
 					<li className='nav-item'>
-						<Link to='/contact' className={`nav-link nav-link-collapse cv-nav${href.match(/ontact/) ? 'link-active' : ''}`}>
+						<NavLink
+							to='/contact'
+							activeClassName='selected'
+							className='nav-link nav-link-collapse cv-nav'
+						>
 							contact
-						</Link>
+						</NavLink>
 					</li>
 					<li className='nav-item'>
-						<Link to='/faq' className={`nav-link cv-nav ${pathname.match('faq') ? 'link-active' : ''}`}>
+						<NavLink to='/faq' className='nav-link cv-nav' activeClassName='selected'>
 							faq
-						</Link>
+						</NavLink>
 					</li>
 					<li className='nav-item'>
 						<a
@@ -139,7 +166,11 @@ class Category extends Component {
 						>
 							<FontAwesomeIcon className='mr-1' icon={faSearch} />
 						</a>
-						<ul className='nav-second-level z-index-1050 p-nav bg-light collapse position-absolute shadow' id='collapseSubItemsSearch' data-parent='#navAccordion'>
+						<ul
+							className='nav-second-level z-index-1050 p-nav bg-light collapse position-absolute shadow'
+							id='collapseSubItemsSearch'
+							data-parent='#navAccordion'
+						>
 							<div className='w-75 h-auto m-auto nav-cats'>
 								<div className='row pt-3 mb-3' id='navAccordion1'>
 									<div className='col-md-4 cat-col'>
@@ -147,7 +178,11 @@ class Category extends Component {
 											<div className='input-group-prepend'>
 												<span className='input-group-text bg-white'>Search</span>
 											</div>
-											<input type='text' className='form-control ' aria-label='Amount (to the nearest dollar)' />
+											<input
+												type='text'
+												className='form-control '
+												aria-label='Amount (to the nearest dollar)'
+											/>
 											<div className='input-group-append'>
 												<span className='input-group-text bg-white'>.00</span>
 											</div>
@@ -158,7 +193,11 @@ class Category extends Component {
 											<div className='input-group-prepend'>
 												<span className='input-group-text bg-white'>$</span>
 											</div>
-											<input type='text' className='form-control' aria-label='Amount (to the nearest dollar)' />
+											<input
+												type='text'
+												className='form-control'
+												aria-label='Amount (to the nearest dollar)'
+											/>
 											<div className='input-group-append'>
 												<span className='input-group-text bg-white'>.00</span>
 											</div>
@@ -169,7 +208,11 @@ class Category extends Component {
 											<div className='input-group-prepend'>
 												<span className='input-group-text bg-white'>$</span>
 											</div>
-											<input type='text' className='form-control' aria-label='Amount (to the nearest dollar)' />
+											<input
+												type='text'
+												className='form-control'
+												aria-label='Amount (to the nearest dollar)'
+											/>
 											<div className='input-group-append'>
 												<span className='input-group-text bg-white'>.00</span>
 											</div>
@@ -182,7 +225,11 @@ class Category extends Component {
 											<div className='input-group-prepend'>
 												<span className='input-group-text bg-white'>$</span>
 											</div>
-											<input type='text' className='form-control' aria-label='Amount (to the nearest dollar)' />
+											<input
+												type='text'
+												className='form-control'
+												aria-label='Amount (to the nearest dollar)'
+											/>
 											<div className='input-group-append'>
 												<span className='input-group-text bg-white'>.00</span>
 											</div>
@@ -193,7 +240,11 @@ class Category extends Component {
 											<div className='input-group-prepend'>
 												<span className='input-group-text bg-white bg-white'>$</span>
 											</div>
-											<input type='text' className='form-control' aria-label='Amount (to the nearest dollar)' />
+											<input
+												type='text'
+												className='form-control'
+												aria-label='Amount (to the nearest dollar)'
+											/>
 											<div className='input-group-append'>
 												<span className='input-group-text bg-white'>.00</span>
 											</div>
@@ -204,7 +255,11 @@ class Category extends Component {
 											<div className='input-group-prepend'>
 												<span className='input-group-text bg-white'>$</span>
 											</div>
-											<input type='text' className='form-control' aria-label='Amount (to the nearest dollar)' />
+											<input
+												type='text'
+												className='form-control'
+												aria-label='Amount (to the nearest dollar)'
+											/>
 											<div className='input-group-append'>
 												<span className='input-group-text bg-white'>.00</span>
 											</div>
