@@ -11,19 +11,88 @@ import { getc, years } from '../../../helper/category.helper';
 import Sidenav from './components/sidenav';
 import { token } from '../../../helper';
 import Dropzone from 'react-dropzone-uploader';
+import { singleItems } from '../../../redux/actions/items.action';
+import Select from 'react-select';
+import CreatableSelect from 'react-select/creatable';
+import { Editor } from 'react-draft-wysiwyg';
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.scss';
 
-class CreateItem extends Component {
+class EditItem extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			name: '',
+			categories: [],
+			subCategory: [],
+		};
+		this.handleInputChange = this.handleInputChange.bind(this);
+	}
 	componentDidMount() {
 		this.props.init();
 		this.props.getCat();
+		category().then(({ payload }) => {
+			payload.data.map(cat => {
+				this.setState({
+					categories: [
+						...this.state.categories,
+						{
+							value: cat.id,
+							label: cat.name,
+							sub: cat.sub,
+							ParentId: cat.ParentId,
+						},
+					],
+				});
+				cat.sub.map(sub => {
+					console.log(sub.name);
+					this.setState({
+						subCategory: [
+							...this.state.subCategory,
+							{
+								value: sub.id,
+								label: sub.name,
+								ParentId: sub.ParentId,
+							},
+						],
+					});
+				});
+			});
+		});
+		const { id } = this.props.match.params;
+		singleItems(id).then(({ payload }) => this.setState(payload.data));
 	}
 	handleChangeStatus = (d, v, allFiles) => {
 		this.setState({ images: allFiles });
 	};
+	handleInputChange = event => {
+		// console.log(event);
+		if (event.sub) {
+			event.sub.map(sub => {
+				console.log(sub.name);
+				this.setState({
+					subCategory: [
+						...this.state.subCategory,
+						{
+							value: sub.id,
+							label: sub.name,
+							ParentId: sub.ParentId,
+						},
+					],
+				});
+			});
+		}
+
+		// event.sub.length
+		// 	? this.setState({
+		// 			category: this.state.categories[event.value],
+		// 			subCategory: this.state.subCategory,
+		// 	  })
+		// 	: this.setState({ category: this.state.categories[event.value] });
+	};
 	handleInput = e => {
+		// console.log(e.target);
 		const target = e.target;
 		const value = target.type === 'checkbox' ? target.checked : target.value;
-		console.log(value);
 		const name = target.name;
 		this.setState({ [name]: value });
 	};
@@ -41,7 +110,9 @@ class CreateItem extends Component {
 		this.props.createItem(formData, token);
 	};
 	render() {
-		const { categories } = this.props;
+		const { state } = this;
+		const { categories, subCategory } = this.state;
+		console.log(this.state);
 		return (
 			<>
 				<Sidenav />
@@ -120,48 +191,46 @@ class CreateItem extends Component {
 											type='text'
 											name='name'
 											className='form-control'
-											placeholder='enter title'
-											onChange={this.handleInput}
+											value={state.name}
+											onInputChange={this.handleInputChange}
 										/>
 									</div>
 									<div className='form-group col-md-3'>
-										<label htmlFor='category'>category</label>
-										<select name='CategoryId' className='form-control' onChange={this.handleInput}>
-											<option value={false}>Select category</option>
-											{categories &&
-												categories.data.map((category, index) => (
-													<option key={index} value={category.id}>
-														{category.name}
-													</option>
-												))}
-										</select>
+										<label htmlFor='Sub category'>Category</label>
+										{categories && (
+											<Select
+												defaultValue={categories[0]}
+												name='CategoryId'
+												onChange={this.handleInputChange}
+												options={categories}
+											/>
+										)}
 									</div>
 									<div className='form-group col-md-3'>
 										<label htmlFor='Sub category'>Sub category</label>
-										<select
-											name='subCategoryId'
-											className='form-control'
-											onChange={this.handleInput}
-											disabled={
-												this.state && getc(categories.data, this.state.categoryId) === false
-													? true
-													: false
-											}
-										>
-											<option defaultValue>Select sub-category</option>
-											{this.state && getc(categories.data, this.state.CategoryId)}
-										</select>
+										{categories && (
+											<Select
+												defaultValue='select Category'
+												name='CategoryId'
+												onChange={this.handleInputChange}
+												options={subCategory}
+											/>
+										)}
 									</div>
-								</div>
-								<div className='form-row m-0'>
 									<div className='form-group col-md-9'>
 										<label htmlFor='description'>Description</label>
-										<textarea
-											name='description'
-											rows='3'
-											placeholder='item description'
-											className='form-control'
-											onChange={this.handleInput}
+										<Editor
+											wrapperClassName='demo-wrapper'
+											editorClassName='demo-editor'
+											value='hello'
+											onChange={this.handleInputChange}
+											toolbar={{
+												inline: { inDropdown: true },
+												list: { inDropdown: true },
+												textAlign: { inDropdown: true },
+												link: { inDropdown: true },
+												history: { inDropdown: true },
+											}}
 										/>
 									</div>
 									<div className='form-group col-md-3 mb-0'>
@@ -192,6 +261,7 @@ class CreateItem extends Component {
 												<input
 													name='negotiable'
 													type='checkbox'
+													checked={this.state.negotiable}
 													className='custom-control-input custom-control-input-lg'
 													id='switch1'
 													onChange={this.handleInput}
@@ -201,6 +271,7 @@ class CreateItem extends Component {
 										</div>
 									</div>
 								</div>
+
 								<div className='form-group'>
 									<label htmlFor='inputZip'>upload images</label>
 									<div className='input-group'>
@@ -210,11 +281,14 @@ class CreateItem extends Component {
 								<div className='form-row'>
 									<div className='form-group col-md-2'>
 										<label htmlFor='color'>Color</label>
-										<input
-											type='text'
-											name='color'
-											className='form-control form-control-sm'
-											onChange={this.handleInput}
+										<CreatableSelect
+											isClearable
+											onChange={this.handleInputChang}
+											options={[
+												{ value: 'one', label: 'One' },
+												{ value: 'two', label: 'Two' },
+												{ value: 'three', label: 'Three' },
+											]}
 										/>
 									</div>
 									<div className='form-group col-md-2'>
@@ -342,4 +416,4 @@ const mapStateToProps = state => {
 	};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateItem);
+export default connect(mapStateToProps, mapDispatchToProps)(EditItem);

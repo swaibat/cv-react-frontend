@@ -15,7 +15,9 @@ export default {
 	},
 	async getLocation() {
 		const { data } = await api.getClient();
-		const { flag, callingCodes } = countries.find(country => country.alpha2Code === data.countryCode);
+		const { flag, callingCodes } = countries.find(
+			country => country.alpha2Code === data.countryCode,
+		);
 		const local = await Geocode.fromLatLng(data.latitude, data.longitude);
 		return {
 			address1: local.results[5].formatted_address,

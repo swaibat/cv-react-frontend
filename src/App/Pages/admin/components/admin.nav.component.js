@@ -25,18 +25,42 @@ class Nav extends Component {
 				</li>
 				<ul className='d-flex'>
 					<li className='nav-item mx-3'>
-						<a className='nav-link text-white' href='#' data-toggle='tooltip' data-placement='bottom' title='visit website'>
+						<a
+							className='nav-link text-white'
+							href='#'
+							data-toggle='tooltip'
+							data-placement='bottom'
+							title='visit website'
+						>
 							<FontAwesomeIcon className='admin-nav-icons' icon={faGlobeAfrica} />
 						</a>
 					</li>
 					<li className='nav-item mx-3'>
-						<a className='nav-link text-white' href='#' data-toggle='tooltip' data-placement='bottom' title='Notifications'>
+						<a
+							className='nav-link text-white'
+							href='#'
+							data-toggle='tooltip'
+							data-placement='bottom'
+							title='Notifications'
+						>
 							<FontAwesomeIcon className='admin-nav-icons' icon={faBell} />
 							<span className='badge badge-light mt-n2 ml-n1 position-absolute'>5</span>
 						</a>
 					</li>
-					<li className='dropdown ml-3' data-toggle='tooltip' data-placement='bottom' title='Notifications'>
-						<button className='btn bg-transparent text-white dropdown-toggle' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+					<li
+						className='dropdown ml-3'
+						data-toggle='tooltip'
+						data-placement='bottom'
+						title='Notifications'
+					>
+						<button
+							className='btn bg-transparent text-white dropdown-toggle'
+							type='button'
+							id='dropdownMenuButton'
+							data-toggle='dropdown'
+							aria-haspopup='true'
+							aria-expanded='false'
+						>
 							{payload && payload.data.firstName}
 						</button>
 						<div className='dropdown-menu' aria-labelledby='dropdownMenuButton'>

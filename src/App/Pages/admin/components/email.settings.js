@@ -3,7 +3,12 @@ import notify from './../../../../assets/images/alert.svg';
 
 function EmailSettings() {
 	return (
-		<div className='tab-pane bg-white rounded px-4  py-2 fade shadow-xs' id='v-pills-messages' role='tabpanel' aria-labelledby='v-pills-messages-tab'>
+		<div
+			className='tab-pane bg-white rounded px-4  py-2 fade shadow-xs'
+			id='v-pills-messages'
+			role='tabpanel'
+			aria-labelledby='v-pills-messages-tab'
+		>
 			{/* <div className='cv-title pb-0'>Email settings</div>
 			<form className='mt-3'>
 				<div className='form-row border-bottom'>
@@ -57,18 +62,29 @@ function EmailSettings() {
 					<img className='mr-3' height='60' src={notify} alt='notify' />
 					<span>
 						<h4>Enable desktop Notification</h4>
-						<p className='font-weight-light'>Never miss any important updates! enable desktop notification even if your not on out website</p>
+						<p className='font-weight-light'>
+							Never miss any important updates! enable desktop notification even if your not on out
+							website
+						</p>
 					</span>
 				</div>
 				<div className='custom-control custom-switch'>
-					<input name='negotiable' type='checkbox' className='custom-control-input ml-auto' id='switch1' checked />
+					<input
+						name='negotiable'
+						type='checkbox'
+						className='custom-control-input ml-auto'
+						id='switch1'
+						checked
+					/>
 					<label className='custom-control-label' htmlFor='switch1' />
 				</div>
 			</div>
 			<div className='py-3 d-flex align-items-center justify-content-between border-bottom'>
 				<div className=''>
 					<h4>Dashboard Notification</h4>
-					<p className='font-weight-light'>Turn the type fo notifications you want to see on your dashboard incase of any operation</p>
+					<p className='font-weight-light'>
+						Turn the type fo notifications you want to see on your dashboard incase of any operation
+					</p>
 				</div>
 			</div>
 			<li className='border-bottom pt-3'>
@@ -76,21 +92,39 @@ function EmailSettings() {
 				<div className='d-flex justify-content-between'>
 					<p className='font-weight-light'>User signs up as a member</p>
 					<div className='custom-control custom-switch'>
-						<input name='negotiable' type='checkbox' className='custom-control-input ml-auto' id='switch1' checked />
+						<input
+							name='negotiable'
+							type='checkbox'
+							className='custom-control-input ml-auto'
+							id='switch1'
+							checked
+						/>
 						<label className='custom-control-label' htmlFor='switch1' />
 					</div>
 				</div>
 				<div className='d-flex justify-content-between'>
 					<p className='font-weight-light'>user posts a new item</p>
 					<div className='custom-control custom-switch'>
-						<input name='negotiable' type='checkbox' className='custom-control-input ml-auto' id='switch1' checked />
+						<input
+							name='negotiable'
+							type='checkbox'
+							className='custom-control-input ml-auto'
+							id='switch1'
+							checked
+						/>
 						<label className='custom-control-label' htmlFor='switch1' />
 					</div>
 				</div>
 				<div className='d-flex justify-content-between'>
 					<p className='font-weight-light'>user creates a new page</p>
 					<div className='custom-control custom-switch'>
-						<input name='negotiable' type='checkbox' className='custom-control-input ml-auto' id='switch1' checked />
+						<input
+							name='negotiable'
+							type='checkbox'
+							className='custom-control-input ml-auto'
+							id='switch1'
+							checked
+						/>
 						<label className='custom-control-label' htmlFor='switch1' />
 					</div>
 				</div>
@@ -100,14 +134,26 @@ function EmailSettings() {
 				<div className='d-flex justify-content-between'>
 					<p className='font-weight-light'>scheduled social post is hared</p>
 					<div className='custom-control custom-switch'>
-						<input name='negotiable' type='checkbox' className='custom-control-input ml-auto' id='switch1' checked />
+						<input
+							name='negotiable'
+							type='checkbox'
+							className='custom-control-input ml-auto'
+							id='switch1'
+							checked
+						/>
 						<label className='custom-control-label' htmlFor='switch1' />
 					</div>
 				</div>
 				<div className='d-flex justify-content-between'>
 					<p className='font-weight-light'>visitor signs up as a member</p>
 					<div className='custom-control custom-switch'>
-						<input name='negotiable' type='checkbox' className='custom-control-input ml-auto' id='switch1' checked />
+						<input
+							name='negotiable'
+							type='checkbox'
+							className='custom-control-input ml-auto'
+							id='switch1'
+							checked
+						/>
 						<label className='custom-control-label' htmlFor='switch1' />
 					</div>
 				</div>

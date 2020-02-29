@@ -19,7 +19,10 @@ class Others extends Component {
 					>
 						Shop By Brand
 					</a>
-					<ul className='nav-second-level nav-second-level-cv collapse text-secondary show' id='collapseSubItems2'>
+					<ul
+						className='nav-second-level nav-second-level-cv collapse text-secondary show'
+						id='collapseSubItems2'
+					>
 						<li className='form-check nav-item py-1 ml-2'>
 							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
 							<label className='form-check-label' htmlFor='defaultCheck1'>
@@ -112,12 +115,20 @@ class Others extends Component {
 					<ul className='nav-second-level collapse' id='collapseSubItems3'>
 						<li className='my-3'>
 							<div className='form-group mb-2 flex-fill'>
-								<input type='number' className='form-control form-control-sm' placeholder='Enter min price' />
+								<input
+									type='number'
+									className='form-control form-control-sm'
+									placeholder='Enter min price'
+								/>
 							</div>
 						</li>
 						<li className='my-3'>
 							<div className='form-group mb-2 flex-fill'>
-								<input type='number' className='form-control form-control-sm' placeholder='Enter max price' />
+								<input
+									type='number'
+									className='form-control form-control-sm'
+									placeholder='Enter max price'
+								/>
 							</div>
 						</li>
 					</ul>

@@ -41,12 +41,16 @@ class CategoryItem extends Component {
 
 	render() {
 		const { settingsPayload } = this.props;
-		this.props.payload && setTimeout(() => this.setState({ payload: this.props.payload, pending: false }), 50);
+		this.props.payload &&
+			setTimeout(() => this.setState({ payload: this.props.payload, pending: false }), 50);
 		const { payload } = this.state;
 		return (
 			<>
 				<Header />
-				<main className={`d-flex flex-column align-items-center justify-content-start text-left ${this.state.pending && 'loader'}`}>
+				<main
+					className={`d-flex flex-column align-items-center justify-content-start text-left ${this
+						.state.pending && 'loader'}`}
+				>
 					<div className='container p-1 p-md-2 min-vh-80 d-flex w-100 row justify-content-center align-items-center'>
 						{this.props.error ? (
 							<h1>{this.props.error.message}</h1>
@@ -61,7 +65,10 @@ class CategoryItem extends Component {
 									<div className='row w-100'>
 										<Card data={this} />
 									</div>
-									<div onClick={this.loadMore} className='btn bg-white text-primary btn-block text-center py-3 mt-3 mb-4 shadow-xs'>
+									<div
+										onClick={this.loadMore}
+										className='btn bg-white text-primary btn-block text-center py-3 mt-3 mb-4 shadow-xs'
+									>
 										<span>load more</span>
 									</div>
 								</>

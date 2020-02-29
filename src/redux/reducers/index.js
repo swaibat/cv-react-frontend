@@ -1,7 +1,17 @@
 import { combineReducers } from 'redux';
 import LoginReducer from './login.reducer';
 import RegisterReducer, { verifyUser, verifyUserCode } from './register.reducer';
-import { Items, getProducts, CatItems, categories, singleItem, createItem, createCategory, updateCategory, deleteCategory } from './items.reducer';
+import {
+	Items,
+	getProducts,
+	CatItems,
+	categories,
+	singleItem,
+	createItem,
+	createCategory,
+	updateCategory,
+	deleteCategory,
+} from './items.reducer';
 import { GetFaq, createFaq, deleteFaq, updateFaq } from './faq.reducer';
 import { GetAbout, createAbout, deleteAbout, updateAbout } from './about.reducer';
 import { getPages, createPage, deletePage, updatePage } from './pages.reducer';

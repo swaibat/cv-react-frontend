@@ -44,7 +44,12 @@ class Faq extends Component {
 												</button>
 											</div>
 
-											<div id={`faq${index}`} className='collapse' aria-labelledby='headingOne' data-parent='#accordionExample'>
+											<div
+												id={`faq${index}`}
+												className='collapse'
+												aria-labelledby='headingOne'
+												data-parent='#accordionExample'
+											>
 												<div className='card-body'>{faq.answer}</div>
 											</div>
 										</div>

@@ -25,7 +25,8 @@ class Pagination extends Component {
 		this.pageLimit = typeof pageLimit === 'number' ? pageLimit : 30;
 		this.totalRecords = typeof totalRecords === 'number' ? totalRecords : 0;
 
-		this.pageNeighbours = typeof pageNeighbours === 'number' ? Math.max(0, Math.min(pageNeighbours, 2)) : 0;
+		this.pageNeighbours =
+			typeof pageNeighbours === 'number' ? Math.max(0, Math.min(pageNeighbours, 2)) : 0;
 
 		this.totalPages = Math.ceil(this.totalRecords / this.pageLimit);
 
@@ -127,7 +128,12 @@ class Pagination extends Component {
 							if (page === LEFT_PAGE)
 								return (
 									<li key={index} className='page-item'>
-										<a className='page-link' href='#' aria-label='Previous' onClick={this.handleMoveLeft}>
+										<a
+											className='page-link'
+											href='#'
+											aria-label='Previous'
+											onClick={this.handleMoveLeft}
+										>
 											<span aria-hidden='true'>&laquo;</span>
 											<span className='sr-only'>Previous</span>
 										</a>
@@ -137,7 +143,12 @@ class Pagination extends Component {
 							if (page === RIGHT_PAGE)
 								return (
 									<li key={index} className='page-item'>
-										<a className='page-link' href='#' aria-label='Next' onClick={this.handleMoveRight}>
+										<a
+											className='page-link'
+											href='#'
+											aria-label='Next'
+											onClick={this.handleMoveRight}
+										>
 											<span aria-hidden='true'>&raquo;</span>
 											<span className='sr-only'>Next</span>
 										</a>

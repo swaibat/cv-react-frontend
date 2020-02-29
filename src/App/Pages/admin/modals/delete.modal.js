@@ -2,7 +2,13 @@ import React from 'react';
 
 function Delete({ data }) {
 	return (
-		<div className='modal fade bd-example-modal-sm' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'>
+		<div
+			className='modal fade bd-example-modal-sm'
+			tabindex='-1'
+			role='dialog'
+			aria-labelledby='mySmallModalLabel'
+			aria-hidden='true'
+		>
 			<div className='modal-dialog modal-dialog-centered'>
 				<div className='modal-content'>
 					<div className='modal-header border-0'>
@@ -15,7 +21,10 @@ function Delete({ data }) {
 					</div>
 					<div className='modal-body'>
 						<p>
-							Are you sure you wan to delete <emp className='text-primary text-capitalize'>{data.state.name || data.state.parentname}</emp>
+							Are you sure you wan to delete{' '}
+							<emp className='text-primary text-capitalize'>
+								{data.state.name || data.state.parentname}
+							</emp>
 						</p>
 					</div>
 					<div className='modal-footer'>

@@ -4,12 +4,20 @@ import React from 'react';
 
 function ThemeSettings() {
 	return (
-		<div className='themes tab-pane bg-white rounded p-3 fade shadow-xs' id='v-pills-profile' role='tabpanel' aria-labelledby='v-pills-profile-tab'>
+		<div
+			className='themes tab-pane bg-white rounded p-3 fade shadow-xs'
+			id='v-pills-profile'
+			role='tabpanel'
+			aria-labelledby='v-pills-profile-tab'
+		>
 			<div className='row'>
 				<div className='col-md-4 theme'>
 					<div className='card mb-3'>
 						<div className='theme dark shadow-sm'>
-							<img className='img-fluid img-thumbnail' src='http://drive.google.com/uc?export=view&id=1tos9QY2WerLKVqpqslIXyE4lf7PSRko1' />
+							<img
+								className='img-fluid img-thumbnail'
+								src='http://drive.google.com/uc?export=view&id=1tos9QY2WerLKVqpqslIXyE4lf7PSRko1'
+							/>
 						</div>
 						<div className='card-footer'>
 							<p>Default theme</p>
@@ -23,7 +31,10 @@ function ThemeSettings() {
 				<div className='col-md-4 theme'>
 					<div className='card mb-3'>
 						<div className='theme dark shadow-sm'>
-							<img className='img-fluid img-thumbnail' src='http://drive.google.com/uc?export=view&id=1tos9QY2WerLKVqpqslIXyE4lf7PSRko1' />
+							<img
+								className='img-fluid img-thumbnail'
+								src='http://drive.google.com/uc?export=view&id=1tos9QY2WerLKVqpqslIXyE4lf7PSRko1'
+							/>
 						</div>
 						<div className='card-footer'>
 							<p>Default theme</p>
@@ -37,7 +48,10 @@ function ThemeSettings() {
 				<div className='col-md-4 theme'>
 					<div className='card mb-3'>
 						<div className='theme dark shadow-sm'>
-							<img className='img-fluid img-thumbnail' src='http://drive.google.com/uc?export=view&id=1tos9QY2WerLKVqpqslIXyE4lf7PSRko1' />
+							<img
+								className='img-fluid img-thumbnail'
+								src='http://drive.google.com/uc?export=view&id=1tos9QY2WerLKVqpqslIXyE4lf7PSRko1'
+							/>
 						</div>
 						<div className='card-footer'>
 							<p>Default theme</p>
@@ -51,7 +65,10 @@ function ThemeSettings() {
 				<div className='col-md-4 theme'>
 					<div className='card mb-3'>
 						<div className='theme dark shadow-sm'>
-							<img className='img-fluid img-thumbnail' src='http://drive.google.com/uc?export=view&id=1tos9QY2WerLKVqpqslIXyE4lf7PSRko1' />
+							<img
+								className='img-fluid img-thumbnail'
+								src='http://drive.google.com/uc?export=view&id=1tos9QY2WerLKVqpqslIXyE4lf7PSRko1'
+							/>
 						</div>
 						<div className='card-footer'>
 							<p>Default theme</p>

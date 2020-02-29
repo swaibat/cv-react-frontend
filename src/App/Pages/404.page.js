@@ -16,8 +16,14 @@ class NotFound extends Component {
 						<div className='row'>
 							<div className='col-md-6 col-lg-6 mx-auto text-center'>
 								<img className='mt-3' src={NotFoundImg} alt='not found' />
-								<p className='text-secondary font-size-normal mt-3'> We cannot find the page you are looking for.</p>
-								<Link onClick={() => window.history.go(-1)} className='btn btn-primary text-decoration-none text-capitalize'>
+								<p className='text-secondary font-size-normal mt-3'>
+									{' '}
+									We cannot find the page you are looking for.
+								</p>
+								<Link
+									onClick={() => window.history.go(-1)}
+									className='btn btn-primary text-decoration-none text-capitalize'
+								>
 									<FontAwesomeIcon className='mr-2' icon={faHandPointLeft} />
 									Back to Previous Page
 								</Link>

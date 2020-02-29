@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 import Token from '../../helper';
 import Logout from './logout.component';
 import Logo from '../../assets/images/logo.svg';
-
 class Header extends Component {
 	render() {
 		return (
@@ -49,7 +48,9 @@ class Header extends Component {
 													<p className='mb-1'>List group item heading</p>
 													<small className='ml-2'>3 days</small>
 												</div>
-												<p className='mb-1 text-truncate font-weight-light'>Dapibus ac facilisis in</p>
+												<p className='mb-1 text-truncate font-weight-light'>
+													Dapibus ac facilisis in
+												</p>
 											</li>
 											<div className='dropdown-divider' />
 											<li className='dropdown-item d-flex flex-column'>
@@ -57,7 +58,9 @@ class Header extends Component {
 													<p className='mb-1'>List group item heading</p>
 													<small className='ml-2'>3 days</small>
 												</div>
-												<p className='mb-1 text-truncate font-weight-light'>Dapibus ac facilisis in</p>
+												<p className='mb-1 text-truncate font-weight-light'>
+													Dapibus ac facilisis in
+												</p>
 											</li>
 											<div className='dropdown-divider' />
 											<li className='dropdown-item d-flex flex-column'>
@@ -65,7 +68,9 @@ class Header extends Component {
 													<p className='mb-1'>List group item heading</p>
 													<small className='ml-2'>3 days</small>
 												</div>
-												<p className='mb-1 text-truncate font-weight-light'>Dapibus ac facilisis in</p>
+												<p className='mb-1 text-truncate font-weight-light'>
+													Dapibus ac facilisis in
+												</p>
 											</li>
 											<div className='dropdown-divider' />
 											<li className='dropdown-item d-flex flex-column'>
@@ -73,7 +78,9 @@ class Header extends Component {
 													<p className='mb-1'>List group item heading</p>
 													<small className='ml-2'>3 days</small>
 												</div>
-												<p className='mb-1 text-truncate font-weight-light'>Dapibus ac facilisis in</p>
+												<p className='mb-1 text-truncate font-weight-light'>
+													Dapibus ac facilisis in
+												</p>
 											</li>
 											<div className='dropdown-divider' />
 											<li className='dropdown-item d-flex flex-column'>
@@ -81,7 +88,9 @@ class Header extends Component {
 													<p className='mb-1'>List group item heading</p>
 													<small className='ml-2'>3 days</small>
 												</div>
-												<p className='mb-1 text-truncate font-weight-light'>Dapibus ac facilisis in</p>
+												<p className='mb-1 text-truncate font-weight-light'>
+													Dapibus ac facilisis in
+												</p>
 											</li>
 										</ul>
 									</div>
@@ -90,7 +99,14 @@ class Header extends Component {
 							</div>
 						</li>
 						<li className='nav-item dropdown mx-2'>
-							<a className='nav-link' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'>
+							<a
+								className='nav-link'
+								data-toggle='dropdown'
+								href='#'
+								role='button'
+								aria-haspopup='true'
+								aria-expanded='false'
+							>
 								<FontAwesomeIcon className='cv-nav-icons' icon={faBell} />
 							</a>
 							<div className='dropdown-menu shadow notification-pane'>
@@ -114,7 +130,9 @@ class Header extends Component {
 													<p className='mb-1'>List group item heading</p>
 													<small className='ml-2'>3 days</small>
 												</div>
-												<p className='mb-1 text-truncate font-weight-light'>Dapibus ac facilisis in</p>
+												<p className='mb-1 text-truncate font-weight-light'>
+													Dapibus ac facilisis in
+												</p>
 											</li>
 											<div className='dropdown-divider' />
 											<li className='dropdown-item d-flex flex-column'>
@@ -122,7 +140,9 @@ class Header extends Component {
 													<p className='mb-1'>List group item heading</p>
 													<small className='ml-2'>3 days</small>
 												</div>
-												<p className='mb-1 text-truncate font-weight-light'>Dapibus ac facilisis in</p>
+												<p className='mb-1 text-truncate font-weight-light'>
+													Dapibus ac facilisis in
+												</p>
 											</li>
 											<div className='dropdown-divider' />
 											<li className='dropdown-item d-flex flex-column'>
@@ -130,7 +150,9 @@ class Header extends Component {
 													<p className='mb-1'>List group item heading</p>
 													<small className='ml-2'>3 days</small>
 												</div>
-												<p className='mb-1 text-truncate font-weight-light'>Dapibus ac facilisis in</p>
+												<p className='mb-1 text-truncate font-weight-light'>
+													Dapibus ac facilisis in
+												</p>
 											</li>
 											<div className='dropdown-divider' />
 											<li className='dropdown-item d-flex flex-column'>
@@ -138,7 +160,9 @@ class Header extends Component {
 													<p className='mb-1'>List group item heading</p>
 													<small className='ml-2'>3 days</small>
 												</div>
-												<p className='mb-1 text-truncate font-weight-light'>Dapibus ac facilisis in</p>
+												<p className='mb-1 text-truncate font-weight-light'>
+													Dapibus ac facilisis in
+												</p>
 											</li>
 										</ul>
 									</div>
