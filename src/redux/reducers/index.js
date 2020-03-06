@@ -8,6 +8,7 @@ import {
 	categories,
 	singleItem,
 	createItem,
+	updateItem,
 	createCategory,
 	updateCategory,
 	deleteCategory,
@@ -66,6 +67,7 @@ const allReducers = combineReducers({
 	RemoveFavourite: Favourite.removeFavourite,
 	GetChat: Chat.getChat,
 	PostChat: Chat.postChat,
+	UpdateItem: updateItem,
 });
 
 export default allReducers;

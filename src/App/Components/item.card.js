@@ -3,7 +3,7 @@ import AdImg from '../../assets/images/img.png';
 import { Link } from 'react-router-dom';
 import converter from '../../helper/currency.converter';
 import value from '../../helper/thousands.helper';
-import Like from '../Components/like.button';
+import Like from './like.button';
 
 function Card({ data }) {
 	const { localPayload, currencyPayload, settingsPayload, payload } = data.props;
@@ -33,7 +33,7 @@ function Card({ data }) {
 							className='banner_holderImage img-thumbnail'
 							style={{
 								backgroundImage: `url(${
-									e.productFiles.length !== 0 ? e.productFiles[0].link : AdImg
+									e.productFiles && e.productFiles.length ? e.productFiles[0].link : AdImg
 								})`,
 							}}
 						></div>

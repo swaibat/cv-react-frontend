@@ -20,21 +20,15 @@ $padding: 10px;
 
 		td {
 			vertical-align: middle;
-			border-bottom: solid 0.7rem #eef2f4;
+			border-bottom: solid 1px $border-color;
 			background: white;
 
 			&:last-child {
 				line-height: 1.4;
-				border-top-right-radius: $border-radius * 3;
-				border-bottom-right-radius: $border-radius * 3;
-				border-right: solid 0.5rem #eef2f4;
 			}
 
 			&:first-child {
 				text-align: left;
-				border-top-left-radius: $border-radius * 3;
-				border-bottom-left-radius: $border-radius * 3;
-				border-left: solid 0.5rem #eef2f4;
 			}
 		}
 

@@ -20,7 +20,7 @@ import {
 	faEdit,
 	faChevronDown,
 } from '@fortawesome/free-solid-svg-icons';
-import Pagination from '../../Components/pagination';
+import Pagination from '../../components/pagination';
 import { DeleteModal, CreateModal, UpdateModal, BulkDel } from './modals';
 
 class Categories extends Component {

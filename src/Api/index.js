@@ -22,6 +22,11 @@ const apis = {
 			headers: { Authorization: token },
 		});
 	},
+	updateItem(data, token, name) {
+		return axios.patch(`${BASE_URL}/products/${name}`, data, {
+			headers: { Authorization: token },
+		});
+	},
 	getItemsByCategory(name) {
 		return axios.get(`${BASE_URL}/category/${name}`);
 	},
@@ -221,6 +226,9 @@ const apis = {
 		return axios.post(`${BASE_URL}/chats`, data, {
 			headers: { Authorization: token },
 		});
+	},
+	facebookLogin(accessToken) {
+		return axios.post(`${BASE_URL}/users/auth/facebook`, { access_token: accessToken });
 	},
 };
 

@@ -15,6 +15,16 @@ export const getc = (data, value) => {
 		));
 };
 
+export const getSub = (data, value) => {
+	if (!value) return 'Not found';
+	const cat = data.find(e => e.id === JSON.parse(value));
+	if (!cat) return 'Not found';
+	if (cat.sub.length === 0) return false;
+	return data
+		.find(e => e.id === JSON.parse(value))
+		.sub.map((e, i) => ({ label: e.name, value: e.id }));
+};
+
 export const getCategory = async value => {
 	if (!value) return 'Not found';
 	const categories = await category();
