@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import constants from '../../../../redux/constants/index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGlobeAfrica, faBell, faImages } from '@fortawesome/free-solid-svg-icons';
+import { faGlobeAfrica } from '@fortawesome/free-solid-svg-icons';
 import decode, { token } from './../../../../helper';
 import { getUser } from '../../../../redux/actions/user.action';
 
@@ -13,12 +13,7 @@ class Nav extends Component {
 		this.state = {
 			menuIsOpen: false,
 		};
-		// this.menuToggle = this.menuToggle.bind(this);
 	}
-	// menuToggle(event) {
-	// 	event.preventDefault();
-	// 	this.setState({ menuIsOpen: !this.menuIsOpen });
-	// }
 	componentDidMount() {
 		this.props.init();
 		this.props.user(token, decode().id);
@@ -26,73 +21,93 @@ class Nav extends Component {
 	render() {
 		const { payload } = this.props;
 		const { menuIsOpen } = this.state;
-		console.log(menuIsOpen);
 		return (
-			<nav className='navbar navbar-dark bg-transparent align-items-center w-100 h-3 mb-3'>
-				<li className='nav-item js-hamburger mt-n3'>
-					<button
-						onClick={() => this.setState({ menuIsOpen: !menuIsOpen })}
-						className={`hamburger-toggle ${menuIsOpen ? 'is-opened' : ''} `}
-					>
-						<span className='bar-top'></span>
-						<span className='bar-mid'></span>
-						<span className='bar-bot'></span>
-					</button>
-				</li>
-				<ul className='d-flex'>
-					<li className='nav-item mx-3'>
-						<a
-							className='nav-link text-white'
-							href='#'
-							data-toggle='tooltip'
-							data-placement='bottom'
-							title='visit website'
+			<>
+				<nav className='navbar navbar-dark bg-transparent align-items-center w-100 h-3 mb-3'>
+					<li className='nav-item js-hamburger mt-n3 btn-group'>
+						<button
+							onClick={() => this.setState({ menuIsOpen: !menuIsOpen })}
+							className={`hamburger-toggle ${menuIsOpen ? 'is-opened' : ''} `}
 						>
-							<FontAwesomeIcon className='admin-nav-icons' icon={faGlobeAfrica} />
-						</a>
+							<span className='bar-top'></span>
+							<span className='bar-mid'></span>
+							<span className='bar-bot'></span>
+						</button>
 					</li>
-					<li className='nav-item mx-3'>
-						<a
-							className='nav-link text-white'
-							href='#'
+					<ul className='d-flex'>
+						<li className='nav-item mx-3'>
+							<a
+								className='nav-link text-white'
+								href='#'
+								data-toggle='tooltip'
+								data-placement='bottom'
+								title='visit website'
+							>
+								<FontAwesomeIcon className='admin-nav-icons' icon={faGlobeAfrica} />
+							</a>
+						</li>
+						<li className='nav-item mx-3'>
+							<a
+								className='nav-link text-white'
+								href='#'
+								data-toggle='tooltip'
+								data-placement='bottom'
+								title='Notifications'
+							>
+								<span className='admin-nav-icons'>
+									<ion-icon name='notifications' />
+								</span>
+								<span className='badge badge-light mt-n2 ml-n2 position-absolute'>5</span>
+							</a>
+						</li>
+						<li
+							className='dropdown ml-3'
 							data-toggle='tooltip'
 							data-placement='bottom'
 							title='Notifications'
 						>
-							<FontAwesomeIcon className='admin-nav-icons' icon={faBell} />
-							<span className='badge badge-light mt-n2 ml-n1 position-absolute'>5</span>
-						</a>
-					</li>
-					<li
-						className='dropdown ml-3'
-						data-toggle='tooltip'
-						data-placement='bottom'
-						title='Notifications'
-					>
+							<button
+								className='btn bg-transparent text-white dropdown-toggle'
+								type='button'
+								id='dropdownMenuButton'
+								data-toggle='dropdown'
+								aria-haspopup='true'
+								aria-expanded='false'
+							>
+								{payload && payload.data.firstName}
+							</button>
+							<div className='dropdown-menu' aria-labelledby='dropdownMenuButton'>
+								<a className='dropdown-item' href='#'>
+									Action
+								</a>
+								<a className='dropdown-item' href='#'>
+									Another action
+								</a>
+								<a className='dropdown-item' href='#'>
+									Something else here
+								</a>
+							</div>
+						</li>
+					</ul>
+				</nav>
+				<div className='w-100 container-fluid d-flex justify-content-between align-items-center mb-n3'>
+					<div className='btn-group align-items-start'>
 						<button
-							className='btn bg-transparent text-white dropdown-toggle'
-							type='button'
-							id='dropdownMenuButton'
-							data-toggle='dropdown'
-							aria-haspopup='true'
-							aria-expanded='false'
+							onClick={() => this.props.history.goBack()}
+							className={`btn p-0 text-white font-size-lg`}
 						>
-							{payload && payload.data.firstName}
+							<ion-icon name='arrow-undo-circle' />
 						</button>
-						<div className='dropdown-menu' aria-labelledby='dropdownMenuButton'>
-							<a className='dropdown-item' href='#'>
-								Action
-							</a>
-							<a className='dropdown-item' href='#'>
-								Another action
-							</a>
-							<a className='dropdown-item' href='#'>
-								Something else here
-							</a>
-						</div>
-					</li>
-				</ul>
-			</nav>
+						<button className={`btn p-0 text-white font-size-lg `}>
+							<ion-icon name='arrow-redo-circle' />
+						</button>
+						<button className={`btn p-0 text-white font-size-lg`}>
+							<ion-icon name='reload-circle' />
+						</button>
+					</div>
+					<h6 className='text-light text-capitalize'>{document.title}</h6>
+				</div>
+			</>
 		);
 	}
 }

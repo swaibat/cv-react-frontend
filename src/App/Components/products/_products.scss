@@ -19,6 +19,13 @@
 	flex-wrap: wrap;
 	align-items: flex-start;
 }
+.title-btn {
+	border-top-right-radius: 0 !important;
+	border-top-left-radius: 0 !important;
+}
+.font-size-lg {
+	font-size: 1.9rem;
+}
 
 .previewImage {
 	padding: 0 0.7rem;
@@ -72,9 +79,48 @@
 .sm-font {
 	font-size: 13px;
 }
+ion-icon {
+	margin-right: 0.4rem;
+	margin-bottom: -0.15rem;
+}
+.sidenav {
+	ion-icon {
+		font-size: 1.2rem;
+		margin-right: 0.4rem;
+		margin-bottom: -0.15rem;
+		&[names='cog'] {
+			font-size: 1.3rem;
+			margin-bottom: -0.25rem;
+		}
+	}
+}
 
 .icon.shadow.padding-4 {
 	border-radius: 10px;
+}
+.cv-editor {
+	.gikaa-btn ion-icon {
+		font-size: 1.1rem;
+		color: #5c5c5c;
+		padding: 0.1rem;
+	}
+	.btn.gikaa-btn {
+		line-height: 0;
+	}
+	.btn.gikaa-link ion-icon {
+		font-size: 0.9rem;
+		color: #5c5c5c;
+		line-height: 0;
+	}
+	textarea {
+		border: none;
+		overflow: auto;
+		outline: none;
+
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
 }
 
 .gu-mirror {

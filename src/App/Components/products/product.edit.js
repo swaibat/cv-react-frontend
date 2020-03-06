@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-expressions */
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faImages } from '@fortawesome/free-solid-svg-icons';
+import { faGlobeAfrica, faBell, faImages } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 import { category, updateItem } from '../../../redux/actions/items.action';
 import constants from '../../../redux/constants/index';
@@ -14,7 +14,7 @@ import { Editor } from 'react-draft-wysiwyg';
 import FileUploader from './helpers/file.upload';
 import dragula from 'react-dragula';
 import AdminNav from '../../Pages/admin/components/admin.nav.component';
-import IosBackspace from 'react-ionicons/lib/IosBackspace';
+import { withRouter } from 'react-router-dom';
 
 class EditItem extends Component {
 	constructor(props) {
@@ -41,6 +41,7 @@ class EditItem extends Component {
 	// 	}
 	// }
 	componentDidMount() {
+		document.title = 'Edit Products';
 		this.props.init();
 		category().then(({ payload }) => {
 			payload.data.map(cat => {
@@ -161,7 +162,6 @@ class EditItem extends Component {
 				<main className='content-wrapper d-flex flex-column align-items-center min-h-display'>
 					<AdminNav />
 					<div className='container-fluid mt-n2'>
-						<h5 className='cv-title title-light'>Create Product</h5>
 						<div className='w-100 bg-white p-4 mt-4 rounded'>
 							<form onSubmit={this.handleSubmit}>
 								<div className='form-row'>
@@ -195,21 +195,54 @@ class EditItem extends Component {
 											options={subCategory}
 										/>
 									</div>
-									<div className='form-group col-md-9'>
+									<div className='form-group col-md-6'>
 										<label htmlFor='description'>Description</label>
-										<Editor
-											wrapperClassName='demo-wrapper'
-											editorClassName='demo-editor'
-											value='hello'
-											onChange={this.handleInputChange}
-											toolbar={{
-												inline: { inDropdown: true },
-												list: { inDropdown: true },
-												textAlign: { inDropdown: true },
-												link: { inDropdown: true },
-												history: { inDropdown: true },
-											}}
-										/>
+										<div class='card cv-editor'>
+											<div class='card-header p-2'>
+												<div class='btn-group btn-group-sm mr-2 border'>
+													<button class='btn gikaa-link bg-white'>
+														<ion-icon src="data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='bold' class='svg-inline--fa fa-bold fa-w-12' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath fill='currentColor' d='M333.49 238a122 122 0 0 0 27-65.21C367.87 96.49 308 32 233.42 32H34a16 16 0 0 0-16 16v48a16 16 0 0 0 16 16h31.87v288H34a16 16 0 0 0-16 16v48a16 16 0 0 0 16 16h209.32c70.8 0 134.14-51.75 141-122.4 4.74-48.45-16.39-92.06-50.83-119.6zM145.66 112h87.76a48 48 0 0 1 0 96h-87.76zm87.76 288h-87.76V288h87.76a56 56 0 0 1 0 112z'%3E%3C/path%3E%3C/svg%3E" />
+													</button>
+													<button class='btn gikaa-link bg-white'>
+														<ion-icon src="data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='italic' class='svg-inline--fa fa-italic fa-w-10' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath fill='currentColor' d='M320 48v32a16 16 0 0 1-16 16h-62.76l-80 320H208a16 16 0 0 1 16 16v32a16 16 0 0 1-16 16H16a16 16 0 0 1-16-16v-32a16 16 0 0 1 16-16h62.76l80-320H112a16 16 0 0 1-16-16V48a16 16 0 0 1 16-16h192a16 16 0 0 1 16 16z'%3E%3C/path%3E%3C/svg%3E" />
+													</button>
+													<button class='btn gikaa-link bg-white'>
+														<ion-icon src="data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='underline' class='svg-inline--fa fa-underline fa-w-14' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='currentColor' d='M32 64h32v160c0 88.22 71.78 160 160 160s160-71.78 160-160V64h32a16 16 0 0 0 16-16V16a16 16 0 0 0-16-16H272a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h32v160a80 80 0 0 1-160 0V64h32a16 16 0 0 0 16-16V16a16 16 0 0 0-16-16H32a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16zm400 384H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z'%3E%3C/path%3E%3C/svg%3E" />
+													</button>
+													<button class='btn gikaa-link bg-white'>
+														<ion-icon name='list-outline' />
+													</button>
+													<button class='btn gikaa-link bg-white'>
+														<ion-icon src="data:image/svg+xml,%3C%3Fxml version='1.0' encoding='iso-8859-1'%3F%3E%3C!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='319.633px' height='319.634px' viewBox='0 0 319.633 319.634' style='enable-background:new 0 0 319.633 319.634;' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpath d='M318.766,9.888c-0.063-5.479-4.521-9.888-10-9.888H10.831c-5.523,0-10,4.478-10,10v55c0,5.522,4.477,10,10,10h22.596 c3.039,0,5.912-1.381,7.809-3.753L58.233,50h71.592v81.019H52.316c-12.012,0-21.75,9.738-21.75,21.75s9.738,21.75,21.75,21.75 h77.508v135.115c0,5.521,4.477,10,10,10h40c5.521,0,10-4.479,10-10V174.52h77.492c12.012,0,21.75-9.737,21.75-21.75 s-9.738-21.75-21.75-21.75h-77.492V50h71.512l17.082,21.263c1.898,2.363,4.766,3.737,7.797,3.737h22.588 c2.66,0,5.211-1.061,7.088-2.946c1.878-1.885,2.927-4.441,2.912-7.102L318.766,9.888z'/%3E%3C/g%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3C/svg%3E%0A" />
+													</button>
+												</div>
+												<div class='btn-group btn-group-sm border'>
+													<button class='btn gikaa-btn bg-white'>
+														<ion-icon name='cut' />
+													</button>
+													<button class='btn gikaa-btn bg-white'>
+														<ion-icon name='code' />
+													</button>
+													<button class='btn gikaa-btn bg-white'>
+														<ion-icon name='copy' />
+													</button>
+													<button class='btn gikaa-btn bg-white'>
+														<ion-icon name='arrow-undo' />
+													</button>
+													<button class='btn gikaa-btn bg-white'>
+														<ion-icon name='arrow-redo' />
+													</button>
+												</div>
+											</div>
+											<div class='card-body p-0'>
+												<textarea class='form-control border-0' name='' id='' rows='2'></textarea>
+											</div>
+											<div class='card-footer p-1 d-flex align-items-center'>
+												<small>
+													<b>body</b> <span class='ml-2'>p</span>{' '}
+												</small>
+											</div>
+										</div>
 									</div>
 									<div className='form-group col-md-3 mb-0'>
 										<div className='form-group'>
@@ -273,13 +306,11 @@ class EditItem extends Component {
 																src={image.link}
 																alt='previewImage'
 															/>
-															<span
-																class='preview-del-btn'
+															<i
+																class='icon-bin2-pro-lite'
 																id={`${key}-${image.id}`}
 																onClick={this.handleClick}
-															>
-																<IosBackspace color='grey' />
-															</span>
+															></i>
 														</div>
 													);
 												})}
@@ -287,6 +318,7 @@ class EditItem extends Component {
 									</div>
 								</div>
 								<button type='submit' className='btn btn-primary'>
+									<ion-icon name='cloudy' />
 									Create
 								</button>
 							</form>
@@ -319,4 +351,4 @@ const mapStateToProps = state => {
 	};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditItem);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(EditItem));

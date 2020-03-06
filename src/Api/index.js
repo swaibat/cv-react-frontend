@@ -227,6 +227,9 @@ const apis = {
 			headers: { Authorization: token },
 		});
 	},
+	facebookLogin(accessToken) {
+		return axios.post(`${BASE_URL}/users/auth/facebook`, { access_token: accessToken });
+	},
 };
 
 export default apis;

@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable react/react-in-jsx-scope */
 // /* eslint-disable jsx-a11y/img-redundant-alt */
 // /* eslint-disable jsx-a11y/anchor-is-valid */
@@ -10,14 +12,7 @@ import Sidenav from './components/sidenav';
 import AdminNav from './components/admin.nav.component';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import getTokenData, { token } from '../../../helper';
-import {
-	faCog,
-	faPen,
-	faPaperPlane,
-	faImage,
-	faPaperclip,
-	faGrin,
-} from '@fortawesome/free-solid-svg-icons';
+import { faCog, faPen, faPaperPlane, faImage, faGrin } from '@fortawesome/free-solid-svg-icons';
 import image from '../../../assets/images/user.svg';
 import ReactTooltip from 'react-tooltip';
 import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react';
@@ -54,6 +49,7 @@ class Page extends React.Component {
 	}
 
 	componentDidMount() {
+		document.title = 'Chat';
 		this.props.get(token);
 	}
 	handleChange(event) {
@@ -112,7 +108,6 @@ class Page extends React.Component {
 				<main className='content-wrapper d-flex flex-column align-items-center min-h-display'>
 					<AdminNav />
 					<div className='container-fluid mt-n2'>
-						<h5 className='cv-title title-light'>Chat</h5>
 						<div className='w-100 bg-white px-3 pt-0 mt-4 rounded'>
 							<div className='row'>
 								<div className='col-md-3 border-right p-1'>

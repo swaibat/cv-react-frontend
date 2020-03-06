@@ -4,12 +4,24 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="shortcut icon" id="favicon" href="favicon.svg" />
 		<title>cv</title>
+		<script
+			type="module"
+			src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"
+		></script>
 	</head>
 	<body>
 		<div id="root"></div>
 	</body>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtdJ2lMzLN7jGl_KHHWv1UvXrhqExiSUM&libraries=places&callback=initAutocomplete" async defer></script>
+	<!-- <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script> -->
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtdJ2lMzLN7jGl_KHHWv1UvXrhqExiSUM&libraries=places&callback=initAutocomplete"
+		async
+		defer
+	></script>
 	<script>
+		$(function() {
+			$('[data-toggle="tooltip"]').tooltip();
+		});
 		var placeSearch, autocomplete;
 		var componentForm = {
 			street_number: 'short_name',
@@ -23,7 +35,10 @@
 		function initAutocomplete() {
 			// Create the autocomplete object, restricting the search to geographical
 			// location types.
-			autocomplete = new google.maps.places.Autocomplete(/** @type {!HTMLInputElement} */ (document.getElementById('autocomplete')), { types: ['geocode'] });
+			autocomplete = new google.maps.places.Autocomplete(
+				/** @type {!HTMLInputElement} */ (document.getElementById('autocomplete')),
+				{ types: ['geocode'] },
+			);
 
 			// When the user selects an address from the dropdown, populate the address
 			// fields in the form.
