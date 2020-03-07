@@ -1,0 +1,72 @@
+.input-tag {
+	border-bottom: 1px solid #d6d6d6;
+	border-radius: 2px;
+	display: flex;
+	flex-wrap: wrap;
+	font-size: small;
+	padding: 10px 0px 0;
+}
+
+.input-tag input {
+	border: none;
+	width: 100%;
+	&:focus {
+		box-shadow: none;
+	}
+}
+
+.input-tag__tags {
+	display: inline-flex;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.input-tag__tags li {
+	align-items: center;
+	background: #b4b4b4;
+	border-radius: 2px;
+	display: flex;
+	font-weight: 100;
+	list-style: none;
+	margin-bottom: 5px;
+	margin-right: 5px;
+	padding: 1px 7px;
+}
+
+.input-tag__tags li button {
+	align-items: center;
+	appearance: none;
+	background: #707070;
+	border: none;
+	border-radius: 50%;
+	color: white;
+	cursor: pointer;
+	display: inline-flex;
+	font-size: 12px;
+	height: 15px;
+	justify-content: center;
+	line-height: 0;
+	margin-left: 8px;
+	transform: rotate(45deg);
+	width: 15px;
+}
+
+.input-tag__tags li.input-tag__tags__input {
+	background: none;
+	flex-grow: 1;
+	padding: 0;
+}
+.cv-forms {
+	ion-icon {
+		margin-right: 0rem;
+		margin-bottom: -0.05rem;
+		font-size: 20px;
+	}
+	.btn{
+		ion-icon {
+			margin-bottom: -0.25rem;
+		}
+	}
+}

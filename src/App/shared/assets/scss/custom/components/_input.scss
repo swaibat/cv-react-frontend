@@ -1,0 +1,245 @@
+$muted-color: mix(white, $secondary, 70%);
+$trans-time: 300ms;
+$width: 320px;
+
+.active-tag {
+	top: -14px !important;
+	font-size: 12px !important;
+	color: $primary !important;
+	margin-left: 0px !important;
+}
+.inactive-tag {
+	color: rgba(0, 0, 0, 0.5) !important;
+	font-size: 16px !important;
+	left: 0 !important;
+	top: 6px !important;
+}
+
+label.false {
+	margin-left: 2.2rem;
+}
+
+.select-dropdown {
+	max-height: 33vh;
+	overflow: scroll;
+}
+.dropdown-icon {
+	ion-icon {
+		font-size: 15px;
+		color: $secondary;
+	}
+}
+
+.cv-form-group {
+	.custom-input {
+		padding-left: 0;
+		padding-right: 0;
+
+		&:focus {
+			outline: none;
+		}
+		&:focus ~ label,
+		&:valid ~ label {
+			top: -14px;
+			font-size: 12px;
+			color: $primary;
+			margin-left: 0px;
+		}
+		&:focus ~ .bar:before {
+			width: 100%;
+		}
+	}
+	.bar {
+		position: relative;
+		display: block;
+		width: 100%;
+		&:before {
+			content: '';
+			height: 1px;
+			width: 0;
+			bottom: 0px;
+			position: absolute;
+			background: $primary;
+			transition: $trans-time ease all;
+			left: 0%;
+		}
+	}
+	.cv-chev {
+		padding: 0px;
+		border-left: 0;
+		border-right: 0;
+		border-top: 0;
+		color: $secondary;
+		&.right {
+			&:before {
+				content: '';
+				border-top: 1px solid $secondary;
+				width: 1rem;
+				transform: rotate(90deg);
+			}
+		}
+		&.left {
+			&:after {
+				content: '';
+				border-top: 1px solid $secondary;
+				width: 1rem;
+				transform: rotate(90deg);
+			}
+		}
+	}
+
+	label {
+		color: rgba(0, 0, 0, 0.5);
+		font-size: 16px;
+		font-weight: normal;
+		position: absolute;
+		pointer-events: none;
+		left: 0;
+		top: 6px;
+		transition: 0.2s ease all;
+		-moz-transition: 0.2s ease all;
+		-webkit-transition: 0.2s ease all;
+		&.left {
+			margin-left: 2.1rem;
+			padding-bottom: 0.2rem;
+		}
+	}
+}
+.cv-input-group-text {
+	border-radius: 0px;
+	border: none;
+	border-bottom: solid 1px #ced4da;
+}
+.custom-input {
+	border-radius: 0px;
+	border: none;
+	background: transparent;
+	border-bottom: solid 1px #ced4da;
+	padding: 0 1.5rem;
+}
+
+.custom-input::placeholder {
+	font-weight: lighter;
+	color: rgb(204, 204, 204) !important;
+}
+
+.stars {
+	background: #ffffff;
+	height: 30px;
+	width: 200px;
+	padding: 10px;
+	border-radius: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row-reverse;
+
+	input {
+		position: absolute;
+		left: -99999px;
+	}
+
+	label {
+		width: 30px;
+		height: 30px;
+		padding: 5px;
+		color: transparent;
+		transition: all 0.1s ease-in-out;
+	}
+
+	label::before {
+		content: '\2605';
+		color: #c0c0c0;
+		font-size: 30px;
+		line-height: 30px;
+		margin-right: -100%;
+		transition: all 0.1s ease-in-out;
+	}
+
+	label:hover::before,
+	label:hover ~ label::before {
+		color: #ffdf32;
+	}
+
+	.gold {
+		&:before {
+			color: #ffd700;
+		}
+	}
+
+	.checkedStar {
+		animation: checked 0.5s ease-in-out 1 both;
+	}
+
+	.checkedLastStar {
+		animation: rotate 0.5s ease-in-out 1 both;
+	}
+
+	@keyframes checked {
+		0% {
+			transform: scale(1);
+		}
+		50% {
+			transform: scale(1.2);
+		}
+		100% {
+			transform: scale(1);
+		}
+	}
+
+	@keyframes rotate {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+}
+
+.reviewers-number {
+	width: 4rem;
+}
+
+.social-button {
+	color: #61677c;
+	font-weight: bold;
+	box-shadow: -5px -5px 20px $color-white, 5px 5px 20px $color-shadow;
+	transition: all 0.2s ease-in-out;
+	cursor: pointer;
+	font-weight: 600;
+
+	&:hover {
+		box-shadow: -2px -2px 5px $color-white, 2px 2px 5px $color-shadow;
+	}
+
+	&:active {
+		box-shadow: inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
+	}
+
+	.icon {
+		margin-right: $ruler/2;
+	}
+
+	&.unit {
+		border-radius: $ruler/2;
+		line-height: 0;
+		width: $ruler * 3;
+		height: $ruler * 3;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0 $ruler/2;
+		font-size: $ruler * 1.2;
+
+		.icon {
+			margin-right: 0;
+		}
+	}
+
+	&.red {
+		display: block;
+		width: 100%;
+		color: $color-red;
+	}
+}
