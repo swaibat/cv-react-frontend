@@ -1,31 +1,31 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Landing from './Pages';
-import Login from './Pages/login';
-import Register from './Pages/register.page';
-import Items from './Pages/items.page';
-import CategoryItems from './Pages/category.item';
-import singleItem from './Pages/single.item';
-import NotFound from './Pages/404.page';
-import Faq from './Pages/faq.page';
-import FaqList from './Pages/admin/faqs.list.page';
-import VerifyUser from './Pages/verify.user.page';
-import Dashboard from './Pages/admin/dashboard.page';
-import CreateProduct from './Pages/admin/create.product.page';
-import EditProduct from './components/products/product.edit';
-import Category from './Pages/admin/categories.page';
-import AdminProducts from './components/products/products';
-import settings from './Pages/admin/Settings.page';
-import Pages from './Pages/admin/pages.page';
-import About from './Pages/admin/about.page';
-import Chat from './Pages/admin/chat.page';
-import ResetPassword from './Pages/reset.password.page';
-import ConfirmReset from './Pages/password.confirm';
-import Contact from './Pages/contact.page';
-import Token, { token } from '../helper/index';
-import Users from './Pages/admin/users.page';
-import Profile from './Pages/profile.page';
-import { initializeSocketIo } from '../helper/socket.io';
+import Landing from './frontend/components/landing';
+import Login from './shared/components/auth/login';
+import Register from './shared/components/auth/register.page';
+import Items from './frontend/components/products/items.page';
+import CategoryItems from './frontend/components/products/category.item';
+import singleItem from './frontend/components/products/single.item';
+import NotFound from './shared/components/404/404.page';
+import Faq from './frontend/components/faq/faq.page';
+import FaqList from './backend/components/faq/faqs.list.page';
+import VerifyUser from './shared/components/auth/verify.user.page';
+import Dashboard from './backend/components/dashboard/dashboard.page';
+import CreateProduct from './backend/components/products/product.create';
+import EditProduct from './backend/components/products/product.edit';
+import Category from './backend/components/categories/categories.page';
+import AdminProducts from './backend/components/products/products';
+import settings from './backend/components/settings/settings.page';
+import Pages from './backend/components/pages/pages';
+// import About from './backend/components/about/about.page';
+import Chat from './backend/components/chat/chat.page';
+import ResetPassword from './shared/components/auth/reset.password.page';
+import ConfirmReset from './shared/components/auth/password.confirm';
+import Contact from './frontend/components/contact/contact.page';
+import Token, { token } from '../App/shared/helper/index';
+import Users from './backend/components/users/users.page';
+import Profile from './frontend/components/profile/profile.page';
+import { initializeSocketIo } from '../App/shared/helper/socket.io';
 import { toast } from 'react-toastify';
 
 toast.configure();
@@ -62,12 +62,16 @@ export class App extends React.Component {
 							<Route exact path='/admin/products/:id/edit' component={EditProduct} />
 							<Route exact path='/admin/category' component={Category} />
 							<Route exact path='/admin/products' component={AdminProducts} />
-							<Route exact path='/admin/settings' component={settings} />
 							<Route exact path='/admin/pages/faq' component={FaqList} />
-							<Route exact path='/admin/pages' component={Pages} />
-							<Route exact path='/admin/pages/about' component={About} />
-							<Route exact path='/admin/chat' component={Chat} />
+							<Route exact path='/admin/pages/webpages' component={Pages} />
+							<Route exact path='/admin/pages/vendorspages' component={Pages} />
+							{/* <Route exact path='/admin/pages/about' component={About} /> */}
+							<Route exact path='/admin/apps/chat' component={Chat} />
 							<Route exact path='/admin/users' component={Users} />
+							<Route exact path='/admin/settings/website' component={settings} />
+							<Route exact path='/admin/settings/payments' component={settings} />
+							<Route exact path='/admin/settings/intergrations' component={settings} />
+							<Route exact path='/admin/settings/seo' component={settings} />
 						</>
 					)}
 

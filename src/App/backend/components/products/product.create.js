@@ -1,0 +1,283 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable no-unused-expressions */
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import Products from '../products/redux/actions';
+import Category from '../categories/redux/actions';
+import constants from '../../../shared/redux/constants';
+import { brands, models } from '../../../shared/helper/cars.helper';
+import { getc, years } from '../../../shared/helper/category.helper';
+import Sidenav from '../../components/navigation/sidenav';
+import { token } from '../../../shared/helper';
+import Dropzone from 'react-dropzone-uploader';
+import AdminNav from '../navigation/admin.nav.component';
+
+class CreateItem extends Component {
+	componentDidMount() {
+		this.props.init();
+		this.props.getCat();
+	}
+	handleChangeStatus = (d, v, allFiles) => {
+		this.setState({ images: allFiles });
+	};
+	handleInput = e => {
+		const target = e.target;
+		const value = target.type === 'checkbox' ? target.checked : target.value;
+		console.log(value);
+		const name = target.name;
+		this.setState({ [name]: value });
+	};
+	handleSubmit = e => {
+		const formData = new FormData();
+		e.preventDefault();
+		this.props.init();
+		const { images } = this.state;
+		for (const key in this.state) {
+			if (this.state.hasOwnProperty(key) && key !== 'images') {
+				formData.append(key, this.state[key]);
+			}
+		}
+		images.map(e => formData.append('images', e.file));
+		this.props.createItem(formData, token);
+	};
+	render() {
+		const { categories } = this.props;
+		return (
+			<>
+				<Sidenav />
+				<div className='header-bg' />
+				<main className='content-wrapper d-flex flex-column align-items-center min-h-display'>
+					<AdminNav />
+					<div className='container-fluid mt-n2'>
+						<div className='w-100 bg-white p-4 mt-4 rounded'>
+							<form onSubmit={this.handleSubmit}>
+								<div className='form-row'>
+									<div className='form-group col-md-6'>
+										<label htmlFor='category'>title</label>
+										<input
+											type='text'
+											name='name'
+											className='form-control'
+											placeholder='enter title'
+											onChange={this.handleInput}
+										/>
+									</div>
+									<div className='form-group col-md-3'>
+										<label htmlFor='category'>category</label>
+										<select name='CategoryId' className='form-control' onChange={this.handleInput}>
+											<option value={false}>Select category</option>
+											{categories &&
+												categories.data.map((category, index) => (
+													<option key={index} value={category.id}>
+														{category.name}
+													</option>
+												))}
+										</select>
+									</div>
+									<div className='form-group col-md-3'>
+										<label htmlFor='Sub category'>Sub category</label>
+										<select
+											name='subCategoryId'
+											className='form-control'
+											onChange={this.handleInput}
+											disabled={
+												this.state && getc(categories.data, this.state.categoryId) === false
+													? true
+													: false
+											}
+										>
+											<option defaultValue>Select sub-category</option>
+											{this.state && getc(categories.data, this.state.CategoryId)}
+										</select>
+									</div>
+								</div>
+								<div className='form-row m-0'>
+									<div className='form-group col-md-9'>
+										<label htmlFor='description'>Description</label>
+										<textarea
+											name='description'
+											rows='3'
+											placeholder='item description'
+											className='form-control'
+											onChange={this.handleInput}
+										/>
+									</div>
+									<div className='form-group col-md-3 mb-0'>
+										<div className='form-group'>
+											<label htmlFor='price'>Price</label>
+											<div className='input-group'>
+												<div className='input-group-prepend'>
+													<span className='input-group-text' id='basic-addon1'>
+														$
+													</span>
+												</div>
+												<input
+													name='price'
+													type='number'
+													className='form-control'
+													placeholder='e.g 300'
+													aria-label='e.g 300'
+													aria-describedby='basic-addon1'
+													onChange={this.handleInput}
+												/>
+											</div>
+										</div>
+										<div className='form-group d-flex mb-0'>
+											<label className='pr-3' htmlFor='inputState'>
+												Price Negotiable
+											</label>
+											<div className='custom-control custom-switch'>
+												<input
+													name='negotiable'
+													type='checkbox'
+													className='custom-control-input custom-control-input-lg'
+													id='switch1'
+													onChange={this.handleInput}
+												/>
+												<label className='custom-control-label' htmlFor='switch1' />
+											</div>
+										</div>
+									</div>
+								</div>
+								<div className='form-group'>
+									<label htmlFor='inputZip'>upload images</label>
+									<div className='input-group'>
+										<Dropzone onChangeStatus={this.handleChangeStatus} accept='image/*' />
+									</div>
+								</div>
+								<div className='form-row'>
+									<div className='form-group col-md-2'>
+										<label htmlFor='color'>Color</label>
+										<input
+											type='text'
+											name='color'
+											className='form-control form-control-sm'
+											onChange={this.handleInput}
+										/>
+									</div>
+									<div className='form-group col-md-2'>
+										<label htmlFor='milage'>milage</label>
+										<input
+											type='text'
+											name='milage'
+											className='form-control form-control-sm'
+											onChange={this.handleInput}
+										/>
+									</div>
+									<div className='form-group col-md-2'>
+										<label htmlFor='transition'>Transition</label>
+										<select
+											type='text'
+											name='transition'
+											className='form-control form-control-sm'
+											onChange={this.handleInput}
+										>
+											<option value=''>select transition</option>
+											<option value='automatic'>automatic</option>
+											<option value='manual'>manual</option>
+										</select>
+									</div>
+									<div className='form-group col-md-2'>
+										<label htmlFor='inputZip'>fuel</label>
+										<select
+											name='fuel'
+											type='text'
+											className='form-control form-control-sm'
+											onChange={this.handleInput}
+										>
+											<option value=''>select year</option>
+											<option value='petrol'>petrol</option>
+											<option value='diesel'>diesel</option>
+											<option value='electric'>electric</option>
+											<option value='hybrid(diesel)'>hybrid(diesel)</option>
+											<option value='hybrid(electric)'>hybrid(electric)</option>
+											<option value='others'>others</option>
+										</select>
+									</div>
+									<div className='form-group col-md-2'>
+										<label htmlFor='inputZip'>engine size</label>
+										<select
+											name='engine'
+											className='form-control form-control-sm'
+											onChange={this.handleInput}
+										>
+											<option value=''>select engine size</option>
+											<option>700</option>
+											<option>1000</option>
+											<option>1300</option>
+											<option>1500</option>
+											<option>1800</option>
+											<option>2000</option>
+											<option>2500</option>
+											<option>3000</option>
+											<option>4000</option>
+										</select>
+									</div>
+									<div className='form-group col-md-2'>
+										<label htmlFor='year'>Year</label>
+										<select
+											name='year'
+											className='form-control form-control-sm'
+											onChange={this.handleInput}
+										>
+											{years()}
+										</select>
+									</div>
+									<div className='form-group col-md-2'>
+										<label htmlFor='brand'>Car brand</label>
+										<input
+											list='carsData'
+											type='text'
+											name='brand'
+											className='form-control form-control-sm'
+											onChange={this.handleInput}
+										/>
+										<datalist id='carsData'>{brands}</datalist>
+									</div>
+									<div className='form-group col-md-2'>
+										<label htmlFor='model'>car model</label>
+										<input
+											list='car-model'
+											type='text'
+											name='model'
+											className='form-control form-control-sm'
+											onChange={this.handleInput}
+										/>
+										<datalist id='car-model'>{this.state && models(this.state.brand)}</datalist>
+									</div>
+								</div>
+								<button type='submit' className='btn btn-primary'>
+									Create
+								</button>
+							</form>
+						</div>
+					</div>
+				</main>
+			</>
+		);
+	}
+}
+
+const mapDispatchToProps = dispatch => {
+	return {
+		init: () =>
+			dispatch({
+				type: constants.CREATE_ITEM_PENDING,
+				pending: true,
+			}),
+
+		createItem: async (data, token) => dispatch(await Products.createProduct(data, token)),
+		getCat: async () => dispatch(await Category.getCategories()),
+	};
+};
+
+const mapStateToProps = state => {
+	return {
+		payload: state.createItem.payload,
+		pending: state.createItem.pending,
+		error: state.createItem.error,
+		categories: state.GetCategories.payload,
+	};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreateItem);
