@@ -1,0 +1,30 @@
+.mini {
+	.sidenav {
+		width: 60px !important;
+		transition: 0.3s;
+		.nav-link {
+			display: flex;
+			justify-content: center;
+			padding: 0.7rem 1rem !important;
+		}
+		.nav-item {
+			a {
+				.nav-item-text {
+					display: none;
+				}
+			}
+			a {
+				ion-icon {
+					font-size: 1.3rem;
+				}
+			}
+		}
+	}
+	.content-wrapper {
+		margin-left: 65px;
+		transition: 0.3s;
+	}
+}
+ion-icon {
+	--ionicon-stroke-width: 50px;
+}
