@@ -1,0 +1,38 @@
+// import scss bootstrap module
+@import './variables';
+@import 'bootstrap/scss/bootstrap.scss';
+@import 'react-toastify/scss/main.scss';
+
+@import './custom/sidenav';
+@import './custom/template.scss';
+
+@import './custom/animations';
+@import './custom/global';
+@import './custom/signin';
+
+// components
+@import './custom/components/product.card';
+@import './custom/components/product.page';
+@import './custom/components/specs.table';
+@import './custom/components/category.nav';
+@import './custom/components/navigation';
+@import '../../../backend/components/products/products';
+@import './custom/components/table';
+@import './custom/components/humberger';
+@import './custom/components/theme.frame';
+@import './custom/components/chat';
+@import './custom/components/input';
+@import './custom/components/pre-loader';
+@import './custom/components/toast';
+@import './custom/components/like';
+@import './custom/components/dropdown';
+
+@import '../../../backend/components/navigation/navigation';
+@import '../../../backend/components/dashboard/dashboard';
+@import '../../../frontend/components/heroslider/hero';
+@import '../../../frontend/components/footer/footer';
+
+// mixins
+@import './custom/mixins/transition';
+// pages
+@import './custom/pages/contact.page';

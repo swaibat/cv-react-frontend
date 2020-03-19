@@ -47,6 +47,13 @@ module.exports = {
 	module: {
 		rules: [
 			{
+				test: /\.css$/i,
+				loader: 'css-loader',
+				options: {
+					import: true,
+				},
+			},
+			{
 				test: /.(js|jsx)$/,
 				exclude: /node_modules/,
 				use: ['babel-loader', 'eslint-loader'],
@@ -61,6 +68,15 @@ module.exports = {
 						},
 					},
 				],
+			},
+			{
+				test: /\.(ttf|eot|woff|woff2)$/,
+				use: {
+					loader: 'file-loader',
+					options: {
+						name: 'fonts/[name].[ext]',
+					},
+				},
 			},
 			{
 				test: /\.s[ac]ss$/i,
