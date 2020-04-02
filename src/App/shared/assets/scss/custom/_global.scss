@@ -10,14 +10,13 @@ a {
 
 a:hover {
 	text-decoration: none;
-	
 }
 // font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 body {
 	height: 100vh;
 	background: rgb(238, 242, 244);
 	font-weight: 100;
-	color:#414040 !important;
+	color: #414040 !important;
 }
 
 .nav-link:hover {
@@ -347,4 +346,12 @@ span {
 .vl {
 	border-left: 1px solid gainsboro;
 	height: 100px;
-  }
+}
+.icons-md {
+	font-size: 25px;
+}
+.cv-category-nav {
+	ion-icon {
+		margin-right: 0.3rem;
+	}
+}

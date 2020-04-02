@@ -81,22 +81,20 @@ class CreateUser extends Component {
 									/>
 								</div>
 								<div className='col-md-3'>
-									<div className='cv-form-group form-group mt-4'>
-										<Select
-											{...{
-												title: 'Select user role',
-												name: 'role',
-												type: 'text',
-												onChange: this.handleChange,
-												data: [
-													{ id: 1, name: 'admin' },
-													{ id: 2, name: 'vendor' },
-													{ id: 2, name: 'user' },
-												],
-												pam: this,
-											}}
-										/>
-									</div>
+									<Select
+										{...{
+											title: 'Select user role',
+											name: 'role',
+											type: 'text',
+											onChange: this.handleChange,
+											data: [
+												{ id: 1, name: 'admin' },
+												{ id: 2, name: 'vendor' },
+												{ id: 2, name: 'user' },
+											],
+											pam: this,
+										}}
+									/>
 								</div>
 								<div className='col-md-7'>
 									<TextInput

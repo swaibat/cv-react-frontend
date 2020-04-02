@@ -12,11 +12,10 @@ class Footer extends Component {
 		this.state = {};
 	}
 	render() {
-		console.log(this.props);
 		return (
 			<>
 				{getTokenData().id !== 1 && <ChatWidget />}
-				<Favourite {...this} />
+				{/* <Favourite data={this.props.data} /> */}
 				<div className='bg-light p-3 d-flex justify-content-center'>
 					<div className='container row '>
 						<div className='col-md-4 d-flex align-items-center'>

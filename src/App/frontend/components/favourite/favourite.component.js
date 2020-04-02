@@ -13,46 +13,31 @@ class Favourite extends Component {
 		super(props);
 		this.state = {
 			pending: true,
-			data: [],
-			items: [],
 			navOpen: false,
 		};
-		this.handleClick = this.handleClick.bind(this);
 		this.openNav = this.openNav.bind(this);
 	}
 	componentDidMount() {
-		this.props.favourites(token);
-	}
-	componentWillReceiveProps(nextProps) {
-		// Any time props.email changes, update state.
-		if (nextProps.payloads !== this.props.payloads) {
-			this.setState({
-				data: nextProps.payloads.data,
-			});
-		} else if (nextProps.payload !== this.props.payload) {
-			this.setState({
-				items: nextProps.payload.data,
-			});
-		}
+		Favourites.viewFavourite(token).then(({ payload }) => {
+			this.props.data.setState({ favourite: payload.data });
+		});
 	}
 	openNav() {
 		this.setState({ navOpen: !this.state.navOpen });
 	}
-	handleClick(e) {
-		e.preventDefault();
-		const targetId = e.target.id;
-		const id = targetId.split('-')[1];
+	handleClick(obj, event) {
+		event.preventDefault();
+		const { id, index } = obj;
 		this.props.delFavourite(id, token);
-		const index = targetId.split('-')[0];
-		const { data } = this.state;
-		data.splice(index, 1);
-		this.setState({ data });
+		const { favourite } = this.props.data.state;
+		favourite.splice(index, 1);
+		this.props.data.setState({ favourite });
 	}
 	render() {
-		const { data, items, navOpen } = this.state;
-		// console.log(this.props);
-		// const favourite = this.props.payload && this.props.payload.data.filter(e => data.map((x, i) => e.id === x.ProductId));
-		const favourite = data.map(e => items.find(x => x.id === e.ProductId));
+		const { navOpen } = this.state;
+		const {
+			state: { favourite },
+		} = this.props.data;
 		return (
 			<>
 				<div className={`fav-sidenav p-3 bg-white shadow  ${navOpen ? 'opened' : 'closed'}`}>
@@ -69,10 +54,10 @@ class Favourite extends Component {
 					</span>
 					<hr />
 					<ul className='list-unstyled'>
-						{favourite[0] &&
-							favourite.map((e, i) => {
+						{favourite &&
+							favourite.map((e, index) => {
 								return (
-									<li key={i} className='media p-1 my-2 border-bottom'>
+									<li key={index} className='media p-1 my-2 border-bottom'>
 										<img height='45' width='60' className='mr-3' src={image} alt='mage' />
 										<div className='media-body d-flex justify-content-between'>
 											<span className='d-flex flex-column'>
@@ -81,7 +66,11 @@ class Favourite extends Component {
 												</span>
 												<span className='text-primary'>{e.price}</span>
 											</span>
-											<span id={`${i}-${e.id}`} onClick={this.handleClick} className='btn btn-sm'>
+											<span
+												id={e.id}
+												onClick={this.handleClick.bind(this, { ...e, index })}
+												className='btn btn-sm'
+											>
 												&times;
 											</span>
 										</div>
@@ -97,7 +86,7 @@ class Favourite extends Component {
 
 export function mapStateToProps(state) {
 	return {
-		payloads: state.ViewFavourite.payload,
+		payload: state.ViewFavourite.payload,
 		error: state.ViewFavourite.error,
 		pending: state.ViewFavourite.pending,
 		delPayload: state.RemoveFavourite.payload,

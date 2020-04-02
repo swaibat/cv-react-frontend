@@ -27,7 +27,7 @@
 .font-size-lg {
 	font-size: 1.9rem;
 }
-.btn-blue{
+.btn-blue {
 	background: #007bff;
 	color: white;
 }
@@ -85,7 +85,6 @@
 	font-size: 13px;
 }
 ion-icon {
-	margin-right: 0.4rem;
 	margin-bottom: -0.15rem;
 }
 .sidenav {
@@ -149,4 +148,118 @@ ion-icon {
 	opacity: 0.2;
 	-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=20)';
 	filter: alpha(opacity=20);
+}
+/* CSS rules are kept repetitive so that you can get CSS rules for each button easily :) */
+
+* {
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+*:focus {
+	outline: none;
+}
+.checks-btns {
+	.button-cover,
+	.knobs,
+	.layer {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+
+	.button {
+		position: relative;
+		top: 50%;
+		width: 74px;
+		height: 30px;
+		margin: -20px auto 0 auto;
+		overflow: hidden;
+	}
+
+	.button.r,
+	.button.r .layer {
+		border-radius: 100px;
+	}
+
+	.button.b2 {
+		border-radius: 2px;
+	}
+
+	.checkbox {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		margin: 0;
+		opacity: 0;
+		cursor: pointer;
+		z-index: 3;
+	}
+
+	.knobs {
+		z-index: 2;
+	}
+
+	.layer {
+		width: 100%;
+		background-color: #ebf7fc;
+		transition: 0.3s ease all;
+		z-index: 1;
+	}
+
+	/* Button 10 */
+	#button-10 .knobs:before,
+	#button-10 .knobs:after,
+	#button-10 .knobs span {
+		position: absolute;
+		top: 4px;
+		width: 30px;
+		height: 23px;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: center;
+		line-height: 1;
+		padding: 6px 4px;
+		border-radius: 2px;
+		transition: 0.3s ease all;
+	}
+
+	#button-10 .knobs:before {
+		content: '';
+		left: 4px;
+		background-color: $primary;
+	}
+
+	#button-10 .knobs:after {
+		content: 'NO';
+		right: 4px;
+		color: #4e4e4e;
+	}
+
+	#button-10 .knobs span {
+		display: inline-block;
+		left: 4px;
+		color: #fff;
+		z-index: 1;
+	}
+
+	#button-10 .checkbox:checked + .knobs span {
+		color: #4e4e4e;
+	}
+
+	#button-10 .checkbox:checked + .knobs:before {
+		left: 42px;
+		background-color: #f44336;
+	}
+
+	#button-10 .checkbox:checked + .knobs:after {
+		color: #fff;
+	}
+
+	#button-10 .checkbox:checked ~ .layer {
+		background-color: #fcebeb;
+	}
 }

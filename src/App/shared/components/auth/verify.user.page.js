@@ -9,9 +9,8 @@ import Token from '../../../shared/helper';
 import { Redirect } from 'react-router';
 import Header from '../../../frontend/components/header/Header';
 import Footer from '../../../frontend/components/footer/Footer';
-import countries from '../../helper/countries.json';
 import Local from '../../../shared/redux/locations/actions';
-// import dynamic from 'next/dynamic';
+import TextInput from '../select-input/flagSelector';
 import VerifyInput from '../auth/code.verification';
 
 class Verify extends Component {
@@ -43,6 +42,7 @@ class Verify extends Component {
 	}
 	handleClick(e) {
 		e.preventDefault();
+		console.log('jfjfjfjfjfj');
 		this.setState({ callingCodes: e.target.id, flag: e.target.name });
 	}
 	handleInput = e => {
@@ -81,14 +81,11 @@ class Verify extends Component {
 	render() {
 		const { payload, error, pending, match, clientPending, clientPayload } = this.props;
 		payload && payload.status === 200 && localStorage.setItem('cv-token', match.params.token);
+		console.log(this.state);
 		return (
 			<>
 				<Header />
-				<main
-					className={`d-flex flex-column align-items-center min-vh-85 ${
-						clientPending ? 'loader' : ''
-					} `}
-				>
+				<main className={`d-flex flex-column align-items-center min-vh-85 `}>
 					{Token() ? <Redirect to='/' /> : ''}
 					<div className='container m-auto'>
 						<div className='row justify-content-sm-center align-items-center'>
@@ -225,61 +222,15 @@ class Verify extends Component {
 																				</div>
 																			</div>
 																			<div className='col-md-12'>
-																				<div className='input-group mb-3 mt-3'>
-																					<div className='input-group-prepend'>
-																						<button
-																							className='btn btn-link dropdown-toggle d-flex align-items-center rounded-0 bg-transparent p-0 border-bottom  '
-																							type='button'
-																							data-toggle='dropdown'
-																							aria-haspopup='true'
-																							aria-expanded='false'
-																						>
-																							<img
-																								height='17'
-																								width='30'
-																								className='pr-1'
-																								src={`http://localhost:5000/flags/${this.state
-																									.flag ||
-																									(clientPayload && clientPayload.flag)}`}
-																								alt='flag'
-																							/>
-																							+
-																							{this.state.callingCodes ||
-																								(clientPayload && clientPayload.callingCodes)}
-																						</button>
-																						<div className='dropdown-menu country-select rounded-sm shadow-xs'>
-																							{countries.map((e, index) => {
-																								return (
-																									<a
-																										key={index}
-																										onClick={this.handleClick}
-																										id={e.callingCodes}
-																										name={e.flag}
-																										className='dropdown-item d-flex align-items-center'
-																										href='#'
-																									>
-																										<img
-																											height='17'
-																											width='30'
-																											className='pr-1'
-																											src={`http://localhost:5000/flags/${e.flag}`}
-																											alt='flag'
-																										/>
-																										<span className='px-1'>{e.name}</span>
-																										<small className=''>+{e.callingCodes}</small>
-																									</a>
-																								);
-																							})}
-																						</div>
-																					</div>
-																					<input
-																						type='number'
-																						name='telephone'
-																						className='form-control custom-input'
-																						placeholder='758307272'
-																						aria-label='Text input with dropdown button'
-																						onChange={this.handleInput}
-																						required
+																				<div className='cv-form-group form-group mt-4'>
+																					<TextInput
+																						{...{
+																							label: 'enter telephone number',
+																							name: 'address',
+																							type: 'text',
+																							icon: { name: 'locate-outline' },
+																							data: this,
+																						}}
 																					/>
 																				</div>
 																			</div>

@@ -40,8 +40,6 @@ export default (event, productImages) => {
 					event.target.value = '';
 				}
 			};
-			console.log(event.target.files);
-			// read file url
 			reader.readAsDataURL(event.target.files[i]);
 			files.push(event.target.files[i]);
 		}

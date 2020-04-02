@@ -9,19 +9,17 @@ import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import Local from '../../../shared/redux/locations/actions';
 import Settings from '../../../backend/components/settings/redux/actions';
-import dummy from '../../../shared/helper/preloader.helper.json';
 import { withRouter } from 'react-router-dom';
 
 class CategoryItem extends React.Component {
 	constructor(props) {
 		super(props);
-
 		this.state = {
 			visible: 12,
 			pending: true,
-			payload: dummy,
+			data: '',
+			favourite: [],
 		};
-
 		this.loadMore = this.loadMore.bind(this);
 	}
 
@@ -36,11 +34,15 @@ class CategoryItem extends React.Component {
 		this.props.getCurrency();
 		this.props.local();
 		this.props.settings();
+		Product.getProductsByCategory(name).then(product =>
+			this.setState({ data: product.payload.data }),
+		);
 	}
 
 	render() {
 		const { settingsPayload } = this.props;
-		const { payload } = this.state;
+		const { data } = this.state;
+		console.log(this.state);
 		return (
 			<>
 				<Header />
@@ -49,12 +51,11 @@ class CategoryItem extends React.Component {
 						{this.props.error ? (
 							<h1>{this.props.error.message}</h1>
 						) : (
-							payload &&
-							payload.data &&
+							data &&
 							settingsPayload && (
 								<>
 									<div className='w-100'>
-										<Bread data={payload && this.props.match.params} />
+										<Bread data={data && this.props.match.params} />
 									</div>
 									<div className='row w-100'>
 										<Card data={this} />
@@ -70,7 +71,7 @@ class CategoryItem extends React.Component {
 						)}
 					</div>
 				</main>
-				<Footer {...{ state: this.state }} />
+				<Footer data={this} />
 			</>
 		);
 	}

@@ -1,0 +1,20 @@
+.cv-country-select {
+	.flag-label {
+		margin-left: 6rem;
+	}
+	.cv-chev-flag {
+		&:after {
+			content: '';
+			background-color: grey;
+			width: 1px;
+			height: 1.1rem;
+			left: 4.2rem;
+			display: block;
+			align-self: center;
+		}
+	}
+
+	// .cv-input-group-text{
+	//     b
+	// }
+}

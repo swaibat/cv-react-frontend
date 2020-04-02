@@ -1,127 +1,29 @@
 import React, { Component } from 'react';
+import Toggle from '../../../shared/components/toggle-btn';
 
 export default class Property extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {};
+	}
 	render() {
+		const { data } = this.props;
 		return (
 			<>
 				<h6>product variables</h6>
 				<hr />
 				<div className='row variants'>
-					<div className='col-md-4'>
-						<div className='d-flex mt-3'>
-							<label>Listed by :</label>
-							<span>
-								<div class='custom-control custom-radio custom-control-inline ml-4'>
-									<input
-										type='radio'
-										id='customRadioInline1'
-										name='customRadioInline1'
-										class='custom-control-input'
-									/>
-									<label class='custom-control-label' for='customRadioInline1'>
-										Owner
-									</label>
-								</div>
-								<div class='custom-control custom-radio custom-control-inline ml-3'>
-									<input
-										type='radio'
-										id='customRadioInline2'
-										name='customRadioInline1'
-										class='custom-control-input'
-									/>
-									<label class='custom-control-label' for='customRadioInline2'>
-										Broker
-									</label>
-								</div>
-							</span>
-						</div>
-					</div>
-					<div className='col-md-4'>
-						<div className='d-flex mt-3'>
-							<label>Furnished :</label>
-							<span>
-								<div class='custom-control custom-radio custom-control-inline ml-4'>
-									<input
-										type='radio'
-										id='customRadioInline3'
-										name='customRadioInline3'
-										class='custom-control-input'
-									/>
-									<label class='custom-control-label' for='customRadioInline3'>
-										Yes
-									</label>
-								</div>
-								<div class='custom-control custom-radio custom-control-inline ml-3'>
-									<input
-										type='radio'
-										id='customRadioInline4'
-										name='customRadioInline3'
-										class='custom-control-input'
-									/>
-									<label class='custom-control-label' for='customRadioInline4'>
-										No
-									</label>
-								</div>
-							</span>
-						</div>
-					</div>
-					<div className='col-md-4'>
-						<div className='d-flex mt-3'>
-							<label>Pets allowed :</label>
-							<span>
-								<div class='custom-control custom-radio custom-control-inline ml-4'>
-									<input
-										type='radio'
-										id='customRadioInline5'
-										name='customRadioInline5'
-										class='custom-control-input'
-									/>
-									<label class='custom-control-label' for='customRadioInline5'>
-										Yes
-									</label>
-								</div>
-								<div class='custom-control custom-radio custom-control-inline ml-3'>
-									<input
-										type='radio'
-										id='customRadioInline6'
-										name='customRadioInline5'
-										class='custom-control-input'
-									/>
-									<label class='custom-control-label' for='customRadioInline6'>
-										No
-									</label>
-								</div>
-							</span>
-						</div>
+					<div className='col-md-3'>
+						<Toggle label='Listed by :' data={data} name='listedBy' />
 					</div>
 					<div className='col-md-3'>
-						<div className='d-flex mt-4'>
-							<label>Parking Lot :</label>
-							<span>
-								<div class='custom-control custom-radio custom-control-inline ml-4'>
-									<input
-										type='radio'
-										id='customRadioInline5'
-										name='customRadioInline5'
-										class='custom-control-input'
-									/>
-									<label class='custom-control-label' for='customRadioInline5'>
-										Yes
-									</label>
-								</div>
-								<div class='custom-control custom-radio custom-control-inline ml-3'>
-									<input
-										type='radio'
-										id='customRadioInline6'
-										name='customRadioInline5'
-										class='custom-control-input'
-									/>
-									<label class='custom-control-label' for='customRadioInline6'>
-										No
-									</label>
-								</div>
-							</span>
-						</div>
+						<Toggle label='Furnished :' data={data} name='furnished' />
+					</div>
+					<div className='col-md-3'>
+						<Toggle label='Pets allowed :' data={data} name='petsAllowed' />
+					</div>
+					<div className='col-md-3'>
+						<Toggle label='Parking Lot :' data={data} name='parkingLot' />
 					</div>
 					<div className='col-md-3'>
 						<div className='cv-form-group input-group mb-3 mt-3'>
@@ -197,22 +99,3 @@ export default class Property extends Component {
 		);
 	}
 }
-
-// Surface size
-// 175 m2
-// Bedrooms
-// 3
-// Bathrooms
-// 2
-// Type of Property
-// Flat
-// Listed by
-// Owner
-// Parking Lot
-// Yes
-// Broker fee
-// No
-// Furnished
-// No
-// Pets allowed
-// Yes

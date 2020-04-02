@@ -8,7 +8,7 @@ export default class TextInput extends Component {
 	render() {
 		const { label, icon, iconRight, name, type, value, onChange } = this.props;
 		return (
-			<div className='cv-form-group input-group mb-3 mt-4'>
+			<div className='cv-form-group input-group mb-3 mt-4 px-3'>
 				<div className='input-group-prepend'>
 					<span className='input-group-text bg-white rounded-0 cv-chev left'>
 						{icon.name ? <ion-icon name={icon.name} /> : <ion-icon src={icon.src} />}
@@ -29,7 +29,8 @@ export default class TextInput extends Component {
 							{iconRight.name ? (
 								<ion-icon name={iconRight.name} />
 							) : (
-								<ion-icon src={iconRight.src} />
+								(iconRight.text && iconRight.text) ||
+								(iconRight.src && <ion-icon src={iconRight.src} />)
 							)}
 						</span>
 					</div>

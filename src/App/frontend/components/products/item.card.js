@@ -30,7 +30,7 @@ function Card({ data }) {
 			return (
 				<div className='item-card-md p-1 p-md-2 flex-fill'>
 					<div key={i} className='card  w-100 bg-white border-0 shadow-xs p-md-2'>
-						<Link to={`/products/${e.name}`} className='banner_holder rounded'>
+						<a href={`/products/${e.id}`} className='banner_holder rounded'>
 							<div
 								className='banner_holderImage img-thumbnail'
 								style={{
@@ -38,21 +38,17 @@ function Card({ data }) {
 										AdImg})`,
 								}}
 							></div>
-						</Link>
+						</a>
 						<div className='card-footer bg-transparent overflow-hidden text-truncate'>
 							<span className='heart text-primary shadow-sm'>
-								<Like id={e.id} {...data} />
+								<Like data={data} product={e} />
 							</span>
-							<Link to={`/products/${e.name}`} className='card-text mb-1 text-truncate '>
+							<a href={`/products/${e.id}`} className='card-text mb-1 text-truncate '>
 								{e.name}
-							</Link>
+							</a>
 							<span className='d-flex align-items-center'>
 								{settingsPayload.data.currencyFlagDisplay && (
-									<img
-										className='flag-icon mr-1'
-										src={`http://localhost:5000/flags/${converted && converted.flag}`}
-										alt='flag'
-									/>
+									<img className='flag-icon mr-1' src={converted && converted.flag} alt='flag' />
 								)}
 								<small className='pr-2'>{converted && converted.currencyCode}</small>
 								<h6 className='card-text'>{value((converted && converted.price) || e.price)}</h6>

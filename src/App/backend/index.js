@@ -42,7 +42,7 @@ export class App extends React.Component {
 							<Route exact path='/admin/apps/chat' component={Chat} />
 							<Route exact path='/admin/users' component={Users} />
 							<Route exact path='/admin/orders' component={Orders} />
-							<Route exact path='/admin/pricing' component={Pricing} />
+							{/* <Route exact path='/admin/pricing' component={Pricing} /> */}
 							<Route exact path='/admin/settings/website' component={settings} />
 							<Route exact path='/admin/settings/payments' component={settings} />
 							<Route exact path='/admin/settings/intergrations' component={settings} />

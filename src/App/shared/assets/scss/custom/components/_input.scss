@@ -22,6 +22,7 @@ label.false {
 .select-dropdown {
 	max-height: 33vh;
 	overflow: scroll;
+	border-radius: $border-radius !important;
 }
 .dropdown-icon {
 	ion-icon {
@@ -90,8 +91,6 @@ label.false {
 
 	label {
 		color: rgba(0, 0, 0, 0.5);
-		font-size: 16px;
-		font-weight: normal;
 		position: absolute;
 		pointer-events: none;
 		left: 0;
@@ -100,7 +99,7 @@ label.false {
 		-moz-transition: 0.2s ease all;
 		-webkit-transition: 0.2s ease all;
 		&.left {
-			margin-left: 2.1rem;
+			margin-left: 3.1rem;
 			padding-bottom: 0.2rem;
 		}
 	}
@@ -242,4 +241,25 @@ label.false {
 		width: 100%;
 		color: $color-red;
 	}
+}
+
+.input-tag {
+	font-size: 1rem;
+	.cv-chev {
+		display: flex;
+		align-items: center;
+		padding: 0.375rem 0;
+		margin-bottom: 0;
+		font-weight: 400;
+		line-height: 1;
+		text-align: center;
+		white-space: nowrap;
+	}
+	label{
+		
+	}
+}
+
+.fr-box.fr-basic{
+	margin: 0 1rem;
 }

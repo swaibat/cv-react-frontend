@@ -69,7 +69,9 @@ class AdminItems extends Component {
 												<span className='vl mr-2' />
 												<img className='table-img border-left' src={img} alt='' />
 											</td>
-											<td className='text-capitalize'>{product.name}</td>
+											<td className='text-capitalize vw-50'>
+												<span className='text-truncate w-50'>{product.name}</span>
+											</td>
 											<td>{product.price}</td>
 											<td>
 												<small>{timeago.format(new Date(product.createdAt))}</small>

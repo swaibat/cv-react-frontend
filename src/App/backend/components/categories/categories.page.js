@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import Categorys from '../../../backend/components/categories/redux/actions';
 import constants from '../../../shared/redux/constants';
 import Sidenav from '../navigation/sidenav';
-import AdminNav from '../navigation/admin.nav.component';
 import { token } from '../../../shared/helper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -85,7 +84,6 @@ class Categories extends Component {
 
 		return (
 			<>
-				<Sidenav />
 				<div className='w-100 bg-white p-3 mt-4 rounded'>
 					<button
 						className='btn btn-sm btn-success'
@@ -100,11 +98,11 @@ class Categories extends Component {
 						{payload &&
 							payload.data.map((category, index) => {
 								return (
-									<div key={index} className='col-md-3 p-0 m-0'>
-										<div className='card rounded-0 border-0'>
-											<div className='card-header p-2 d-flex align-items-center bg-white border-0 '>
-												<span className='category-icon d-flex justify-content-center align-items-center'>
-													<FontAwesomeIcon className='admin-nav-icons' icon={faGlobeAfrica} />
+									<div key={index} className='col-md-4 p-0 m-0'>
+										<div className='card rounded-0 border-bottom-0 border-right-0'>
+											<div className='card-header shadow-xs p-2 d-flex align-items-center bg-white border-0'>
+												<span className='icons-md d-flex justify-content-center align-items-center'>
+													<ion-icon name='gift-outline' />
 												</span>
 												<span className='card-text ml-2 text-truncate'>
 													{this.state && category.id === parseInt(this.state.ParentId)
@@ -244,7 +242,7 @@ class Categories extends Component {
 													</span>
 												)}
 											</div>
-											<div className='card-footer rounded-0 d-flex p-2 align-items-center bg-white border-bottom'>
+											<div className='card-footer shadow-top-xs rounded-0 d-flex p-2 align-items-center bg-white border-0'>
 												<span className='card-text text-truncate'>
 													{this.state && category.id === parseInt(this.state.ParentId)
 														? this.state.parentname

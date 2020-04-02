@@ -9,42 +9,31 @@ import { token } from '../../../shared/helper';
 export class Like extends React.Component {
 	constructor(props) {
 		super(props);
-
-		this.state = {
-			pending: true,
-			data: [],
-			id: this.props.id,
-		};
-		this.handleFavourite = this.handleFavourite.bind(this);
+		this.state = {};
 	}
 	componentDidMount() {
 		this.props.favourites(token);
 	}
-	handleFavourite(e) {
-		const id = e.target.id.split('-')[1];
-		this.setState({ id });
-		e.target.checked ? this.props.favourite(id, token) : this.props.delFavourite(id, token);
+	handleFavourite(product, e) {
+		e.target.checked
+			? this.props.favourite(product.id, token)
+			: this.props.delFavourite(product.id, token);
+		this.props.data.setState({ favourite: [...this.props.data.state.favourite, product] });
 	}
-	componentWillReceiveProps(nextProps) {
-		// Any time props.email changes, update state.
-		if (nextProps.viewPayload !== this.props.viewPayload) {
-			this.setState({
-				data: nextProps.viewPayload.data,
-			});
-		}
-	}
+
 	render() {
-		const { id, data } = this.state;
+		const { favourite } = this.props.data.state;
+		const { product } = this.props;
 		return (
 			<>
 				<input
-					onChange={this.handleFavourite}
+					onChange={this.handleFavourite.bind(this, product)}
 					className='like-checkbox'
 					type='checkbox'
-					id={`checkbox-${id}`}
-					checked={data.find(e => e.ProductId === id)}
+					id={`checkbox-${product.id}`}
+					checked={favourite.find(e => e.id === product.id)}
 				/>
-				<label className='like-label' htmlFor={`checkbox-${id}`}>
+				<label className='like-label' htmlFor={`checkbox-${product.id}`}>
 					<svg id='heart-svg' viewBox='467 392 58 57' xmlns='http://www.w3.org/2000/svg'>
 						<g id='Group' fill='none' fill-rule='evenodd' transform='translate(467 392)'>
 							<path

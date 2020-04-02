@@ -52,9 +52,9 @@ const allReducers = combineReducers({
 	OnlineUsers: Chat.onlineUsers,
 	DeleteUser: Auth.deleteUser,
 	DeleteProduct: Products.deleteProduct,
-	GetPlans: Plan.getPlan,
-	UpdatePlans: Plan.updatePlan,
-	CreatePlans: Plan.createPlan,
+	// GetPlans: Plan.getPlan,
+	// UpdatePlans: Plan.updatePlan,
+	// CreatePlans: Plan.createPlan,
 });
 
 export default allReducers;
