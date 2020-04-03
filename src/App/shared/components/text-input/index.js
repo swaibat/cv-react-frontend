@@ -25,7 +25,11 @@ export default class TextInput extends Component {
 				/>
 				{iconRight && (
 					<div className='input-group-prepend'>
-						<span className='input-group-text bg-white rounded-0 cv-chev right'>
+						<span
+							type='button'
+							className='input-group-text bg-white rounded-0 cv-chev right'
+							onClick={iconRight.onClick && iconRight.onClick}
+						>
 							{iconRight.name ? (
 								<ion-icon name={iconRight.name} />
 							) : (

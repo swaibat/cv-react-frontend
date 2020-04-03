@@ -10,9 +10,12 @@ import { connect } from 'react-redux';
 class CreateUser extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
+		this.state = {
+			viewPassword: false,
+		};
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleToggle = this.handleToggle.bind(this);
 	}
 	handleChange(event) {
 		event.preventDefault();
@@ -25,7 +28,11 @@ class CreateUser extends Component {
 		event.preventDefault();
 		this.props.createUser(this.state, token);
 	}
+	handleToggle() {
+		this.setState({ viewPassword: !this.state.viewPassword });
+	}
 	render() {
+		const { viewPassword } = this.state;
 		return (
 			<div
 				className='modal fade'
@@ -84,7 +91,7 @@ class CreateUser extends Component {
 									<Select
 										{...{
 											title: 'Select user role',
-											name: 'role',
+											name: 'roleId',
 											type: 'text',
 											onChange: this.handleChange,
 											data: [
@@ -118,14 +125,28 @@ class CreateUser extends Component {
 										}}
 									/>
 								</div>
-								<div className='col-md-12'>
+								<div className='col-md-6'>
+									<TextInput
+										{...{
+											label: 'company',
+											name: 'company',
+											type: 'text',
+											icon: { name: 'briefcase-outline' },
+											onChange: this.handleChange,
+										}}
+									/>
+								</div>
+								<div className='col-md-6'>
 									<TextInput
 										{...{
 											label: 'password',
 											name: 'password',
-											type: 'password',
+											type: viewPassword ? 'text' : 'password',
 											icon: { name: 'lock-closed-outline' },
-											iconRight: { name: 'eye-outline' },
+											iconRight: {
+												name: viewPassword ? 'eye-off-outline' : 'eye-outline',
+												onClick: this.handleToggle,
+											},
 											onChange: this.handleChange,
 										}}
 									/>
@@ -139,6 +160,7 @@ class CreateUser extends Component {
 								>
 									Close
 								</button>
+
 								<button type='submit' className='btn btn-sm btn-primary'>
 									Save
 								</button>
