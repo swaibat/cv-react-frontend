@@ -20,7 +20,7 @@ class Page extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			actionUser: { Role: { name: '' } },
+			data: { Role: { name: '' } },
 		};
 	}
 
@@ -28,7 +28,7 @@ class Page extends Component {
 		this.props.get(token);
 	}
 	handleClick(data) {
-		this.setState({ actionUser: data });
+		this.setState({ data });
 	}
 
 	render() {
@@ -129,9 +129,9 @@ class Page extends Component {
 						</table>
 					</div>
 				</div>
-				<CreateModal {...this} />
-				<EditModal {...this} />
-				<DeleteModal {...this} />
+				{/* <CreateModal {...this} /> */}
+				<EditModal data={this.state.data} />
+				{/* <DeleteModal {...this} /> */}
 			</>
 		);
 	}

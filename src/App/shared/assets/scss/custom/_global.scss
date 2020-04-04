@@ -355,3 +355,7 @@ span {
 		margin-right: 0.3rem;
 	}
 }
+
+.custom-checkbox .custom-control-label::before {
+    border-radius: 0.1rem;
+}

@@ -4,17 +4,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Categorys from '../../../backend/components/categories/redux/actions';
 import constants from '../../../shared/redux/constants';
-import Sidenav from '../navigation/sidenav';
 import { token } from '../../../shared/helper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faGlobeAfrica,
-	faTrash,
-	faPlus,
-	faEdit,
-	faChevronDown,
-} from '@fortawesome/free-solid-svg-icons';
-import { DeleteModal, CreateModal, UpdateModal, BulkDel } from '../faq/modals';
+import { faTrash, faPlus, faEdit, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import DeleteModal from './category.delete';
+import CreateModal from './category.create';
 
 class Categories extends Component {
 	constructor(props) {
@@ -33,7 +27,6 @@ class Categories extends Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleInput = this.handleInput.bind(this);
 		this.handleClick = this.handleClick.bind(this);
-		this.handleDelete = this.handleDelete.bind(this);
 		this.handleUpdate = this.handleUpdate.bind(this);
 	}
 	async componentDidMount() {
@@ -43,20 +36,9 @@ class Categories extends Component {
 		this.setState({ categories: categories.payload.data });
 	}
 
-	handleClick = e => {
+	handleClick = (data, e) => {
 		e.stopPropagation();
-		this.setState({
-			ParentId: e.target.id,
-			parentname: e.target.name.split('>')[0],
-			name: e.target.name.split('>')[1],
-		});
-	};
-	handleDelete = e => {
-		e.preventDefault();
-		const { ParentId } = this.state;
-		ParentId
-			? this.props.delete(token, ParentId)
-			: this.state.bulk.map(sub => this.props.delete(token, sub.split('>')[1]));
+		this.setState(data);
 	};
 	handleUpdate = e => {
 		e.preventDefault();
@@ -113,12 +95,11 @@ class Categories extends Component {
 													{category.sub.length}
 												</span>
 												<button
-													name={`${category.name}>${''}`}
 													id={category.id}
 													className='btn btn-sm ml-1'
 													data-toggle='modal'
 													data-target='#exampleModalCenter'
-													onClick={this.handleClick}
+													onClick={this.handleClick.bind(this, category)}
 												>
 													<FontAwesomeIcon className='' icon={faPlus} />
 												</button>
@@ -174,24 +155,22 @@ class Categories extends Component {
 																	onClick={this.handleClick}
 																>
 																	<button
-																		name={`${category.name}>${sub.name}`}
 																		id={sub.id}
 																		type='button'
 																		className='btn text-primary'
 																		data-toggle='modal'
 																		data-target='#updateModel'
-																		onClick={this.handleClick}
+																		onClick={this.handleClick.bind(this, sub)}
 																	>
 																		<FontAwesomeIcon className='' icon={faEdit} />
 																	</button>
 																	<button
-																		name={`${category.name}>${sub.name}`}
 																		id={sub.id}
 																		type='button'
 																		className='btn text-danger'
 																		data-toggle='modal'
 																		data-target='.bd-example-modal-sm'
-																		onClick={this.handleClick}
+																		onClick={this.handleClick.bind(this, sub)}
 																	>
 																		<FontAwesomeIcon icon={faTrash} />
 																	</button>
@@ -223,7 +202,7 @@ class Categories extends Component {
 																className='btn btn-secondary btn-sm'
 																data-toggle='modal'
 																data-target='#exampleModalCenter'
-																onClick={this.handleClick}
+																onClick={this.handleClick.bind(this, category)}
 															>
 																<FontAwesomeIcon className='mr-2' icon={faPlus} />
 																add one
@@ -260,24 +239,22 @@ class Categories extends Component {
 														onClick={this.handleClick}
 													>
 														<button
-															name={`${category.name}>${''}`}
 															id={category.id}
 															type='button'
 															className='btn text-primary'
 															data-toggle='modal'
 															data-target='#updateModel'
-															onClick={this.handleClick}
+															onClick={this.handleClick.bind(this, category)}
 														>
 															<FontAwesomeIcon className='' icon={faEdit} />
 														</button>
 														<button
-															name={`${category.name}>${''}`}
 															id={category.id}
 															type='button'
 															className='btn text-danger'
 															data-toggle='modal'
 															data-target='.bd-example-modal-sm'
-															onClick={this.handleClick}
+															onClick={this.handleClick.bind(this, category)}
 														>
 															<FontAwesomeIcon icon={faTrash} />
 														</button>
@@ -291,10 +268,10 @@ class Categories extends Component {
 					</div>
 				</div>
 
-				<CreateModal data={this} />
-				<DeleteModal data={this} />
-				<UpdateModal data={this} />
-				<BulkDel data={this} />
+				<CreateModal data={this.state} />
+				<DeleteModal data={this.state} />
+				{/* <UpdateModal data={this} />
+				<BulkDel data={this} /> */}
 			</>
 		);
 	}

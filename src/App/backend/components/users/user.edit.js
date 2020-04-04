@@ -5,13 +5,23 @@ import Select from '../../../shared/components/select-input';
 export default class EditUser extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
-		// this.handleChange = this.handleChange.bind(this);
+		this.state = {
+			data: { name: '', Role: { name: '' } },
+		};
+		this.handleChange = this.handleChange.bind(this);
+	}
+	handleChange(event) {
+		event.preventDefault();
+		const { name, value } = event.target;
+		this.setState({ data: { ...this.state.data, [name]: value } });
+	}
+	componentWillReceiveProps(nextProps) {
+		if (nextProps.data !== this.props.data) {
+			this.setState({ data: nextProps.data });
+		}
 	}
 	render() {
-		const {
-			state: { actionUser },
-		} = this.props;
+		const { data } = this.state;
 		return (
 			<div
 				className='modal fade'
@@ -39,7 +49,7 @@ export default class EditUser extends Component {
 											label: 'firstname',
 											name: 'firstName',
 											type: 'text',
-											value: actionUser.firstName,
+											value: data.firstName,
 											icon: { name: 'person-outline' },
 											onChange: this.handleChange,
 										}}
@@ -51,56 +61,40 @@ export default class EditUser extends Component {
 											label: 'lastname',
 											name: 'lastname',
 											type: 'text',
-											value: actionUser.lastName,
+											value: data.lastName,
 											icon: { name: 'person-add-outline' },
+											onChange: this.handleChange,
 										}}
 									/>
 								</div>
 								<div className='col-md-9'>
 									<TextInput
 										{...{
-											label: 'email address',
-											name: 'email',
-											type: 'email',
-											value: actionUser.email,
-											icon: { name: 'mail-outline' },
+											label: 'company',
+											name: 'company',
+											type: 'text',
+											value: data.company,
+											icon: { name: 'briefcase-outline' },
+											onChange: this.handleChange,
 										}}
 									/>
 								</div>
-								{/* <div className='col-md-3'>
-									<div className='cv-form-group form-group mt-4'>
-										<Select
-											title='Select user role'
-											name='role'
-											type='text'
-											value={actionUser && actionUser.Role.name}
-											data={[
+								<div className='col-md-3'>
+									<Select
+										{...{
+											title: 'Select user role',
+											name: 'role',
+											type: 'text',
+											onChange: this.handleChange,
+											data: [
 												{ id: 1, name: 'admin' },
 												{ id: 2, name: 'vendor' },
 												{ id: 2, name: 'user' },
-											]}
-											pam={this}
-										/>
-									</div>
-								</div> */}
-								<div className='col-md-3'>
-									<div className='cv-form-group form-group mt-4'>
-										<Select
-											{...{
-												title: 'Select user role',
-												name: 'role',
-												type: 'text',
-												onChange: this.handleChange,
-												data: [
-													{ id: 1, name: 'admin' },
-													{ id: 2, name: 'vendor' },
-													{ id: 2, name: 'user' },
-												],
-												value: actionUser && actionUser.Role.name,
-												pam: this,
-											}}
-										/>
-									</div>
+											],
+											value: data && data.Role.name,
+											pam: this,
+										}}
+									/>
 								</div>
 								<div className='col-md-7'>
 									<TextInput
@@ -108,8 +102,9 @@ export default class EditUser extends Component {
 											label: 'physical address',
 											name: 'address',
 											type: 'text',
-											value: actionUser.address,
+											value: data.address,
 											icon: { name: 'locate-outline' },
+											onChange: this.handleChange,
 										}}
 									/>
 								</div>
@@ -119,20 +114,9 @@ export default class EditUser extends Component {
 											label: 'Telephone number',
 											name: 'telephone',
 											type: 'number',
-											value: actionUser.telephone,
+											value: data.telephone,
 											icon: { name: 'call-outline' },
-										}}
-									/>
-								</div>
-								<div className='col-md-12'>
-									<TextInput
-										{...{
-											label: 'password',
-											name: 'Password',
-											type: 'password',
-											value: actionUser.Password,
-											icon: { name: 'lock-closed-outline' },
-											iconRight: { name: 'eye-outline' },
+											onChange: this.handleChange,
 										}}
 									/>
 								</div>
