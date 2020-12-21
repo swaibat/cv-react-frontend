@@ -204,7 +204,7 @@ class Verify extends Component {
 																						onChange={this.handleInput}
 																						checked={this.state.channel === 'sms'}
 																					/>
-																					<label className='custom-control-label' htmlFor='sms'>
+																					<label className='custom-control-label' htmlhtmlFor='sms'>
 																						Receive an Sms
 																					</label>
 																				</div>
@@ -216,7 +216,10 @@ class Verify extends Component {
 																						className='custom-control-input'
 																						onChange={this.handleInput}
 																					/>
-																					<label className='custom-control-label' htmlFor='call'>
+																					<label
+																						className='custom-control-label'
+																						htmlhtmlFor='call'
+																					>
 																						Receve a Voice call
 																					</label>
 																				</div>

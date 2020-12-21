@@ -26,7 +26,7 @@ function ProductSettings() {
 							id='switch1'
 							checked
 						/>
-						<label className='custom-control-label' htmlFor='switch1' />
+						<label className='custom-control-label' htmlhtmlFor='switch1' />
 					</div>
 				</li>
 				<li className='d-flex justify-content-between py-3 border-bottom'>
@@ -45,7 +45,7 @@ function ProductSettings() {
 							id='switch1'
 							checked
 						/>
-						<label className='custom-control-label' htmlFor='switch1' />
+						<label className='custom-control-label' htmlhtmlFor='switch1' />
 					</div>
 				</li>
 				<li className='d-flex justify-content-between py-3'>
@@ -64,7 +64,7 @@ function ProductSettings() {
 							id='switch1'
 							checked
 						/>
-						<label className='custom-control-label' htmlFor='switch1' />
+						<label className='custom-control-label' htmlhtmlFor='switch1' />
 					</div>
 				</li>
 				<div className='form-row'>

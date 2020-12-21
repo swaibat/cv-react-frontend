@@ -7,10 +7,7 @@ export class App extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				{!window.location.pathname.match('admin') && <UserApp />}
-				{Token().role && Token().role.match('admin') && window.location.pathname.match('admin') && (
-					<AdminApp />
-				)}
+				<AdminApp />
 			</React.Fragment>
 		);
 	}

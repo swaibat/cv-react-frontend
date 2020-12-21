@@ -25,73 +25,73 @@ class Others extends Component {
 					>
 						<li className='form-check nav-item py-1 ml-2'>
 							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
-							<label className='form-check-label' htmlFor='defaultCheck1'>
+							<label className='form-check-label' htmlhtmlFor='defaultCheck1'>
 								Apple
 							</label>
 						</li>
 						<li className='form-check nav-item py-1 ml-2'>
 							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
-							<label className='form-check-label' htmlFor='defaultCheck1'>
+							<label className='form-check-label' htmlhtmlFor='defaultCheck1'>
 								Samsung
 							</label>
 						</li>
 						<li className='form-check nav-item py-1 ml-2'>
 							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
-							<label className='form-check-label' htmlFor='defaultCheck1'>
+							<label className='form-check-label' htmlhtmlFor='defaultCheck1'>
 								Huawei
 							</label>
 						</li>
 						<li className='form-check nav-item py-1 ml-2'>
 							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
-							<label className='form-check-label' htmlFor='defaultCheck1'>
+							<label className='form-check-label' htmlhtmlFor='defaultCheck1'>
 								Techno
 							</label>
 						</li>
 						<li className='form-check nav-item py-1 ml-2'>
 							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
-							<label className='form-check-label' htmlFor='defaultCheck1'>
+							<label className='form-check-label' htmlhtmlFor='defaultCheck1'>
 								infinix
 							</label>
 						</li>
 						<li className='form-check nav-item py-1 ml-2'>
 							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
-							<label className='form-check-label' htmlFor='defaultCheck1'>
+							<label className='form-check-label' htmlhtmlFor='defaultCheck1'>
 								LG
 							</label>
 						</li>
 						<li className='form-check nav-item py-1 ml-2'>
 							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
-							<label className='form-check-label' htmlFor='defaultCheck1'>
+							<label className='form-check-label' htmlhtmlFor='defaultCheck1'>
 								Nokia
 							</label>
 						</li>
 						<li className='form-check nav-item py-1 ml-2'>
 							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
-							<label className='form-check-label' htmlFor='defaultCheck1'>
+							<label className='form-check-label' htmlhtmlFor='defaultCheck1'>
 								One plus
 							</label>
 						</li>
 						<li className='form-check nav-item py-1 ml-2'>
 							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
-							<label className='form-check-label' htmlFor='defaultCheck1'>
+							<label className='form-check-label' htmlhtmlFor='defaultCheck1'>
 								Itel
 							</label>
 						</li>
 						<li className='form-check nav-item py-1 ml-2'>
 							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
-							<label className='form-check-label' htmlFor='defaultCheck1'>
+							<label className='form-check-label' htmlhtmlFor='defaultCheck1'>
 								Black berry
 							</label>
 						</li>
 						<li className='form-check nav-item py-1 ml-2'>
 							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
-							<label className='form-check-label' htmlFor='defaultCheck1'>
+							<label className='form-check-label' htmlhtmlFor='defaultCheck1'>
 								Motorolla
 							</label>
 						</li>
 						<li className='form-check nav-item py-1 ml-2'>
 							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
-							<label className='form-check-label' htmlFor='defaultCheck1'>
+							<label className='form-check-label' htmlhtmlFor='defaultCheck1'>
 								others
 							</label>
 						</li>
@@ -151,13 +151,13 @@ class Others extends Component {
 					<ul className='nav-second-level collapse' id='collapseSubItems33'>
 						<li className='form-check nav-item py-1 ml-2'>
 							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
-							<label className='form-check-label' htmlFor='defaultCheck1'>
+							<label className='form-check-label' htmlhtmlFor='defaultCheck1'>
 								New
 							</label>
 						</li>
 						<li className='form-check nav-item py-1 ml-2'>
 							<input className='form-check-input' type='checkbox' value='' id='defaultCheck1' />
-							<label className='form-check-label' htmlFor='defaultCheck1'>
+							<label className='form-check-label' htmlhtmlFor='defaultCheck1'>
 								Used
 							</label>
 						</li>

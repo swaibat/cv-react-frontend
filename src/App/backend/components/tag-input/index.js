@@ -62,7 +62,10 @@ export default class InputTag extends React.Component {
 									this.tagInput = c;
 								}}
 							/>
-							<label className={`cv-label ${tags.length > 0 && 'active-tag'}`} htmlFor='category'>
+							<label
+								className={`cv-label ${tags.length > 0 && 'active-tag'}`}
+								htmlhtmlFor='category'
+							>
 								{`${this.props.label || 'Enter Tags e.g food, foo,'} separated by commas`}
 							</label>
 						</li>

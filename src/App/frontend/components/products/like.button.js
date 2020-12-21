@@ -33,7 +33,7 @@ export class Like extends React.Component {
 					id={`checkbox-${product.id}`}
 					checked={favourite.find(e => e.id === product.id)}
 				/>
-				<label className='like-label' htmlFor={`checkbox-${product.id}`}>
+				<label className='like-label' htmlhtmlFor={`checkbox-${product.id}`}>
 					<svg id='heart-svg' viewBox='467 392 58 57' xmlns='http://www.w3.org/2000/svg'>
 						<g id='Group' fill='none' fill-rule='evenodd' transform='translate(467 392)'>
 							<path

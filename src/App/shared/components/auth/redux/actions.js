@@ -1,6 +1,7 @@
 import constant from '../../../redux/constants';
 import Api from '../../../Api';
 import { toast } from 'react-toastify';
+import { token } from '../../../helper';
 
 const Auth = {
 	async facebookLogin(accessToken) {
@@ -27,7 +28,7 @@ const Auth = {
 		}
 	},
 
-	async register(payload, token) {
+	async register(payload) {
 		try {
 			const result = await Api.register(payload, token);
 			toast.success(result.data.message);
@@ -56,7 +57,7 @@ const Auth = {
 		}
 	},
 
-	async logout(token) {
+	async logout() {
 		try {
 			const result = await Api.logout(token);
 			return { type: constant.LOGOUT_SUCCESS, payload: result.data };
@@ -64,7 +65,7 @@ const Auth = {
 			return { type: constant.LOGOUT_ERROR };
 		}
 	},
-	async deleteUser(token, id) {
+	async deleteUser(id) {
 		try {
 			const result = await Api.deleteUser(token, id);
 			toast.success(result.data.message);

@@ -1,32 +1,34 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import constants from '../../../shared/redux/constants';
-import { token } from '../../../shared/helper';
-import Product from './redux/actions';
+import React, { useState } from 'react';
+import Products from './redux/actions';
+import { useDispatch } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import UseReduxSelector from '../../../shared/helper/use.selector';
 
-class DeleteModal extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {};
-		this.handleDelete = this.handleDelete.bind(this);
-	}
-	handleDelete() {
-		const {
-			actionProduct: { id },
-		} = this.props.state;
-		this.props.deleteProduct(token, id);
-	}
-	render() {
-		const {
-			state: { actionProduct },
-		} = this.props;
-		return (
+const DeleteProduct = ({ product }) => {
+	const dispatch = useDispatch();
+	const [delStatus, setDelStatus] = useState();
+	const handleDelete = async () => {
+		dispatch(await Products.deleteProduct(product.id));
+		dispatch(await Products.items());
+	};
+	UseReduxSelector('DeleteProduct', setDelStatus);
+	return (
+		<>
+			<button
+				type='button'
+				data-toggle='modal'
+				data-target={`#deleteModal-${product.id}`}
+				className='btn text-danger'
+			>
+				<FontAwesomeIcon icon={faTrash} />
+			</button>
 			<div
-				className='modal fade'
-				id='deleteModal'
+				className={`modal fade`}
+				id={`deleteModal-${product.id}`}
 				tabIndex='-1'
 				role='dialog'
-				aria-labelledby='deleteModal'
+				aria-labelledby={`deleteModal-${product.id}`}
 				aria-hidden='true'
 			>
 				<div className='modal-dialog modal-dialog-centered'>
@@ -41,7 +43,7 @@ class DeleteModal extends Component {
 						</div>
 						<div className='modal-body text-center'>
 							<p className='mb-2'>Are you sure you wan to delete</p>
-							<emp className='text-primary text-capitalize text-truncate'>{actionProduct.name}</emp>
+							<p className='text-primary text-capitalize text-truncate'>{product.name}</p>
 						</div>
 						<div className='modal-footer'>
 							<button
@@ -51,34 +53,15 @@ class DeleteModal extends Component {
 							>
 								Cancel
 							</button>
-							<button type='button' onClick={this.handleDelete} className='btn btn-sm btn-danger'>
+							<button type='button' onClick={handleDelete} className='btn btn-sm btn-danger'>
 								Delete
 							</button>
 						</div>
 					</div>
 				</div>
 			</div>
-		);
-	}
-}
-
-const mapDispatchToProps = dispatch => {
-	return {
-		init: () =>
-			dispatch({
-				type: constants.DELETE_PRODUCT_PENDING,
-				pending: true,
-			}),
-		deleteProduct: async (token, id) => dispatch(await Product.deleteProduct(token, id)),
-	};
+		</>
+	);
 };
 
-const mapStateToProps = state => {
-	return {
-		payload: state.DeleteProduct.payload,
-		pending: state.DeleteProduct.pending,
-		error: state.DeleteProduct.error,
-	};
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(DeleteModal);
+export default DeleteProduct;

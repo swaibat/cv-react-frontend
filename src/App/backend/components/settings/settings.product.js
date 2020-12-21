@@ -30,7 +30,7 @@ class ProductSettings extends Component {
 			>
 				<form className='h-100' onSubmit={handleSubmit}>
 					<div className='form-group form-row align-items-center'>
-						<label htmlFor='inputPassword' className='col-md-8 col-form-label'>
+						<label htmlhtmlFor='inputPassword' className='col-md-8 col-form-label'>
 							<div className=''>
 								<h6>Seletect default currency</h6>
 								<small className='font-weight-light'>
@@ -111,7 +111,7 @@ class ProductSettings extends Component {
 								id='autoCurrency'
 								onChange={handleInput}
 							/>
-							<label className='custom-control-label' htmlFor='autoCurrency' />
+							<label className='custom-control-label' htmlhtmlFor='autoCurrency' />
 						</div>
 					</li>
 					<li className='d-flex justify-content-between py-3 border-bottom'>
@@ -131,7 +131,7 @@ class ProductSettings extends Component {
 								id='currencyFlagDisplay'
 								onChange={handleInput}
 							/>
-							<label className='custom-control-label' htmlFor='currencyFlagDisplay' />
+							<label className='custom-control-label' htmlhtmlFor='currencyFlagDisplay' />
 						</div>
 					</li>
 					<li className='d-flex justify-content-between align-items-center border-bottom py-3'>
@@ -152,7 +152,7 @@ class ProductSettings extends Component {
 									className='custom-control-input'
 									onChange={handleInput}
 								/>
-								<label className='custom-control-label' htmlFor='currencyDisplayBy-code'>
+								<label className='custom-control-label' htmlhtmlFor='currencyDisplayBy-code'>
 									code <small>( USD )</small>
 								</label>
 							</div>
@@ -165,7 +165,7 @@ class ProductSettings extends Component {
 									className='custom-control-input'
 									onChange={handleInput}
 								/>
-								<label className='custom-control-label' htmlFor='currencyDisplayBy-symbol'>
+								<label className='custom-control-label' htmlhtmlFor='currencyDisplayBy-symbol'>
 									symbol <small>( &#36; )</small>
 								</label>
 							</div>
@@ -188,7 +188,7 @@ class ProductSettings extends Component {
 								id='autoProductApproval'
 								onChange={handleInput}
 							/>
-							<label className='custom-control-label' htmlFor='autoProductApproval' />
+							<label className='custom-control-label' htmlhtmlFor='autoProductApproval' />
 						</div>
 					</li>
 					<div className='form-row'>

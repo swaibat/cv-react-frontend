@@ -34,14 +34,14 @@ class Login extends Component {
 		this.setState({ visible: !this.state.visible });
 	}
 	handleInput = e => {
-		const { type, value } = e.target;
-		this.setState({ [type]: value });
+		const { name, value } = e.target;
+		this.setState({ [name]: value });
 	};
 
 	handleSubmit = e => {
 		e.preventDefault();
-		const { email, password } = this.state;
-		const user = { email, password };
+		const { username, password } = this.state;
+		const user = { username, password };
 		this.props.init();
 		this.props.login(user);
 	};
@@ -57,7 +57,7 @@ class Login extends Component {
 			<>
 				<Header />
 				<main className='d-flex flex-column align-items-center min-vh-85'>
-					{Token() ? <Redirect to='/' /> : ''}
+					{Token() ? <Redirect to='/admin/dashboard' /> : ''}
 					<div className='container m-auto'>
 						<div className='row justify-content-sm-center'>
 							<div className='col-sm-6 col-md-5'>
@@ -101,9 +101,10 @@ class Login extends Component {
 													</span>
 												</div>
 												<input
-													type='email'
+													type='text'
 													className='form-control custom-input'
-													placeholder='email'
+													placeholder='username'
+													name='username'
 													onChange={this.handleInput}
 													required
 												/>
@@ -123,6 +124,7 @@ class Login extends Component {
 													type={visible ? 'text' : 'password'}
 													className='form-control custom-input'
 													placeholder='password'
+													name='password'
 													onChange={this.handleInput}
 													required
 												/>

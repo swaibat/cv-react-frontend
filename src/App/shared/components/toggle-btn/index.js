@@ -20,12 +20,12 @@ class Toggle extends Component {
 			<div className='d-flex mt-4'>
 				<label>{label}</label>
 				<span className='ml-3 mt-1 checks-btns'>
-					<div class='button b2' id='button-10'>
-						<input type='checkbox' name={name} onChange={this.handleChange} class='checkbox' />
-						<div class='knobs'>
+					<div className='button b2' id='button-10'>
+						<input type='checkbox' name={name} onChange={this.handleChange} className='checkbox' />
+						<div className='knobs'>
 							<span>YES</span>
 						</div>
-						<div class='layer'></div>
+						<div className='layer'></div>
 					</div>
 				</span>
 			</div>

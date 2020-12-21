@@ -5,7 +5,7 @@
 import React, { Component } from 'react';
 import './select.scss';
 
-export default class componentName extends Component {
+export default class Select extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -54,7 +54,7 @@ export default class componentName extends Component {
 							className={`cv-label text-capitalize  ${
 								!this.state.title && !value ? 'inactive-tag' : ''
 							}`}
-							htmlFor='category'
+							htmlhtmlFor='category'
 						>
 							{this.props.title}
 						</label>

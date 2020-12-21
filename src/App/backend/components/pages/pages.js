@@ -69,7 +69,7 @@ class Page extends Component {
 														className='custom-control-input custom-control-input-lg'
 														id={index}
 													/>
-													<label className='custom-control-label' for={index} />
+													<label className='custom-control-label' htmlFor={index} />
 												</div>
 											</td>
 											<td className='text-right'>

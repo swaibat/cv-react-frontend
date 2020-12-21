@@ -41,7 +41,7 @@ class Code extends Component {
 					onSubmit={data.handleVerify}
 				>
 					<div className='py-3'>
-						<label htmlFor='vcode1'>Enter 6-digit verification code</label>
+						<label htmlhtmlFor='vcode1'>Enter 6-digit verification code</label>
 						<div className='vcode d-flex justify-content-center' id='vcode'>
 							<input
 								name='code1'

@@ -217,7 +217,7 @@ class Registerform extends Component {
 														value='1'
 														checked
 													/>
-													<label className='form-check-label' htmlFor='exampleRadios1'>
+													<label className='form-check-label' htmlhtmlFor='exampleRadios1'>
 														Buyer
 													</label>
 												</div>
@@ -229,7 +229,7 @@ class Registerform extends Component {
 														id='exampleRadios2'
 														value='2'
 													/>
-													<label className='form-check-label' htmlFor='exampleRadios2'>
+													<label className='form-check-label' htmlhtmlFor='exampleRadios2'>
 														Seller
 													</label>
 												</div>

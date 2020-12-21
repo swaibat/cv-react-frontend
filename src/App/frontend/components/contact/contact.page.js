@@ -20,7 +20,7 @@ class NotFound extends Component {
 											<div className='card-body'>
 												<form>
 													<div className='form-group'>
-														<label htmlFor='exampleFormControlInput1'>Email address</label>
+														<label htmlhtmlFor='exampleFormControlInput1'>Email address</label>
 														<input
 															type='email'
 															className='form-control'
@@ -29,7 +29,7 @@ class NotFound extends Component {
 														/>
 													</div>
 													<div className='form-group'>
-														<label htmlFor='exampleFormControlInput1'>Subject</label>
+														<label htmlhtmlFor='exampleFormControlInput1'>Subject</label>
 														<input
 															type='email'
 															className='form-control'
@@ -38,7 +38,7 @@ class NotFound extends Component {
 														/>
 													</div>
 													<div className='form-group'>
-														<label htmlFor='exampleFormControlTextarea1'>Enter message</label>
+														<label htmlhtmlFor='exampleFormControlTextarea1'>Enter message</label>
 														<textarea
 															className='form-control'
 															id='exampleFormControlTextarea1'

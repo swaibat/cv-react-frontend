@@ -1,18 +1,19 @@
 import constant from '../../../../shared/redux/constants';
 import Api from '../../../../shared/Api';
 import { toast } from 'react-toastify';
+import { token } from '../../../../shared/helper';
 
 const Category = {
 	async getCategories() {
 		try {
 			const result = await Api.getCategories();
-			return { type: constant.CATEGORY_SUCCESS, payload: result.data, allItems: result.data };
+			return { type: constant.CATEGORY_SUCCESS, payload: result.data.data, allItems: result.data };
 		} catch (error) {
 			return { type: constant.CATEGORY_ERROR, error: error.response.data };
 		}
 	},
 
-	async createCategory(data, token) {
+	async createCategory(data) {
 		try {
 			const result = await Api.createCategory(data, token);
 			toast.success(result.data.message);
@@ -23,7 +24,7 @@ const Category = {
 		}
 	},
 
-	async updateCategory(data, token, id) {
+	async updateCategory(data, id) {
 		try {
 			const result = await Api.updateCategory(data, token, id);
 			toast.success(result.data.message);
@@ -34,7 +35,7 @@ const Category = {
 		}
 	},
 
-	async deleteCategory(token, id) {
+	async deleteCategory(id) {
 		try {
 			const result = await Api.deleteCategory(token, id);
 			toast.success(result.data.message);

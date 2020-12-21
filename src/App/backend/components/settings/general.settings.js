@@ -13,29 +13,29 @@ function GeneralSettings() {
 			<form>
 				<div className='form-row'>
 					<div className='form-group col-md-12'>
-						<label htmlFor='inputEmail4'>Site Name</label>
+						<label htmlhtmlFor='inputEmail4'>Site Name</label>
 						<input type='email' className='form-control' id='inputEmail4' />
 					</div>
 					<div className='form-group col-md-12'>
-						<label htmlFor='inputPassword4'>Site Description</label>
+						<label htmlhtmlFor='inputPassword4'>Site Description</label>
 						<textarea className='form-control' placeholder='enter description'></textarea>
 					</div>
 				</div>
 				<div className='form-row'>
 					<div className='form-group col-md-4'>
-						<label htmlFor='inputZip'>Upload Favicon</label>
+						<label htmlhtmlFor='inputZip'>Upload Favicon</label>
 						<div className='input-group'>
 							<Dropzone accept='image/*' />
 						</div>
 					</div>
 					<div className='form-group col-md-4'>
-						<label htmlFor='inputZip'>Upload Light Logo</label>
+						<label htmlhtmlFor='inputZip'>Upload Light Logo</label>
 						<div className='input-group'>
 							<Dropzone accept='image/*' />
 						</div>
 					</div>
 					<div className='form-group col-md-4'>
-						<label htmlFor='inputZip'>Upload Dark Logo</label>
+						<label htmlhtmlFor='inputZip'>Upload Dark Logo</label>
 						<div className='input-group'>
 							<Dropzone accept='image/*' />
 						</div>
@@ -43,7 +43,7 @@ function GeneralSettings() {
 				</div>
 				<div className='form-row'>
 					<div className='form-group col-md-4'>
-						<label htmlFor='inputAddress2'>Company Address</label>
+						<label htmlhtmlFor='inputAddress2'>Company Address</label>
 						<input
 							type='text'
 							className='form-control'
@@ -52,7 +52,7 @@ function GeneralSettings() {
 						/>
 					</div>
 					<div className='form-group col-md-4'>
-						<label htmlFor='inputAddress'>Contact Email</label>
+						<label htmlhtmlFor='inputAddress'>Contact Email</label>
 						<input
 							type='text'
 							className='form-control'
@@ -61,7 +61,7 @@ function GeneralSettings() {
 						/>
 					</div>
 					<div className='form-group col-md-4'>
-						<label htmlFor='inputAddress'>Contact Phone</label>
+						<label htmlhtmlFor='inputAddress'>Contact Phone</label>
 						<input
 							type='text'
 							className='form-control'
@@ -72,18 +72,18 @@ function GeneralSettings() {
 				</div>
 				<div className='form-row'>
 					<div className='form-group col-md-4'>
-						<label htmlFor='inputCity'>Facebook Page</label>
+						<label htmlhtmlFor='inputCity'>Facebook Page</label>
 						<input type='text' className='form-control' id='inputCity' />
 					</div>
 					<div className='form-group col-md-4'>
-						<label htmlFor='inputState'>Twitter Page</label>
+						<label htmlhtmlFor='inputState'>Twitter Page</label>
 						<select id='inputState' className='form-control'>
 							<option defaultValue>Choose...</option>
 							<option>...</option>
 						</select>
 					</div>
 					<div className='form-group col-md-4'>
-						<label htmlFor='inputZip'>Youtube Channel</label>
+						<label htmlhtmlFor='inputZip'>Youtube Channel</label>
 						<input type='text' className='form-control' id='inputZip' />
 					</div>
 				</div>

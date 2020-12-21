@@ -40,7 +40,7 @@ export default class Property extends Component {
 								</span>
 							</div>
 							<span className='bar' />
-							<label className='cv-label' htmlFor='category'>
+							<label className='cv-label' htmlhtmlFor='category'>
 								Surface Area
 							</label>
 						</div>
@@ -65,7 +65,7 @@ export default class Property extends Component {
 								required
 							/>
 							<span className='bar' />
-							<label className='cv-label left' htmlFor='price'>
+							<label className='cv-label left' htmlhtmlFor='price'>
 								Number of Bedrooms
 							</label>
 						</div>
@@ -89,7 +89,7 @@ export default class Property extends Component {
 								required
 							/>
 							<span className='bar' />
-							<label className='cv-label left' htmlFor='price'>
+							<label className='cv-label left' htmlhtmlFor='price'>
 								Number of Bathrooms
 							</label>
 						</div>

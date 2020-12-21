@@ -10,9 +10,9 @@ export default class TextInput extends Component {
 		const { label, icon, iconRight, name, type, value, data } = this.props;
 		return (
 			<div className='cv-form-group cv-country-select input-group mb-3 mt-4'>
-				<div class='input-group mb-3'>
+				<div className='input-group mb-3'>
 					<div
-						class='input-group-prepend cv-chev-flag'
+						className='input-group-prepend cv-chev-flag'
 						id='dropdownMenuButton'
 						data-toggle='dropdown'
 						aria-haspopup='true'
@@ -33,12 +33,12 @@ export default class TextInput extends Component {
 							+ 1
 						</span>
 						<span className='cv-input-group-text input-group-text bg-white pl-0 dropdown-toggle' />
-						<div class='dropdown-menu dropdown-menu select-dropdown border-0 rounded-0 shadow-sm'>
+						<div className='dropdown-menu dropdown-menu select-dropdown border-0 rounded-0 shadow-sm'>
 							{Countries.map(country => {
 								return (
 									<span
 										onClick={() => data.setState({ country })}
-										class='dropdown-item d-flex align-items-center'
+										className='dropdown-item d-flex align-items-center'
 									>
 										<img height='20' width='30' src={country.flag} alt='country' />
 										<span className='ml-2'>

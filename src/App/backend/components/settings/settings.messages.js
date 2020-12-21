@@ -67,7 +67,7 @@ class MessageSettings extends Component {
 						</div>
 					</div>
 					<div className='form-group form-row'>
-						<label htmlFor='inputPassword' className='col-md-7 col-form-label'>
+						<label htmlhtmlFor='inputPassword' className='col-md-7 col-form-label'>
 							Twilo accountSid
 						</label>
 						<div className='col-md-5'>
@@ -79,7 +79,7 @@ class MessageSettings extends Component {
 						</div>
 					</div>
 					<div className='form-group form-row'>
-						<label htmlFor='inputPassword' className='col-md-7 col-form-label'>
+						<label htmlhtmlFor='inputPassword' className='col-md-7 col-form-label'>
 							Twilo authToken
 						</label>
 						<div className='col-md-5'>
@@ -91,7 +91,7 @@ class MessageSettings extends Component {
 						</div>
 					</div>
 					<div className='form-group form-row'>
-						<label htmlFor='inputPassword' className='col-md-7 col-form-label'>
+						<label htmlhtmlFor='inputPassword' className='col-md-7 col-form-label'>
 							Twilo serviceId
 						</label>
 						<div className='col-md-5'>

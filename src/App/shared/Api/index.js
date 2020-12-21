@@ -1,79 +1,79 @@
-import BASE_URL, { ipUrl, forexUrl } from '../config';
-import axios from 'axios';
+import { ipUrl, forexUrl } from '../config';
+import Router from './config';
 
 const apis = {
 	loginUser(data) {
-		return axios.post(`${BASE_URL}/users/login`, data);
+		return Router.post(`/users/login`, data);
 	},
 	register(data, token) {
-		return axios.post(`${BASE_URL}/users/register/${token}`, data);
+		return Router.post(`/users/register/${token}`, data);
 	},
 	verifyUser(data) {
-		return axios.post(`${BASE_URL}/users/verify`, data);
+		return Router.post(`/users/verify`, data);
 	},
 	verifyUserCode(telephone, code) {
-		return axios.post(`${BASE_URL}/users/verify/${code}`, telephone);
+		return Router.post(`/users/verify/${code}`, telephone);
 	},
 	getItems() {
-		return axios.get(`${BASE_URL}/products`);
+		return Router.get(`/products`);
 	},
 	createItem(data, token) {
-		return axios.post(`${BASE_URL}/products`, data, {
+		return Router.post(`/products`, data, {
 			headers: { Authorization: token },
 		});
 	},
 	updateItem(data, token, name) {
-		return axios.patch(`${BASE_URL}/products/${name}`, data, {
+		return Router.patch(`/products/${name}`, data, {
 			headers: { Authorization: token },
 		});
 	},
 	getItemsByCategory(name) {
-		return axios.get(`${BASE_URL}/category/${name}`);
+		return Router.get(`/category/${name}`);
 	},
 	getCategories() {
-		return axios.get(`${BASE_URL}/category`);
+		return Router.get(`/category`);
 	},
 	createCategory(data, token) {
-		return axios.post(`${BASE_URL}/category`, data, {
+		return Router.post(`/category`, data, {
 			headers: { Authorization: token },
 		});
 	},
 	singleItem(name) {
-		return axios.get(`${BASE_URL}/products/${name}`);
+		return Router.get(`/products/${name}`);
 	},
 	getFaq() {
-		return axios.get(`${BASE_URL}/faqs`);
+		return Router.get(`/faqs`);
 	},
 	logout(token) {
-		return axios.get(`${BASE_URL}/users/logout/${token}`);
+		return Router.get(`/users/logout/${token}`);
 	},
 	updateCategory(data, token, id) {
-		return axios.patch(`${BASE_URL}/category/${id}`, data, {
+		return Router.patch(`/category/${id}`, data, {
 			headers: { Authorization: token },
 		});
 	},
 	deleteCategory(token, id) {
-		return axios.delete(`${BASE_URL}/category/${id}`, {
+		return Router.delete(`/category/${id}`, {
 			headers: { Authorization: token },
 		});
 	},
 	getProducts(token) {
-		return axios.get(`${BASE_URL}/products/admin`, {
+		return Router.get(`/products/admin`, {
 			headers: { Authorization: token },
 		});
 	},
 	createFaq(data, token) {
-		return axios.post(`${BASE_URL}/faqs`, data, {
+		return Router.post(`/faqs`, data, {
 			headers: { Authorization: token },
 		});
 	},
 	deleteFaq(id, token) {
-		return axios.delete(`${BASE_URL}/faqs/${id}`, {
+		return Router.delete(`/faqs/${id}`, {
 			headers: { Authorization: token },
 		});
 	},
 	updateFaq(id, data, token) {
-		return axios.patch(`${BASE_URL}/faqs/${id}`, data, {
+		return Router.patch(`/faqs/${id}`, data, {
 			headers: { Authorization: token },
 		});
 	},
@@ -82,7 +82,7 @@ const apis = {
 	 * @param {*} token
 	 */
 	getPages(token) {
-		return axios.get(`${BASE_URL}/pages`, {
+		return Router.get(`/pages`, {
 			headers: { Authorization: token },
 		});
 	},
@@ -92,7 +92,7 @@ const apis = {
 	 * @param {*} token
 	 */
 	createPage(data, token) {
-		return axios.post(`${BASE_URL}/pages`, data, {
+		return Router.post(`/pages`, data, {
 			headers: { Authorization: token },
 		});
 	},
@@ -103,7 +103,7 @@ const apis = {
 	 */
 
 	deletePage(id, token) {
-		return axios.delete(`${BASE_URL}/pages/${id}`, {
+		return Router.delete(`/pages/${id}`, {
 			headers: { Authorization: token },
 		});
 	},
@@ -115,7 +115,7 @@ const apis = {
 	 */
 
 	updatePage(id, data, token) {
-		return axios.patch(`${BASE_URL}/pages/${id}`, data, {
+		return Router.patch(`/pages/${id}`, data, {
 			headers: { Authorization: token },
 		});
 	},
@@ -127,7 +127,7 @@ const apis = {
 	 */
 
 	getUser(token) {
-		return axios.get(`${BASE_URL}/users/profile`, {
+		return Router.get(`/users/profile`, {
 			headers: { Authorization: token },
 		});
 	},
@@ -137,7 +137,7 @@ const apis = {
 	 * @param {*} token
 	 */
 	createAbout(data, token) {
-		return axios.post(`${BASE_URL}/about`, data, {
+		return Router.post(`/about`, data, {
 			headers: { Authorization: token },
 		});
 	},
@@ -148,7 +148,7 @@ const apis = {
 	 */
 
 	deleteAbout(id, token) {
-		return axios.delete(`${BASE_URL}/about/${id}`, {
+		return Router.delete(`/about/${id}`, {
 			headers: { Authorization: token },
 		});
 	},
@@ -160,7 +160,7 @@ const apis = {
 	 */
 
 	updateAbout(id, data, token) {
-		return axios.patch(`${BASE_URL}/about/${id}`, data, {
+		return Router.patch(`/about/${id}`, data, {
 			headers: { Authorization: token },
 		});
 	},
@@ -172,7 +172,7 @@ const apis = {
 	 * @param {*} token
 	 */
 	getUsers(token) {
-		return axios.get(`${BASE_URL}/users`, {
+		return Router.get(`/users`, {
 			headers: { Authorization: token },
 		});
 	},
@@ -182,69 +182,69 @@ const apis = {
 	 * @param {*} name
 	 */
 	getIp() {
-		return axios.get(ipUrl);
+		return Router.get(ipUrl);
 	},
 	getCurrency() {
-		return axios.get(forexUrl);
+		return Router.get(forexUrl);
 	},
 	updateCurrency(data) {
-		return axios.patch(`${BASE_URL}/currency`, data);
+		return Router.patch(`/currency`, data);
 	},
 	getCurrencies() {
-		return axios.get(`${BASE_URL}/currency`);
+		return Router.get(`/currency`);
 	},
 	getSettings() {
-		return axios.get(`${BASE_URL}/settings`);
+		return Router.get(`/settings`);
 	},
 	updateSettings(data) {
-		return axios.patch(`${BASE_URL}/settings`, data);
+		return Router.patch(`/settings`, data);
 	},
 	getClient() {
-		return axios.get(`https://get.client-ip.com/lookup`);
+		return Router.get(`https://get.client-ip.com/lookup`);
 	},
 	addToFavourite(id, token) {
-		return axios.get(`${BASE_URL}/favourite/${id}`, {
+		return Router.get(`/favourite/${id}`, {
 			headers: { Authorization: token },
 		});
 	},
 	viewFavourite(token) {
-		return axios.get(`${BASE_URL}/favourite`, {
+		return Router.get(`/favourite`, {
 			headers: { Authorization: token },
 		});
 	},
 	removeFavourite(id, token) {
-		return axios.delete(`${BASE_URL}/favourite/${id}`, {
+		return Router.delete(`/favourite/${id}`, {
 			headers: { Authorization: token },
 		});
 	},
 	getChat(token) {
-		return axios.get(`${BASE_URL}/chats`, {
+		return Router.get(`/chats`, {
 			headers: { Authorization: token },
 		});
 	},
 	createChat(data, token) {
-		return axios.post(`${BASE_URL}/chats`, data, {
+		return Router.post(`/chats`, data, {
 			headers: { Authorization: token },
 		});
 	},
 
 	facebookLogin(accessToken) {
-		return axios.post(`${BASE_URL}/users/auth/facebook`, { access_token: accessToken });
+		return Router.post(`/users/auth/facebook`, { access_token: accessToken });
 	},
 
 	deleteUser(token, id) {
-		return axios.delete(`${BASE_URL}/users/${id}`, {
+		return Router.delete(`/users/${id}`, {
 			headers: { Authorization: token },
 		});
 	},
 
 	deleteProduct(token, id) {
-		return axios.delete(`${BASE_URL}/products/${id}`, {
+		return Router.delete(`/products/${id}`, {
 			headers: { Authorization: token },
 		});
 	},
 	getPlan() {
-		return axios.get(`${BASE_URL}/plans`);
+		return Router.get(`/plans`);
 	},
 };
 

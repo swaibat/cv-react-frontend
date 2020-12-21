@@ -89,7 +89,7 @@ class Item extends Component {
 													name='customRadioInline1'
 													className='custom-control-input'
 												/>
-												<label className='custom-control-label red' for='customRadioInline1' />
+												<label className='custom-control-label red' htmlFor='customRadioInline1' />
 											</div>
 											<div className='custom-control custom-radio custom-control-inline ml-4'>
 												<input
@@ -98,7 +98,10 @@ class Item extends Component {
 													name='customRadioInline1'
 													className='custom-control-input'
 												/>
-												<label className='custom-control-label orange' for='customRadioInline2' />
+												<label
+													className='custom-control-label orange'
+													htmlFor='customRadioInline2'
+												/>
 											</div>
 											<div className='custom-control custom-radio custom-control-inline ml-4'>
 												<input
@@ -107,7 +110,7 @@ class Item extends Component {
 													name='customRadioInline1'
 													className='custom-control-input'
 												/>
-												<label className='custom-control-label grey' for='customRadioInline3' />
+												<label className='custom-control-label grey' htmlFor='customRadioInline3' />
 											</div>
 										</div>
 									</div>

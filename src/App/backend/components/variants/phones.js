@@ -26,7 +26,7 @@ export default class Phone extends Component {
 								required
 							/>
 							<span className='bar' />
-							<label className='cv-label left' htmlFor='price'>
+							<label className='cv-label left' htmlhtmlFor='price'>
 								Brand
 							</label>
 						</div>
@@ -50,7 +50,7 @@ export default class Phone extends Component {
 								required
 							/>
 							<span className='bar' />
-							<label className='cv-label left' htmlFor='price'>
+							<label className='cv-label left' htmlhtmlFor='price'>
 								Operation System
 							</label>
 						</div>
@@ -70,7 +70,7 @@ export default class Phone extends Component {
 								</span>
 							</div>
 							<span className='bar' />
-							<label className='cv-label' htmlFor='category'>
+							<label className='cv-label' htmlhtmlFor='category'>
 								Surface Area
 							</label>
 						</div>
@@ -94,7 +94,7 @@ export default class Phone extends Component {
 								required
 							/>
 							<span className='bar' />
-							<label className='cv-label left' htmlFor='price'>
+							<label className='cv-label left' htmlhtmlFor='price'>
 								Main Camera size in (Pixels)
 							</label>
 						</div>
@@ -118,7 +118,7 @@ export default class Phone extends Component {
 								required
 							/>
 							<span className='bar' />
-							<label className='cv-label left' htmlFor='price'>
+							<label className='cv-label left' htmlhtmlFor='price'>
 								Front Camera size in (Pixels)
 							</label>
 						</div>
@@ -142,7 +142,7 @@ export default class Phone extends Component {
 								required
 							/>
 							<span className='bar' />
-							<label className='cv-label left' htmlFor='price'>
+							<label className='cv-label left' htmlhtmlFor='price'>
 								Battery (mAh)
 							</label>
 						</div>
@@ -166,7 +166,7 @@ export default class Phone extends Component {
 								required
 							/>
 							<span className='bar' />
-							<label className='cv-label left' htmlFor='price'>
+							<label className='cv-label left' htmlhtmlFor='price'>
 								Sim-card Type
 							</label>
 						</div>
@@ -190,7 +190,7 @@ export default class Phone extends Component {
 								required
 							/>
 							<span className='bar' />
-							<label className='cv-label left' htmlFor='price'>
+							<label className='cv-label left' htmlhtmlFor='price'>
 								Ram in (GB)
 							</label>
 						</div>
@@ -214,7 +214,7 @@ export default class Phone extends Component {
 								required
 							/>
 							<span className='bar' />
-							<label className='cv-label left' htmlFor='price'>
+							<label className='cv-label left' htmlhtmlFor='price'>
 								Display Size in (pixels)
 							</label>
 						</div>
@@ -238,7 +238,7 @@ export default class Phone extends Component {
 								required
 							/>
 							<span className='bar' />
-							<label className='cv-label left' htmlFor='price'>
+							<label className='cv-label left' htmlhtmlFor='price'>
 								Internal Storage in (GB)
 							</label>
 						</div>

@@ -12,7 +12,7 @@ li {
 
 @media (min-width: 992px) {
 	.sidenav {
-		width: 190px;
+		width: 210px;
 		height: calc(100vh - 3.5rem);
 		box-sizing: border-box;
 		border-top: solid 0.5px #eef2f4;
@@ -28,7 +28,6 @@ li {
 
 	.content-wrapper {
 		margin-left: 210px;
-		margin-right: 1rem;
 	}
 }
 

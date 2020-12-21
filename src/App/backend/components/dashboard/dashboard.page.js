@@ -447,6 +447,9 @@ class Dashboard extends Component {
 	// 		],
 	// 	};
 	// }
+	componentDidMount() {
+		document.title = 'Dashboard';
+	}
 	render() {
 		return (
 			<div className='row'>

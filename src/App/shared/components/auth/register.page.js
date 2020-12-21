@@ -322,7 +322,7 @@ class Register extends Component {
 																				className='custom-control-input'
 																				onChange={this.handleInput}
 																			/>
-																			<label className='custom-control-label' htmlFor='roleId'>
+																			<label className='custom-control-label' htmlhtmlFor='roleId'>
 																				Buyer
 																			</label>
 																		</div>
@@ -334,7 +334,7 @@ class Register extends Component {
 																				className='custom-control-input'
 																				onChange={this.handleInput}
 																			/>
-																			<label className='custom-control-label' htmlFor='both'>
+																			<label className='custom-control-label' htmlhtmlFor='both'>
 																				Buyer and seller
 																			</label>
 																		</div>
