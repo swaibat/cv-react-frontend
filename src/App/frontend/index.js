@@ -25,22 +25,24 @@ export class App extends React.Component {
 	render() {
 		return (
 			<Router>
-				<Switch>
-					<Route exact path='/' render={props => <Landing {...props} session={true} />} />
-					<Route exact path='/login' component={Login} />
-					<Route exact path='/register/:token' component={Register} />
-					<Route exact path='/verify' component={VerifyUser} />
-					<Route exact path='/products' component={Items} />
-					<Route exact path='/category/:name' component={CategoryItems} />
-					<Route exact path='/category/:name/:sub' component={CategoryItems} />
-					<Route exact path='/products/:name' component={singleItem} />
-					<Route exact path='/faq' component={Faq} />
-					<Route exact path='/reset-password' component={ResetPassword} />
-					<Route exact path='/confirm-reset/:token' component={ConfirmReset} />
-					<Route exact path='/contact' component={Contact} />
-					<Route exact path='/profile' component={Profile} />
-					<Route path='*' component={NotFound} />
-				</Switch>
+				<Route path='/:path?/:path?' exact>
+					<Switch>
+						<Route exact path='/' render={props => <Landing {...props} session={true} />} />
+						<Route exact path='/login' component={Login} />
+						<Route exact path='/register/:token' component={Register} />
+						<Route exact path='/verify' component={VerifyUser} />
+						<Route exact path='/products' component={Items} />
+						<Route exact path='/category/:name' component={CategoryItems} />
+						<Route exact path='/category/:name/:sub' component={CategoryItems} />
+						<Route exact path='/products/:name' component={singleItem} />
+						<Route exact path='/faq' component={Faq} />
+						<Route exact path='/reset-password' component={ResetPassword} />
+						<Route exact path='/confirm-reset/:token' component={ConfirmReset} />
+						<Route exact path='/contact' component={Contact} />
+						<Route exact path='/profile' component={Profile} />
+						{/* <Route path='*' component={NotFound} /> */}
+					</Switch>
+				</Route>
 			</Router>
 		);
 	}

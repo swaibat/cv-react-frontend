@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import AdminApp from './backend';
 import UserApp from './frontend';
-import Token from '../App/shared/helper/index';
+import Auth from './shared/components/auth/redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
 
-export class App extends React.Component {
-	render() {
-		return (
-			<React.Fragment>
-				<AdminApp />
-			</React.Fragment>
-		);
-	}
-}
+const App = () => {
+	const dispatch = useDispatch();
+	useMemo(() => {
+		dispatch(Auth.currentUser);
+	}, [dispatch]);
+	const payload = useSelector(({ User }) => User.payload);
+	console.log('====================================');
+	console.log(payload);
+	console.log('====================================');
+	return (
+		<>
+			<AdminApp />
+			<UserApp />
+			{/* <Route path='/admin/*' component={AdminApp} /> */}
+		</>
+	);
+};
 
 export default App;

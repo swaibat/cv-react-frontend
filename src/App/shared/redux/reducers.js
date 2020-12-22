@@ -12,7 +12,7 @@ import Chat from '../redux/chat/reducers';
 import Plan from '../../backend/components/pricing/redux/actions';
 
 const allReducers = combineReducers({
-	LoginReducer: Auth.login,
+	Login: Auth.login,
 	Items: Products.products,
 	CatItems: Products.getProductsByCategoty,
 	GetCategories: Category.getCategories,
@@ -21,6 +21,7 @@ const allReducers = combineReducers({
 	RegisterReducer: Auth.register,
 	verifyUser: Auth.verifyUser,
 	Logout: Auth.logout,
+	User: Auth.setUser,
 	createItem: Products.createProduct,
 	createCategory: Category.createCategory,
 	updateCategory: Category.updateCategory,

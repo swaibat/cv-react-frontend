@@ -8,7 +8,7 @@ import Logo from '../../../shared/assets/images/logo.svg';
 import { NavLink } from 'react-router-dom';
 import AdminSidenav from './admin.routes';
 
-function Nav() {
+function SideNav() {
 	return (
 		<ul className='navbar-nav mr-auto sidenav bg-white -light vh-100' id='navAccordion'>
 			<li className='nav-item shadow-sm p-2 m-0 h-3 d-flex justify-content-center'>
@@ -37,9 +37,10 @@ function Nav() {
 							aria-describedby='basic-addon2'
 						/>
 						<div className='input-group-append'>
-							<span className='input-group-text bg-white rounded-sm-right -light' id='basic-addon2'>
-								{/* <IosSearch/> */}
-							</span>
+							<span
+								className='input-group-text bg-white rounded-sm-right -light'
+								id='basic-addon2'
+							></span>
 						</div>
 					</div>
 				</li>
@@ -119,4 +120,4 @@ function Nav() {
 	);
 }
 
-export default Nav;
+export default SideNav;

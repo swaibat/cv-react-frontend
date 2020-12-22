@@ -15,8 +15,7 @@ import image from '../../../shared/assets/images/user.svg';
 import ScrollToBottom from 'react-scroll-to-bottom';
 import _ from 'lodash';
 import io from 'socket.io-client';
-const ENDPOINT = 'http://localhost:5000';
-const socket = io(ENDPOINT);
+const socket = io('https://vamoo.herokuapp.com');
 
 class Page extends React.Component {
 	constructor(props) {

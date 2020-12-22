@@ -84,7 +84,7 @@ class Nav extends React.Component {
 								aria-haspopup='true'
 								aria-expanded='false'
 							>
-								{payload && payload.data.firstName}
+								{payload && payload.firstName}
 							</button>
 							<div className='dropdown-menu' aria-labelledby='dropdownMenuButton'>
 								<a className='dropdown-item' href='#'>

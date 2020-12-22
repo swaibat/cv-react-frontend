@@ -39,6 +39,19 @@ const Auth = {
 		}
 	},
 
+	setUser(state = initialState, action) {
+		switch (action.type) {
+			case constant.USER_SUCCESS:
+				return {
+					...state,
+					pending: false,
+					payload: action.payload,
+				};
+			default:
+				return state;
+		}
+	},
+
 	register(state = initialState, action) {
 		switch (action.type) {
 			case constant.REGISTER_PENDING:
