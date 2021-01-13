@@ -9,11 +9,11 @@ const AddCategory = () => {
 	const handleChange = async ({ target }) => setValue(target.value);
 	const handleSubmit = async e => {
 		e.preventDefault();
-		setLoading(true);
+		// setLoading(true);
 		dispatch(await Category.createCategory({ name: value }));
 		dispatch(await Category.getCategories());
-		setLoading(false);
-		setValue('');
+		// setLoading(false);
+		// setValue('');
 	};
 	return (
 		<div className='card mb-3'>

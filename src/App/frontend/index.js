@@ -6,7 +6,7 @@ import Register from '../shared/components/auth/register.page';
 import Items from './components/products/items.page';
 import CategoryItems from './components/products/category.item';
 import singleItem from './components/products/single.item';
-import NotFound from '../shared/components/404/404.page';
+// import NotFound from '../shared/components/404/404.page';
 import Faq from './components/faq/faq.page';
 import VerifyUser from '../shared/components/auth/verify.user.page';
 import ResetPassword from '../shared/components/auth/reset.password.page';

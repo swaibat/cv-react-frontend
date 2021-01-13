@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route, useParams, useRouteMatch } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import FaqList from './components/faq/faqs.list.page';
 import Dashboard from './components/dashboard/dashboard.page';
 import CreateProduct from './components/products/product.create';
@@ -24,7 +24,7 @@ const Admin = () => {
 	return (
 		<Router>
 			<Switch>
-				<Route path='/admin/:path?' exact>
+				<Route path='/admin/:path?/:path?' exact>
 					<AdminWrapper.Sidenav />
 					<div
 						className={`header-bg${

@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { Component } from 'react';
 import Sidenav from '../navigation/sidenav';
-import AdminNav from '../navigation/admin.nav.component';
+import AdminNav from '../navigation/admin.nav';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCogs } from '@fortawesome/free-solid-svg-icons';
 import EmailSettings from './email.settings';

@@ -4,7 +4,7 @@ import constants from '../../../shared/redux/constants';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Sidenav from '../navigation/sidenav';
-import AdminNav from '../navigation/admin.nav.component';
+import AdminNav from '../navigation/admin.nav';
 import { faPlus, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { token } from '../../../shared/helper';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
